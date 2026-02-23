@@ -118,7 +118,7 @@ function Navbar() {
               Área do Aluno
             </a>
             <a href="#cta2" className="top-bar-btn btn-yellow">
-              Fale Conosco
+              Trabalhe conosco
             </a>
           </div>
         </div>

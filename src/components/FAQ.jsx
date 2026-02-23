@@ -3,10 +3,6 @@ import './FAQ.css'
 
 const faqData = [
   {
-    pergunta: 'Quais cursos a Evolutec oferece?',
-    resposta: 'Oferecemos uma ampla variedade de cursos técnicos e profissionalizantes, incluindo Técnico em Enfermagem, Conectividade e Tecnologia, Profissional em Vendas, entre outros. Nossos cursos são desenvolvidos para preparar você para o mercado de trabalho.'
-  },
-  {
     pergunta: 'Como funciona o processo de matrícula?',
     resposta: 'O processo de matrícula é simples e rápido. Você pode se inscrever através do nosso site ou visitando uma de nossas unidades. Nossa equipe está pronta para orientá-lo em todas as etapas, desde a escolha do curso até a documentação necessária.'
   },
@@ -25,7 +21,16 @@ const faqData = [
   {
     pergunta: 'Existe algum tipo de bolsa ou financiamento?',
     resposta: 'Sim, trabalhamos com diversas opções de pagamento e parcerias para facilitar seu acesso à educação de qualidade. Entre em contato conosco para conhecer as opções disponíveis e encontrar a melhor solução para você.'
-  }
+  },
+  {
+    pergunta: 'Posso estudar à distância?',
+    resposta: 'Sim, oferecemos cursos na modalidade EAD (Ensino a Distância) para que você possa estudar de onde estiver. Nossos cursos EAD contam com uma plataforma online interativa, materiais de alta qualidade e suporte dedicado para garantir seu sucesso.'
+  },
+  
+  {
+    pergunta: 'A partir de quantos anos posso me matricular?',
+    resposta: 'A partir dos 12 anos o aluno pode se matricular em cursos específicos para a sua idade, como curso de Informática, inglês entre outros' }
+  
 ]
 
 export default function FAQ() {
