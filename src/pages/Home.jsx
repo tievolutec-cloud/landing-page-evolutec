@@ -6,6 +6,7 @@ import Estatisticas from '../components/Estatisticas'
 import GaleriaFormatura from '../components/GaleriaFormatura'
 import Blog from './Blog'
 import Depoimentos from '../components/Depoimentos'
+import FAQ from '../components/FAQ'
 import Mapa from '../components/Mapa'
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
       <Estatisticas/>
       <GaleriaFormatura/>
       <Depoimentos/>
+      <FAQ/>
       <RedesSociais/>
       <Blog/>
       <Mapa/>

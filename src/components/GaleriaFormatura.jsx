@@ -26,7 +26,7 @@ export default function GaleriaFormatura() {
 
         {/* Célula 3 — imagem */}
         <div className="galeria-cell galeria-cell--img">
-          <img src="/formatura2.jpeg" alt="Formatura" />
+          <img src="/a.jpg" alt="Formatura" />
           <div className="galeria-img-overlay">
             <span>Aprovados</span>
           </div>
@@ -34,7 +34,7 @@ export default function GaleriaFormatura() {
 
         {/* Célula 4 — imagem */}
         <div className="galeria-cell galeria-cell--img">
-          <img src="/formatura3.jpeg" alt="Formatura" />
+          <img src="/b.jpg" alt="Formatura" />
           <div className="galeria-img-overlay">
             <span>Conquistas</span>
           </div>
@@ -53,7 +53,7 @@ export default function GaleriaFormatura() {
 
         {/* Célula 6 — imagem grande horizontal */}
         <div className="galeria-cell galeria-cell--img galeria-cell--wide">
-          <img src="/formatura4.jpeg" alt="Formatura" />
+          <img src="/c.jpg" alt="Formatura" />
           <div className="galeria-img-overlay">
             <span>Momentos Especiais</span>
           </div>
