@@ -1,0 +1,133 @@
+/* ===== Seção Estatísticas ===== */
+.estat-section {
+  background: linear-gradient(135deg, #c0392b 0%, #e63946 50%, #c0392b 100%);
+  padding: 60px 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Decorações */
+.estat-deco {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 2.5rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+.estat-deco--tl { top: 20px; left: 40px; font-size: 1.8rem; }
+.estat-deco--tr { top: 20px; right: 40px; font-size: 2.5rem; }
+.estat-deco--bl { bottom: 20px; left: 60px; font-size: 1.4rem; }
+.estat-deco--br { bottom: 20px; right: 60px; font-size: 2rem; }
+
+/* Inner container */
+.estat-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Header */
+.estat-header {
+  text-align: center;
+  color: #fff;
+}
+
+.estat-cap-icon {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.estat-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.estat-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Grid de stats */
+.estat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Item individual */
+.estat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  gap: 0.4rem;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.estat-item:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.estat-icon {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.2rem;
+}
+
+.estat-number {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.estat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 820px) {
+  .estat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .estat-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .estat-title {
+    font-size: 1.6rem;
+  }
+
+  .estat-number {
+    font-size: 2rem;
+  }
+}

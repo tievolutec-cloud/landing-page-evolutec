@@ -2,58 +2,50 @@
 .contato {
   background-color: #0d2a5c;
   padding: 4rem 2rem;
+  overflow: visible;
+  position: relative;
 }
 
 .contato-container {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 3rem;
+  overflow: visible;
 }
 
 /* ===== Lado visual (esquerda) ===== */
 .contato-visual {
   position: relative;
   flex-shrink: 0;
-  width: 380px;
-  height: 460px;
+  width: 360px;
+  height: 420px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  overflow: visible;
 }
 
-.contato-card-bg {
-  position: absolute;
-  width: 280px;
-  height: 320px;
-  background: #e63946;
-  border-radius: 60px 20px 30px 10px;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-}
 
 .contato-avatar {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  margin-left: 20px;
-  max-height: 400px;
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  z-index: 10;
+  height: 680px;
+  width: auto;
   object-fit: contain;
   object-position: bottom;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .contato-avatar.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 @keyframes fadeInUp {
@@ -70,14 +62,14 @@
 /* Ícones sociais flutuantes */
 .contato-social {
   position: absolute;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  z-index: 2;
+  z-index: 12;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -97,22 +89,22 @@
 
 .contato-social--whatsapp {
   background: #25d366;
-  top: 0;
-  left: 55%;
+  top: -10px;
+  left: 72%;
   animation: float-whatsapp 3s ease-in-out infinite;
 }
 
 .contato-social--facebook {
   background: #1877f2;
-  left: 0;
-  top: 30%;
+  left: 60px;
+  top: 185px;
   animation: float-facebook 3.5s ease-in-out infinite;
 }
 
 .contato-social--instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  left: 5px;
-  top: 55%;
+  left: -10px;
+  top: 260px;
   animation: float-instagram 4s ease-in-out infinite;
 }
 
@@ -245,64 +237,141 @@
 }
 
 /* ===== Responsive ===== */
+
+/* Tablets e telas médias */
 @media (max-width: 900px) {
+  .contato {
+    padding: 3rem 1.5rem;
+  }
+
   .contato-container {
     flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .contato-visual {
+    width: 300px;
+    height: 350px;
+    margin: 0 auto;
+  }
+
+  .contato-avatar {
+    height: 500px;
+    bottom: -60px;
+  }
+
+  .contato-social--whatsapp {
+    top: 20px;
+    left: 65%;
+  }
+
+  .contato-social--facebook {
+    left: 40px;
+    top: 180px;
+  }
+
+  .contato-social--instagram {
+    left: -5px;
+    top: 250px;
+  }
+
+  .contato-form-wrapper {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .contato-titulo {
+    font-size: 1.75rem;
     text-align: center;
+  }
+}
+
+/* Mobile paisagem / tablets pequenos */
+@media (max-width: 768px) {
+  .contato {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .contato-container {
+    gap: 1.5rem;
   }
 
   .contato-visual {
     width: 260px;
-    height: 320px;
-  }
-
-  .contato-card-bg {
-    width: 220px;
-    border-radius: 60px 20px 30px 10px;
-    height: 270px;
+    height: 300px;
   }
 
   .contato-avatar {
-    max-width: 280px !important;
-    width: 280px !important;
-    max-height: 310px !important;
-    margin-left: 0 !important;
+    height: 420px;
+    bottom: -50px;
+  }
+
+  .contato-social {
+    width: 52px;
+    height: 52px;
+  }
+
+  .contato-social svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .contato-social--whatsapp {
+    top: 10px;
+    left: 68%;
+  }
+
+  .contato-social--facebook {
+    left: 30px;
+    top: 150px;
+  }
+
+  .contato-social--instagram {
+    left: 0;
+    top: 210px;
   }
 
   .contato-titulo {
     font-size: 1.5rem;
   }
-}
 
-@media (max-width: 580px) {
-  .contato {
-    padding: 2.5rem 1rem;
+  .contato-form input[type="text"],
+  .contato-form input[type="tel"],
+  .contato-form select {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9rem;
   }
 
-  .contato-row {
-    flex-direction: column;
+  .contato-btn {
+    font-size: 1.05rem;
+    padding: 0.9rem 1.75rem;
+  }
+}
+
+/* Mobile retrato padrão */
+@media (max-width: 580px) {
+  .contato {
+    padding: 2rem 1rem;
+  }
+
+  .contato-container {
+    gap: 1rem;
   }
 
   .contato-visual {
     width: 220px;
-    height: 280px;
-  }
-
-  .contato-card-bg {
-    width: 190px;
-    height: 240px;
+    height: 260px;
   }
 
   .contato-avatar {
-    max-width: 200px !important;
-    width: 200px !important;
-    max-height: 260px !important;
-    margin-left: 0 !important;
+    height: 360px;
+    bottom: -40px;
   }
 
   .contato-social {
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
   }
 
   .contato-social svg {
@@ -310,8 +379,169 @@
     height: 22px;
   }
 
+  .contato-social--whatsapp {
+    top: 5px;
+    left: 70%;
+  }
+
+  .contato-social--facebook {
+    left: 20px;
+    top: 130px;
+  }
+
+  .contato-social--instagram {
+    left: -2px;
+    top: 180px;
+  }
+
+  .contato-titulo {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .contato-form {
+    gap: 0.85rem;
+  }
+
+  .contato-row {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .contato-form input[type="text"],
+  .contato-form input[type="tel"],
+  .contato-form select {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.88rem;
+    border-radius: 8px;
+  }
+
+  .contato-lgpd {
+    font-size: 0.73rem;
+    gap: 0.6rem;
+  }
+
+  .contato-lgpd input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
   .contato-btn {
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding: 0.85rem 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+/* Mobile pequeno (iPhone SE, etc) */
+@media (max-width: 400px) {
+  .contato {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .contato-visual {
+    width: 180px;
+    height: 220px;
+  }
+
+  .contato-avatar {
+    height: 300px;
+    bottom: -30px;
+  }
+
+  .contato-social {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contato-social svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contato-social--whatsapp {
+    top: 0;
+    left: 72%;
+  }
+
+  .contato-social--facebook {
+    left: 15px;
+    top: 110px;
+  }
+
+  .contato-social--instagram {
+    left: -5px;
+    top: 155px;
+  }
+
+  .contato-titulo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .contato-form {
+    gap: 0.75rem;
+  }
+
+  .contato-form input[type="text"],
+  .contato-form input[type="tel"],
+  .contato-form select {
+    padding: 0.65rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .contato-lgpd {
+    font-size: 0.7rem;
+  }
+
+  .contato-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.25rem;
+  }
+}
+
+/* Ajustes para landscape em mobile */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 500px) {
+  .contato {
+    padding: 2rem 1rem;
+  }
+
+  .contato-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contato-visual {
+    width: 200px;
+    height: 240px;
+  }
+
+  .contato-avatar {
+    height: 320px;
+    bottom: -30px;
+  }
+
+  .contato-social {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contato-social svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .contato-titulo {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .contato-form {
+    gap: 0.7rem;
+  }
+
+  .contato-row {
+    flex-direction: row;
   }
 }

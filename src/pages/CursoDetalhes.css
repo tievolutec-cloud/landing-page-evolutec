@@ -1,0 +1,522 @@
+/* ===== Container Principal ===== */
+.curso-detalhes-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* ===== Botão Voltar Flutuante ===== */
+.btn-voltar-flutuante {
+  position: fixed;
+  top: 90px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1F2937;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-voltar-flutuante:hover {
+  background: #E60000;
+  color: white;
+  transform: translateX(-4px);
+  box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3);
+}
+
+.btn-voltar-flutuante svg {
+  stroke: currentColor;
+}
+
+/* ===== Hero Section ===== */
+.curso-hero {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.curso-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.curso-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(14, 42, 92, 0.85) 0%, rgba(230, 0, 0, 0.7) 100%);
+}
+
+.curso-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.curso-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.curso-hero-breadcrumb a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.curso-hero-breadcrumb a:hover {
+  opacity: 0.7;
+}
+
+.curso-hero-category {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  margin-bottom: 1rem;
+}
+
+.curso-hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.curso-hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.curso-hero-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.curso-hero-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.curso-hero-info-item svg {
+  flex-shrink: 0;
+}
+
+.curso-hero-info-item .label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.curso-hero-info-item .value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.curso-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-matricula {
+  background: #fbbf24;
+  color: #1F2937;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+}
+
+.btn-matricula:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.5);
+}
+
+.curso-mode-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Conteúdo Principal ===== */
+.curso-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.curso-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4B5563;
+}
+
+/* ===== Objetivos ===== */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.objective-item:hover {
+  border-color: #E60000;
+  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.objective-item svg {
+  flex-shrink: 0;
+  stroke: #10b981;
+  margin-top: 2px;
+}
+
+.objective-item span {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* ===== Grade Curricular ===== */
+.curriculum-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.curriculum-module {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.curriculum-module:hover {
+  border-color: #E60000;
+  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
+}
+
+.module-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #E60000;
+  margin-bottom: 1rem;
+}
+
+.module-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.module-topics li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #4B5563;
+  padding: 0.5rem 0;
+}
+
+.module-topics li svg {
+  flex-shrink: 0;
+  stroke: #10b981;
+}
+
+/* ===== Oportunidades de Carreira ===== */
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.career-item {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.career-item:hover {
+  background: #E60000;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.2);
+}
+
+/* ===== Info Cards ===== */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.info-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #E60000;
+  margin-bottom: 0.75rem;
+}
+
+.info-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4B5563;
+}
+
+/* ===== CTA Final ===== */
+.curso-cta {
+  background: linear-gradient(135deg, #0e2a5c 0%, #E60000 100%);
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  margin-top: 4rem;
+}
+
+.curso-cta h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.curso-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.btn-matricula-cta {
+  background: #fbbf24;
+  color: #1F2937;
+  padding: 1.25rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+}
+
+.btn-matricula-cta:hover {
+  background: #f59e0b;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.5);
+}
+
+/* ===== Curso Not Found ===== */
+.curso-not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.curso-not-found h2 {
+  font-size: 2rem;
+  color: #1F2937;
+  margin-bottom: 1.5rem;
+}
+
+.btn-voltar {
+  background: #E60000;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background: #b80000;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .btn-voltar-flutuante {
+    top: 80px;
+    left: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .curso-hero {
+    height: 500px;
+  }
+
+  .curso-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .curso-hero-description {
+    font-size: 1rem;
+  }
+
+  .curso-hero-info {
+    gap: 1rem;
+  }
+
+  .curso-hero-info-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .curso-content {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .objectives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .curso-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .curso-cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .curso-hero {
+    height: 450px;
+  }
+
+  .curso-hero-title {
+    font-size: 2rem;
+  }
+
+  .curso-hero-info {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .curso-hero-info-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-matricula {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .curriculum-module {
+    padding: 1.5rem;
+  }
+
+  .module-title {
+    font-size: 1.2rem;
+  }
+}
