@@ -34,7 +34,9 @@ export const cursosData = [
       "Coordenador de equipes"
     ],
     requirements: "Ensino Médio completo",
-    certificationType: "Diploma de Graduação reconhecido pelo MEC"
+    certificationType: "Diploma de Graduação reconhecido pelo MEC",
+    salary: "R$ 3.500,00",
+    marketInfo: "O mercado de trabalho para administradores é amplo e diversificado, com oportunidades em empresas de todos os portes e segmentos, desde startups até grandes corporações, atuar em consultorias empresariais e empreender seu próprio negócio."
   },
   {
     id: 2,
@@ -70,7 +72,9 @@ export const cursosData = [
       "Enfermeiro(a) docente"
     ],
     requirements: "Ensino Médio completo",
-    certificationType: "Diploma de Graduação reconhecido pelo MEC + Registro no COREN"
+    certificationType: "Diploma de Graduação reconhecido pelo MEC + Registro no COREN",
+    salary: "R$ 4.200,00",
+    marketInfo: "A área de enfermagem possui alta demanda em todo o país, com oportunidades em hospitais públicos e privados, clínicas especializadas, unidades de saúde da família, home care, empresas na área de saúde ocupacional e instituições de ensino."
   },
   {
     id: 3,
@@ -105,6 +109,8 @@ export const cursosData = [
       "Técnico em manutenção",
       "Assistente de TI"
     ],
+    salary: "R$ 2.800,00",
+    marketInfo: "A área de tecnologia da informação está em constante crescimento, com grande demanda por técnicos em informática em empresas de todos os segmentos, consultorias de TI, assistências técnicas e oportunidades de trabalho autônomo.",
     requirements: "Ensino Médio em andamento ou completo",
     certificationType: "Certificado de Curso Técnico"
   },
@@ -141,6 +147,8 @@ export const cursosData = [
       "Consultor de marketing digital",
       "Gestor de e-commerce"
     ],
+    salary: "R$ 3.200,00",
+    marketInfo: "O marketing digital é uma das áreas que mais cresce no mercado, com oportunidades em agências de marketing, empresas de e-commerce, startups, assessorias de comunicação e possibilidade de atuar como freelancer ou consultoria.",
     requirements: "Nenhum pré-requisito",
     certificationType: "Certificado de Conclusão"
   },
@@ -177,6 +185,8 @@ export const cursosData = [
       "Coordenador de segurança",
       "Consultor de SST"
     ],
+    salary: "R$ 3.100,00",
+    marketInfo: "A segurança do trabalho é obrigatória em empresas de diversos segmentos. O mercado oferece oportunidades em indústrias, construção civil, hospitais, empresas de logística e consultorias especializadas em segurança e meio ambiente.",
     requirements: "Ensino Médio completo",
     certificationType: "Certificado de Curso Técnico + Registro no MTE"
   },
@@ -214,7 +224,47 @@ export const cursosData = [
       "Freelancer em design"
     ],
     requirements: "Nenhum pré-requisito",
-    certificationType: "Certificado de Profissionalização"
+    certificationType: "Certificado de Profissionalização",
+    salary: "R$ 2.900,00",
+    marketInfo: "O mercado de design gráfico oferece diversas oportunidades em agências de publicidade, estúdios de design, editoras, gráficas, empresas de comunicação visual e grandes possibilidades de trabalho freelancer com variados clientes."
+  },
+  {
+    id: 7,
+    slug: "tecnico-radiologia",
+    title: "Técnico em Radiologia",
+    category: "SAÚDE",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&h=300&fit=crop",
+    mode: "Presencial",
+    duration: "24 meses",
+    hours: "1800h",
+    tag: "Técnico",
+    description: "Forme-se como técnico em radiologia e atue realizando exames radiográficos convencionais, processando filmes radiológicos e preparando soluções químicas.",
+    fullDescription: "Dentre outras atividades, o Técnico em Radiologia realiza exames radiográficos convencionais, processa filmes radiológicos, imagens e gráficos, e prepara soluções químicas, além de organizar a sala de processamento. Ele também prepara o paciente e o ambiente para a realização de exames de radiologia e diagnóstico por imagem, como mamografia, hemodinâmica, tomografia computadorizada e ressonância magnética nuclear.",
+    objectives: [
+      "Capacitar para realização de exames radiográficos",
+      "Formar profissionais em proteção radiológica",
+      "Desenvolver competências em diagnóstico por imagem",
+      "Preparar para atuar em hospitais e clínicas"
+    ],
+    curriculum: [
+      { module: "Fundamentos da Radiologia", topics: ["Física das Radiações", "Equipamentos Radiológicos", "Segurança Radiológica"] },
+      { module: "Técnicas Radiográficas", topics: ["Radiologia Convencional", "Posicionamento", "Processamento de Imagens"] },
+      { module: "Diagnóstico por Imagem", topics: ["Tomografia", "Ressonância Magnética", "Ultrassonografia"] },
+      { module: "Anatomia e Fisiologia", topics: ["Anatomia Humana", "Fisiologia", "Patologia"] },
+      { module: "Proteção Radiológica", topics: ["Normas de Segurança", "Dosimetria", "Radioproteção"] }
+    ],
+    careerOpportunities: [
+      "Técnico em radiologia",
+      "Técnico em tomografia",
+      "Técnico em ressonância magnética",
+      "Técnico em mamografia",
+      "Técnico em hemodinâmica",
+      "Auxiliar em diagnóstico por imagem"
+    ],
+    requirements: "Ensino Médio completo",
+    certificationType: "Certificado de Curso Técnico + Registro no CONTER",
+    salary: "R$ 2.881,62",
+    marketInfo: "Serviços de radiologia e diagnóstico por imagem em hospitais, clínicas e unidades básicas de saúde."
   }
 ];
 

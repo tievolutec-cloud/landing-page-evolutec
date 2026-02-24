@@ -1,7 +1,7 @@
 /* ===== Container Principal ===== */
 .curso-detalhes-container {
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #f5f5f5;
 }
 
 /* ===== Botão Voltar Flutuante ===== */
@@ -36,369 +36,570 @@
   stroke: currentColor;
 }
 
-/* ===== Hero Section ===== */
-.curso-hero {
+/* ===== Hero Section Vermelho ===== */
+.curso-hero-verde {
+  background: linear-gradient(135deg, #E60000 0%, #cc0000 100%);
+  padding: 6rem 2rem 4rem;
+  color: white;
   position: relative;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
-.curso-hero-image {
+.curso-hero-verde::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
 }
 
-.curso-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(14, 42, 92, 0.85) 0%, rgba(230, 0, 0, 0.7) 100%);
-}
-
-.curso-hero-content {
+.curso-hero-verde-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: center;
   position: relative;
-  z-index: 10;
-  max-width: 900px;
-  padding: 2rem;
-  text-align: center;
-  color: white;
+  z-index: 1;
 }
 
-.curso-hero-breadcrumb {
+.curso-hero-left {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.curso-hero-breadcrumb a {
-  color: white;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.curso-hero-breadcrumb a:hover {
-  opacity: 0.7;
-}
-
-.curso-hero-category {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fbbf24;
-  margin-bottom: 1rem;
-}
-
-.curso-hero-title {
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin: 0 0 1rem 0;
-  line-height: 1.2;
-  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.curso-hero-description {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-.curso-hero-info {
+.curso-badges {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.curso-hero-info-item {
-  display: flex;
-  align-items: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.curso-hero-info-item svg {
-  flex-shrink: 0;
-}
-
-.curso-hero-info-item .label {
-  display: block;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.curso-hero-info-item .value {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.curso-hero-actions {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
-.btn-matricula {
-  background: #fbbf24;
-  color: #1F2937;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 800;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
-}
-
-.btn-matricula:hover {
-  background: #f59e0b;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.5);
-}
-
-.curso-mode-badge {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
+.badge-categoria {
+  background: white;
+  color: #E60000;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-inscricao {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* ===== Conteúdo Principal ===== */
-.curso-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+.curso-titulo-principal {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.curso-section {
-  margin-bottom: 4rem;
+.curso-salario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
 }
 
-.section-title {
+.salario-label {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.salario-valor {
   font-size: 2rem;
   font-weight: 800;
-  color: #1F2937;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  letter-spacing: -0.5px;
 }
 
-.section-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #4B5563;
-}
-
-/* ===== Objetivos ===== */
-.objectives-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
-
-.objective-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+.btn-inscreva-se {
   background: white;
-  padding: 1.25rem;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.objective-item:hover {
-  border-color: #E60000;
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.objective-item svg {
-  flex-shrink: 0;
-  stroke: #10b981;
-  margin-top: 2px;
-}
-
-.objective-item span {
-  font-size: 1rem;
-  color: #374151;
-  line-height: 1.6;
-}
-
-/* ===== Grade Curricular ===== */
-.curriculum-list {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.curriculum-module {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.curriculum-module:hover {
-  border-color: #E60000;
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
-}
-
-.module-title {
-  font-size: 1.4rem;
-  font-weight: 700;
   color: #E60000;
-  margin-bottom: 1rem;
-}
-
-.module-topics {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.75rem;
-}
-
-.module-topics li {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 1rem;
-  color: #4B5563;
-  padding: 0.5rem 0;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.module-topics li svg {
-  flex-shrink: 0;
-  stroke: #10b981;
-}
-
-/* ===== Oportunidades de Carreira ===== */
-.career-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.career-item {
-  background: white;
-  padding: 1.25rem;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  text-align: center;
-  font-weight: 600;
-  color: #374151;
-  transition: all 0.3s ease;
-}
-
-.career-item:hover {
+.btn-inscreva-se:hover {
   background: #E60000;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Info Cards ===== */
-.info-cards {
+.curso-hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curso-hero-image-pessoa {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* ===== Conteúdo Principal ===== */
+.curso-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.curso-section-info {
+  background: white;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title-novo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin: 0 0 1.5rem 0;
+}
+
+.section-text-novo {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4B5563;
+  margin: 0;
+}
+
+/* ===== Cards de Informações ===== */
+.curso-info-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin: 2.5rem 0;
 }
 
-.info-card {
-  background: white;
+.info-card-verde {
+  background: linear-gradient(135deg, #E60000 0%, #cc0000 100%);
+  color: white;
   padding: 2rem;
   border-radius: 12px;
-  border: 2px solid #e5e7eb;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-card h3 {
-  font-size: 1.3rem;
+.info-card-verde:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(230, 0, 0, 0.4);
+}
+
+.info-card-verde svg {
+  stroke: white;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.info-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-card-label {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.info-card-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* ===== Seções de Detalhes ===== */
+.curso-section-detalhes {
+  background: white;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title-destaque {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title-destaque svg {
+  stroke: #E60000;
+}
+
+/* Objetivos */
+.objectives-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.objective-item-novo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.objective-item-novo:hover {
+  background: #ffe5e5;
+  transform: translateX(4px);
+}
+
+.objective-item-novo svg {
+  stroke: #E60000;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.objective-item-novo span {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Grade Curricular */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.curriculum-card {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.curriculum-card:hover {
+  border-color: #E60000;
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.curriculum-module-title {
+  font-size: 1.25rem;
   font-weight: 700;
   color: #E60000;
-  margin-bottom: 0.75rem;
+  margin: 0 0 1rem 0;
 }
 
-.info-card p {
-  font-size: 1rem;
-  line-height: 1.7;
+.curriculum-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.curriculum-topics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
   color: #4B5563;
 }
 
-/* ===== CTA Final ===== */
-.curso-cta {
-  background: linear-gradient(135deg, #0e2a5c 0%, #E60000 100%);
-  padding: 4rem 2rem;
-  border-radius: 20px;
-  text-align: center;
+.curriculum-topics li svg {
+  stroke: #E60000;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 0.2rem;
+}
+
+/* Oportunidades de Carreira */
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.career-tag {
+  background: #ffe5e5;
+  color: #E60000;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid #E60000;
+  transition: all 0.2s ease;
+}
+
+.career-tag:hover {
+  background: #E60000;
   color: white;
-  margin-top: 4rem;
+  transform: translateY(-2px);
 }
 
-.curso-cta h2 {
-  font-size: 2.5rem;
+/* ===== Seção Outros Cursos ===== */
+.outros-cursos-section {
+  background: white;
+  padding: 3rem 2.5rem;
+  margin: 3rem 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-title-outros-cursos {
+  font-size: 2rem;
   font-weight: 900;
-  margin-bottom: 1rem;
-}
-
-.curso-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-.btn-matricula-cta {
-  background: #fbbf24;
   color: #1F2937;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.section-subtitle-cursos {
+  font-size: 1.1rem;
+  color: #6B7280;
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+}
+
+.outros-cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.curso-card-mini {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.curso-card-mini:hover {
+  border-color: #E60000;
+  box-shadow: 0 8px 25px rgba(230, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.curso-card-mini-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.curso-card-mini-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.curso-card-mini:hover .curso-card-mini-image img {
+  transform: scale(1.05);
+}
+
+.curso-card-mini-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(230, 0, 0, 0.95);
+  color: white;
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.curso-card-mini-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.curso-card-mini-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #E60000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.curso-card-mini-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.curso-card-mini-description {
+  font-size: 0.9rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.curso-card-mini-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+}
+
+.curso-card-mini-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6B7280;
+  font-size: 0.85rem;
+}
+
+.curso-card-mini-info svg {
+  stroke: currentColor;
+  width: 18px;
+  height: 18px;
+}
+
+.ver-mais {
+  color: #E60000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: gap 0.2s ease;
+}
+
+.curso-card-mini:hover .ver-mais {
+  gap: 0.5rem;
+}
+
+.ver-mais svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-ver-todos-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-ver-todos-cursos {
+  background: linear-gradient(135deg, #E60000 0%, #cc0000 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
+}
+
+.btn-ver-todos-cursos:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(230, 0, 0, 0.4);
+}
+
+/* ===== CTA Final ===== */
+.curso-cta-final {
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  color: white;
+  padding: 4rem 2.5rem;
+  margin: 3rem 0 0 0;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.curso-cta-final h2 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+}
+
+.curso-cta-final p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin: 0 0 2rem 0;
+}
+
+.btn-cta-matricula {
+  background: #E60000;
+  color: white;
+  border: none;
   padding: 1.25rem 3rem;
   border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: 800;
-  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
 }
 
-.btn-matricula-cta:hover {
-  background: #f59e0b;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.5);
+.btn-cta-matricula:hover {
+  background: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(230, 0, 0, 0.4);
 }
 
-/* ===== Curso Not Found ===== */
+/* ===== Curso Não Encontrado ===== */
 .curso-not-found {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -416,107 +617,102 @@
 .btn-voltar {
   background: #E60000;
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 700;
   border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-voltar:hover {
-  background: #b80000;
+  background: #cc0000;
   transform: translateY(-2px);
 }
 
 /* ===== Responsividade ===== */
+@media (max-width: 1024px) {
+  .curso-hero-verde-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .curso-hero-right {
+    order: -1;
+  }
+
+  .curso-titulo-principal {
+    font-size: 2.5rem;
+  }
+
+  .curso-info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  .curso-hero-verde {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .curso-titulo-principal {
+    font-size: 2rem;
+  }
+
+  .salario-valor {
+    font-size: 1.5rem;
+  }
+
+  .curso-content-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .curso-section-info,
+  .curso-section-detalhes,
+  .outros-cursos-section {
+    padding: 1.5rem;
+  }
+
+  .section-title-novo,
+  .section-title-destaque {
+    font-size: 1.5rem;
+  }
+
+  .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outros-cursos-grid {
+    grid-template-columns: 1fr;
+  }
+
   .btn-voltar-flutuante {
-    top: 80px;
+    top: 70px;
     left: 10px;
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
 
-  .curso-hero {
-    height: 500px;
-  }
-
-  .curso-hero-title {
-    font-size: 2.5rem;
-  }
-
-  .curso-hero-description {
-    font-size: 1rem;
-  }
-
-  .curso-hero-info {
-    gap: 1rem;
-  }
-
-  .curso-hero-info-item {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .curso-content {
-    padding: 2rem 1rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .objectives-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .career-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  .curso-cta h2 {
-    font-size: 1.8rem;
-  }
-
-  .curso-cta p {
-    font-size: 1rem;
+  .curso-cta-final h2 {
+    font-size: 1.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  .curso-hero {
-    height: 450px;
+  .curso-titulo-principal {
+    font-size: 1.75rem;
   }
 
-  .curso-hero-title {
-    font-size: 2rem;
+  .curso-badges {
+    flex-wrap: wrap;
   }
 
-  .curso-hero-info {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .curso-hero-info-item {
+  .btn-inscreva-se {
     width: 100%;
     justify-content: center;
   }
 
-  .btn-matricula {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
-  }
-
-  .info-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .curriculum-module {
-    padding: 1.5rem;
-  }
-
-  .module-title {
-    font-size: 1.2rem;
+  .section-title-outros-cursos {
+    font-size: 1.5rem;
   }
 }

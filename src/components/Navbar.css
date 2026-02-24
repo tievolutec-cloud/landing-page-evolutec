@@ -95,7 +95,7 @@
 /* Main Navbar */
 .navbar {
   position: fixed;
-  height: 70px;
+  min-height: 70px;
   top: 2.5rem;
   left: 0;
   width: 100%;
@@ -104,7 +104,7 @@
   z-index: 1002;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 /* Desktop: mostra topbar */
@@ -124,42 +124,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   padding: 0.75rem 2rem;
   position: relative;
   box-sizing: border-box;
 }
 
-/* Desktop: navbar no centro */
+/* Desktop: logo absoluta à esquerda, links centralizados */
 @media (min-width: 1025px) {
-  .navbar-container {
-    justify-content: center;
-  }
-  
   .navbar-logo {
-    order: unset;
-  }
-  
-  .navbar-links {
-    order: unset;
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
   }
 }
 
-/* Mobile: navbar com logo à esquerda e hamburger à direita */
+/* Mobile: logo à esquerda, hamburger à direita */
 @media (max-width: 1024px) {
   .navbar-container {
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
   }
-  
+
   .navbar-logo {
+    position: static;
+    transform: none;
     order: 1;
   }
-  
+
   .navbar-toggle {
     order: 2;
   }
-  
+
   .navbar-links {
     order: 3;
   }
