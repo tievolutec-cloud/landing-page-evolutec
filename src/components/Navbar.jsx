@@ -75,6 +75,11 @@ function Navbar() {
   const handleAnchorClick = (e, anchor) => {
     closeMenu()
     
+    // Se o link for para a página de unidades, não faz scroll, apenas redireciona
+    if (anchor === '#unidades') {
+      return;
+    }
+    
     // Se já estamos na home
     if (location.pathname === '/') {
       e.preventDefault()
@@ -163,7 +168,59 @@ function Navbar() {
               CURSOS
             </Link>
           </li>
-          <li><Link to="/#unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>UNIDADES</Link></li>
+          <li className="dropdown">
+            <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>UNIDADES</Link>
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 1</strong>
+                  <span>Informações do Polo 1</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 2</strong>
+                  <span>Informações do Polo 2</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 3</strong>
+                  <span>Informações do Polo 3</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 4</strong>
+                  <span>Informações do Polo 4</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 5</strong>
+                  <span>Informações do Polo 5</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 6</strong>
+                  <span>Informações do Polo 6</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 7</strong>
+                  <span>Informações do Polo 7</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                  <strong>Polo 8</strong>
+                  <span>Informações do Polo 8</span>
+                </Link>
+              </li>
+            </ul>
+          </li>
           <li><Link to="/#sobre" onClick={(e) => handleAnchorClick(e, '#sobre')}>SOBRE EVOLUTEC</Link></li>
           <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>MATRICULE-SE</Link></li>
         </ul>

@@ -1,6 +1,6 @@
 /* ===== Seção FAQ ===== */
 .faq-section {
-  background-color: #101553;
+  background-color: #c43026;
   padding: 60px 2rem;
   position: relative;
   overflow: hidden;
@@ -56,7 +56,7 @@
 
 /* Item individual */
 .faq-item {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(209, 43, 43, 0.459);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;

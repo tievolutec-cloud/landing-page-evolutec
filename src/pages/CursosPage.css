@@ -3,6 +3,25 @@
   min-height: 100vh;
   background-color: #f9fafb;
   padding-bottom: 4rem;
+  margin-top: 126px;
+}
+
+@media (max-width: 900px) {
+  .cursos-page {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursos-page {
+    margin-top: 65px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cursos-page {
+    margin-top: 60px;
+  }
 }
 
 /* ===== Hero Section ===== */
@@ -65,7 +84,25 @@
   padding: 1.5rem;
   height: fit-content;
   position: sticky;
-  top: 100px;
+  top: 140px;
+}
+
+@media (max-width: 900px) {
+  .cursos-page-sidebar {
+    top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursos-page-sidebar {
+    top: 85px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cursos-page-sidebar {
+    top: 80px;
+  }
 }
 
 .sidebar-header {

@@ -18,9 +18,9 @@ function Home() {
       <Estatisticas/>
       <GaleriaFormatura/>
       <Depoimentos/>
-      <FAQ/>
       <RedesSociais/>
       <Blog/>
+      <FAQ/>
       <Mapa/>
     </>
   )

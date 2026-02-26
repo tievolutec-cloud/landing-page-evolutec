@@ -1,0 +1,136 @@
+.unidades-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding-bottom: 4rem;
+  margin-top: 126px;
+}
+
+@media (max-width: 900px) {
+  .unidades-page {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .unidades-page {
+    margin-top: 65px;
+  }
+}
+
+@media (max-width: 576px) {
+  .unidades-page {
+    margin-top: 60px;
+  }
+}
+
+/* Hero Section */
+.unidades-hero {
+  background-color: #0b29d3; /* Vermelho Evolutec */
+  padding: 4rem 2rem 0; /* Sem padding embaixo para a imagem encostar */
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.unidades-hero::before {
+  content: none; /* Removendo o grid antigo */
+}
+
+.unidades-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.unidades-hero-text {
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+.unidades-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  text-shadow: none;
+}
+
+.unidades-hero p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.unidades-hero-image {
+  flex: 0 0 500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+/* Círculo branco atrás da pessoa */
+.unidades-hero-image::before {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  width: 450px;
+  height: 450px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.unidades-hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content Section */
+.unidades-content {
+  padding: 0; /* Removido padding para o mapa colar no verde claro */
+}
+
+.unidades-mapa-wrapper {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .unidades-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .unidades-hero-text {
+    padding-bottom: 2rem;
+  }
+  
+  .unidades-hero-image {
+    display: none; /* Esconde a imagem no mobile para ficar igual ao print */
+  }
+}
+
+@media (max-width: 768px) {
+  .unidades-hero {
+    padding: 3rem 1.5rem 2rem; /* Adicionado padding bottom */
+  }
+  
+  .unidades-hero h1 {
+    font-size: 2.2rem;
+  }
+}

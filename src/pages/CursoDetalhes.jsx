@@ -86,7 +86,11 @@ function CursoDetalhes() {
       </button>
 
       {/* Hero Section Verde */}
-      <section className="curso-hero-verde">
+      <section 
+        className="curso-hero-verde"
+        style={{ backgroundImage: `url(${curso.image})` }}
+      >
+        <div className="curso-hero-overlay"></div>
         <div className="curso-hero-verde-content">
           <div className="curso-hero-left">
             <div className="curso-badges">
@@ -104,10 +108,6 @@ function CursoDetalhes() {
             <button className="btn-inscreva-se" onClick={handleMatriculaClick}>
               Inscreva-se →
             </button>
-          </div>
-
-          <div className="curso-hero-right">
-            <img src={curso.image} alt={curso.title} className="curso-hero-image-pessoa" />
           </div>
         </div>
       </section>

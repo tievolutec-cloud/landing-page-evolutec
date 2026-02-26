@@ -5,7 +5,25 @@
   height: 85vh;
   min-height: 450px;
   overflow: hidden;
-  margin-top: 60px; /* espaço para a navbar fixa */
+  margin-top: 126px; /* espaço para a navbar fixa */
+}
+
+@media (max-width: 900px) {
+  .banner {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 65px;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    margin-top: 60px;
+  }
 }
 
 /* Slides */
