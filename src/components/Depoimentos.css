@@ -14,7 +14,7 @@
 
 .dep-panel--left {
   background-color: var(--secondary-color);
-  background-image: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+  background-image: var(--accent-color) 100%;
   padding: 5rem 4rem;
   display: flex;
   flex-direction: column;

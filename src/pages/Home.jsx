@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Banner from '../components/Banner'
 import RedesSociais from '../components/RedesSociais'
 import Cursos from './Cursos'
@@ -11,6 +13,17 @@ import Mapa from '../components/Mapa'
 import ChamadaMatricula from '../components/ChamadaMatricula'
 
 function Home() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash === '#matricule') {
+      const element = document.getElementById('matricule')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [hash])
+
   return (
     <>
       <Banner/>

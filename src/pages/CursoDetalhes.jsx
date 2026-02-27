@@ -1,4 +1,5 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { getCourseBySlug, cursosData } from '../data/coursesData';
 import './CursoDetalhes.css';
 
@@ -55,6 +56,10 @@ function CursoDetalhes() {
   const navigate = useNavigate();
   const curso = getCourseBySlug(slug);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   if (!curso) {
     return (
       <div className="curso-detalhes-container">
@@ -69,7 +74,7 @@ function CursoDetalhes() {
   }
 
   const handleMatriculaClick = () => {
-    navigate('/contato');
+    navigate('/#matricule');
   };
 
   // Pegar cursos relacionados (mesma categoria ou aleatórios)
