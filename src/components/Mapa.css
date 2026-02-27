@@ -19,7 +19,7 @@
   flex-direction: column;
   gap: 20px;
   position: static;
-  background-color: #05155e; /* Vermelho Evolutec */
+  background-color: var(--primary-color);
   padding: 3rem 2rem;
   width: 100%;
   align-items: center;

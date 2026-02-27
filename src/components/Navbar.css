@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ee0e0e;
+  background-color: var(--secondary-color);
   z-index: 1000;
   padding: 1rem;
 }
@@ -81,15 +81,15 @@
 }
 
 .top-bar-btn.btn-yellow {
-  background-color: #f4a300;
+  background-color: var(--highlight-color);
   color: #0d0d0d;
   border: none;
 }
 
 .top-bar-btn.btn-yellow:hover {
-  background-color: #ffc107;
+  background-color: #e59400;
   transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(244, 163, 0, 0.4);
+  box-shadow: 0 3px 10px rgba(246, 174, 45, 0.4);
 }
 
 /* Main Navbar */
@@ -178,7 +178,7 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #e63946, #ff6b35);
+  background: linear-gradient(135deg, var(--action-color), var(--highlight-color));
   color: #fff;
   font-weight: 800;
   font-size: 1.25rem;
@@ -223,7 +223,7 @@
 
 .navbar-links li a {
   text-decoration: none;
-  color: #1f1a50;
+  color: var(--primary-color);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -235,12 +235,12 @@
 .navbar-links li a::after {
   content: '';
   position: absolute;
-  color: #1f1a50;
+  color: var(--primary-color);
   bottom: -4px;
   left: 0;
   width: 0;
   height: 2px;
-  background: #e63946;
+  background: var(--action-color);
   transition: width 0.3s ease;
 }
 .navbar-links li a:hover::after {
@@ -331,7 +331,7 @@
 
 .navbar-links .dropdown-menu li a strong {
   font-size: 0.95rem;
-  color: #1f1a50;
+  color: var(--primary-color);
   margin-bottom: 0.25rem;
 }
 
@@ -362,23 +362,23 @@
 }
 
 .btn-red {
-  background-color: #e63946;
+  background-color: var(--action-color);
   color: #ffffff;
 }
 
 .btn-red:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.45);
+  box-shadow: 0 4px 14px rgba(242, 100, 25, 0.45);
 }
 
 .btn-yellow {
-  background-color: #f4a300;
+  background-color: var(--highlight-color);
   color: #0d0d0d;
 }
 
 .btn-yellow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(244, 163, 0, 0.45);
+  box-shadow: 0 4px 14px rgba(246, 174, 45, 0.45);
 }
 
 /* ===== (mobile) ===== */
@@ -407,18 +407,18 @@
 }
 
 .navbar-toggle:hover {
-  background-color: rgba(31, 26, 80, 0.05);
+  background-color: rgba(47, 72, 88, 0.05);
 }
 
 .navbar-toggle:active {
-  background-color: rgba(31, 26, 80, 0.1);
+  background-color: rgba(47, 72, 88, 0.1);
 }
 
 .navbar-toggle span {
   display: block;
   width: 26px;
   height: 3px;
-  background-color: #1f1a50;
+  background-color: var(--primary-color);
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -793,7 +793,7 @@
 
 .progress-bar {
   height: 100%;
-  background: #EC1922;
+  background: var(--action-color);
   transition: width 0.1s ease-out;
 }
 

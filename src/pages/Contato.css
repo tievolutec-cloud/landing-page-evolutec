@@ -1,6 +1,6 @@
 /* ===== Seção Contato ===== */
 .contato {
-  background-color: #0d2a5c;
+  background-color: var(--primary-color);
   padding: 4rem 2rem;
   overflow: visible;
   position: relative;

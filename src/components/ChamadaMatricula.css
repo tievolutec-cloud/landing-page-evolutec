@@ -1,6 +1,6 @@
 /* ===== Chamada para Matrícula ===== */
 .chamada-matricula {
-  background: linear-gradient(135deg, #091b3a 0%, #00375E 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   padding: 5rem 2rem;
   color: #ffffff;
   position: relative;
@@ -15,7 +15,7 @@
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(230, 57, 70, 0.15) 0%, rgba(230, 57, 70, 0) 70%);
+  background: radial-gradient(circle, rgba(246, 174, 45, 0.15) 0%, rgba(246, 174, 45, 0) 70%);
   border-radius: 50%;
   z-index: 1;
 }
@@ -56,7 +56,7 @@
 }
 
 .chamada-titulo span {
-  color: #e63946;
+  color: var(--highlight-color);
   display: block;
 }
 
@@ -75,7 +75,7 @@
 
 .btn-matricula {
   display: inline-block;
-  background-color: #e63946;
+  background-color: var(--action-color);
   color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -83,13 +83,13 @@
   font-size: 1.1rem;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+  box-shadow: 0 4px 15px rgba(242, 100, 25, 0.3);
 }
 
 .btn-matricula:hover {
-  background-color: #d62828;
+  background-color: #ca4e0e;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+  box-shadow: 0 6px 20px rgba(242, 100, 25, 0.4);
 }
 
 .btn-falar-consultor {
@@ -126,15 +126,91 @@
   position: relative;
 }
 
-.imagem-placeholder img {
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease;
 }
 
-.imagem-placeholder:hover img {
+.carousel-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-container:hover .carousel-image.active {
   transform: scale(1.05);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease;
+  opacity: 0;
+}
+
+.carousel-container:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-btn:hover {
+  background: rgba(230, 57, 70, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.indicator.active {
+  background: #e63946;
+  transform: scale(1.2);
 }
 
 /* ===== Responsive ===== */

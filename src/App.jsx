@@ -7,6 +7,7 @@ import CursoDetalhes from './pages/CursoDetalhes'
 import Unidades from './pages/Unidades'
 import Noticia from './pages/Noticia'
 import BlogPage from './pages/BlogPage'
+import TrabalheConosco from './pages/TrabalheConosco'
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/unidades" element={<Unidades />} />
         <Route path="/noticia/:id" element={<Noticia />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
       </Routes>
       <Footer />
     </Router>

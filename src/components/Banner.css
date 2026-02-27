@@ -94,7 +94,7 @@
 .banner-cta {
   display: inline-block;
   padding: 0.85rem 2.5rem;
-  background-color: #e63946;
+  background-color: var(--action-color);
   color: #ffffff;
   font-size: 1rem;
   font-weight: 700;
@@ -107,8 +107,8 @@
 
 .banner-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.5);
-  background-color: #c62d3a;
+  box-shadow: 0 6px 20px rgba(242, 100, 25, 0.5);
+  background-color: #ca4e0e;
 }
 
 /* Setas de navegação */
@@ -168,8 +168,8 @@
 }
 
 .banner-dot.active {
-  background: #e63946;
-  border-color: #e63946;
+  background: var(--action-color);
+  border-color: var(--action-color);
   transform: scale(1.2);
 }
 

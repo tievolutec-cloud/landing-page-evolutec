@@ -14,14 +14,13 @@ function Home() {
   return (
     <>
       <Banner/>
-      <ChamadaMatricula/>
+      <Estatisticas/>
       <Cursos/>
       <Contato/>
-      <Estatisticas/>
       <GaleriaFormatura/>
       <Depoimentos/>
-      <RedesSociais/>
       <Blog/>
+      <RedesSociais/>
       <FAQ/>
       <Mapa/>
     </>

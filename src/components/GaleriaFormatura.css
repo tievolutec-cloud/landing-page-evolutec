@@ -1,7 +1,7 @@
 /* ===== Galeria Formatura ===== */
 .galeria-section {
   width: 100%;
-  background: #111;
+  background: var(--primary-color);
 }
 
 .galeria-grid {
@@ -62,11 +62,11 @@
 }
 
 .galeria-cell--dark {
-  background-color: #1a1a2e;
+  background-color: var(--secondary-color);
 }
 
 .galeria-cell--red {
-  background-color: #e63946;
+  background-color: var(--action-color);
 }
 
 .galeria-tag {

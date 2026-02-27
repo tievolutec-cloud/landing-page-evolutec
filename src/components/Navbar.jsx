@@ -122,9 +122,9 @@ function Navbar() {
             <a href="#cta1" className="top-bar-btn btn-outline">
               Área do Aluno
             </a>
-            <a href="#cta2" className="top-bar-btn btn-yellow">
+            <Link to="/trabalhe-conosco" className="top-bar-btn btn-yellow" onClick={closeMenu}>
               Trabalhe conosco
-            </a>
+            </Link>
           </div>
         </div>
       </div>

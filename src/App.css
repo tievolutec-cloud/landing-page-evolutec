@@ -16,7 +16,7 @@
 /* Banner → Cursos (escuro para branco) */
 .transition-banner-to-cursos {
   background: linear-gradient(180deg, 
-    rgba(13, 42, 92, 0.8) 0%, 
+    rgba(26, 93, 148, 0.8) 0%, 
     rgba(150, 150, 150, 0.3) 50%,
     rgba(255, 255, 255, 1) 100%
   );
@@ -26,15 +26,15 @@
 .transition-cursos-to-autoridade {
   background: linear-gradient(180deg, 
     rgba(255, 255, 255, 1) 0%,
-    rgba(248, 244, 255, 0.5) 50%,
-    rgba(248, 244, 255, 1) 100%
+    rgba(228, 228, 228, 0.5) 50%,
+    rgba(228, 228, 228, 1) 100%
   );
 }
 
 /* Autoridade → Depoimentos (roxo claro para escuro) */
 .transition-autoridade-to-depoimentos {
   background: linear-gradient(180deg, 
-    rgba(255, 255, 255, 1) 0%,
+    rgba(228, 228, 228, 1) 0%,
     rgba(100, 100, 100, 0.4) 50%,
     rgba(0, 0, 0, 0.8) 100%
   );
@@ -43,17 +43,17 @@
 /* Depoimentos → Contato (escuro para azul escuro) */
 .transition-depoimentos-to-contato {
   background: linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(13, 42, 92, 0.5) 50%,
-    rgba(13, 42, 92, 1) 100%
+    rgba(26, 93, 148, 0.9) 0%,
+    rgba(26, 93, 148, 0.5) 50%,
+    rgba(26, 93, 148, 1) 100%
   );
 }
 
 /* Contato → Redes Sociais (azul escuro para cinza claro) */
 .transition-contato-to-redes {
   background: linear-gradient(180deg, 
-    rgba(13, 42, 92, 1) 0%,
-    rgba(134, 169, 224, 0.6) 50%,
+    rgba(26, 93, 148, 1) 0%,
+    rgba(26, 93, 148, 0.6) 50%,
     rgba(245, 245, 245, 1) 100%
   );
 }
@@ -62,26 +62,26 @@
 .transition-redes-to-blog {
   background: linear-gradient(180deg, 
     rgba(245, 245, 245, 1) 0%,
-    rgba(129, 169, 224, 0.6) 50%,
-    rgba(13, 42, 92, 1) 100%
+    rgba(26, 93, 148, 0.6) 50%,
+    rgba(26, 93, 148, 1) 100%
   );
 }
 
 /* Blog → Mapa (azul escuro para azul claro) */
 .transition-blog-to-mapa {
   background: linear-gradient(180deg, 
-    rgba(13, 42, 92, 1) 0%,
-    rgba(134, 169, 224, 0.7) 50%,
-    rgba(245, 247, 250, 1) 100%
+    rgba(26, 93, 148, 1) 0%,
+    rgba(26, 93, 148, 0.7) 50%,
+    rgba(228, 228, 228, 1) 100%
   );
 }
 
 /* Mapa → Footer (azul claro para azul muito escuro) */
 .transition-mapa-to-footer {
   background: linear-gradient(180deg, 
-    rgba(195, 207, 226, 1) 0%,
-    rgba(102, 134, 181, 0.6) 50%,
-    rgba(9, 27, 58, 1) 100%
+    rgba(228, 228, 228, 1) 0%,
+    rgba(26, 93, 148, 0.6) 50%,
+    rgba(26, 93, 148, 1) 100%
   );
 }
 

@@ -1,6 +1,7 @@
 /* CourseCard.css */
 :root {
-  --primary-color: #E60000;
+  /* --primary-color overrides global if not scoped, but let's map it to action color for cards */
+  --card-highlight: var(--action-color); 
   --text-dark: #1F2937;
   --text-gray: #6B7280;
   --bg-tag: #F3F4F6;
@@ -20,26 +21,27 @@
   background: white;
   border-radius: var(--card-radius);
   /* Sombra suave inicial */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: var(--transition);
   border: 1px solid transparent;
   height: 100%; /* Garante altura igual no grid */
+  border: 1px solid #e5e7eb; /* Add border for visibility since shadow is gone */
 }
 
 /* Efeito de Hover: Card sobe e sombra aumenta */
 .card-container-link:hover .card-container {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: rgba(230, 0, 0, 0.1);
+  /* transform: translateY(-4px); */
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+  /* border-color: rgba(255, 175, 0, 0.1); */
 }
 
 .card-container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: rgba(230, 0, 0, 0.1);
+  /* transform: translateY(-4px); */
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+  /* border-color: rgba(255, 175, 0, 0.1); */
 }
 
 .image-wrapper {
@@ -56,11 +58,11 @@
 }
 
 .card-container-link:hover .card-image {
-  transform: scale(1.05); /* Zoom sutil na imagem */
+  /* transform: scale(1.05); */ /* Zoom sutil na imagem */
 }
 
 .card-container:hover .card-image {
-  transform: scale(1.05); /* Zoom sutil na imagem */
+  /* transform: scale(1.05); */ /* Zoom sutil na imagem */
 }
 
 /* Badge Flutuante (EAD/Presencial) */
@@ -74,7 +76,7 @@
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--card-highlight);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
@@ -85,7 +87,7 @@
 .badge-dot {
   width: 6px;
   height: 6px;
-  background-color: var(--primary-color);
+  background-color: var(--card-highlight);
   border-radius: 50%;
 }
 
@@ -219,21 +221,21 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--primary-color);
-  color: white;
+  background: var(--action-color);
+  color: var(--primary-color);
   padding: 1rem 2.5rem;
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(230, 0, 0, 0.3);
+  /* box-shadow: 0 4px 14px rgba(255, 175, 0, 0.3); */
 }
 
 .btn-ver-todos-cursos:hover {
-  background: #b80000;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
+  background: #e69d00;
+  /* transform: translateY(-2px); */
+  /* box-shadow: 0 6px 20px rgba(255, 175, 0, 0.4); */
   gap: 1rem;
 }
 
@@ -242,7 +244,7 @@
 }
 
 .btn-ver-todos-cursos:hover svg {
-  transform: translateX(4px);
+  /* transform: translateX(4px); */
 }
 
 /* Responsividade */
