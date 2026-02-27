@@ -1,0 +1,196 @@
+/* ===== Chamada para Matrícula ===== */
+.chamada-matricula {
+  background: linear-gradient(135deg, #091b3a 0%, #00375E 100%);
+  padding: 5rem 2rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elementos decorativos de fundo */
+.chamada-matricula::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.15) 0%, rgba(230, 57, 70, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.chamada-matricula::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.chamada-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.chamada-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.chamada-titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.chamada-titulo span {
+  color: #e63946;
+  display: block;
+}
+
+.chamada-descricao {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 2.5rem;
+}
+
+.chamada-botoes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-matricula {
+  display: inline-block;
+  background-color: #e63946;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.btn-matricula:hover {
+  background-color: #d62828;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+.btn-falar-consultor {
+  display: inline-block;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-falar-consultor:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.chamada-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imagem-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.imagem-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.imagem-placeholder:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .chamada-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .chamada-content {
+    max-width: 100%;
+  }
+
+  .chamada-titulo {
+    font-size: 2.4rem;
+  }
+
+  .chamada-titulo span {
+    display: inline;
+  }
+
+  .chamada-botoes {
+    justify-content: center;
+  }
+
+  .chamada-imagem {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  .chamada-matricula {
+    padding: 4rem 1.5rem;
+  }
+
+  .chamada-titulo {
+    font-size: 2rem;
+  }
+
+  .chamada-descricao {
+    font-size: 1rem;
+  }
+
+  .chamada-botoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-matricula, .btn-falar-consultor {
+    width: 100%;
+    text-align: center;
+  }
+
+  .imagem-placeholder {
+    height: 300px;
+  }
+}

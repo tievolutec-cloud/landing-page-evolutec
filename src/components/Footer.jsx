@@ -1,5 +1,5 @@
 import './Footer.css'
-
+import { Map, Mail,Headset } from 'lucide-react';
 function Footer() {
   return (
     <footer className="footer">
@@ -52,15 +52,17 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Coluna 3 — Cursos */}
+        {/* Coluna 3 — Unidades */}
         <div className="footer-col">
-          <h4 className="footer-col-titulo">Cursos</h4>
+          <h4 className="footer-col-titulo">Unidades</h4>
           <ul className="footer-links">
-            <li><a href="#">Técnico em Enfermagem</a></li>
-            <li><a href="#">Operador de Caixa</a></li>
-            <li><a href="#">Conectividade e Tecnologia</a></li>
-            <li><a href="#">Hotelaria e Turismo</a></li>
-            <li><a href="#">Profissional em Vendas</a></li>
+            <li><a href="#">Castanhal - PA</a></li>
+            <li><a href="#">Marapanim - PA</a></li>
+            <li><a href="#">Curuçá - PA</a></li>
+            <li><a href="#">maracanã - PA</a></li>
+            <li><a href="#">Irituia - PA</a></li>
+            <li><a href="#">Sao domingos do capim - PA</a></li>
+            <li><a href="#">Sao Miguel do guamá - PA</a></li>
           </ul>
         </div>
 
@@ -69,15 +71,15 @@ function Footer() {
           <h4 className="footer-col-titulo">Contato</h4>
           <ul className="footer-links footer-links--contato">
             <li>
-              <span className="footer-icon">&#128205;</span>
-              Castanhal - PA
+              <Map size={50}/>
+              Tv. Cônego Luíz Leitão, 2479 - Centro, Castanhal - PA, 68743-020
             </li>
             <li>
-              <span className="footer-icon">&#128222;</span>
-              (91) 0000-0000
+              <Headset />
+              (91) 3711-1405
             </li>
             <li>
-              <span className="footer-icon">&#9993;</span>
+              <Mail />
               contato@evolutec.com.br
             </li>
           </ul>

@@ -8,11 +8,13 @@ import Blog from './Blog'
 import Depoimentos from '../components/Depoimentos'
 import FAQ from '../components/FAQ'
 import Mapa from '../components/Mapa'
+import ChamadaMatricula from '../components/ChamadaMatricula'
 
 function Home() {
   return (
     <>
       <Banner/>
+      <ChamadaMatricula/>
       <Cursos/>
       <Contato/>
       <Estatisticas/>

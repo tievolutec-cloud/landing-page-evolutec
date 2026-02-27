@@ -180,6 +180,7 @@
 
 .cursos-container {
   max-width: 1200px;
+  height: fit-content;
   margin: 0 auto;
 }
 
@@ -248,6 +249,11 @@
 @media (max-width: 768px) {
   .cursos-section {
     padding: 50px 15px;
+  }
+  .cursos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: fit-content; /* important */
   }
 
   .cursos-titulo {
