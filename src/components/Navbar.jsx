@@ -221,7 +221,7 @@ function Navbar() {
               </li>
             </ul>
           </li>
-          <li><Link to="/#sobre" onClick={(e) => handleAnchorClick(e, '#sobre')}>SOBRE EVOLUTEC</Link></li>
+          <li><Link to="/sobre" onClick={closeMenu}>SOBRE EVOLUTEC</Link></li>
           <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>MATRICULE-SE</Link></li>
         </ul>
       </div>

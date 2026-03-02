@@ -1,0 +1,151 @@
+.sobre-page {
+  width: 100%;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* Hero Section */
+.sobre-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&h=900&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sobre-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.sobre-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.sobre-hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* History Section */
+.sobre-historia {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.historia-text h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color, #dc2626);
+  margin-bottom: 1.5rem;
+}
+
+.historia-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.historia-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats / Polos Section */
+.sobre-polos {
+  background-color: #f8fafc;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.polos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.polo-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.polo-card:hover {
+  transform: translateY(-5px);
+}
+
+.polo-card h3 {
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--primary-color, #dc2626);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Values Section */
+.sobre-valores {
+  padding: 5rem 2rem;
+  background: #1e293b;
+  color: white;
+  text-align: center;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.valor-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .sobre-historia {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sobre-hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
