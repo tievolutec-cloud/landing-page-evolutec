@@ -102,7 +102,7 @@ model Course {
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
 }
-
+  
 model CourseObjective {
   id        Int    @id @default(autoincrement())
   text      String

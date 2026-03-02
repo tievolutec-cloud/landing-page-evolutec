@@ -13,14 +13,14 @@ const customIcon = L.icon({
 })
 
 // Componente para atualizar o centro do mapa
-const MapUpdater = ({ center }) => {
+const MapUpdater = ({ center, zoom }) => {
   const map = useMap()
   
   useEffect(() => {
     if (center) {
-      map.flyTo(center, 13, { duration: 1.5 })
+      map.flyTo(center, zoom || 13, { duration: 1.5 })
     }
-  }, [center, map])
+  }, [center, zoom, map])
   
   return null
 }
@@ -32,55 +32,49 @@ const Mapa = () => {
       nome: 'Todos os Polos',
       position: [-1.2949, -47.9182],
       descricao: 'Visualize todos os nossos polos de ensino.',
-      zoom: 9
+      zoom: 8
     },
     {
       id: 1,
-      nome: 'Polo 1',
+      nome: 'Castanhal - PA',
       position: [-1.2949, -47.9182],
-      descricao: 'Informações do Polo 1',
+      descricao: 'Conheça nossa unidade em Castanhal',
     },
     {
       id: 2,
-      nome: 'Polo 2',
+      nome: 'Marapanim - PA',
       position: [-0.71315, -47.69749],
-      descricao: 'Informações do Polo 2',
+      descricao: 'Conheça nossa unidade em Marapanim',
     },
     {
       id: 3,
-      nome: 'Polo 3',
-      position: [-0.7010, -47.6971],
-      descricao: 'Informações do Polo 3',
+      nome: 'Curuçá - PA',
+      position: [-0.728, -47.850], // Coordenadas aproximadas de Curuçá
+      descricao: 'Conheça nossa unidade em Curuçá',
     },
     {
       id: 4,
-      nome: 'Polo 4',
-      position: [-0.7079, -47.8832],
-      descricao: 'Informações do Polo 4',
+      nome: 'Maracanã - PA',
+      position: [-0.7578, -47.4506], // Coordenadas aproximadas de Maracanã
+      descricao: 'Conheça nossa unidade em Maracanã',
     },
     {
       id: 5,
-      nome: 'Polo 5',
+      nome: 'Irituia - PA',
       position: [-1.6144, -47.4740],
-      descricao: 'Informações do Polo 5',
+      descricao: 'Conheça nossa unidade em Irituia',
     },
     {
       id: 6,
-      nome: 'Polo 6',
+      nome: 'São Domingos do Capim - PA',
       position: [-1.7081, -47.7431],
-      descricao: 'Informações do Polo 6',
+      descricao: 'Conheça nossa unidade em São Domingos do Capim',
     },
     {
       id: 7,
-      nome: 'Polo 7',
-      position: [-1.7781, -47.4410],
-      descricao: 'Informações do Polo 7',
-    },
-    {
-      id: 8,
-      nome: 'Polo 8',
-      position: [-1.1404, -47.6154],
-      descricao: 'Informações do Polo 8',
+      nome: 'São Miguel do Guamá - PA',
+      position: [-1.615, -47.483], // Ajustado para coordenadas mais precisas de São Miguel
+      descricao: 'Conheça nossa unidade em São Miguel do Guamá',
     }
   ]
 
@@ -102,7 +96,7 @@ const Mapa = () => {
             scrollWheelZoom={true}
             className="mapa-leaflet"
           >
-            <MapUpdater center={poloSelecionado.position} />
+            <MapUpdater center={poloSelecionado.position} zoom={poloSelecionado.zoom} />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -173,50 +173,44 @@ function Navbar() {
             <ul className="dropdown-menu">
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 1</strong>
-                  <span>Informações do Polo 1</span>
+                  <strong>Castanhal - PA</strong>
+                 
                 </Link>
               </li>
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 2</strong>
-                  <span>Informações do Polo 2</span>
+                  <strong>Marapanim - PA</strong>
+                 
                 </Link>
               </li>
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 3</strong>
-                  <span>Informações do Polo 3</span>
+                  <strong>Curuçá - PA</strong>
+                 
                 </Link>
               </li>
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 4</strong>
-                  <span>Informações do Polo 4</span>
+                  <strong>Maracanã - PA</strong>
+                 
                 </Link>
               </li>
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 5</strong>
-                  <span>Informações do Polo 5</span>
+                  <strong>Irituia - PA</strong>
+                 
                 </Link>
               </li>
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 6</strong>
-                  <span>Informações do Polo 6</span>
+                  <strong>São Domingos do Capim - PA</strong>
+                 
                 </Link>
               </li>
               <li>
                 <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 7</strong>
-                  <span>Informações do Polo 7</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
-                  <strong>Polo 8</strong>
-                  <span>Informações do Polo 8</span>
+                  <strong>São Miguel do Guamá - PA</strong>
+                 
                 </Link>
               </li>
             </ul>

@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .trabalhe-conosco-hero {
-  background-color: var(--primary-color);
+  background-color: #00375E;
   background-image: url('/mascote.png');
   background-repeat: no-repeat;
   background-position: right 10% bottom;
@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, var(--primary-color) 0%, rgba(47, 72, 88, 0.7) 100%);
+  background: linear-gradient(90deg, rgba(0,55,94,0.9) 0%, rgba(0,55,94,0.7) 100%);
   z-index: 1;
 }
 

@@ -10,17 +10,17 @@
   grid-template-columns: 45% 55%;
   min-height: 560px;
   font-family: 'Inter', sans-serif;
+  background-color: #fff;
 }
 
 .dep-panel--left {
-  background-color: var(--secondary-color);
-  background-image: var(--accent-color) 100%;
+  background-color: #fff;
   padding: 5rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.4rem;
-  color: #fff;
+  color: var(--primary-color);
   transition: opacity 0.35s ease;
 }
 
@@ -43,8 +43,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.75);
-  border-left: 3px solid rgba(255,255,255,0.5);
+  color: rgba(26, 93, 148, 0.75);
+  border-left: 3px solid rgba(26, 93, 148, 0.5);
   padding-left: 0.6rem;
 }
 
@@ -52,7 +52,7 @@
   font-size: 2.4rem;
   font-weight: 900;
   line-height: 1.15;
-  color: #fff;
+  color: var(--primary-color);
   margin: 0;
 }
 
@@ -64,8 +64,8 @@
 .dep-quote {
   font-size: 1rem;
   line-height: 1.7;
-  color: rgba(255,255,255,0.88);
-  border-left: 3px solid rgba(255,255,255,0.35);
+  color: rgba(26, 93, 148, 0.88);
+  border-left: 3px solid rgba(26, 93, 148, 0.35);
   padding-left: 1rem;
   margin: 0;
   font-style: italic;
@@ -86,14 +86,14 @@
 .dep-author-info strong {
   font-size: 1rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .dep-author-info span {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(26, 93, 148, 0.7);
 }
 
 .dep-actions {
@@ -109,8 +109,8 @@
   align-items: center;
   gap: 0.6rem;
   background: transparent;
-  border: 2px solid rgba(255,255,255,0.7);
-  color: #fff;
+  border: 2px solid rgba(26, 93, 148, 0.7);
+  color: var(--primary-color);
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -122,15 +122,15 @@
 }
 
 .dep-play:hover {
-  background: rgba(255,255,255,0.15);
-  border-color: #fff;
+  background: rgba(26, 93, 148, 0.15);
+  border-color: var(--primary-color);
 }
 
 .dep-play-icon {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.2);
+  background: rgba(26, 93, 148, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,9 +146,9 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.5);
+  border: 2px solid rgba(26, 93, 148, 0.5);
   background: transparent;
-  color: #fff;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,14 +157,14 @@
 }
 
 .dep-arrow:hover {
-  background: rgba(255,255,255,0.15);
-  border-color: #fff;
+  background: rgba(26, 93, 148, 0.15);
+  border-color: var(--primary-color);
   transform: scale(1.1);
 }
 
 .dep-counter {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(26, 93, 148, 0.7);
   font-weight: 600;
   min-width: 36px;
   text-align: center;

@@ -319,6 +319,8 @@
   color: #333;
   text-decoration: none;
   transition: background-color 0.2s;
+  text-align: left;
+  align-items: flex-start;
 }
 
 .navbar-links .dropdown-menu li a::after {

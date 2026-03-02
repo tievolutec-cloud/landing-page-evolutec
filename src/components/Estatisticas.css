@@ -13,17 +13,18 @@
 .estat-container {
   background: #1a5d94;
   color: #333;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Soft shadow */
-  padding: 2.5rem 3rem;
-  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  padding: 1.5rem 2rem;
+  width: 90%;
+  max-width: 1100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   position: relative;
   transform: translateY(-50%); /* overlap half */
-  margin-bottom: -100px; /* Counteract space */
+  margin-bottom: -80px; /* Counteract space */
 }
 
 /* Wrapper individual */
@@ -40,7 +41,7 @@
 .estat-item {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Increased gap slightly */
+  gap: 1rem; /* Increased gap slightly */
   width: 100%;
   justify-content: center; /* Centers the whole block horizontally */
 }
@@ -49,8 +50,8 @@
 .estat-icon-wrapper {
   background-color: transparent; 
   color: #ffffff;
-  width: 90px; /* Increased slightly more to match big text */
-  height: 90px;
+  width: 60px; /* Reduced to match smaller text */
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center; /* Centers the SVG inside the wrapper */
@@ -71,7 +72,7 @@
 }
 
 .estat-number {
-  font-size: 2.5rem; /* Increased from 1.8rem */
+  font-size: 2rem; /* Reduced from 2.5rem */
   font-weight: 800;
   color: #fff;
   line-height: 1.1;
@@ -79,18 +80,18 @@
 }
 
 .estat-label {
-  font-size: 1.1rem; /* Increased from 0.95rem */
+  font-size: 0.95rem; /* Reduced from 1.1rem */
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 /* Divider */
 .estat-divider {
   width: 1px;
-  height: 50px;
-  background-color: #e0e0e0;
-  margin: 0 1.5rem;
+  height: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin: 0 1rem;
 }
 
 /* Responsividade */
@@ -98,18 +99,21 @@
   .estat-container {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    width: 95%;
   }
 
   .estat-wrapper {
     flex: 0 0 45%; /* 2 items per row */
-    justify-content: flex-start;
-    margin-bottom: 1rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
   
   .estat-item {
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .estat-divider {
@@ -118,13 +122,53 @@
 }
 
 @media (max-width: 576px) {
+  .estat-container {
+    width: 90%;
+    transform: translateY(-30%);
+    padding: 2rem 1rem;
+    margin-bottom: -50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+    justify-items: center;
+  }
+
   .estat-wrapper {
-    flex: 0 0 100%; /* 1 item per row */
-    margin-bottom: 1.5rem;
+    width: 100%;
+    margin-bottom: 0;
+    justify-content: center;
+    padding: 0;
   }
   
   .estat-item {
-     padding-left: 1rem; /* Indent */
+     padding-left: 0;
+     flex-direction: column;
+     text-align: center;
+     justify-content: center;
+     gap: 0.5rem;
+  }
+  
+  .estat-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.5rem;
+  }
+
+  .estat-number {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .estat-label {
+    font-size: 0.8rem;
+    white-space: normal;
+    max-width: 120px;
+    margin: 0 auto;
+    line-height: 1.2;
+  }
+  
+  .estat-divider {
+    display: none;
   }
 }
 
