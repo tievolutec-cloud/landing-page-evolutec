@@ -175,8 +175,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
   border-radius: 8px;
   background: linear-gradient(135deg, var(--action-color), var(--highlight-color));
   color: #fff;
@@ -194,8 +192,8 @@
 }
 
 .logo-img {
-  width: 36px;
-  height: 36px;
+  width: 150px;
+  height: auto;
 }
 
 
@@ -504,8 +502,8 @@
   }
 
   .logo-img {
-    width: 30px;
-    height: 30px;
+    width: 120px;
+    height: auto;
   }
 
   /* Aumenta sombra quando menu está aberto */
@@ -661,8 +659,8 @@
   }
 
   .logo-img {
-    width: 26px;
-    height: 26px;
+    width: 100px;
+    height: auto;
   }
 
   .navbar-toggle span {
@@ -717,8 +715,8 @@
   }
 
   .logo-img {
-    width: 24px;
-    height: 24px;
+    width: 90px;
+    height: auto;
   }
 
   .navbar-toggle {
@@ -766,8 +764,8 @@
   }
 
   .logo-img {
-    width: 28px;
-    height: 28px;
+    width: 90px;
+    height: auto;
   }
 
   .navbar-logo svg {

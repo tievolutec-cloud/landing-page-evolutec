@@ -3,9 +3,56 @@ import './Sobre.css';
 import { Target, Award, Users, Search, CheckCircle, MapPin } from 'lucide-react';
 
 const Sobre = () => {
+  const [activeTab, setActiveTab] = React.useState('missao');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const renderTabContent = () => {
+    switch(activeTab) {
+      case 'missao':
+        return (
+          <div className="mission-content-box animate-fade-in">
+            <h3>Missão da Empresa</h3>
+            <p>
+              Democratizar o acesso ao ensino de qualidade, oferecendo cursos práticos e focados na realidade do mercado, 
+              permitindo que nossos alunos conquistem sua independência financeira e realizem seus sonhos profissionais.
+            </p>
+            <p>
+              Acreditamos que a educação é a ferramenta mais poderosa para transformar a realidade social e econômica de nossa região.
+            </p>
+          </div>
+        );
+      case 'visao':
+        return (
+          <div className="mission-content-box animate-fade-in">
+            <h3>Nossa Visão</h3>
+            <p>
+              Ser reconhecida como a maior e melhor rede de ensino profissionalizante do Norte do Brasil, 
+              sendo referência em inovação pedagógica, empregabilidade e impacto social positivo.
+            </p>
+            <p>
+              Queremos expandir fronteiras e levar oportunidades reais de crescimento para cada vez mais pessoas.
+            </p>
+          </div>
+        );
+      case 'valores':
+        return (
+          <div className="mission-content-box animate-fade-in">
+            <h3>Nossos Valores</h3>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '12px' }}><strong>• Excelência:</strong> Comprometimento com a qualidade superior em tudo que fazemos.</li>
+              <li style={{ marginBottom: '12px' }}><strong>• Inovação:</strong> Busca constante por novas metodologias e tecnologias de ensino.</li>
+              <li style={{ marginBottom: '12px' }}><strong>• Ética:</strong> Transparência, integridade e respeito em todas as relações.</li>
+              <li><strong>• Resultado:</strong> Foco total no sucesso e na transformação de vida dos nossos alunos.</li>
+            </ul>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="sobre-page">
@@ -23,10 +70,10 @@ const Sobre = () => {
         <div className="container about-container">
           <div className="about-images">
             <div className="img-wrapper main-img">
-              <img src="/formatura5.jpeg" alt="Equipe Evolutec" />
+              <img src="/evolutec-sobre-1.webp" alt="Equipe Evolutec" />
             </div>
             <div className="img-wrapper sub-img">
-              <img src="/formatura6.jpeg" alt="Alunos estudando" />
+              <img src="/evolutec-sobre-2.webp" alt="Alunos estudando" />
               <div className="experience-badge">
                 <span className="years">15+</span>
                 <span className="text">Anos de<br/>Experiência</span>
@@ -123,25 +170,31 @@ const Sobre = () => {
             <h2 className="section-title">Nosso principal objetivo é qualificar você para o <span className="highlight-alt">Futuro</span></h2>
             
             <div className="mission-tabs">
-              <button className="tab-btn active">Nossa Missão</button>
-              <button className="tab-btn">Nossa Visão</button>
-              <button className="tab-btn">Valores</button>
+              <button 
+                className={`tab-btn ${activeTab === 'missao' ? 'active' : ''}`}
+                onClick={() => setActiveTab('missao')}
+              >
+                Nossa Missão
+              </button>
+              <button 
+                className={`tab-btn ${activeTab === 'visao' ? 'active' : ''}`}
+                onClick={() => setActiveTab('visao')}
+              >
+                Nossa Visão
+              </button>
+              <button 
+                className={`tab-btn ${activeTab === 'valores' ? 'active' : ''}`}
+                onClick={() => setActiveTab('valores')}
+              >
+                Valores
+              </button>
             </div>
             
-            <div className="mission-content-box">
-              <h3>Missão da Empresa</h3>
-              <p>
-                Democratizar o acesso ao ensino de qualidade, oferecendo cursos práticos e focados na realidade do mercado, 
-                permitindo que nossos alunos conquistem sua independência financeira e realizem seus sonhos profissionais.
-              </p>
-              <p>
-                Acreditamos que a educação é a ferramenta mais poderosa para transformar a realidade social e econômica de nossa região.
-              </p>
-            </div>
+            {renderTabContent()}
           </div>
 
           <div className="mission-image">
-            <img src="/formatura3.jpeg" alt="Nossa Missão" />
+            <img src="/evolutec-sobre.webp" alt="Nossa Missão" />
           </div>
         </div>
       </section>
@@ -155,37 +208,63 @@ const Sobre = () => {
             <p className="section-desc">Encontre a unidade Evolutec mais próxima e comece sua transformação profissional hoje mesmo.</p>
           </div>
           
-          <div className="units-grid">
-            <div className="unit-card">
-              <div className="unit-icon-bg">
-                <MapPin size={32} />
-              </div>
-              <h3>Castanhal</h3>
-              <p>Centro</p>
+          <div className="units-content-wrapper">
+            <div className="units-map-image">
+              <img src="/mapa-pará-escola.png" alt="Mapa de atuação Evolutec no Pará" />
             </div>
-            
-            <div className="unit-card">
-              <div className="unit-icon-bg">
-                <MapPin size={32} />
-              </div>
-              <h3>Belém</h3>
-              <p>São Brás</p>
-            </div>
-            
-            <div className="unit-card">
-              <div className="unit-icon-bg">
-                <MapPin size={32} />
-              </div>
-              <h3>Ananindeua</h3>
-              <p>Cidade Nova</p>
-            </div>
-            
-            <div className="unit-card">
-              <div className="unit-icon-bg">
-                <MapPin size={32} />
-              </div>
-              <h3>Marituba</h3>
-              <p>Centro</p>
+
+            <div className="units-list-container">
+              <ul className="units-list">
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">Castanhal</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">Marapanim</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">Curuçá</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">Maracanã</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">Irituia</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">São Domingos do Capim</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="unit-bullet"><MapPin size={18} /></div>
+                  <div className="unit-info">
+                    <span className="unit-name">São Miguel do Guamá</span>
+                    <span className="unit-address">Endereço da unidade...</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

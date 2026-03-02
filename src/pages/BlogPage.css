@@ -122,7 +122,11 @@
   margin-bottom: 1.5rem;
   line-height: 1.5;
   flex-grow: 1;
-}var(--secondary-color);
+  text-align: justify;
+}
+
+.blog-page-ler-mais {
+  color: var(--secondary-color);
   font-weight: 700;
   font-size: 0.95rem;
   margin-top: auto;
@@ -131,10 +135,7 @@
 }
 
 .blog-page-card:hover .blog-page-ler-mais {
-  color: var(--primary-color)
-
-.blog-page-card:hover .blog-page-ler-mais {
-  color: #c1272d;
+  color: var(--primary-color);
 }
 
 /* Responsividade */

@@ -37,43 +37,43 @@ const Mapa = () => {
     {
       id: 1,
       nome: 'Castanhal - PA',
-      position: [-1.2949, -47.9182],
+      position: [-1.2904867452288942, -47.927698915342106],
       descricao: 'Conheça nossa unidade em Castanhal',
     },
     {
       id: 2,
       nome: 'Marapanim - PA',
-      position: [-0.71315, -47.69749],
+      position: [-0.7129983384339472, -47.69613518032469],
       descricao: 'Conheça nossa unidade em Marapanim',
     },
     {
       id: 3,
       nome: 'Curuçá - PA',
-      position: [-0.728, -47.850], // Coordenadas aproximadas de Curuçá
+      position: [-0.7314956080193113, -47.85028899692766], // Coordenadas aproximadas de Curuçá
       descricao: 'Conheça nossa unidade em Curuçá',
     },
     {
       id: 4,
       nome: 'Maracanã - PA',
-      position: [-0.7578, -47.4506], // Coordenadas aproximadas de Maracanã
+      position: [-0.7644489541998982, -47.456059412414234], // Coordenadas aproximadas de Maracanã
       descricao: 'Conheça nossa unidade em Maracanã',
     },
     {
       id: 5,
       nome: 'Irituia - PA',
-      position: [-1.6144, -47.4740],
+      position: [-1.7696900394870572, -47.44180260081108],
       descricao: 'Conheça nossa unidade em Irituia',
     },
     {
       id: 6,
       nome: 'São Domingos do Capim - PA',
-      position: [-1.7081, -47.7431],
+      position: [-1.6742720646956826, -47.77274371713776],
       descricao: 'Conheça nossa unidade em São Domingos do Capim',
     },
     {
       id: 7,
       nome: 'São Miguel do Guamá - PA',
-      position: [-1.615, -47.483], // Ajustado para coordenadas mais precisas de São Miguel
+      position: [-1.6224162787634167, -47.482412474973565], // Ajustado para coordenadas mais precisas de São Miguel
       descricao: 'Conheça nossa unidade em São Miguel do Guamá',
     }
   ]

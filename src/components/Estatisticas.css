@@ -122,15 +122,23 @@
 }
 
 @media (max-width: 576px) {
+  .estat-section {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
   .estat-container {
-    width: 90%;
-    transform: translateY(-30%);
+    width: 100%;
+    transform: translateY(-20px);
+    margin-bottom: -20px;
     padding: 2rem 1rem;
-    margin-bottom: -50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem 1rem;
-    justify-items: center;
+    background: #1a5d94;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
 
   .estat-wrapper {
@@ -149,22 +157,25 @@
   }
   
   .estat-icon-wrapper {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 0.5rem;
   }
 
   .estat-number {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 0;
+    line-height: 1;
   }
 
   .estat-label {
     font-size: 0.8rem;
     white-space: normal;
-    max-width: 120px;
+    max-width: 100%;
     margin: 0 auto;
     line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
   .estat-divider {

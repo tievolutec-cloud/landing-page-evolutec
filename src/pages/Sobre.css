@@ -23,7 +23,7 @@
   position: relative;
   height: 60vh;
   min-height: 400px;
-  background-image: url('/formatura.jpeg');
+  background-image: url('/evolutec-sobre.webp');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -362,11 +362,126 @@
 
 
 /* =========================================
+   5. UNITS SECTION
+   ========================================= */
+.sobre-units-section {
+  padding: 6rem 2rem;
+  background-color: var(--sobre-bg-light);
+}
+
+.units-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.units-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Map on left, Grid on right. Grid takes more space */
+  gap: 3rem;
+  align-items: center; /* Center vertically if desired, or 'start' */
+}
+
+.units-map-image {
+  position: sticky;
+  top: 100px; /* Sticky map effect */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.units-map-image:hover {
+  transform: scale(1.02);
+}
+
+.units-map-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.units-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.units-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: var(--sobre-text);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.units-list li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background-color: var(--sobre-bg-light);
+}
+
+.unit-bullet {
+  color: var(--sobre-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(26, 93, 148, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.units-list li:hover .unit-bullet {
+  background-color: var(--sobre-primary);
+  color: #fff;
+}
+
+.unit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.unit-name {
+  font-weight: 700;
+  color: var(--sobre-heading);
+}
+
+.unit-address {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+/* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 992px) {
   .about-container,
-  .mission-container {
+  .mission-container,
+  .units-content-wrapper {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
