@@ -123,20 +123,32 @@
   max-width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0.80rem 2rem;
   position: relative;
   box-sizing: border-box;
+  gap: 2rem;
 }
 
-/* Desktop: logo absoluta à esquerda, links centralizados */
+/* Desktop: logo à esquerda, links no espaço restante */
 @media (min-width: 1025px) {
   .navbar-logo {
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-top: 0;
+    position: static;
+    transform: none;
+    flex-shrink: 0;
+    order: 0;
+  }
+
+  .navbar-toggle {
+    order: 1;
+  }
+
+  .navbar-links {
+    flex: 1;
+    padding-left: 0;
+    justify-content: flex-start;
+    margin: 0;
+    order: 2;
   }
 }
 
@@ -243,6 +255,55 @@
 }
 .navbar-links li a:hover::after {
   width: 100%;
+}
+
+/* Botões na navbar */
+.navbar-btn-item {
+  list-style: none;
+}
+
+.navbar-btn {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.navbar-btn--outline,
+.navbar-links li a.navbar-btn--outline {
+  border: 2px solid var(--primary-color);
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.navbar-btn--outline:hover,
+.navbar-links li a.navbar-btn--outline:hover {
+  background: #0d3d6b;
+  border-color: #0d3d6b;
+  color: #fff;
+}
+
+.navbar-btn--yellow,
+.navbar-links li a.navbar-btn--yellow {
+  background: var(--highlight-color);
+  color: #1a1a1a;
+  border: 2px solid var(--highlight-color);
+}
+
+.navbar-btn--yellow:hover,
+.navbar-links li a.navbar-btn--yellow:hover {
+  background: #e69d00;
+  border-color: #e69d00;
+}
+
+/* Remove underline effect for button items */
+.navbar-btn-item a::after {
+  display: none !important;
 }
 
 /* Dropdown Menu */
@@ -447,7 +508,7 @@
   display: block;
   width: 26px;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }

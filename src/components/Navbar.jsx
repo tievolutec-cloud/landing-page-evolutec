@@ -140,12 +140,6 @@ function Navbar() {
             <a href="cta0" className="top-bar-link">
               VENHA VOCÊ TAMBÉM FAZER PARTE DO EVOLUTEC!
             </a>
-            <a href="#cta1" className="top-bar-btn btn-outline">
-              Área do Aluno
-            </a>
-            <Link to="/trabalhe-conosco" className="top-bar-btn btn-yellow" onClick={closeMenu}>
-              Trabalhe conosco
-            </Link>
           </div>
         </div>
       </div>
@@ -263,6 +257,12 @@ function Navbar() {
           </li>
           <li><Link to="/sobre" onClick={closeMenu}>SOBRE EVOLUTEC</Link></li>
           <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>MATRICULE-SE</Link></li>
+          <li className="navbar-btn-item">
+            <a href="#cta1" className="navbar-btn navbar-btn--outline" onClick={closeMenu}>Área do Aluno</a>
+          </li>
+          <li className="navbar-btn-item">
+            <Link to="/trabalhe-conosco" className="navbar-btn navbar-btn--yellow" onClick={closeMenu}>Trabalhe Conosco</Link>
+          </li>
         </ul>
       </div>
       <div className="progress-container">

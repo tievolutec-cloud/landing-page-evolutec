@@ -249,14 +249,7 @@ function CursoDetalhes() {
           </div>
         </section>
 
-        {/* CTA Final */}
-        <section className="curso-cta-final">
-          <h2>Pronto para transformar sua carreira?</h2>
-          <p>Inscreva-se agora e dê o próximo passo no seu futuro profissional!</p>
-          <button className="btn-cta-matricula" onClick={handleMatriculaClick}>
-            Quero me Inscrever
-          </button>
-        </section>
+    
       </div>
     </div>
   );

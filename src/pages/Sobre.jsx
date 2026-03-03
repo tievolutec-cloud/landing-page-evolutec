@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Sobre.css';
 import { Target, Award, Users, Search, CheckCircle, MapPin } from 'lucide-react';
+import Estatisticas from '../components/Estatisticas';
 
 const Sobre = () => {
   const [activeTab, setActiveTab] = React.useState('missao');
@@ -118,49 +119,7 @@ const Sobre = () => {
       </section>
 
       {/* 3. Stats Bar */}
-      <section className="sobre-stats-bar">
-        <div className="container stats-container">
-          <div className="stat-box">
-            <div className="stat-icon-bg">
-               <Users size={32} />
-            </div>
-            <div className="stat-info">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Anos de História</span>
-            </div>
-          </div>
-          
-          <div className="stat-box">
-            <div className="stat-icon-bg">
-               <CheckCircle size={32} />
-            </div>
-            <div className="stat-info">
-              <span className="stat-number">40k+</span>
-              <span className="stat-label">Alunos Formados</span>
-            </div>
-          </div>
-
-          <div className="stat-box">
-            <div className="stat-icon-bg">
-               <Award size={32} />
-            </div>
-            <div className="stat-info">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Prêmios de Qualidade</span>
-            </div>
-          </div>
-
-          <div className="stat-box">
-            <div className="stat-icon-bg">
-               <Target size={32} />
-            </div>
-            <div className="stat-info">
-              <span className="stat-number">98%</span>
-              <span className="stat-label">Satisfação dos Alunos</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Estatisticas />
 
       {/* 4. Mission Section (Text Left, Image Right) */}
       <section className="sobre-mission-section">
