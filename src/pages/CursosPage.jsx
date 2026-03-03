@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { cursosData } from '../data/coursesData';
 import './CursosPage.css';
 
@@ -59,12 +59,19 @@ const ArrowRightIcon = () => (
 );
 
 function CursosPage() {
+  const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
+  const [selectedCategory, setSelectedCategory] = useState(() => searchParams.get('categoria') || 'Todos');
   const [selectedMode, setSelectedMode] = useState('Todos');
   const [selectedTag, setSelectedTag] = useState('Todos');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' ou 'list'
   const [sortBy, setSortBy] = useState('title'); // 'title', 'duration', 'category'
+
+  // Sincroniza o filtro de categoria quando o query param muda (ex: navegação pelo dropdown)
+  useEffect(() => {
+    const categoria = searchParams.get('categoria');
+    setSelectedCategory(categoria || 'Todos');
+  }, [searchParams]);
 
   // Extrair categorias, modos e tags únicos
   const categories = ['Todos', ...new Set(cursosData.map(curso => curso.category))];
@@ -286,6 +293,17 @@ function CursosPage() {
           )}
         </main>
       </div>
+
+      {/* Nova Seção de CTA */}
+      <section className="cursos-page-cta">
+        <div className="cta-content">
+          <h2>Não encontrou o que procurava?</h2>
+          <p>Entre em contato conosco e receba uma orientação personalizada para sua carreira.</p>
+          <Link to="/#matricule" className="btn-cta-contato">
+            Falar com um Consultor
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

@@ -10,7 +10,10 @@ function Blog() {
     <section className="blog" id="conteudos">
       {/* Header */}
       <div className="blog-header">
-        <h2 className="blog-titulo">Blog Evolutec</h2>
+        <div className="blog-header-left">
+          <h2 className="blog-titulo">Blog Evolutec</h2>
+          <p className="blog-subtitulo">Confira as nossas últimas notícias</p>
+        </div>
         <Link to="/blog" className="blog-ver-mais">
           Ver mais notícias <span>&rarr;</span>
         </Link>

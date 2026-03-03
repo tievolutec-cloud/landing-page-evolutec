@@ -2,7 +2,6 @@
 .cursos-page {
   min-height: 100vh;
   background-color: #f9fafb;
-  padding-bottom: 4rem;
   margin-top: 126px;
 }
 
@@ -447,7 +446,7 @@
 }
 
 .meta-item svg {
-  color: var(--action-color);
+  color: var(--primary-color);
   flex-shrink: 0;
 }
 
@@ -586,4 +585,65 @@
   .curso-card-content {
     padding: 1.25rem;
   }
+}
+
+/* ===== CTA Section ===== */
+.cursos-page-cta {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0d3d6b 100%);
+  margin-top: 4rem;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cursos-page-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.btn-cta-contato {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffaf00;
+  color: #1a1a1a;
+  padding: 0.9rem 2.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(255, 175, 0, 0.35);
+}
+
+.btn-cta-contato:hover {
+  background: #e69d00;
+  box-shadow: 0 6px 28px rgba(255, 175, 0, 0.5);
+  transform: translateY(-2px);
 }

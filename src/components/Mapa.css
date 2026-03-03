@@ -20,10 +20,19 @@
   gap: 20px;
   position: static;
   background-color: var(--primary-color);
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem;
   width: 100%;
   align-items: center;
-  order: -1; /* Coloca a barra de seleção acima do mapa */
+  order: -1;
+}
+
+.mapa-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
 }
 
 .mapa-header {
@@ -81,6 +90,40 @@
   display: none; /* Escondido conforme o design */
 }
 
+.polo-endereco {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.polo-endereco-nome {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.polo-endereco-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.polo-endereco-linha svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #ffaf00;
+}
+
 .mapa-content {
   width: 100%;
   height: 60vh;
@@ -129,16 +172,26 @@
 }
 
 .popup-content h3 {
-  font-size: 1.2rem;
-  color: #e00606;
-  margin: 0 0 8px 0;
-  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0 0 6px 0;
+  font-weight: 700;
 }
 
-.popup-content p {
-  font-size: 0.95rem;
-  color: #fa7272;
+.popup-endereco {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: #555;
   margin: 0;
+  line-height: 1.4;
+}
+
+.popup-endereco svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #ffaf00;
 }
 
 /* Grid de informações */

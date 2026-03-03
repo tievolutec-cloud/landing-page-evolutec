@@ -7,6 +7,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
+  const [openDropdown, setOpenDropdown] = useState(null)
   const location = useLocation()
 
   const toggleMenu = () => {
@@ -16,6 +17,8 @@ function Navbar() {
     })
   }
   const closeMenu = () => setMenuOpen(false)
+  const toggleDropdown = (name) => setOpenDropdown(prev => prev === name ? null : name)
+  const closeDropdown = () => setOpenDropdown(null)
 
   // Detecta mudanças no tamanho da tela
   useEffect(() => {
@@ -70,6 +73,24 @@ function Navbar() {
       document.removeEventListener('click', handleClickOutside)
     }
   }, [menuOpen])
+
+  // Fecha dropdown fixado ao clicar fora da navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.navbar-container')) {
+        closeDropdown()
+      }
+    }
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [openDropdown])
+
+  // Fecha dropdown ao navegar
+  useEffect(() => {
+    setOpenDropdown(null)
+  }, [location])
 
   // Função para lidar com navegação de âncoras
   const handleAnchorClick = (e, anchor) => {
@@ -155,57 +176,87 @@ function Navbar() {
         >
           <li><Link to="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>HOME</Link></li>
           <li><Link to="/#conteudos" onClick={(e) => handleAnchorClick(e, '#conteudos')}>CONTEÚDOS</Link></li>
-          <li>
+          <li className={`dropdown${openDropdown === 'cursos' ? ' is-open' : ''}`}>
             <Link 
               to={location.pathname === '/' ? '/#cursos' : '/cursos'} 
-              onClick={handleCursosClick}
+              onClick={(e) => { handleCursosClick(e); toggleDropdown('cursos') }}
             >
               CURSOS
             </Link>
-          </li>
-          <li className="dropdown">
-            <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>UNIDADES</Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/cursos?categoria=GESTÃO" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Gestão</strong>
+                </Link>
+              </li>
+              <li>
+                <Link to="/cursos?categoria=SAÚDE" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Saúde</strong>
+                </Link>
+              </li>
+              <li>
+                <Link to="/cursos?categoria=TECNOLOGIA" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Tecnologia</strong>
+                </Link>
+              </li>
+              <li>
+                <Link to="/cursos?categoria=MARKETING" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Marketing</strong>
+                </Link>
+              </li>
+              <li>
+                <Link to="/cursos?categoria=SEGURANÇA" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Segurança</strong>
+                </Link>
+              </li>
+              <li>
+                <Link to="/cursos?categoria=DESIGN" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Design</strong>
+                </Link>
+              </li>
+              <li className="dropdown-ver-todos">
+                <Link to="/cursos" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Ver todos os cursos →</strong>
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className={`dropdown${openDropdown === 'unidades' ? ' is-open' : ''}`}>
+            <Link to="/unidades" onClick={(e) => { handleAnchorClick(e, '#unidades'); toggleDropdown('unidades') }}>UNIDADES</Link>
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/unidades?unidade=1" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>Castanhal - PA</strong>
-                 
                 </Link>
               </li>
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/unidades?unidade=2" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>Marapanim - PA</strong>
-                 
                 </Link>
               </li>
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/unidades?unidade=3" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>Curuçá - PA</strong>
-                 
                 </Link>
               </li>
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/unidades?unidade=4" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>Maracanã - PA</strong>
-                 
                 </Link>
               </li>
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/unidades?unidade=5" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>Irituia - PA</strong>
-                 
                 </Link>
               </li>
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/unidades?unidade=6" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>São Domingos do Capim - PA</strong>
-                 
                 </Link>
               </li>
               <li>
-                <Link to="/unidades" onClick={(e) => handleAnchorClick(e, '#unidades')}>
+                <Link to="/unidades?unidade=7" onClick={() => { closeMenu(); closeDropdown() }}>
                   <strong>São Miguel do Guamá - PA</strong>
-                 
                 </Link>
               </li>
             </ul>

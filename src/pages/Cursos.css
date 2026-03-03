@@ -1,12 +1,11 @@
 /* CourseCard.css */
 :root {
   /* --primary-color overrides global if not scoped, but let's map it to action color for cards */
-  --card-highlight: var(--action-color); 
+  --card-highlight: var(--primary-color); 
   --text-dark: #1F2937;
   --text-gray: #6B7280;
   --bg-tag: #F3F4F6;
   --card-radius: 12px;
-  --transition: all 0.3s ease;
 }
 
 /* Link do Card */
@@ -16,7 +15,6 @@
   display: block;
   height: 100%;
 }
-
 .card-container {
   background: white;
   border-radius: var(--card-radius);
@@ -30,20 +28,6 @@
   height: 100%; /* Garante altura igual no grid */
   border: 1px solid #e5e7eb; /* Add border for visibility since shadow is gone */
 }
-
-/* Efeito de Hover: Card sobe e sombra aumenta */
-.card-container-link:hover .card-container {
-  /* transform: translateY(-4px); */
-  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
-  /* border-color: rgba(255, 175, 0, 0.1); */
-}
-
-.card-container:hover {
-  /* transform: translateY(-4px); */
-  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
-  /* border-color: rgba(255, 175, 0, 0.1); */
-}
-
 .image-wrapper {
   position: relative;
   height: 180px;
@@ -55,14 +39,6 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-}
-
-.card-container-link:hover .card-image {
-  /* transform: scale(1.05); */ /* Zoom sutil na imagem */
-}
-
-.card-container:hover .card-image {
-  /* transform: scale(1.05); */ /* Zoom sutil na imagem */
 }
 
 /* Badge Flutuante (EAD/Presencial) */
@@ -221,30 +197,23 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--action-color);
-  color: var(--primary-color);
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.9rem 2.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.3s ease;
-  /* box-shadow: 0 4px 14px rgba(255, 175, 0, 0.3); */
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-left: 4px solid #ffaf00;
+  transition: all 0.2s ease;
 }
 
 .btn-ver-todos-cursos:hover {
-  background: #e69d00;
-  /* transform: translateY(-2px); */
-  /* box-shadow: 0 6px 20px rgba(255, 175, 0, 0.4); */
+  background: #0d3d6b;
+  border-left-color: #e69d00;
   gap: 1rem;
-}
-
-.btn-ver-todos-cursos svg {
-  transition: transform 0.3s ease;
-}
-
-.btn-ver-todos-cursos:hover svg {
-  /* transform: translateX(4px); */
 }
 
 /* Responsividade */

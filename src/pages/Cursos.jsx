@@ -97,8 +97,7 @@ function Cursos() {
 
         <div className="cursos-cta">
           <Link to="/cursos" className="btn-ver-todos-cursos">
-            Ver Todos os Cursos
-            <ArrowIcon />
+            Ver Todos os Cursos <ArrowIcon />
           </Link>
         </div>
       </div>

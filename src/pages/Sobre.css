@@ -452,17 +452,20 @@
 .unit-info {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .unit-name {
   font-weight: 700;
   color: var(--sobre-heading);
+  text-align: left;
 }
 
 .unit-address {
   font-size: 0.9rem;
   color: #666;
   margin-top: 2px;
+  text-align: left;
 }
 
 @keyframes fadeIn {

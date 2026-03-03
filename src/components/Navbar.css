@@ -251,7 +251,9 @@
 }
 
 .navbar-links .dropdown-menu {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -267,6 +269,7 @@
   list-style: none;
   margin-top: 10px;
   border: 1px solid rgba(0,0,0,0.05);
+  transition: opacity 0.2s ease, visibility 0s linear 0.4s;
 }
 
 /* Estilização da barra de rolagem do dropdown */
@@ -301,8 +304,12 @@
   border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-.navbar-links .dropdown:hover .dropdown-menu {
-  display: block;
+.navbar-links .dropdown:hover .dropdown-menu,
+.navbar-links .dropdown.is-open .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s ease, visibility 0s linear 0s;
   animation: fadeIn 0.2s ease-in-out;
 }
 
@@ -339,6 +346,28 @@
   font-size: 0.8rem;
   color: #666;
   font-weight: normal;
+}
+
+/* Item "Ver todos" no dropdown */
+.navbar-links .dropdown-menu li.dropdown-ver-todos {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+.navbar-links .dropdown-menu li.dropdown-ver-todos a {
+  background-color: #f0f6ff;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links .dropdown-menu li.dropdown-ver-todos a strong {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.navbar-links .dropdown-menu li.dropdown-ver-todos a:hover {
+  background-color: #dceeff;
 }
 
 @keyframes fadeIn {

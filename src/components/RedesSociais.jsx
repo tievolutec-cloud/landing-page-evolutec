@@ -24,16 +24,16 @@ function RedesSociais() {
       <div className="redes-container">
         <div className="redes-left">
           <div className="social-icons">
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
+            <a href="https://www.youtube.com/@evolutecoficial" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
               <i className="fab fa-youtube"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
+            <a href="https://www.facebook.com/evolutecoficial/" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-icon tiktok">
+            <a href="https://www.tiktok.com/@evoluteceducacao" target="_blank" rel="noopener noreferrer" className="social-icon tiktok">
               <i className="fab fa-tiktok"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+            <a href="https://www.instagram.com/evoluteceducacao/" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
               <i className="fab fa-instagram"></i>
             </a>
           </div>

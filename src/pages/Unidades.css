@@ -68,6 +68,35 @@
   font-weight: 500;
 }
 
+.hero-polo-endereco {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-polo-endereco strong {
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.hero-polo-endereco span {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.hero-polo-endereco span svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #ffaf00;
+}
+
 .unidades-hero-image {
   flex: 0 0 500px;
   display: flex;

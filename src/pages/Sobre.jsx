@@ -219,49 +219,49 @@ const Sobre = () => {
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">Castanhal</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">Tv. Cônego Luíz Leitão, 2479 - Centro, Castanhal - PA, 68743-020</span>
                   </div>
                 </li>
                 <li>
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">Marapanim</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">R. Edmundo Botelho, 544 - Centro, Marapanim - PA, 68760-000</span>
                   </div>
                 </li>
                 <li>
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">Curuçá</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">Tv. Sete de Setembro, 151 - Centro, Curuçá - PA, 68750-000</span>
                   </div>
                 </li>
                 <li>
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">Maracanã</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">Rua Cantidio Guimarães, Tv. Ernesto Gomes, 53 - Qd 44 - Centro, Maracanã - PA, 68710-000</span>
                   </div>
                 </li>
                 <li>
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">Irituia</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">Tv. Ceará - Centro, Irituia - PA, 68655-000</span>
                   </div>
                 </li>
                 <li>
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">São Domingos do Capim</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">Av. Dr. Lauro Sodré, 70 - Centro, São Domingos do Capim - PA, 68635-000</span>
                   </div>
                 </li>
                 <li>
                   <div className="unit-bullet"><MapPin size={18} /></div>
                   <div className="unit-info">
                     <span className="unit-name">São Miguel do Guamá</span>
-                    <span className="unit-address">Endereço da unidade...</span>
+                    <span className="unit-address">Tv. Américo Lopes, 297 - São Manoel, São Miguel do Guamá - PA, 68660-000</span>
                   </div>
                 </li>
               </ul>
