@@ -31,7 +31,7 @@ export const blogData = [
   },
   {
     id: 'formatura-setembro',
-    imagem: '/BANNER.webp',
+    imagem: '/formatura.jpeg',
     tags: ['#FORMATURA', '#ALUNOS'],
     titulo: 'Formatura evolutec setembro',
     subtitulo: 'Mais uma turma de profissionais prontos para o mercado.',
@@ -59,6 +59,65 @@ export const blogData = [
       <h3>3. Formação e Experiência</h3>
       <p>Liste suas formações e experiências profissionais da mais recente para a mais antiga. Destaque as atividades e resultados alcançados.</p>
       <p>Lembre-se: a honestidade é essencial. Nunca minta em seu currículo!</p>
+    `,
+    destaque: false
+  },
+  {
+    id: 'festverao-2026',
+    imagem: '/festverao-irituia.png',
+    tags: ['#EVENTOS', '#FESTVERAO'],
+    titulo: 'FestVerão Evolutec 2026: confira como foi a festa!',
+    subtitulo: 'Uma celebração inesquecível que reuniu alunos, professores e a comunidade.',
+    data: '05/03/2026',
+    conteudo: `
+      <p>O FestVerão Evolutec 2026 foi um sucesso absoluto! Com muita música, alegria e integração, o evento reuniu centenas de alunos, colaboradores, professores e a comunidade em uma tarde inesquecível.</p>
+      <p>A festa foi realizada para celebrar o fim do verão e o início de um novo ciclo de aprendizado, reforçando o espírito de comunidade que é marca registrada da Evolutec.</p>
+      <h3>Destaques do Evento</h3>
+      <p>A programação contou com apresentações culturais dos próprios alunos, sorteio de brindes e bolsas de estudo, além de tendas de alimentação e estandes com informações sobre os cursos disponíveis para 2026.</p>
+      <p>O FestVerão também foi palco de homenagens especiais aos alunos destaques do semestre, reconhecendo o esforço e a dedicação de quem investe no próprio futuro.</p>
+      <h3>Muito Mais Por Vir</h3>
+      <p>Esse é apenas o começo! A Evolutec tem uma agenda cheia de eventos e novidades ao longo do ano. Fique de olho nas nossas redes sociais para não perder nada.</p>
+      <p>Obrigado a todos que participaram e tornaram esse dia especial. Juntos, construímos uma escola cada vez melhor!</p>
+    `,
+    destaque: true
+  },
+  {
+    id: 'destaque-vendas-2026',
+    imagem: '/destaque-de-vendas.png',
+    tags: ['#DESTAQUE', '#RESULTADOS'],
+    titulo: 'Evolutec bate recorde de matrículas e vendas no início de 2026',
+    subtitulo: 'Crescimento expressivo mostra a força da marca e a confiança dos alunos.',
+    data: '05/03/2026',
+    conteudo: `
+      <p>O início de 2026 trouxe ótimas notícias para a Evolutec: a instituição registrou o maior volume de matrículas e vendas da sua história, superando todas as metas estabelecidas para o primeiro trimestre.</p>
+      <p>Os números refletem o trabalho dedicado de toda a equipe comercial e a crescente confiança dos alunos e famílias na qualidade do ensino oferecido pela Evolutec.</p>
+      <h3>Cursos Mais Procurados</h3>
+      <p>Entre os cursos com maior procura no período, destacam-se Tecnologia, Atendente de Farmácia e Rotinas Administrativas, áreas com alta empregabilidade e forte demanda do mercado regional.</p>
+      <h3>Reconhecimento da Equipe</h3>
+      <p>A diretoria da Evolutec reconheceu publicamente o esforço da equipe de vendas e atendimento, que foi fundamental para atingir esses resultados expressivos.</p>
+      <p>"Este resultado é fruto do comprometimento de todos. Cada matrícula representa uma vida que estamos ajudando a transformar", destacou a direção.</p>
+      <h3>Perspectivas para o Restante do Ano</h3>
+      <p>Com esse resultado positivo, as perspectivas para os próximos meses são ainda mais animadoras. Novas turmas serão abertas e a Evolutec prepara mais novidades em breve.</p>
+    `,
+    destaque: false
+  },
+  {
+    id: 'reinauguracao-curuca',
+    imagem: '/reinauguração-curuca.png',
+    tags: ['#REINAUGURAÇÃO', '#CURUÇÁ'],
+    titulo: 'Evolutec reinaugura unidade em Curuçá com estrutura renovada',
+    subtitulo: 'Nova estrutura moderna e ampliada para atender ainda melhor os alunos da região.',
+    data: '05/03/2026',
+    conteudo: `
+      <p>É com grande alegria que a Evolutec anuncia a reinauguração da sua unidade em Curuçá! A escola passou por uma completa reforma e agora conta com uma estrutura moderna, ampliada e totalmente equipada para oferecer a melhor experiência de aprendizado.</p>
+      <p>A reinauguração marca um novo capítulo da Evolutec na cidade de Curuçá, reafirmando o compromisso da instituição com a educação profissionalizante de qualidade em toda a região.</p>
+      <h3>O Que Mudou</h3>
+      <p>A unidade reformada conta com novas salas de aula climatizadas, laboratório de informática atualizado, recepção ampliada e toda a infraestrutura necessária para proporcionar conforto e qualidade aos alunos e colaboradores.</p>
+      <h3>Cursos Disponíveis em Curuçá</h3>
+      <p>Com a reabertura, a unidade de Curuçá passa a oferecer os principais cursos do portfólio da Evolutec, incluindo Tecnologia, Atendente de Farmácia, Operador de Caixa, Hotelaria e Rotinas Administrativas.</p>
+      <h3>Venha Conhecer</h3>
+      <p>As matrículas na unidade reinaugurada já estão abertas. Venha conhecer o novo espaço, bater um papo com nossa equipe e garantir sua vaga nos cursos profissionalizantes que vão transformar seu futuro!</p>
+      <p>A Evolutec Curuçá espera por você. Juntos, vamos construir novos caminhos!</p>
     `,
     destaque: false
   }

@@ -4,7 +4,8 @@ import './Banner.css'
 const slides = [
   {
     id: 1,
-    image: '/banner1.png',
+    imageDesktop: '/banner1.png',
+    imageMobile: '/banner1.png', // Substitua depois pela versão mobile
     title: 'Aprenda Tecnologia na Prática',
     subtitle: 'Cursos de programação, robótica e muito mais para transformar seu futuro.',
     cta: 'Conheça Nossos Cursos',
@@ -12,7 +13,8 @@ const slides = [
   },
   {
     id: 2,
-    image: '/banner2.png',
+    imageDesktop: '/banner2.png',
+    imageMobile: '/banner2.png', // Substitua depois pela versão mobile
     title: 'Educação que Transforma',
     subtitle: 'Metodologia inovadora com foco em resultados e aprendizado real.',
     cta: 'Saiba Mais',
@@ -20,7 +22,8 @@ const slides = [
   },
   {
     id: 3,
-    image: '/banner3.png',
+    imageDesktop: '/banner3.png',
+    imageMobile: '/banner3.png', // Substitua depois pela versão mobile
     title: 'Matricule-se Agora',
     subtitle: 'Vagas limitadas! Garanta sua vaga e comece sua jornada na tecnologia.',
     cta: 'Matricule-se',
@@ -60,8 +63,16 @@ function Banner() {
           <div
             key={slide.id}
             className={`banner-slide${index === current ? ' active' : ''}`}
-            style={{ backgroundImage: `url(${slide.image})` }}
           >
+            <picture>
+              <source media="(max-width: 768px)" srcSet={slide.imageMobile} />
+              <img
+                src={slide.imageDesktop}
+                alt={slide.title}
+                className="banner-image"
+              />
+            </picture>
+            
             {/* <div className="banner-overlay" />
             <div className="banner-content">
               <h1>{slide.title}</h1>
