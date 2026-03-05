@@ -4,7 +4,7 @@ import './Banner.css'
 const slides = [
   {
     id: 1,
-    image: '/BANNER.webp',
+    image: '/banner1.png',
     title: 'Aprenda Tecnologia na Prática',
     subtitle: 'Cursos de programação, robótica e muito mais para transformar seu futuro.',
     cta: 'Conheça Nossos Cursos',
@@ -12,7 +12,7 @@ const slides = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&h=600&fit=crop',
+    image: '/banner2.png',
     title: 'Educação que Transforma',
     subtitle: 'Metodologia inovadora com foco em resultados e aprendizado real.',
     cta: 'Saiba Mais',
@@ -20,7 +20,7 @@ const slides = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1400&h=600&fit=crop',
+    image: '/banner3.png',
     title: 'Matricule-se Agora',
     subtitle: 'Vagas limitadas! Garanta sua vaga e comece sua jornada na tecnologia.',
     cta: 'Matricule-se',
@@ -62,11 +62,11 @@ function Banner() {
             className={`banner-slide${index === current ? ' active' : ''}`}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            <div className="banner-overlay" />
+            {/* <div className="banner-overlay" />
             <div className="banner-content">
               <h1>{slide.title}</h1>
               <p>{slide.subtitle}</p>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

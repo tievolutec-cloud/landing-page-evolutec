@@ -99,7 +99,7 @@
   top: 3.5rem;
   left: 0;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   background-color: #fcfcfc;
   z-index: 1002;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -576,7 +576,7 @@
     justify-content: space-between;
     padding: 0.75rem 1rem;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
@@ -671,6 +671,53 @@
 
   .navbar-links .dropdown-menu li:last-child a {
     border-bottom: none;
+  }
+
+  /* Botões de ação no menu mobile */
+  .navbar-links .navbar-btn-item {
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .navbar-links .navbar-btn-item:first-of-type {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .navbar-links .navbar-btn-item a.navbar-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .navbar-links .navbar-btn-item a.navbar-btn:hover {
+    padding-left: 1rem;
+  }
+
+  .navbar-links .navbar-btn-item a.navbar-btn--outline {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+  }
+
+  .navbar-links .navbar-btn-item a.navbar-btn--outline:hover {
+    background: #0d4a7a;
+  }
+
+  .navbar-links .navbar-btn-item a.navbar-btn--yellow {
+    background: var(--highlight-color);
+    color: #1a1a1a;
+  }
+
+  .navbar-links .navbar-btn-item a.navbar-btn--yellow:hover {
+    background: #e69d00;
   }
 }
 
