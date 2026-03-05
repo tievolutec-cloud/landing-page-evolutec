@@ -44,25 +44,6 @@ export const blogData = [
     destaque: false
   },
   {
-    id: 'dicas-curriculo',
-    imagem: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop',
-    tags: ['#DICAS', '#CARREIRA'],
-    titulo: 'Dicas de currículo nota 10',
-    subtitulo: 'Aprenda a destacar suas habilidades e conquistar a vaga dos sonhos.',
-    data: '28/01/2026',
-    conteudo: `
-      <p>O currículo é o seu cartão de visitas profissional. Para chamar a atenção dos recrutadores, é fundamental que ele seja claro, objetivo e bem estruturado.</p>
-      <h3>1. Dados Pessoais</h3>
-      <p>Mantenha seus dados de contato atualizados. Não é necessário incluir documentos como CPF ou RG, a menos que seja solicitado.</p>
-      <h3>2. Objetivo Profissional</h3>
-      <p>Seja direto sobre a área ou cargo que deseja atuar. Evite frases genéricas.</p>
-      <h3>3. Formação e Experiência</h3>
-      <p>Liste suas formações e experiências profissionais da mais recente para a mais antiga. Destaque as atividades e resultados alcançados.</p>
-      <p>Lembre-se: a honestidade é essencial. Nunca minta em seu currículo!</p>
-    `,
-    destaque: false
-  },
-  {
     id: 'festverao-2026',
     imagem: '/festverao-irituia.png',
     tags: ['#EVENTOS', '#FESTVERAO'],
@@ -120,5 +101,24 @@ export const blogData = [
       <p>A Evolutec Curuçá espera por você. Juntos, vamos construir novos caminhos!</p>
     `,
     destaque: false
+  },
+  {
+    id: 'premio-lider-2026',
+    imagem: '/premio-lider.png',
+    tags: ['#PRÊMIO', '#DESTAQUE'],
+    titulo: 'Evolutec conquista o Prêmio Líder de Ensino Profissionalizante 2026',
+    subtitulo: 'Reconhecimento reforça o compromisso da instituição com a excelência em educação.',
+    data: '05/03/2026',
+    conteudo: `
+      <p>É com enorme orgulho que a Evolutec anuncia mais uma grande conquista: o Prêmio Líder de Ensino Profissionalizante 2026! O reconhecimento chega como resultado de anos de dedicação, trabalho e compromisso com a transformação de vida dos nossos alunos.</p>
+      <p>O prêmio é concedido às instituições que se destacam pela qualidade do ensino, índice de empregabilidade dos formandos e impacto positivo na comunidade onde estão inseridas.</p>
+      <h3>Um Resultado Coletivo</h3>
+      <p>Essa conquista não seria possível sem o esforço de toda a equipe da Evolutec — professores, coordenadores, colaboradores administrativos e, principalmente, os nossos alunos, que acreditaram no poder da educação para transformar suas vidas.</p>
+      <p>"Este prêmio é de cada pessoa que passou pela Evolutec. Ele representa histórias de superação, dedicação e conquista", afirmou a direção da instituição durante a cerimônia de premiação.</p>
+      <h3>Compromisso Renovado</h3>
+      <p>O reconhecimento fortalece ainda mais o nosso compromisso de continuar oferecendo o melhor ensino profissionalizante da região. Seguiremos investindo em estrutura, metodologia e no desenvolvimento dos nossos alunos.</p>
+      <p>Obrigado a todos que fazem parte dessa história. O melhor ainda está por vir!</p>
+    `,
+    destaque: true
   }
 ];
