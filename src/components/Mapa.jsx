@@ -162,7 +162,7 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
         <div className="mapa-sidebar">
           <div className="polo-selector-container">
             <label htmlFor="polo-select" className="polo-selector-label">
-              Selecione seu estado
+              Selecione sua cidade:
             </label>
             <select 
               id="polo-select"
@@ -170,7 +170,7 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
               value={poloSelecionado.id}
               onChange={handlePoloChange}
             >
-              <option value="todos" disabled hidden>Estado</option>
+              <option value="todos" disabled hidden>Cidade</option>
               {polos.map((polo) => (
                 <option key={polo.id} value={polo.id}>
                   {polo.nome}

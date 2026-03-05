@@ -205,6 +205,84 @@
   color: var(--action-color);
 }
 
+.google-rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border: 2px solid #FBBC04;
+  border-radius: 14px;
+  padding: 1rem 1.75rem;
+  margin-bottom: 2rem;
+  width: fit-content;
+  box-shadow: 0 4px 18px rgba(251, 188, 4, 0.25);
+}
+
+.google-rating-score {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.google-score-number {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #333;
+  line-height: 1;
+}
+
+.google-score-label {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.google-rating-divider {
+  width: 2px;
+  height: 48px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+
+.google-rating-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.google-rating-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.google-rating-stars .star-filled {
+  color: #FBBC04;
+  fill: #FBBC04;
+}
+
+.google-rating-stars .star-half {
+  color: #FBBC04;
+  fill: #FBBC04;
+  opacity: 0.45;
+}
+
+.google-rating-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.google-rating-text strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.google-rating-text span {
+  font-size: 0.75rem;
+  color: #777;
+}
+
 .btn-primary {
   display: inline-block;
   background-color: var(--action-color); /* Yellow/Gold */

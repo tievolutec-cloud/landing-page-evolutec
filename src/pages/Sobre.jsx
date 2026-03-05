@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './Sobre.css';
-import { Target, Award, Users, Search, CheckCircle, MapPin } from 'lucide-react';
+import { Target, Award, Users, Search, CheckCircle, MapPin, Star } from 'lucide-react';
 import Estatisticas from '../components/Estatisticas';
 
 const Sobre = () => {
@@ -109,6 +109,25 @@ const Sobre = () => {
                 <div className="feature-item">
                   <CheckCircle size={20} className="check-icon" />
                   <span>Aulas Dinâmicas</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="google-rating-badge">
+              <div className="google-rating-score">
+                <span className="google-score-number">4,9</span>
+                <span className="google-score-label">/ 5</span>
+              </div>
+              <div className="google-rating-divider" />
+              <div className="google-rating-right">
+                <div className="google-rating-stars">
+                  {[1,2,3,4,5].map(i => (
+                    <Star key={i} size={22} className={i <= 4 ? 'star-filled' : 'star-half'} />
+                  ))}
+                </div>
+                <div className="google-rating-text">
+                  <strong>Avaliação Google</strong>
+                  <span>Baseado nas avaliações dos nossos alunos</span>
                 </div>
               </div>
             </div>
