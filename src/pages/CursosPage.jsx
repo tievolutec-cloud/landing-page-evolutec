@@ -3,6 +3,8 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { cursosData } from '../data/coursesData';
 import './CursosPage.css';
 
+const ITEMS_PER_PAGE = 9;
+
 // Ícones
 const SearchIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -66,6 +68,7 @@ function CursosPage() {
   const [selectedTag, setSelectedTag] = useState('Todos');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' ou 'list'
   const [sortBy, setSortBy] = useState('title'); // 'title', 'duration', 'category'
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Sincroniza o filtro de categoria quando o query param muda (ex: navegação pelo dropdown)
   useEffect(() => {
@@ -111,6 +114,25 @@ function CursosPage() {
     setSelectedMode('Todos');
     setSelectedTag('Todos');
     setSortBy('title');
+    setCurrentPage(1);
+  };
+
+  // Reset para página 1 ao mudar filtros
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory, selectedMode, selectedTag, sortBy]);
+
+  const totalPages = Math.ceil(filteredCursos.length / ITEMS_PER_PAGE);
+  const paginatedCursos = filteredCursos.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const getPageNumbers = () => {
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
+    if (currentPage <= 4) return [1, 2, 3, 4, 5, '...', totalPages];
+    if (currentPage >= totalPages - 3) return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
   };
 
   return (
@@ -206,6 +228,9 @@ function CursosPage() {
           <div className="cursos-controls">
             <div className="cursos-count">
               <strong>{filteredCursos.length}</strong> {filteredCursos.length === 1 ? 'curso encontrado' : 'cursos encontrados'}
+              {totalPages > 1 && (
+                <span className="cursos-count-page"> &mdash; página {currentPage} de {totalPages}</span>
+              )}
             </div>
 
             <div className="cursos-actions">
@@ -249,8 +274,46 @@ function CursosPage() {
               </button>
             </div>
           ) : (
-            <div className={`cursos-list ${viewMode}`}>
-              {filteredCursos.map(curso => (
+            <>
+              {/* Paginação superior */}
+              {totalPages > 1 && (
+                <nav className="cursos-pagination cursos-pagination--top" aria-label="Paginação de cursos (topo)">
+                  <button
+                    className="pagination-btn pagination-prev"
+                    onClick={() => setCurrentPage(p => p - 1)}
+                    disabled={currentPage === 1}
+                  >
+                    &lsaquo; Anterior
+                  </button>
+
+                  <div className="pagination-pages">
+                    {getPageNumbers().map((page, idx) =>
+                      page === '...' ? (
+                        <span key={`ellipsis-top-${idx}`} className="pagination-ellipsis">...</span>
+                      ) : (
+                        <button
+                          key={page}
+                          className={`pagination-page${currentPage === page ? ' active' : ''}`}
+                          onClick={() => setCurrentPage(page)}
+                        >
+                          {page}
+                        </button>
+                      )
+                    )}
+                  </div>
+
+                  <button
+                    className="pagination-btn pagination-next"
+                    onClick={() => setCurrentPage(p => p + 1)}
+                    disabled={currentPage === totalPages}
+                  >
+                    Próxima &rsaquo;
+                  </button>
+                </nav>
+              )}
+
+              <div className={`cursos-list ${viewMode}`}>
+                {paginatedCursos.map(curso => (
                 <Link
                   key={curso.id}
                   to={`/curso/${curso.slug}`}
@@ -290,6 +353,44 @@ function CursosPage() {
                 </Link>
               ))}
             </div>
+
+              {/* Paginação */}
+              {totalPages > 1 && (
+                <nav className="cursos-pagination" aria-label="Paginação de cursos">
+                  <button
+                    className="pagination-btn pagination-prev"
+                    onClick={() => { setCurrentPage(p => p - 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    disabled={currentPage === 1}
+                  >
+                    &lsaquo; Anterior
+                  </button>
+
+                  <div className="pagination-pages">
+                    {getPageNumbers().map((page, idx) =>
+                      page === '...' ? (
+                        <span key={`ellipsis-${idx}`} className="pagination-ellipsis">...</span>
+                      ) : (
+                        <button
+                          key={page}
+                          className={`pagination-page${currentPage === page ? ' active' : ''}`}
+                          onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                        >
+                          {page}
+                        </button>
+                      )
+                    )}
+                  </div>
+
+                  <button
+                    className="pagination-btn pagination-next"
+                    onClick={() => { setCurrentPage(p => p + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    disabled={currentPage === totalPages}
+                  >
+                    Próxima &rsaquo;
+                  </button>
+                </nav>
+              )}
+            </>
           )}
         </main>
       </div>

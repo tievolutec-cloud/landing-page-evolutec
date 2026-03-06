@@ -1,0 +1,58 @@
+export const ebooksData = [
+  {
+    id: 1,
+    titulo: 'Guia Completo de Gestão Empresarial',
+    descricao: 'Aprenda os fundamentos da gestão empresarial moderna e como aplicar estratégias eficazes no seu negócio.',
+    categoria: 'Gestão',
+    paginas: 48,
+    capa: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=560&fit=crop',
+    downloadUrl: '#',
+  },
+  {
+    id: 2,
+    titulo: 'Introdução à Segurança do Trabalho',
+    descricao: 'Um guia essencial sobre normas de segurança, prevenção de acidentes e saúde ocupacional.',
+    categoria: 'Segurança',
+    paginas: 36,
+    capa: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=560&fit=crop',
+    downloadUrl: '#',
+  },
+  {
+    id: 3,
+    titulo: 'Marketing Digital para Iniciantes',
+    descricao: 'Descubra as principais estratégias de marketing digital, redes sociais e como construir sua presença online.',
+    categoria: 'Marketing',
+    paginas: 52,
+    capa: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&h=560&fit=crop',
+    downloadUrl: '#',
+  },
+  {
+    id: 4,
+    titulo: 'Primeiros Passos em Tecnologia da Informação',
+    descricao: 'Conceitos fundamentais de TI, redes, sistemas operacionais e o mercado de tecnologia.',
+    categoria: 'Tecnologia',
+    paginas: 44,
+    capa: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=560&fit=crop',
+    downloadUrl: '#',
+  },
+  {
+    id: 5,
+    titulo: 'Saúde e Bem-Estar no Trabalho',
+    descricao: 'Dicas práticas para manter a qualidade de vida, ergonomia e saúde mental no ambiente profissional.',
+    categoria: 'Saúde',
+    paginas: 30,
+    capa: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=560&fit=crop',
+    downloadUrl: '#',
+  },
+  {
+    id: 6,
+    titulo: 'Design Gráfico: Do Zero ao Profissional',
+    descricao: 'Um panorama completo sobre design gráfico, ferramentas, fundamentos visuais e carreira na área.',
+    categoria: 'Design',
+    paginas: 58,
+    capa: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=560&fit=crop',
+    downloadUrl: '#',
+  },
+];
+
+export const categorias = ['Todos', 'Gestão', 'Segurança', 'Marketing', 'Tecnologia', 'Saúde', 'Design'];

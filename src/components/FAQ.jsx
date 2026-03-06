@@ -4,11 +4,11 @@ import './FAQ.css'
 const faqData = [
   {
     pergunta: 'Como funciona o processo de matrícula?',
-    resposta: 'O processo de matrícula é simples e rápido. Você pode se inscrever através do nosso site ou visitando uma de nossas unidades. Nossa equipe está pronta para orientá-lo em todas as etapas, desde a escolha do curso até a documentação necessária.'
+    resposta: 'O processo de matrícula é simples e rápido. Você pode se inscrever através do nosso site e conversar com um de nossos atendentes ou visitando uma de nossas unidades. Nossa equipe está pronta para orientá-lo em todas as etapas, desde a escolha do curso até a documentação necessária.'
   },
   {
     pergunta: 'Os cursos têm certificação reconhecida?',
-    resposta: 'Sim! Todos os nossos cursos possuem certificação reconhecida pelo MEC e órgãos competentes. Ao concluir seu curso na Evolutec, você receberá um certificado válido em todo território nacional.'
+    resposta: 'Sim! Todos os nossos cursos possuem certificação reconhecida. Ao concluir seu curso na Evolutec, você receberá um certificado válido em todo território nacional.'
   },
   {
     pergunta: 'Qual é a duração dos cursos?',

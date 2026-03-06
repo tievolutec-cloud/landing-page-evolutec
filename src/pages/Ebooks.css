@@ -1,0 +1,219 @@
+.ebooks-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding-top: 126px;
+  padding-bottom: 5rem;
+}
+
+/* ── Header ── */
+.ebooks-header {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1600&h=600&fit=crop');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ebooks-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(var(--primary-color-rgb, 10, 36, 99), 0.72) 100%
+  );
+}
+
+.ebooks-header-content {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.ebooks-header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(4px);
+}
+
+.ebooks-header h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.ebooks-header p {
+  font-size: 1.15rem;
+  color: #e5e7eb;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Filtros ── */
+.ebooks-filtros-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem 2rem;
+}
+
+.ebooks-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  justify-content: center;
+}
+
+.ebooks-filtro-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ebooks-filtro-btn:hover,
+.ebooks-filtro-btn.ativo {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* ── Container & Grid ── */
+.ebooks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ebooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.ebooks-vazio {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  padding: 3rem 0;
+}
+
+/* ── Card ── */
+.ebook-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ebook-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.ebook-card-capa {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.ebook-card-capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ebook-card-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.ebook-categoria {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ebook-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ebook-descricao {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+  flex: 1;
+  margin: 0;
+}
+
+.ebook-paginas {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.ebook-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ebook-download-btn:hover {
+  background: var(--secondary-color, #f59e0b);
+  transform: scale(1.02);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  .ebooks-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .ebooks-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -256,6 +256,7 @@ function Navbar() {
             </ul>
           </li>
           <li><Link to="/sobre" onClick={closeMenu}>SOBRE EVOLUTEC</Link></li>
+          <li><Link to="/ebooks" onClick={closeMenu}>E-BOOKS</Link></li>
           <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>MATRICULE-SE</Link></li>
           <li className="navbar-btn-item">
             <a href="#cta1" className="navbar-btn navbar-btn--outline" onClick={closeMenu}>Área do Aluno</a>
