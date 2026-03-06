@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Sobre.css';
+import InfoCards from '../components/InfoCards';
 import { Target, Award, Users, Search, CheckCircle, MapPin, Star } from 'lucide-react';
 import Estatisticas from '../components/Estatisticas';
 
@@ -139,7 +140,7 @@ const Sobre = () => {
 
       {/* 3. Stats Bar */}
       <Estatisticas />
-
+      <InfoCards/>
       {/* 4. Mission Section (Text Left, Image Right) */}
       <section className="sobre-mission-section">
         <div className="container mission-container">
