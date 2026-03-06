@@ -1,5 +1,7 @@
 # Especificação do Backend - Landing Page Evolutec
 
+> **Última atualização:** 06/03/2026 — Adicionadas imagens de stock (Unsplash) para os cursos *REDES & Infraestrutura*, *Profissional em Animação 3D* e *Manutenção de Celulares*. Adicionada seção de Estratégia de Imagens e Seed Data dos 19 cursos.
+
 Esta documentação descreve a estrutura do backend em formato **MVC (Model-View-Controller)** utilizando **Prisma ORM** e **PostgreSQL**, projetada para atender às necessidades dinâmicas do projeto `landing-page-evolutec`.
 
 ## 1. Visão Geral da Arquitetura
@@ -71,6 +73,8 @@ model BlogPost {
 }
 
 // 2. Cursos (Referência: src/data/coursesData.js)
+// NOTA: O campo é chamado `image` no frontend (coursesData.js). 
+//       No schema e na API, padronizar como `imageUrl` e fazer o mapeamento no serviço de cursos.
 enum CourseMode {
   EAD
   PRESENCIAL
@@ -263,3 +267,47 @@ Aqui estão os endpoints necessários para conectar seu frontend ao backend.
 *   `POST /api/jobs`: Enviar currículo ("Trabalhe Conosco").
     *   *Nota:* Este endpoint precisará de suporte a Upload de Arquivos (Multer/S3).
 *   `POST /api/leads`: Salvar contato (Opcional, se quiser salvar além de mandar pro WhatsApp).
+
+---
+
+## 5. Estratégia de Imagens dos Cursos
+
+O campo `imageUrl` (schema) / `image` (frontend) dos cursos segue esta hierarquia:
+
+1.  **Imagem personalizada** — Upload feito pelo Admin/Editor, armazenado em bucket (S3 ou similar). URL salva no banco.
+2.  **Stock image padrão (Unsplash)** — URLs do CDN Unsplash (`images.unsplash.com`) usadas como fallback enquanto não há imagem personalizada.
+
+> **Convenção de nomenclatura:** o campo é `image` em `coursesData.js` (frontend). No schema Prisma e nas respostas da API, o campo deve ser chamado `imageUrl`. O service de cursos é responsável por mapear `image → imageUrl` ao migrar o seed para o banco.
+
+Parâmetros padrão usados nas URLs Unsplash: `?w=600&h=400&fit=crop`
+
+---
+
+## 6. Seed Data — Cursos (19 registros)
+
+Dados iniciais baseados em `src/data/coursesData.js` para popular o banco em ambiente de desenvolvimento/staging.
+
+| id | slug | title | category | imageUrl (Unsplash) | tag |
+|----|------|-------|----------|---------------------|-----|
+| 1 | tecnologia | Tecnologia | TECNOLOGIA | photo-1517694712202-14dd9538aa97 | Profissionalizante |
+| 2 | atendente-de-farmacia | Atendente de Farmácia | SAÚDE | photo-1587854692152-cbe660dbde88 | Profissionalizante |
+| 3 | operador-de-caixa | Operador de Caixa | COMÉRCIO | photo-1556742049-0cfed4f6a45d | Profissionalizante |
+| 4 | hotelaria | Hotelaria e Turismo | TURISMO | photo-1566073771259-6a8506099945 | Profissionalizante |
+| 5 | rotinas-administrativas | Rotinas Administrativas | GESTÃO | photo-1454165804606-c3d57bc86b40 | Profissionalizante |
+| 6 | informatica-completo | Informática Completo | TECNOLOGIA | photo-1517694712202-14dd9538aa97 | Profissionalizante |
+| 7 | power-bi | Power BI | DADOS | photo-1551288049-bebda4e38f71 | Especialização |
+| 8 | design-web | Profissional Design Web | DESIGN | photo-1581291518633-83b4ebd1d83e | Profissionalizante |
+| 9 | informatica-operador-caixa | Profissional em Informática e Operador de Caixa | COMÉRCIO | photo-1556740738-b6a63e27c4df | Profissionalizante |
+| 10 | desenvolvedor-games-apps | Desenvolvedor Games e Apps | PROGRAMAÇÃO | photo-1552820728-8b83bb6b773f | Tecnológico |
+| 11 | profissional-planilhas | Profissional em Planilhas | ADMINISTRAÇÃO | photo-1460925895917-afdab827c52f | Especialização |
+| 12 | gerenciamento-pessoas | Gerenciamento De Pessoas | RH | photo-1519389950473-47ba0277781c | Profissionalizante |
+| 13 | redes-infraestrutura | REDES & Infraestrutura | TECNOLOGIA | **photo-1558618666-fcd25c85cd64** *(atualizado 06/03/26)* | Técnico |
+| 14 | animacao-3d | Profissional em Animação 3D | DESIGN | **photo-1617791160505-6f00504e3519** *(atualizado 06/03/26)* | Especialização |
+| 15 | auxiliar-administrativo | Auxiliar Administrativo | ADMINISTRAÇÃO | photo-1450101499163-c8848c66ca85 | Profissionalizante |
+| 16 | marketing-digital | Marketing Digital | MARKETING | photo-1533750516457-a7f992034fec | Profissionalizante |
+| 17 | manutencao-celulares | Manutenção de Celulares | TÉCNICO | **photo-1601784551446-20c9e07cdbdb** *(atualizado 06/03/26)* | Técnico |
+| 18 | google-workspace | Google WorkSpace | PRODUTIVIDADE | photo-1572021335469-31706a17aaef | Especialização |
+| 19 | gestao-empresarial | Gestão Empresarial | GESTÃO | photo-1507679799987-c73779587ccf | Profissionalizante |
+
+> Todas as URLs completas seguem o padrão: `https://images.unsplash.com/{photo-id}?w=600&h=400&fit=crop`
+

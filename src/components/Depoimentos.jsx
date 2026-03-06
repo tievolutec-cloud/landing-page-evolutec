@@ -26,6 +26,14 @@ const depoimentos = [
     videoId: 'lOUrBKfGwhk',
     imagem: '/formatura2.jpeg',
   },
+  {
+    nome: 'Depoimento Evolutec',
+    curso: 'Evolutec',
+    texto:
+      'A Evolutec transforma vidas através da educação profissional de qualidade, preparando alunos para conquistar seu espaço no mercado de trabalho.',
+    videoId: 'yko35xXx8go',
+    imagem: 'https://img.youtube.com/vi/yko35xXx8go/hqdefault.jpg',
+  },
 ]
 
 export default function Depoimentos() {
