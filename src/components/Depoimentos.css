@@ -1,28 +1,280 @@
-﻿/* ===== Seção Depoimentos  Split Screen ===== */
+﻿/* ===== Seção Depoimentos — Carrossel YouTube ===== */
 
-.dep-fade {
-  opacity: 0;
-  transition: opacity 0.35s ease;
+:root {
+  --dep-gap: 1rem;
 }
 
 .dep-section {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  min-height: 560px;
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
+  background: #fff;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  overflow: hidden;
 }
 
-.dep-panel--left {
-  background-color: #fff;
-  padding: 5rem 4rem;
+/* ── Título ── */
+.dep-heading {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin: 0 0 2.5rem;
+  line-height: 1.2;
+}
+
+/* ── Wrapper do carrossel ── */
+.dep-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── Clip / track ── */
+.dep-track-clip {
+  flex: 1;
+  overflow: hidden;
+}
+
+.dep-track {
+  display: flex;
+  gap: var(--dep-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ── Card ── */
+.dep-card {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.dep-card-btn {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+}
+
+.dep-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.dep-card-btn:hover .dep-thumb {
+  transform: scale(1.05);
+}
+
+/* ── Overlay ── */
+.dep-card-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1.4rem;
-  color: var(--primary-color);
-  transition: opacity 0.35s ease;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    transparent 35%,
+    transparent 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
 }
+
+/* ── Título do vídeo (topo) ── */
+.dep-card-title {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ── Play button (centro) ── */
+.dep-yt-play-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+  transition: transform 0.2s ease, filter 0.2s ease;
+  pointer-events: none;
+}
+
+.dep-yt-play-bg {
+  fill: #ff0000;
+  fill-opacity: 0.92;
+}
+
+.dep-yt-play-arrow {
+  fill: #fff;
+}
+
+.dep-card-btn:hover .dep-yt-play-svg {
+  transform: translate(-50%, -50%) scale(1.12);
+  filter: drop-shadow(0 4px 16px rgba(255,0,0,0.5));
+}
+
+/* ── Logo YouTube (rodapé) ── */
+.dep-yt-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: left;
+  color: white;
+}
+
+/* ── Setas de navegação ── */
+.dep-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2.5px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.dep-arrow:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.06);
+  transform: scale(1.1);
+}
+
+.dep-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Dots ── */
+.dep-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.dep-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.dep-dot.active {
+  background: #e62117;
+  transform: scale(1.25);
+}
+
+/* ── Modal de vídeo ── */
+.dep-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: dep-fadein 0.25s ease;
+}
+
+@keyframes dep-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.dep-modal-box {
+  position: relative;
+  width: 90%;
+  max-width: 1100px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.dep-modal-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.dep-modal-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dep-modal-close:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.1);
+}
+
+/* ── Responsividade ── */
+@media (max-width: 1024px) {
+  .dep-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .dep-section {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .dep-heading {
+    font-size: 1.4rem;
+  }
+
+  .dep-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 
 .dep-panel--right {
   position: relative;
