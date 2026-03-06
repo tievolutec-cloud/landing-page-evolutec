@@ -187,6 +187,439 @@ export const cursosData = [
     certificationType: "Certificado de Conclusão Profissionalizante",
     salary: "R$ 1.600,00",
     marketInfo: "A área administrativa é presente em empresas de todos os portes e segmentos. É uma das áreas com maior volume de vagas no mercado de trabalho brasileiro."
+  },
+  {
+    id: 6,
+    slug: "informatica-completo",
+    title: "Informática Completo",
+    category: "TECNOLOGIA",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "12 meses",
+    hours: "120h",
+    tag: "Profissionalizante",
+    description: "Domine o computador do zero ao avançado: Windows, Office, Internet e muito mais.",
+    fullDescription: "O curso de Informática Completo aborda desde os conceitos básicos de computação até ferramentas avançadas de produtividade. Ideal para quem busca qualificação rápida e essencial para qualquer área de atuação.",
+    objectives: [
+      "Dominar o Sistema Operacional",
+      "Utilizar editores de texto e planilhas",
+      "Navegar com segurança na internet"
+    ],
+    curriculum: [
+      { module: "Introdução", topics: ["Hardware e Software", "Windows"] },
+      { module: "Office", topics: ["Word", "Excel", "PowerPoint"] }
+    ],
+    careerOpportunities: [
+      "Auxiliar Administrativo",
+      "Recepcionista",
+      "Atendente"
+    ],
+    requirements: "Nenhum",
+    certificationType: "Certificado de Conclusão",
+    salary: "R$ 1.500,00",
+    marketInfo: "Essencial para qualquer currículo."
+  },
+  {
+    id: 7,
+    slug: "power-bi",
+    title: "Power BI",
+    category: "DADOS",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "3 meses",
+    hours: "60h",
+    tag: "Especialização",
+    description: "Transforme dados em insights visuais poderosos para tomada de decisão.",
+    fullDescription: "Aprenda a analisar dados de negócios e criar dashboards interativos com o Microsoft Power BI. Ferramenta essencial para analistas e gestores.",
+    objectives: [
+      "Conectar fontes de dados",
+      "Modelar dados",
+      "Criar visualizações interativas"
+    ],
+    curriculum: [
+      { module: "Introdução ao Power BI", topics: ["Interface", "Conexão de Dados"] },
+      { module: "DAX e Visualização", topics: ["Funções DAX", "Gráficos e Mapas"] }
+    ],
+    careerOpportunities: [
+      "Analista de Dados",
+      "Analista de BI",
+      "Consultor"
+    ],
+    requirements: "Conhecimento básico de Excel",
+    certificationType: "Certificado de Especialização",
+    salary: "R$ 3.500,00",
+    marketInfo: "Alta demanda por profissionais que sabem analisar dados."
+  },
+  {
+    id: 8,
+    slug: "design-web",
+    title: "Profissional Design Web",
+    category: "DESIGN",
+    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "8 meses",
+    hours: "160h",
+    tag: "Profissionalizante",
+    description: "Crie sites modernos e interfaces atraentes para a web.",
+    fullDescription: "Desenvolva habilidades em design de interfaces (UI) e experiência do usuário (UX), além de criar layouts para sites e aplicações web.",
+    objectives: [
+      "Criar layouts responsivos",
+      "Entender princípios de UI/UX",
+      "Utilizar ferramentas de design"
+    ],
+    curriculum: [
+      { module: "Fundamentos de Design", topics: ["Cor", "Tipografia", "Layout"] },
+      { module: "Ferramentas", topics: ["Figma", "Adobe XD", "Photoshop para Web"] }
+    ],
+    careerOpportunities: [
+      "Web Designer",
+      "Designer UI/UX",
+      "Front-end Developer"
+    ],
+    requirements: "Informática básica",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 2.800,00",
+    marketInfo: "O mercado digital precisa constantemente de bons designers."
+  },
+  {
+    id: 9,
+    slug: "informatica-operador-caixa",
+    title: "Profissional em Informática e Operador de Caixa",
+    category: "COMÉRCIO",
+    image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "5 meses",
+    hours: "100h",
+    tag: "Profissionalizante",
+    description: "Combine habilidades de informática com técnicas de operação de caixa.",
+    fullDescription: "Prepare-se para atuar no comércio com domínio de computadores e sistemas de caixa, além de técnicas de atendimento e vendas.",
+    objectives: [
+      "Operar sistemas comerciais",
+      "Atender clientes com excelência",
+      "Utilizar o computador no dia a dia"
+    ],
+    curriculum: [
+      { module: "Informática Básica", topics: ["Windows", "Internet"] },
+      { module: "Operação de Caixa", topics: ["Abertura/Fechamento", "Pagamentos", "Atendimento"] }
+    ],
+    careerOpportunities: [
+      "Operador de Caixa",
+      "Atendente de Loja",
+      "Auxiliar Administrativo"
+    ],
+    requirements: "Ensino Fundamental",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 1.600,00",
+    marketInfo: "Vagas abundantes no comércio varejista."
+  },
+  {
+    id: 10,
+    slug: "desenvolvedor-games-apps",
+    title: "Desenvolvedor Games e Apps",
+    category: "PROGRAMAÇÃO",
+    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "18 meses",
+    hours: "300h",
+    tag: "Tecnológico",
+    description: "Aprenda a criar seus próprios jogos e aplicativos para celular.",
+    fullDescription: "Entre no mundo da programação criando jogos 2D/3D e aplicativos móveis. Aprenda lógica de programação e as principais engines do mercado.",
+    objectives: [
+      "Desenvolver lógica de programação",
+      "Criar jogos completos",
+      "Publicar aplicativos"
+    ],
+    curriculum: [
+      { module: "Lógica de Programação", topics: ["Algoritmos", "Estruturas de Dados"] },
+      { module: "Desenvolvimento de Jogos", topics: ["Unity/Godot", "Física de Jogos", "Design de Níveis"] }
+    ],
+    careerOpportunities: [
+      "Desenvolvedor de Jogos",
+      "Programador Mobile",
+      "Indie Developer"
+    ],
+    requirements: "Informática intermediária",
+    certificationType: "Certificado Técnico",
+    salary: "R$ 3.000,00+",
+    marketInfo: "Indústria de games supera a do cinema em faturamento."
+  },
+  {
+    id: 11,
+    slug: "profissional-planilhas",
+    title: "Profissional em Planilhas",
+    category: "ADMINISTRAÇÃO",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "2 meses",
+    hours: "40h",
+    tag: "Especialização",
+    description: "Seja um expert em Excel e Google Sheets.",
+    fullDescription: "Domine as planilhas eletrônicas, desde fórmulas básicas até tabelas dinâmicas e macros, otimizando seu trabalho administrativo.",
+    objectives: [
+      "Criar planilhas complexas",
+      "Automatizar tarefas",
+      "Analisar dados"
+    ],
+    curriculum: [
+      { module: "Excel Básico", topics: ["Fórmulas", "Formatação"] },
+      { module: "Excel Avançado", topics: ["Tabelas Dinâmicas", "VLOOKUP/PROCV", "Gráficos"] }
+    ],
+    careerOpportunities: [
+      "Assistente Administrativo",
+      "Analista Financeiro",
+      "Auxiliar de Escritório"
+    ],
+    requirements: "Informática básica",
+    certificationType: "Certificado de Especialização",
+    salary: "R$ 2.000,00",
+    marketInfo: "Excel é requisito para quase todas as vagas administrativas."
+  },
+  {
+    id: 12,
+    slug: "gerenciamento-pessoas",
+    title: "Gerenciamento De Pessoas",
+    category: "RH",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "6 meses",
+    hours: "120h",
+    tag: "Profissionalizante",
+    description: "Desenvolva liderança e técnicas de gestão de equipes.",
+    fullDescription: "Aprenda a liderar equipes, mediar conflitos, realizar processos de seleção e promover o desenvolvimento humano nas organizações.",
+    objectives: [
+      "Liderar equipes",
+      "Gerir conflitos",
+      "Realizar recrutamento e seleção"
+    ],
+    curriculum: [
+      { module: "Liderança", topics: ["Estilos de Liderança", "Motivação"] },
+      { module: "Rotinas de RH", topics: ["Recrutamento", "Treinamento", "Avaliação de Desempenho"] }
+    ],
+    careerOpportunities: [
+      "Assistente de RH",
+      "Supervisor de Equipe",
+      "Analista de RH"
+    ],
+    requirements: "Ensino Médio completo",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 2.500,00",
+    marketInfo: "Empresas buscam líderes capacitados para gerir talentos."
+  },
+  {
+    id: 13,
+    slug: "redes-infraestrutura",
+    title: "REDES & Infraestrutura",
+    category: "TECNOLOGIA",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bbcbf?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "10 meses",
+    hours: "200h",
+    tag: "Técnico",
+    description: "Configure e mantenha redes de computadores e servidores.",
+    fullDescription: "Formação técnica para instalação, configuração e manutenção de redes de computadores, servidores e infraestrutura de TI.",
+    objectives: [
+      "Configurar roteadores e switches",
+      "Gerenciar redes locais",
+      "Implementar segurança de rede"
+    ],
+    curriculum: [
+      { module: "Fundamentos de Redes", topics: ["TCP/IP", "Cabeamento"] },
+      { module: "Servidores", topics: ["Windows Server", "Linux", "Virtualização"] }
+    ],
+    careerOpportunities: [
+      "Técnico de Redes",
+      "Analista de Suporte",
+      "Administrador de Redes"
+    ],
+    requirements: "Informática avançada",
+    certificationType: "Certificado Técnico",
+    salary: "R$ 3.000,00",
+    marketInfo: "Infraestrutura é a base da TI em qualquer empresa."
+  },
+  {
+    id: 14,
+    slug: "animacao-3d",
+    title: "Profissional em Animação 3D",
+    category: "DESIGN",
+    image: "https://images.unsplash.com/photo-1626544827763-d516dce335ca?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "12 meses",
+    hours: "240h",
+    tag: "Especialização",
+    description: "Dê vida a personagens e cenários tridimensionais.",
+    fullDescription: "Domine as técnicas de modelagem, texturização, iluminação e animação 3D para filmes, jogos e publicidade.",
+    objectives: [
+      "Modelar objetos e personagens 3D",
+      "Criar animações fluidas",
+      "Renderizar cenas realistas"
+    ],
+    curriculum: [
+      { module: "Modelagem 3D", topics: ["Blender/Maya", "Escultura Digital"] },
+      { module: "Animação", topics: ["Rigging", "Keyframes", "Curvas de Animação"] }
+    ],
+    careerOpportunities: [
+      "Animador 3D",
+      "Modelador 3D",
+      "Artista de VFX"
+    ],
+    requirements: "Conhecimentos de design",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 3.500,00+",
+    marketInfo: "Mercado em expansão com streaming e jogos."
+  },
+  {
+    id: 15,
+    slug: "auxiliar-administrativo",
+    title: "Auxiliar Administrativo",
+    category: "ADMINISTRAÇÃO",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "6 meses",
+    hours: "180h",
+    tag: "Profissionalizante",
+    description: "Aprenda a organizar e administrar rotinas de escritório.",
+    fullDescription: "Curso completo para quem deseja atuar na área administrativa, com foco em organização, documentação, atendimento e rotinas financeiras.",
+    objectives: [
+      "Organizar arquivos e documentos",
+      "Auxiliar em rotinas financeiras",
+      "Atender clientes e fornecedores"
+    ],
+    curriculum: [
+      { module: "Rotinas Administrativas", topics: ["Arquivo", "Protocolo", "Correspondência"] },
+      { module: "Financeiro Básico", topics: ["Contas a Pagar/Receber", "Nota Fiscal"] }
+    ],
+    careerOpportunities: [
+      "Auxiliar Administrativo",
+      "Recepcionista",
+      "Secretário(a)"
+    ],
+    requirements: "Ensino Fundamental",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 1.600,00",
+    marketInfo: "Vagas em todos os setores da economia."
+  },
+  {
+    id: 16,
+    slug: "marketing-digital",
+    title: "Marketing Digital",
+    category: "MARKETING",
+    image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "6 meses",
+    hours: "140h",
+    tag: "Profissionalizante",
+    description: "Domine as estratégias para vender e promover marcas na internet.",
+    fullDescription: "Aprenda a criar campanhas, gerenciar redes sociais, produzir conteúdo e analisar métricas para alavancar negócios no ambiente digital.",
+    objectives: [
+      "Gerenciar redes sociais",
+      "Criar campanhas de anúncios",
+      "Produzir conteúdo relevante"
+    ],
+    curriculum: [
+      { module: "Redes Sociais", topics: ["Instagram", "Facebook", "TikTok"] },
+      { module: "Tráfego Pago", topics: ["Google Ads", "Meta Ads"] }
+    ],
+    careerOpportunities: [
+      "Social Media",
+      "Analista de Marketing",
+      "Gestor de Tráfego"
+    ],
+    requirements: "Informática básica",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 2.200,00",
+    marketInfo: "Qualquer empresa hoje precisa de presença digital."
+  },
+  {
+    id: 17,
+    slug: "manutencao-celulares",
+    title: "Manutenção de Celulares",
+    category: "TÉCNICO",
+    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a782?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "4 meses",
+    hours: "80h",
+    tag: "Técnico",
+    description: "Aprenda a consertar smartphones e tablets de diversas marcas.",
+    fullDescription: "Curso prático voltado para o diagnóstico e reparo de dispositivos móveis. Aprenda a trocar telas, baterias, conectores e resolver problemas de software.",
+    objectives: [
+      "Diagnosticar defeitos",
+      "Trocar componentes",
+      "Realizar reparos em placas"
+    ],
+    curriculum: [
+      { module: "Hardware Mobile", topics: ["Desmontagem", "Troca de Telas", "Solda"] },
+      { module: "Software", topics: ["Android", "iOS", "Reset e Backup"] }
+    ],
+    careerOpportunities: [
+      "Técnico de Celular",
+      "Empreendedor (Loja Própria)",
+      "Assistência Técnica"
+    ],
+    requirements: "Nenhum",
+    certificationType: "Certificado Técnico",
+    salary: "R$ 2.500,00 (Variável)",
+    marketInfo: "Alta demanda por reparos rápidos e acessíveis."
+  },
+  {
+    id: 18,
+    slug: "google-workspace",
+    title: "Google WorkSpace",
+    category: "PRODUTIVIDADE",
+    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "1 mês",
+    hours: "20h",
+    tag: "Especialização",
+    description: "Produtividade máxima com as ferramentas do Google.",
+    fullDescription: "Domine o Gmail, Google Drive, Agenda, Docs, Sheets e Meet para trabalhar de forma colaborativa e eficiente na nuvem.",
+    objectives: [
+      "Gerenciar e-mails e agenda",
+      "Trabalhar com arquivos na nuvem",
+      "Colaborar em tempo real"
+    ],
+    curriculum: [
+      { module: "Comunicação", topics: ["Gmail", "Google Meet", "Chat"] },
+      { module: "Colaboração", topics: ["Drive", "Docs", "Sheets", "Slides"] }
+    ],
+    careerOpportunities: [
+      "Qualquer função administrativa",
+      "Trabalho Remoto"
+    ],
+    requirements: "Informática básica",
+    certificationType: "Certificado de Conclusão",
+    salary: "N/A (Habilidade complementar)",
+    marketInfo: "Ferramentas padrão em muitas startups e empresas modernas."
+  },
+  {
+    id: 19,
+    slug: "gestao-empresarial",
+    title: "Gestão Empresarial",
+    category: "GESTÃO",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop",
+    mode: "Presencial",
+    duration: "12 meses",
+    hours: "300h",
+    tag: "Profissionalizante",
+    description: "Visão estratégica e prática para gerenciar negócios.",
+    fullDescription: "Curso abrangente sobre gestão de empresas, envolvendo finanças, marketing, recursos humanos, logística e planejamento estratégico.",
+    objectives: [
+      "Entender o funcionamento de uma empresa",
+      "Planejar estratégias de crescimento",
+      "Gerenciar recursos"
+    ],
+    curriculum: [
+      { module: "Administração Geral", topics: ["Teorias da Administração", "Organização"] },
+      { module: "Gestão Estratégica", topics: ["Planejamento", "Marketing", "Finanças Corporativas"] }
+    ],
+    careerOpportunities: [
+      "Gerente",
+      "Supervisor",
+      "Empreendedor"
+    ],
+    requirements: "Ensino Médio completo",
+    certificationType: "Certificado Profissional",
+    salary: "R$ 4.000,00+",
+    marketInfo: "Profissionais com visão global do negócio são valorizados."
   }
 ];
 
