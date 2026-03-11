@@ -21,9 +21,6 @@ function Ebooks() {
       <div className="ebooks-header">
         <div className="ebooks-header-overlay" />
         <div className="ebooks-header-content">
-          <div className="ebooks-header-icon">
-            <BookOpen size={40} />
-          </div>
           <h1>E-books Gratuitos</h1>
           <p>
             Amplie seus conhecimentos com nossos materiais exclusivos. Baixe

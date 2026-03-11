@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { MessageCircle } from 'lucide-react'
 import './Navbar.css'
@@ -8,6 +8,7 @@ function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const dropdownTimeout = useRef(null)
   const location = useLocation()
 
   const toggleMenu = () => {
@@ -17,8 +18,32 @@ function Navbar() {
     })
   }
   const closeMenu = () => setMenuOpen(false)
-  const toggleDropdown = (name) => setOpenDropdown(prev => prev === name ? null : name)
-  const closeDropdown = () => setOpenDropdown(null)
+
+  const DROPDOWN_DELAY = 200; // ms
+
+  const openDropdownDelayed = (name) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    dropdownTimeout.current = setTimeout(() => {
+      setOpenDropdown(name);
+    }, DROPDOWN_DELAY);
+  };
+
+  const closeDropdownDelayed = () => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    dropdownTimeout.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, DROPDOWN_DELAY);
+  };
+
+  const toggleDropdown = (name) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(prev => prev === name ? null : name);
+  };
+
+  const closeDropdown = () => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(null);
+  };
 
   // Detecta mudanças no tamanho da tela
   useEffect(() => {
@@ -74,18 +99,7 @@ function Navbar() {
     }
   }, [menuOpen])
 
-  // Fecha dropdown fixado ao clicar fora da navbar
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('.navbar-container')) {
-        closeDropdown()
-      }
-    }
-    if (openDropdown) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [openDropdown])
+  // (Removido: fechamento ao clicar fora da navbar)
 
   // Fecha dropdown ao navegar
   useEffect(() => {
@@ -169,8 +183,31 @@ function Navbar() {
           role="navigation"
         >
           <li><Link to="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>HOME</Link></li>
-          <li><Link to="/#conteudos" onClick={(e) => handleAnchorClick(e, '#conteudos')}>CONTEÚDOS</Link></li>
-          <li className={`dropdown${openDropdown === 'cursos' ? ' is-open' : ''}`}>
+          <li className={`dropdown${openDropdown === 'conteudos' ? ' is-open' : ''}`}
+            onMouseEnter={() => openDropdownDelayed('conteudos')}
+            onMouseLeave={closeDropdownDelayed}
+          >
+            <Link>
+              CONTEÚDOS
+            </Link>
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/blog" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>Blog</strong>
+                </Link>
+              </li>
+              <li>
+                <Link to="/ebooks" onClick={() => { closeMenu(); closeDropdown() }}>
+                  <strong>E-books</strong>
+                </Link>
+              </li>
+              
+            </ul>
+          </li>
+          <li className={`dropdown${openDropdown === 'cursos' ? ' is-open' : ''}`}
+            onMouseEnter={() => openDropdownDelayed('cursos')}
+            onMouseLeave={closeDropdownDelayed}
+          >
             <Link 
               to={location.pathname === '/' ? '/#cursos' : '/cursos'} 
               onClick={(e) => { handleCursosClick(e); toggleDropdown('cursos') }}
@@ -215,7 +252,10 @@ function Navbar() {
               </li>
             </ul>
           </li>
-          <li className={`dropdown${openDropdown === 'unidades' ? ' is-open' : ''}`}>
+          <li className={`dropdown${openDropdown === 'unidades' ? ' is-open' : ''}`}
+            onMouseEnter={() => openDropdownDelayed('unidades')}
+            onMouseLeave={closeDropdownDelayed}
+          >
             <Link to="/unidades" onClick={(e) => { handleAnchorClick(e, '#unidades'); toggleDropdown('unidades') }}>UNIDADES</Link>
             <ul className="dropdown-menu">
               <li>
@@ -256,11 +296,7 @@ function Navbar() {
             </ul>
           </li>
           <li><Link to="/sobre" onClick={closeMenu}>SOBRE EVOLUTEC</Link></li>
-          <li><Link to="/ebooks" onClick={closeMenu}>E-BOOKS</Link></li>
           <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>MATRICULE-SE</Link></li>
-          <li className="navbar-btn-item">
-            <a href="#cta1" className="navbar-btn navbar-btn--outline" onClick={closeMenu}>Área do Aluno</a>
-          </li>
           <li className="navbar-btn-item">
             <Link to="/trabalhe-conosco" className="navbar-btn navbar-btn--yellow" onClick={closeMenu}>Trabalhe Conosco</Link>
           </li>

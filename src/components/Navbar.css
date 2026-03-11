@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   background-color: var(--secondary-color);
-  z-index: 1000;
+  z-index: 1005;
   padding: 1rem;
 }
 
@@ -314,7 +314,6 @@
 .navbar-links .dropdown-menu {
   visibility: hidden;
   opacity: 0;
-  pointer-events: none;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -330,7 +329,7 @@
   list-style: none;
   margin-top: 10px;
   border: 1px solid rgba(0,0,0,0.05);
-  transition: opacity 0.2s ease, visibility 0s linear 0.4s;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
 }
 
 /* Estilização da barra de rolagem do dropdown */
@@ -598,6 +597,7 @@
 
   /* Aumenta sombra quando menu está aberto */
   .navbar-links.active ~ .progress-container {
+    z-index: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
@@ -925,7 +925,7 @@
   height: 4px;
   width: 100%;
   background: transparent;
-  z-index: 1004;
+  z-index: 900;
 }
 
 .progress-bar {
@@ -943,5 +943,6 @@
 @media (max-width: 576px) {
   .progress-container {
     height: 2px;
+    z-index: 0;
   }
 }

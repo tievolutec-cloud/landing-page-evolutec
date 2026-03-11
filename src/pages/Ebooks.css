@@ -8,9 +8,7 @@
 /* ── Header ── */
 .ebooks-header {
   position: relative;
-  background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1600&h=600&fit=crop');
-  background-size: cover;
-  background-position: center;
+  background-color:#1a5d94;
   color: white;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -23,11 +21,6 @@
 .ebooks-header-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(var(--primary-color-rgb, 10, 36, 99), 0.72) 100%
-  );
 }
 
 .ebooks-header-content {

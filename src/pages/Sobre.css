@@ -21,11 +21,8 @@
    ========================================= */
 .sobre-hero {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
-  background-image: url('/evolutec-sobre.webp');
-  background-size: cover;
-  background-position: center;
+  height: 30vh;
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
