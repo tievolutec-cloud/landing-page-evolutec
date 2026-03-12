@@ -1,193 +1,294 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import './TrabalheConosco.css'
 
+const vagas = [
+  {
+    id: 1,
+    cargo: 'Instrutor',
+    area: 'Educação',
+    cidades: ['São Paulo', 'Belo Horizonte'],
+    tipo: 'CLT',
+    destaque: true,
+    imagem: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80',
+    resumo: 'Conduza aulas e acompanhe o desenvolvimento dos alunos nos cursos da Evolutec.',
+    cargaHoraria: '40 horas semanais',
+    descricao: `Buscamos profissionais apaixonados por ensino e tecnologia para compor nosso time de instrutores. Você será responsável por conduzir aulas dinâmicas e práticas, acompanhar o progresso individual dos alunos e contribuir para a melhoria contínua do material didático.`,
+    responsabilidades: [
+      'Ministrar aulas presenciais e/ou online nos cursos da Evolutec',
+      'Elaborar planos de aula e materiais complementares',
+      'Avaliar e acompanhar o desenvolvimento dos alunos',
+      'Participar de reuniões pedagógicas e treinamentos internos',
+      'Propor melhorias nos conteúdos e metodologias de ensino',
+    ],
+    requisitos: [
+      'Graduação em Ciência da Computação, Sistemas de Informação ou área correlata',
+      'Experiência prévia com docência ou treinamentos (diferencial)',
+      'Domínio em pelo menos uma das linguagens: Python, JavaScript, Java',
+      'Boa comunicação e habilidade didática',
+      'Disponibilidade para horários noturnos e/ou fins de semana',
+    ],
+    beneficios: ['Vale-refeição', 'Plano de saúde', 'Acesso gratuito a todos os cursos', 'Auxílio transporte'],
+  },
+  {
+    id: 2,
+    cargo: 'Vendedor Externo',
+    area: 'Comercial',
+    cidades: ['São Paulo', 'Rio de Janeiro'],
+    tipo: 'CLT + Comissão',
+    destaque: true,
+    imagem: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
+    resumo: 'Prospecte clientes e apresente as soluções educacionais da Evolutec no mercado.',
+    cargaHoraria: '44 horas semanais',
+    descricao: `Como Vendedor Externo, sua missão é identificar novas oportunidades de negócio, construir relacionamentos sólidos e apresentar nossas soluções educacionais para empresas e profissionais que buscam crescimento.`,
+    responsabilidades: [
+      'Prospectar novos clientes por meio de visitas, ligações e redes sociais',
+      'Apresentar o portfólio de cursos e soluções corporativas da Evolutec',
+      'Negociar propostas e fechar contratos com empresas parceiras',
+      'Atingir e superar as metas mensais de vendas',
+      'Manter relacionamento pós-venda e garantir a satisfação dos clientes',
+    ],
+    requisitos: [
+      'Ensino médio completo (superior em curso é diferencial)',
+      'Experiência mínima de 1 ano em vendas externas',
+      'Habilidade de negociação e persuasão',
+      'CNH categoria B e disponibilidade para viagens locais',
+      'Perfil proativo, resiliente e orientado a resultados',
+    ],
+    beneficios: ['Salário fixo + comissão atrativa', 'Vale-refeição', 'Plano de saúde', 'Auxílio combustível'],
+  },
+  {
+    id: 3,
+    cargo: 'Panfleteiro',
+    area: 'Marketing',
+    cidades: ['Rio de Janeiro'],
+    tipo: 'PJ / Temporário',
+    destaque: false,
+    imagem: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=600&q=80',
+    resumo: 'Distribua materiais de divulgação em pontos estratégicos da cidade.',
+    cargaHoraria: 'Flexível',
+    descricao: `O Panfleteiro Evolutec é o responsável por levar a mensagem da escola diretamente para as pessoas em locais estratégicos da cidade, contribuindo para o crescimento da nossa base de alunos.`,
+    responsabilidades: [
+      'Distribuir materiais de divulgação em pontos de alto fluxo',
+      'Abordar o público de forma simpática e objetiva',
+      'Reportar ao supervisor o número de materiais distribuídos',
+      'Zelar pela imagem da empresa durante a atividade',
+    ],
+    requisitos: [
+      'Ensino fundamental completo',
+      'Boa comunicação e disposição física',
+      'Pontualidade e responsabilidade',
+      'Disponibilidade para trabalhar em diferentes pontos da cidade',
+    ],
+    beneficios: ['Pagamento por produção', 'Vale-transporte', 'Flexibilidade de horários'],
+  },
+  {
+    id: 4,
+    cargo: 'Recepcionista',
+    area: 'Administrativo',
+    cidades: ['Belo Horizonte'],
+    tipo: 'CLT',
+    destaque: false,
+    imagem: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+    resumo: 'Recepcione alunos e visitantes, gerencie agendas e apoie as rotinas administrativas.',
+    cargaHoraria: '44 horas semanais',
+    descricao: `O Recepcionista da Evolutec é o ponto de contato que cria a primeira impressão para alunos, responsáveis e visitantes. Se você é organizado, cordial e gosta de gente, essa vaga é para você.`,
+    responsabilidades: [
+      'Recepcionar e orientar alunos, pais e visitantes',
+      'Gerenciar agendas, salas de aula e recursos da unidade',
+      'Realizar matrículas, rematrículas e controle de frequência',
+      'Apoiar nas rotinas administrativas e financeiras da unidade',
+      'Manter o ambiente da recepção organizado e acolhedor',
+    ],
+    requisitos: [
+      'Ensino médio completo (superior em andamento é diferencial)',
+      'Experiência com atendimento ao público',
+      'Conhecimento em pacote Office e sistemas de gestão',
+      'Excelente comunicação verbal e escrita',
+      'Organização, proatividade e empatia',
+    ],
+    beneficios: ['Vale-refeição', 'Plano de saúde', 'Plano odontológico', 'Acesso a cursos Evolutec'],
+  },
+]
+
+const areas = ['Todas', ...Array.from(new Set(vagas.map(v => v.area)))]
+
+function VagaDetalhe({ vaga, onVoltar }) {
+  return (
+    <div className="vaga-detalhe-page">
+      <button className="btn-voltar" onClick={onVoltar}>
+        &#8592; Voltar às vagas
+      </button>
+
+      <div className="vd-hero">
+        <img src={vaga.imagem} alt={vaga.cargo} className="vd-hero-img" />
+        <div className="vd-hero-overlay" />
+        <div className="vd-hero-content">
+          <span className="vd-badge-area">{vaga.area}</span>
+          <h1>{vaga.cargo}</h1>
+          <div className="vd-meta">
+            <span className="vd-meta-item">{vaga.tipo}</span>
+            <span className="vd-meta-sep">·</span>
+            {vaga.cidades.map((c, i) => (
+              <span key={i} className="vd-meta-item">{c}{i < vaga.cidades.length - 1 ? ', ' : ''}</span>
+            ))}
+            <span className="vd-meta-sep">·</span>
+            <span className="vd-meta-item">{vaga.cargaHoraria}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="vd-body">
+        <div className="vd-col-main">
+          <section className="vd-secao">
+            <h2>Sobre a vaga</h2>
+            <p>{vaga.descricao}</p>
+          </section>
+
+          <section className="vd-secao">
+            <h2>Responsabilidades</h2>
+            <ul className="vd-lista">
+              {vaga.responsabilidades.map((r, i) => <li key={i}>{r}</li>)}
+            </ul>
+          </section>
+
+          <section className="vd-secao">
+            <h2>Requisitos</h2>
+            <ul className="vd-lista">
+              {vaga.requisitos.map((r, i) => <li key={i}>{r}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <aside className="vd-col-aside">
+          <div className="vd-aside-card">
+            <h3>Informações da Vaga</h3>
+            <div className="vd-info-lista">
+              <div className="vd-info-row">
+                <span className="vd-info-label">Área</span>
+                <span className="vd-info-valor">{vaga.area}</span>
+              </div>
+              <div className="vd-info-row">
+                <span className="vd-info-label">Regime</span>
+                <span className="vd-info-valor">{vaga.tipo}</span>
+              </div>
+              <div className="vd-info-row">
+                <span className="vd-info-label">Carga horária</span>
+                <span className="vd-info-valor">{vaga.cargaHoraria}</span>
+              </div>
+              <div className="vd-info-row">
+                <span className="vd-info-label">Localidades</span>
+                <span className="vd-info-valor">{vaga.cidades.join(', ')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="vd-aside-card">
+            <h3>Benefícios</h3>
+            <ul className="vd-beneficios-lista">
+              {vaga.beneficios.map((b, i) => <li key={i}>{b}</li>)}
+            </ul>
+          </div>
+
+          <div className="vd-aside-cta">
+            <h3>Interessado nesta vaga?</h3>
+            <p>Envie seu currículo para nossa equipe de Recursos Humanos.</p>
+            <a
+              href={`mailto:rh@evolutec.com.br?subject=Candidatura: ${vaga.cargo} - ${vaga.cidades[0]}`}
+              className="btn-candidatar"
+            >
+              Candidatar-me
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  )
+}
+
+function VagaCard({ vaga, onClick }) {
+  return (
+    <article className="vaga-card" onClick={onClick}>
+      <div className="vaga-card-img-wrap">
+        <img src={vaga.imagem} alt={vaga.cargo} className="vaga-card-img" />
+        {vaga.destaque && <span className="vaga-badge-destaque">Destaque</span>}
+      </div>
+      <div className="vaga-card-body">
+        <span className="vaga-card-area">{vaga.area.toUpperCase()}</span>
+        <h3 className="vaga-card-titulo">{vaga.cargo}</h3>
+        <p className="vaga-card-resumo">{vaga.resumo}</p>
+        <div className="vaga-card-footer">
+          <span className="vaga-card-carga">{vaga.cargaHoraria}</span>
+          <button className="btn-ver-vaga">Ver Vaga</button>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 function TrabalheConosco() {
-  const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    role: 'Business',
-    companyName: '',
-    city: '',
-    postcode: '',
-    agreePolicy: false,
-    curriculo: null,
-  })
-  const fileInputRef = useRef(null)
+  const [filtro, setFiltro] = useState('Todas')
+  const [vagaSelecionada, setVagaSelecionada] = useState(null)
 
-  const handleChange = (e) => {
-    const { name, value, type, checked, files } = e.target
-    setForm((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : type === 'file' ? files[0] : value,
-    }))
-  }
+  const vagasFiltradas = filtro === 'Todas' ? vagas : vagas.filter(v => v.area === filtro)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Formulário enviado:', form)
-    alert('Currículo enviado com sucesso!')
-    setForm({
-      firstName: '',
-      lastName: '',
-      phone: '',
-      email: '',
-      role: 'Business',
-      companyName: '',
-      city: '',
-      postcode: '',
-      agreePolicy: false,
-      curriculo: null,
-    })
-    if (fileInputRef.current) {
-      fileInputRef.current.value = ''
-    }
+  if (vagaSelecionada) {
+    return (
+      <div className="trabalhe-conosco-page">
+        <div className="tc-inner">
+          <VagaDetalhe vaga={vagaSelecionada} onVoltar={() => setVagaSelecionada(null)} />
+        </div>
+      </div>
+    )
   }
 
   return (
     <div className="trabalhe-conosco-page">
-      {/* Hero Section */}
-      <section className="trabalhe-conosco-hero">
-        <div className="trabalhe-conosco-hero-content">
+      <section className="tc-hero">
+        <div className="tc-hero-content">
+          <span className="hero-pretitle">Junte-se ao nosso time</span>
           <h1>Trabalhe Conosco</h1>
-          <p>Venha fazer parte da equipe Evolutec e construa uma carreira de sucesso!</p>
+          <p>Faça parte de uma empresa que transforma vidas através da tecnologia e da educação. Encontre a vaga ideal e construa uma carreira de sucesso com a Evolutec.</p>
+          <div className="hero-stats">
+            <div className="stat"><strong>{vagas.length}</strong><span>Vagas Abertas</span></div>
+            <div className="stat-divider" />
+            <div className="stat"><strong>4</strong><span>Cidades</span></div>
+            <div className="stat-divider" />
+            <div className="stat"><strong>100%</strong><span>Oportunidades Reais</span></div>
+          </div>
         </div>
       </section>
 
-      <section className="trabalhe-conosco-section">
-        <div className="trabalhe-conosco-container">
-          <div className="trabalhe-conosco-content">
-            <h2>Sobre você</h2>
-            <p>Preencha o formulário abaixo e anexe seu currículo.</p>
-          
-          <form className="trabalhe-conosco-form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label>Primeiro Nome</label>
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="Digite seu primeiro nome"
-                  value={form.firstName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label>Sobrenome</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Digite seu sobrenome"
-                  value={form.lastName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            
-            <div className="form-row">
-              <div className="form-group">
-                <label>Número de Telefone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Seu número de telefone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label>Endereço de E-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Seu endereço de e-mail"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
+      <section className="tc-section">
+        <div className="tc-inner">
+          <div className="filtros-area">
+            {areas.map(a => (
+              <button
+                key={a}
+                className={`filtro-btn ${filtro === a ? 'filtro-btn--ativo' : ''}`}
+                onClick={() => setFiltro(a)}
+              >
+                {a}
+              </button>
+            ))}
+          </div>
 
-            <div className="form-group full-width">
-              <label>Diga-nos quem você é</label>
-              <select name="role" value={form.role} onChange={handleChange}>
-                <option value="Business">Empresa</option>
-                <option value="Candidate">Candidato</option>
-                <option value="Other">Outro</option>
-              </select>
-            </div>
-            
-            <div className="form-row">
-              <div className="form-group">
-                <label>Nome da Empresa</label>
-                <input
-                  type="text"
-                  name="companyName"
-                  placeholder="Nome da sua empresa"
-                  value={form.companyName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Diga-nos onde você está</label>
-                <select name="city" value={form.city} onChange={handleChange}>
-                  <option value="">Selecione sua cidade</option>
-                  <option value="Sao Paulo">São Paulo</option>
-                  <option value="Rio de Janeiro">Rio de Janeiro</option>
-                  <option value="Belo Horizonte">Belo Horizonte</option>
-                  <option value="Other">Outra</option>
-                </select>
-              </div>
-            </div>
+          <div className="vagas-grid">
+            {vagasFiltradas.map(vaga => (
+              <VagaCard key={vaga.id} vaga={vaga} onClick={() => setVagaSelecionada(vaga)} />
+            ))}
+          </div>
 
-            <div className="form-group full-width">
-              <label>CEP</label>
-              <input
-                type="text"
-                name="postcode"
-                placeholder="Digite seu CEP"
-                value={form.postcode}
-                onChange={handleChange}
-              />
+          <div className="contato-geral">
+            <div>
+              <h3>Não encontrou a vaga ideal?</h3>
+              <p>Envie seu currículo para o nosso banco de talentos. Quando surgir uma oportunidade alinhada ao seu perfil, entraremos em contato.</p>
             </div>
-            
-            <div className="form-group file-group full-width">
-              <label htmlFor="curriculo">Anexar Currículo (PDF, DOC, DOCX)</label>
-              <input
-                type="file"
-                id="curriculo"
-                name="curriculo"
-                accept=".pdf,.doc,.docx"
-                onChange={handleChange}
-                ref={fileInputRef}
-                required
-              />
-            </div>
-
-            <div className="form-group checkbox-group full-width">
-              <label>
-                <input
-                  type="checkbox"
-                  name="agreePolicy"
-                  checked={form.agreePolicy}
-                  onChange={handleChange}
-                  required
-                />
-                Eu concordo com a <a href="#">Política de Privacidade</a> da Evolutec
-              </label>
-            </div>
-            
-            <button type="submit" className="btn-enviar">
-              Começar
-            </button>
-          </form>
+            <a href="mailto:rh@evolutec.com.br?subject=Currículo Espontâneo" className="btn-curriculo">
+              Enviar Currículo Espontâneo
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   )
 }
