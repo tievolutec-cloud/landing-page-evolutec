@@ -4,33 +4,23 @@ import './Depoimentos.css'
 const videos = [
   {
     id: 1,
-    titulo: 'Depoimento Evolutec',
-    videoId: '-evDTv0CGcU',
+    titulo: 'Depoimento Evolutec (Shorts)',
+    videoId: 'cnAxO-xCS64',
   },
   {
     id: 2,
-    titulo: 'Depoimento Evolutec',
-    videoId: 'kZZR7-eo5DE',
+    titulo: 'Depoimento Evolutec (Shorts)',
+    videoId: '3dx35FkCzF8',
   },
   {
     id: 3,
-    titulo: 'Depoimento Evolutec',
-    videoId: 'jWHU9JG7jDA',
+    titulo: 'Depoimento Evolutec (Shorts)',
+    videoId: 't8xSaN7sl6M',
   },
   {
     id: 4,
-    titulo: 'Depoimento Evolutec',
-    videoId: 'mMQh2DQdsuE',
-  },
-  {
-    id: 5,
     titulo: 'Taiana de Souza: Conectividade e Tecnologia na Evolutec',
     videoId: 'lOUrBKfGwhk',
-  },
-  {
-    id: 6,
-    titulo: 'Depoimento Evolutec — Transformando Vidas',
-    videoId: 'yko35xXx8go',
   },
 ]
 
@@ -93,7 +83,7 @@ export default function Depoimentos() {
   return (
     <>
       <section className="dep-section" id="depoimentos">
-        <h2 className="dep-heading">Fique ligado nas nossas últimas postagens</h2>
+        <h1 className="dep-heading">O que nossos alunos dizem sobre a escola</h1>
 
         <div className="dep-carousel-wrapper">
           {/* Seta esquerda */}

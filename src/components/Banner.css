@@ -5,7 +5,8 @@
   height: 85vh;
   min-height: 450px;
   overflow: hidden;
-  margin-top: 126px; /* espaço para a navbar fixa */
+  margin-top: 126px; /* espao para a navbar fixa */
+  font-family: 'Inter', sans-serif;
 }
 
 @media (max-width: 900px) {

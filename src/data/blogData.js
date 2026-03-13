@@ -1,7 +1,7 @@
 export const blogData = [
   {
     id: 'vagas-2026',
-    imagem: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop',
+    imagem: '/Estrelita.png',
     tags: ['OPORTUNIDADE', '#NOTÍCIAS'],
     titulo: 'Rede de ensino anúncia vagas para mais de 100 cursos profissionalizantes em 2026',
     subtitulo: 'Condições facilitadas para quem decide começar uma nova profissão.',
