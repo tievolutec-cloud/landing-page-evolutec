@@ -146,7 +146,7 @@ function Navbar() {
       {/* Top Bar */}
       <div className="top-bar">
         <div className="top-bar-container">
-          <a href="https://wa.me/" className="top-bar-link whatsapp-link">
+          <a href="https://wa.me/559140424250" className="top-bar-link whatsapp-link">
             <MessageCircle size={16} />
             Matricule-se pelo WhatsApp
           </a>
