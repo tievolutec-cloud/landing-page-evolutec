@@ -52,7 +52,7 @@ function Contato() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const msg = `Olá! Meu nome é ${form.nome}, telefone ${form.telefone}. Tenho interesse no curso: ${form.curso}. Cidade: ${form.cidade}.`
-    const url = `https://wa.me/5500000000000?text=${encodeURIComponent(msg)}`
+    const url = `https://wa.me/559140424250?text=${encodeURIComponent(msg)}`
     window.open(url, '_blank')
   }
 

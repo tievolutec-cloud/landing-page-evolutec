@@ -12,6 +12,7 @@ import TrabalheConosco from './pages/TrabalheConosco'
 import Ebooks from './pages/Ebooks'
 
 import './App.css'
+import WhatsappButton from './components/WhatsappButton';
 
 function SiteLayout() {
   return (
@@ -19,6 +20,8 @@ function SiteLayout() {
       <Navbar />
       <Outlet />
       <Footer />
+      {/* Botão flutuante WhatsApp */}
+      <WhatsappButton />
     </>
   )
 }
