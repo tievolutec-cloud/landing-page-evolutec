@@ -199,6 +199,6 @@ export const blogData = [
       <h3>Conclusão</h3>
       <p>A inteligência artificial não deve simplesmente acabar com empregos. O que está acontecendo é uma transformação no mercado de trabalho. Algumas profissões vão desaparecer, mas muitas outras irão surgir — principalmente nas áreas ligadas à tecnologia, criatividade e solução de problemas. Quem busca aprender novas habilidades e acompanhar as mudanças do mercado terá mais chances de aproveitar as oportunidades que surgirão nos próximos anos.</p>
     `,
-    destaque: false
+      destaque: true
   }
 ];
