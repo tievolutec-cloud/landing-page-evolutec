@@ -29,7 +29,7 @@ export const blogData = [
     },
     {
       id: 'profissoes-crescimento-2026',
-      imagem: '/a.jpg',
+      imagem: '/10-profissoes-que-crescem-2026.jpg',
       tags: ['#CARREIRA', '#OPORTUNIDADE'],
       titulo: '10 Profissões que Devem Crescer Muito no Brasil em 2026 (Mesmo Sem Faculdade)',
       subtitulo: 'Veja áreas promissoras para quem busca qualificação prática e oportunidades de emprego.',
@@ -84,7 +84,7 @@ export const blogData = [
   },
   {
       id: 'primeiro-emprego-habilidades',
-      imagem: '/b.jpg',
+      imagem: '/.jpg',
       tags: ['#CARREIRA', '#DICAS'],
       titulo: 'Primeiro Emprego: 8 Habilidades que as Empresas Mais Procuram em Jovens',
       subtitulo: 'Descubra quais competências aumentam suas chances de conquistar a primeira vaga.',
