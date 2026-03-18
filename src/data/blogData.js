@@ -84,7 +84,7 @@ export const blogData = [
   },
   {
       id: 'primeiro-emprego-habilidades',
-      imagem: '/.jpg',
+      imagem: '/primeiro-emprego.png',
       tags: ['#CARREIRA', '#DICAS'],
       titulo: 'Primeiro Emprego: 8 Habilidades que as Empresas Mais Procuram em Jovens',
       subtitulo: 'Descubra quais competências aumentam suas chances de conquistar a primeira vaga.',

@@ -246,11 +246,13 @@ function VagaDetalhe({ vaga, onVoltar }) {
           <div className="vd-aside-cta">
             <h3>Interessado nesta vaga?</h3>
             <p>Envie seu currículo para nossa equipe de Recursos Humanos.</p>
+           
+           
+           
             <a
-              href={`mailto:rh@evolutec.com.br?subject=Candidatura: ${vaga.cargo} - ${vaga.cidades[0]}`}
-              className="btn-candidatar"
+            href='https://rhevolutec.base44.app/InscricaoCandidato'className="btn-candidatar"
             >
-              Candidatar-me
+            Candidatar-me
             </a>
           </div>
         </aside>
@@ -301,13 +303,76 @@ function TrabalheConosco() {
         <div className="tc-hero-content">
           <span className="hero-pretitle">Junte-se ao nosso time</span>
           <h1>Trabalhe Conosco</h1>
-          <p>Faça parte de uma empresa que transforma vidas através da tecnologia e da educação. Encontre a vaga ideal e construa uma carreira de sucesso com a Evolutec.</p>
-          <div className="hero-stats">
-            <div className="stat"><strong>{vagas.length}</strong><span>Vagas Abertas</span></div>
-            <div className="stat-divider" />
-            <div className="stat"><strong>4</strong><span>Cidades</span></div>
-            <div className="stat-divider" />
-            <div className="stat"><strong>100%</strong><span>Oportunidades Reais</span></div>
+        </div>
+      </section>
+
+      {/* ─── SEÇÃO NÚMEROS + BENEFÍCIOS ─── */}
+      <section className="tc-numeros-section">
+        <div className="tc-inner">
+          <div className="tc-numeros-header">
+            <span className="tc-numeros-pretitle">Por que a Evolutec?</span>
+            <h2>Um lugar onde você cresce de verdade</h2>
+            <p>Mais do que um emprego — aqui você encontra propósito, desenvolvimento e uma equipe que torce por você.</p>
+          </div>
+
+          <div className="tc-stats-grid">
+            {[
+              { valor: '8', sufixo: '+', label: 'Unidades no Norte do Brasil' },
+              { valor: '70', sufixo: '+', label: 'Cursos disponíveis' },
+              { valor: '10', sufixo: 'k+', label: 'Alunos transformados' },
+              { valor: '5', sufixo: 'anos', label: 'De crescimento contínuo' },
+            ].map((s, i) => (
+              <div className="tc-stat-card" key={i}>
+                <div className="tc-stat-numero">
+                  <span className="tc-stat-valor">{s.valor}</span>
+                  <span className="tc-stat-sufixo">{s.sufixo}</span>
+                </div>
+                <span className="tc-stat-label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="tc-beneficios-grid">
+            {[
+              {
+                icon: '🚀',
+                titulo: 'Plano de Carreira',
+                desc: 'Crescimento estruturado com promoções reais: Vendedor → Supervisor → Gerente → Diretor.',
+              },
+              {
+                icon: '🎓',
+                titulo: 'Cursos Gratuitos',
+                desc: 'Acesso ilimitado aos cursos Evolutec com certificação internacional pela Faculdade Evolutec.',
+              },
+              {
+                icon: '💰',
+                titulo: 'Remuneração Competitiva',
+                desc: 'Salário base + comissões. Nossos vendedores chegam a R$ 4.000/mês e recebem prêmios por metas.',
+              },
+              {
+                icon: '✈️',
+                titulo: 'Viagens como Prêmio',
+                desc: 'Destinos paradisíacos com hospedagem e alimentação pagos pela empresa para quem bate metas.',
+              },
+              {
+                icon: '🏥',
+                titulo: 'Saúde & Bem-estar',
+                desc: 'Plano de saúde, plano odontológico e desconto especial no Centro de Saúde Estelita do Grupo Evolutec.',
+              },
+              {
+                icon: '🤝',
+                titulo: 'Cultura de Pertencimento',
+                desc: 'Time que celebra conquistas, faz treinamentos juntos e se apoia no dia a dia.',
+              },
+            ].map((b, i) => (
+              <div className="tc-beneficio-card" key={i}>
+                <div className="tc-beneficio-icon">{b.icon}</div>
+                <div>
+                  <h4>{b.titulo}</h4>
+                  <p>{b.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -337,7 +402,7 @@ function TrabalheConosco() {
               <h3>Não encontrou a vaga ideal?</h3>
               <p>Envie seu currículo para o nosso banco de talentos. Quando surgir uma oportunidade alinhada ao seu perfil, entraremos em contato.</p>
             </div>
-            <a href="mailto:rh@evolutec.com.br?subject=Currículo Espontâneo" className="btn-curriculo">
+            <a href="https://rhevolutec.base44.app/InscricaoCandidato" className="btn-curriculo">
               Enviar Currículo Espontâneo
             </a>
           </div>

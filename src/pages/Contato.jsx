@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import './Contato.css'
 
+// 🔴 Cole aqui a URL gerada pelo Google Apps Script
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDRXs5jyX4bYAvT0W6FZ3e_3c03oiWyJTZqfmHrdbnQMyF-UnEDYo-xiqT6dauuNffg/exec'
+
 const cursosOpcoes = [
   'Técnico em Operador de Caixa',
   'Conectividade e Tecnologia',
@@ -19,6 +22,7 @@ function Contato() {
     lgpd: false,
   })
 
+  const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
   const [isVisible, setIsVisible] = useState(false)
   const avatarRef = useRef(null)
 
@@ -49,11 +53,52 @@ function Contato() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const msg = `Olá! Meu nome é ${form.nome}, telefone ${form.telefone}. Tenho interesse no curso: ${form.curso}. Cidade: ${form.cidade}.`
-    const url = `https://wa.me/559140424250?text=${encodeURIComponent(msg)}`
-    window.open(url, '_blank')
+    setStatus('loading')
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // necessário para Apps Script
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome: form.nome,
+          telefone: form.telefone,
+          curso: form.curso,
+          cidade: form.cidade,
+        }),
+      })
+
+      // no-cors não retorna body, então assumimos sucesso se não lançou erro
+      setStatus('success')
+      setForm({ nome: '', telefone: '', curso: '', cidade: '', lgpd: false })
+    } catch (err) {
+      console.error('Erro ao enviar para o Sheets:', err)
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <section className="contato" id="matricule">
+        <div className="contato-container contato-container--success">
+          <div className="contato-success">
+            <div className="contato-success__icon">✅</div>
+            <h2 className="contato-success__titulo">Recebemos seu contato!</h2>
+            <p className="contato-success__texto">
+              Em breve nossa equipe entrará em contato com você pelo WhatsApp.
+            </p>
+            <button
+              className="contato-btn"
+              onClick={() => setStatus('idle')}
+            >
+              Enviar outro contato
+            </button>
+          </div>
+        </div>
+      </section>
+    )
   }
 
   return (
@@ -143,8 +188,14 @@ function Contato() {
               </span>
             </label>
 
-            <button type="submit" className="contato-btn">
-              Quero ser atendido pelo WhatsApp
+            {status === 'error' && (
+              <p className="contato-erro">
+                Ocorreu um erro ao enviar. Tente novamente.
+              </p>
+            )}
+
+            <button type="submit" className="contato-btn" disabled={status === 'loading'}>
+              {status === 'loading' ? 'Enviando...' : 'Quero me matricular!'}
             </button>
           </form>
         </div>

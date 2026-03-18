@@ -15,6 +15,62 @@
   overflow: visible;
 }
 
+/* ===== Tela de sucesso ===== */
+.contato-container--success {
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.contato-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 3rem 2rem;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.contato-success__icon {
+  font-size: 4rem;
+}
+
+.contato-success__titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.contato-success__texto {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  max-width: 420px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Mensagem de erro ===== */
+.contato-erro {
+  color: #ff6b6b;
+  font-size: 0.88rem;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* ===== Botão desabilitado ===== */
+.contato-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* ===== Lado visual (esquerda) ===== */
 .contato-visual {
   position: relative;
@@ -285,6 +341,10 @@
     font-size: 1.75rem;
     text-align: center;
   }
+
+  .contato-success__titulo {
+    font-size: 1.75rem;
+  }
 }
 
 /* Mobile paisagem / tablets pequenos */
@@ -430,6 +490,14 @@
     font-size: 0.95rem;
     padding: 0.85rem 1.5rem;
     border-radius: 12px;
+  }
+
+  .contato-success__titulo {
+    font-size: 1.5rem;
+  }
+
+  .contato-success__texto {
+    font-size: 1rem;
   }
 }
 
