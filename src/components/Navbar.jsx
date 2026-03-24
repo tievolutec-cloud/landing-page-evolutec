@@ -182,13 +182,13 @@ function Navbar() {
           className={`navbar-links${menuOpen ? ' active' : ''}`}
           role="navigation"
         >
-          <li><Link to="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>HOME</Link></li>
+          <li><Link to="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>Home</Link></li>
           <li className={`dropdown${openDropdown === 'conteudos' ? ' is-open' : ''}`}
             onMouseEnter={() => openDropdownDelayed('conteudos')}
             onMouseLeave={closeDropdownDelayed}
           >
             <Link>
-              CONTEÚDOS
+              Conteúdos
             </Link>
             <ul className="dropdown-menu">
               <li>
@@ -212,7 +212,7 @@ function Navbar() {
               to={location.pathname === '/' ? '/#cursos' : '/cursos'} 
               onClick={(e) => { handleCursosClick(e); toggleDropdown('cursos') }}
             >
-              CURSOS
+              Cursos
             </Link>
             <ul className="dropdown-menu">
               <li>
@@ -256,7 +256,7 @@ function Navbar() {
             onMouseEnter={() => openDropdownDelayed('unidades')}
             onMouseLeave={closeDropdownDelayed}
           >
-            <Link to="/unidades" onClick={(e) => { handleAnchorClick(e, '#unidades'); toggleDropdown('unidades') }}>UNIDADES</Link>
+            <Link to="/unidades" onClick={(e) => { handleAnchorClick(e, '#unidades'); toggleDropdown('unidades') }}>Unidades</Link>
             <ul className="dropdown-menu">
               <li>
                 <Link to="/unidades?unidade=1" onClick={() => { closeMenu(); closeDropdown() }}>
@@ -295,8 +295,8 @@ function Navbar() {
               </li>
             </ul>
           </li>
-          <li><Link to="/sobre" onClick={closeMenu}>SOBRE EVOLUTEC</Link></li>
-          <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>MATRICULE-SE</Link></li>
+          <li><Link to="/sobre" onClick={closeMenu}>Sobre Evolutec</Link></li>
+          <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>Matricule-se</Link></li>
           <li className="navbar-btn-item">
             <Link to="/trabalhe-conosco" className="navbar-btn navbar-btn--yellow" onClick={closeMenu}>Trabalhe Conosco</Link>
           </li>
