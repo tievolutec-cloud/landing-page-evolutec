@@ -4,8 +4,8 @@ import './Banner.css'
 const slides = [
   {
     id: 1,
-    imageDesktop: '/banner1.png',
-    imageMobile: '/banner1.png', // Substitua depois pela versão mobile
+    imageDesktop: '/banner1.webp',
+    imageMobile: '/banner1.webp', // Substitua depois pela versão mobile
     title: 'Aprenda Tecnologia na Prática',
     subtitle: 'Cursos de programação, robótica e muito mais para transformar seu futuro.',
     cta: 'Conheça Nossos Cursos',
@@ -13,8 +13,8 @@ const slides = [
   },
   {
     id: 2,
-    imageDesktop: '/banner2.png',
-    imageMobile: '/banner2.png', // Substitua depois pela versão mobile
+    imageDesktop: '/banner2.webp',
+    imageMobile: '/banner2.webp', // Substitua depois pela versão mobile
     title: 'Educação que Transforma',
     subtitle: 'Metodologia inovadora com foco em resultados e aprendizado real.',
     cta: 'Saiba Mais',
@@ -22,8 +22,8 @@ const slides = [
   },
   {
     id: 3,
-    imageDesktop: '/banner3.png',
-    imageMobile: '/banner3.png', // Substitua depois pela versão mobile
+    imageDesktop: '/banner3.webp',
+    imageMobile: '/banner3.webp', // Substitua depois pela versão mobile
     title: 'Matricule-se Agora',
     subtitle: 'Vagas limitadas! Garanta sua vaga e comece sua jornada na tecnologia.',
     cta: 'Matricule-se',
