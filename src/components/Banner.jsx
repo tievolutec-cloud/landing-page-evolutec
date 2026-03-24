@@ -66,9 +66,10 @@ function Banner() {
           >
             <picture>
               <source media="(max-width: 768px)" srcSet={slide.imageMobile} />
-              <img
-                src={slide.imageDesktop}
-                alt={slide.title}
+                <img
+                  src={slide.imageDesktop}
+                  alt={slide.title}
+                  loading="lazy"
                 className="banner-image"
               />
             </picture>

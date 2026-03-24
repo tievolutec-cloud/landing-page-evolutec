@@ -152,7 +152,7 @@ function Navbar() {
           </a>
           <div className="top-bar-right">
             <a href="cta0" className="top-bar-link">
-              VENHA VOCÊ TAMBÉM FAZER PARTE DO EVOLUTEC!
+              Venha você também fazer parte do Evolutec !
             </a>
           </div>
         </div>

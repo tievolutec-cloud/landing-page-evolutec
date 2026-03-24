@@ -1,5 +1,7 @@
 .galeria-section {
   padding: 4rem 0;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: var(--primary-color);
   width: 100%;
 }
