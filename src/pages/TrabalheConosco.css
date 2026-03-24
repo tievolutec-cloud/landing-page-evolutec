@@ -28,7 +28,9 @@
   background-repeat: no-repeat;
   background-position: right 8% bottom;
   background-size: 300px;
-  padding: 90px 24px 80px;
+  height: 55vh;
+  min-height: 400px;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }

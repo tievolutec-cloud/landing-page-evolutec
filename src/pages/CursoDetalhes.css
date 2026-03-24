@@ -79,7 +79,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 6rem 2rem 4rem;
+    height: 55vh;
+    min-height: 400px;
+    padding: 0;
   color: white;
   position: relative;
   overflow: hidden;
