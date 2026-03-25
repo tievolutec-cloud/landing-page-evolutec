@@ -1,7 +1,13 @@
+/* 1. Importação da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
 /* ===== Seção Blog ===== */
 .blog {
   background-color: var(--primary-color);
   padding: 3.5rem 2rem 4rem;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* Header */
@@ -11,6 +17,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .blog-header-left {
@@ -20,6 +27,7 @@
 }
 
 .blog-titulo {
+  font-family: 'Poppins', sans-serif !important;
   font-size: 2.25rem;
   font-weight: 800;
   color: #ffffff;
@@ -27,6 +35,7 @@
 }
 
 .blog-subtitulo {
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
@@ -36,6 +45,7 @@
 
 .blog-ver-mais {
   color: #ffffff;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -105,6 +115,7 @@
 .blog-destaque-tags {
   display: flex;
   gap: 0.6rem;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .blog-tag {
@@ -116,6 +127,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .blog-destaque-titulo {
@@ -123,13 +135,14 @@
   font-weight: 800;
   color: #ffffff;
   line-height: 1.3;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .blog-destaque-subtitulo {
   font-size: 0.9rem;
   color: #ccc;
   line-height: 1.5;
-  font-style: italic;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* ===== Cards laterais (direita) ===== */
@@ -186,10 +199,12 @@
   font-weight: 700;
   border-radius: 5px;
   width: fit-content;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .blog-card-titulo {
   font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif !important;
   font-weight: 700;
   color: var(--primary-color);
   line-height: 1.35;

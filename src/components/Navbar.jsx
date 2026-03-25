@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { MessageCircle, ChevronDown } from 'lucide-react';
@@ -21,23 +20,28 @@ function Navbar() {
   }
   const closeMenu = () => setMenuOpen(false)
 
-  const DROPDOWN_DELAY = 200
+  const DROPDOWN_DELAY = 150
 
-  // Desktop: hover com delay
+  // Desktop: hover com delay — usado tanto no <li> quanto no dropdown-menu
   const openDropdownDelayed = (name) => {
     if (isMobile) return
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
-    dropdownTimeout.current = setTimeout(() => {
-      setOpenDropdown(name)
-    }, DROPDOWN_DELAY)
+    setOpenDropdown(name)
   }
 
+  // Fecha somente depois de um delay, permitindo que o mouse
+  // atravesse o gap entre o trigger e o menu sem fechar
   const closeDropdownDelayed = () => {
     if (isMobile) return
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
     dropdownTimeout.current = setTimeout(() => {
       setOpenDropdown(null)
     }, DROPDOWN_DELAY)
+  }
+
+  // Cancela o fechamento quando o mouse entra no menu (bridge gap)
+  const cancelClose = () => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
   }
 
   // Mobile: toggle por tap
@@ -148,12 +152,9 @@ function Navbar() {
   // Handler para item de dropdown com link + seta no mobile
   const handleDropdownLinkClick = (e, name, linkAction) => {
     if (isMobile) {
-      // No mobile, o toque na seta ou no texto do pai abre/fecha o submenu
-      // apenas o link filho navega
       e.preventDefault()
       toggleDropdown(name)
     } else {
-      // Desktop: executa a ação normal do link
       if (linkAction) linkAction(e)
     }
   }
@@ -177,6 +178,18 @@ function Navbar() {
   if (isMobile) {
     return <NavbarMobile />;
   }
+
+  // Helper: props de hover para cada item de dropdown pai
+  const dropdownProps = (name) => ({
+    onMouseEnter: () => openDropdownDelayed(name),
+    onMouseLeave: closeDropdownDelayed,
+  })
+
+  // Helper: props de hover para o próprio menu (cancela o fechamento)
+  const dropdownMenuProps = () => ({
+    onMouseEnter: cancelClose,
+    onMouseLeave: closeDropdownDelayed,
+  })
 
   return (
     <>
@@ -210,11 +223,11 @@ function Navbar() {
                 Home
               </Link>
             </li>
+
             {/* Dropdown: Conteúdos */}
             <li
               className={`dropdown${openDropdown === 'conteudos' ? ' is-open' : ''}`}
-              onMouseEnter={() => openDropdownDelayed('conteudos')}
-              onMouseLeave={closeDropdownDelayed}
+              {...dropdownProps('conteudos')}
             >
               <div className="dropdown-trigger">
                 <Link
@@ -231,7 +244,7 @@ function Navbar() {
                   <ChevronDown size={16} />
                 </button>
               </div>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu" {...dropdownMenuProps()}>
                 <li>
                   <Link to="/blog" onClick={() => { closeMenu(); closeDropdown() }}>
                     <strong>Blog</strong>
@@ -244,11 +257,11 @@ function Navbar() {
                 </li>
               </ul>
             </li>
+
             {/* Dropdown: Cursos */}
             <li
               className={`dropdown${openDropdown === 'cursos' ? ' is-open' : ''}`}
-              onMouseEnter={() => openDropdownDelayed('cursos')}
-              onMouseLeave={closeDropdownDelayed}
+              {...dropdownProps('cursos')}
             >
               <div className="dropdown-trigger">
                 <Link
@@ -266,7 +279,7 @@ function Navbar() {
                   <ChevronDown size={16} />
                 </button>
               </div>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu" {...dropdownMenuProps()}>
                 {[
                   { categoria: 'GESTÃO', label: 'Gestão' },
                   { categoria: 'SAÚDE', label: 'Saúde' },
@@ -291,11 +304,11 @@ function Navbar() {
                 </li>
               </ul>
             </li>
+
             {/* Dropdown: Unidades */}
             <li
               className={`dropdown${openDropdown === 'unidades' ? ' is-open' : ''}`}
-              onMouseEnter={() => openDropdownDelayed('unidades')}
-              onMouseLeave={closeDropdownDelayed}
+              {...dropdownProps('unidades')}
             >
               <div className="dropdown-trigger">
                 <Link
@@ -313,7 +326,7 @@ function Navbar() {
                   <ChevronDown size={16} />
                 </button>
               </div>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu" {...dropdownMenuProps()}>
                 {[
                   { id: 1, label: 'Castanhal - PA' },
                   { id: 2, label: 'Marapanim - PA' },
@@ -334,6 +347,7 @@ function Navbar() {
                 ))}
               </ul>
             </li>
+
             <li>
               <Link to="/sobre" onClick={closeMenu}>
                 Sobre Evolutec

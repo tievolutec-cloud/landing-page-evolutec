@@ -1,15 +1,17 @@
-﻿/* ===== Seção Depoimentos — Carrossel YouTube ===== */
-
+﻿/* 1. Importação da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root {
   --dep-gap: 1rem;
 }
+
+
 
 .dep-section {
   background: #fff;
   padding: 4rem 2rem 3rem;
   text-align: center;
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* ── Título ── */
@@ -19,6 +21,7 @@
   color: var(--primary-color);
   margin: 0 0 2.5rem;
   line-height: 1.2;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* ── Wrapper do carrossel ── */
@@ -104,8 +107,6 @@
   line-height: 1.35;
   text-align: left;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   overflow: hidden;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }

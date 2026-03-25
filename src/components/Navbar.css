@@ -253,7 +253,6 @@
 
 .navbar-btn {
   display: inline-block;
-  padding: 0.45rem 1.1rem;
   border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
@@ -283,7 +282,6 @@
   font-size: 0.95rem;
   background: var(--highlight-color);
   color: #1a1a1a;
-  border: 2px solid var(--highlight-color);
 }
 
 .navbar-btn--yellow:hover,
@@ -311,13 +309,15 @@
   display: none;
 }
 
+/* ─── Dropdown menu: visibilidade controlada por JS via .is-open ─── */
 .navbar-links .dropdown-menu {
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px); /* pequeno gap visual; coberto pelo pseudo-bridge */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-4px);
   background-color: #ffffff;
   min-width: 250px;
   max-height: 400px;
@@ -327,12 +327,23 @@
   padding: 0.5rem 0;
   z-index: 1000;
   list-style: none;
-  margin-top: 10px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
 }
 
+/* Ponte invisível que preenche o gap entre o trigger e o menu,
+   impedindo que o mouse "caia" fora da área antes de chegar ao menu */
 .navbar-links .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -14px; /* cobre o gap de 8px + margem extra */
+  left: 0;
+  width: 100%;
+  height: 14px;
+}
+
+/* Seta decorativa */
+.navbar-links .dropdown-menu::after {
   content: '';
   position: absolute;
   top: -6px;
@@ -343,22 +354,47 @@
   background-color: #ffffff;
   border-left: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  pointer-events: none;
 }
 
-.navbar-links .dropdown:hover .dropdown-menu {
+/* Aberto via classe .is-open (controlada pelo React) */
+.navbar-links .dropdown.is-open .dropdown-menu {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.2s ease, visibility 0s linear 0s;
-  animation: fadeIn 0.2s ease-in-out;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0s;
+}
+
+/* ─── Hover nos itens do dropdown ─── */
+.navbar-links .dropdown-menu li {
+  position: relative;
 }
 
 .navbar-links .dropdown-menu li a {
   display: flex;
   flex-direction: column;
-  padding: 0.75rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   color: #333;
   text-align: left;
   border-left: 3px solid transparent;
+  transition:
+    background-color 0.18s ease,
+    border-left-color 0.18s ease,
+    padding-left 0.18s ease,
+    color 0.18s ease;
+}
+
+/* Remove o underline animado herdado dos links normais da navbar */
+.navbar-links .dropdown-menu li a::after {
+  display: none !important;
+}
+
+.navbar-links .dropdown-menu li a:hover {
+  background-color: rgba(var(--primary-color-rgb, 21, 80, 160), 0.06);
+  border-left-color: var(--primary-color);
+  padding-left: 1.85rem;
+  color: var(--primary-color);
 }
 
 .navbar-links .dropdown-menu li a strong {
@@ -366,12 +402,24 @@
   font-weight: 500;
   color: var(--primary-color);
   margin-bottom: 0.25rem;
+  transition: color 0.18s ease;
 }
 
 .navbar-links .dropdown-menu li a span {
   font-size: 0.8rem;
   color: #666;
   font-weight: 400;
+}
+
+/* Item "Ver todos" com destaque diferente */
+.dropdown-ver-todos a {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 0.25rem;
+  padding-top: 0.85rem !important;
+}
+
+.dropdown-ver-todos a:hover {
+  background-color: rgba(var(--primary-color-rgb, 21, 80, 160), 0.08) !important;
 }
 
 
@@ -425,7 +473,7 @@
     top: 0;
     right: -100%;
     width: min(320px, 85vw);
-    height: 100vh;           /* Mudado de 200px para 100vh (altura total da tela) */
+    height: 100vh;
   display: flex !important;
   flex-direction: column;
   padding-top: 60px;

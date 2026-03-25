@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* ===== Página de Cursos ===== */
 .cursos-page {
   min-height: 100vh;
@@ -34,6 +36,8 @@
   color: white;
   position: relative;
   overflow: hidden;
+  
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .cursos-page-hero::before {
@@ -55,6 +59,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .cursos-page-hero h1 {
@@ -62,13 +67,14 @@
   font-weight: 900;
   margin: 0 0 1rem 0;
   text-align: center;
-  /* text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); */
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .cursos-page-hero p {
   font-size: 1.25rem;
   opacity: 0.95;
   line-height: 1.6;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* ===== Container Principal ===== */
@@ -112,6 +118,8 @@
 }
 
 .sidebar-header {
+  
+  font-family: 'Poppins', sans-serif !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,6 +129,8 @@
 }
 
 .sidebar-header h3 {
+  
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1.25rem;
   font-weight: 700;
   color: #1F2937;
@@ -131,6 +141,8 @@
 }
 
 .btn-clear-filters {
+  
+  font-family: 'Poppins', sans-serif !important;
   background: none;
   border: none;
   color: var(--secondary-color);
@@ -150,6 +162,8 @@
 }
 
 .filter-group label {
+  
+  font-family: 'Poppins', sans-serif !important;
   display: block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -173,6 +187,8 @@
 }
 
 .search-input {
+  
+  font-family: 'Poppins', sans-serif !important;
   width: 100%;
   padding: 0.75rem 0.75rem 0.75rem 2.5rem;
   border: 2px solid #E5E7EB;
@@ -193,6 +209,8 @@
 }
 
 .filter-btn {
+  
+  font-family: 'Poppins', sans-serif !important;
   width: 100%;
   padding: 0.65rem 1rem;
   background: #F9FAFB;
@@ -237,11 +255,15 @@
 }
 
 .cursos-count {
+  
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1rem;
   color: #6B7280;
 }
 
 .cursos-count strong {
+  
+  font-family: 'Poppins', sans-serif !important;
   color: var(--secondary-color);
   font-size: 1.5rem;
   font-weight: 700;
@@ -254,6 +276,8 @@
 }
 
 .sort-select {
+  
+  font-family: 'Poppins', sans-serif !important;
   padding: 0.65rem 1rem;
   border: 2px solid #E5E7EB;
   border-radius: 8px;
@@ -317,6 +341,7 @@
 
 /* ===== Cards de Curso ===== */
 .curso-card {
+  font-family: 'Poppins', sans-serif !important;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -366,6 +391,8 @@
 }
 
 .curso-card-badge {
+  
+  font-family: 'Poppins', sans-serif !important;
   position: absolute;
   top: 12px;
   left: 12px;
@@ -395,6 +422,8 @@
 }
 
 .curso-card-category {
+  
+  font-family: 'Poppins', sans-serif !important;
   font-size: 0.7rem;
   font-weight: 700;
   color: #6B7280;
@@ -403,6 +432,8 @@
 }
 
 .curso-card-tag {
+  
+  font-family: 'Poppins', sans-serif !important;
   background: var(--action-color);
   color: var(--primary-color);
   padding: 0.25rem 0.75rem;
@@ -412,6 +443,8 @@
 }
 
 .curso-card-title {
+  
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1.25rem;
   font-weight: 700;
   color: #1F2937;
@@ -429,9 +462,7 @@
 
 .curso-card.list .curso-card-description {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -444,6 +475,8 @@
 }
 
 .meta-item {
+  
+  font-family: 'Poppins', sans-serif !important;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -472,23 +505,27 @@
   transition: gap 0.2s;
 }
 
-.curso-card:hover .view-details {
-  /* gap: 0.75rem; */
-}
 
 /* ===== Sem Resultados ===== */
 .no-results {
+  
+  font-family: 'Poppins', sans-serif !important;
   text-align: center;
   padding: 4rem 2rem;
 }
 
 .no-results p {
+  
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1.1rem;
   color: #6B7280;
   margin-bottom: 1.5rem;
 }
 
+
 .btn-clear-filters-main {
+  
+  font-family: 'Poppins', sans-serif !important;
   background: var(--action-color);
   color: var(--primary-color);
   padding: 0.875rem 2rem;
@@ -507,6 +544,8 @@
 
 /* ===== Paginação ===== */
 .cursos-count-page {
+  
+  font-family: 'Poppins', sans-serif !important;
   font-size: 0.875rem;
   color: #9ca3af;
 }
@@ -532,6 +571,8 @@
 }
 
 .pagination-btn {
+  
+  font-family: 'Poppins', sans-serif !important;
   padding: 0.55rem 1.1rem;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
@@ -561,6 +602,8 @@
 }
 
 .pagination-page {
+  
+  font-family: 'Poppins', sans-serif !important;
   width: 38px;
   height: 38px;
   display: inline-flex;
@@ -589,6 +632,8 @@
 }
 
 .pagination-ellipsis {
+  
+  font-family: 'Poppins', sans-serif !important;
   width: 38px;
   text-align: center;
   color: #9ca3af;
