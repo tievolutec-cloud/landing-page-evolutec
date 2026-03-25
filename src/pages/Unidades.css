@@ -1,8 +1,8 @@
 .unidades-page {
   min-height: 100vh;
+  margin-top: 40px;
   background-color: #f9fafb;
   padding-bottom: 4rem;
-  margin-top: 126px;
 }
 
 @media (max-width: 900px) {
@@ -26,7 +26,9 @@
 /* Hero Section */
 .unidades-hero {
   background-color: var(--primary-color); /* Vermelho Evolutec (Updated to Primary) */
-  padding: 4rem 2rem 0; /* Sem padding embaixo para a imagem encostar */
+  height: 55vh;
+  min-height: 400px;
+  padding: 0;
   text-align: left;
   color: white;
   position: relative;

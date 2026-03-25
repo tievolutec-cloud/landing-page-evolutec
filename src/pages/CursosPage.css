@@ -2,7 +2,8 @@
 .cursos-page {
   min-height: 100vh;
   background-color: #f9fafb;
-  margin-top: 126px;
+  margin-top: 88px;
+  align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -26,7 +27,9 @@
 /* ===== Hero Section ===== */
 .cursos-page-hero {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  padding: 6rem 2rem 4rem;
+  height: 55vh;
+  min-height: 400px;
+  padding: 0;
   text-align: center;
   color: white;
   position: relative;
@@ -45,16 +48,20 @@
 }
 
 .cursos-page-hero-content {
-  position: relative;
   z-index: 1;
   max-width: 800px;
-  margin: 0 auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .cursos-page-hero h1 {
   font-size: 3rem;
   font-weight: 900;
   margin: 0 0 1rem 0;
+  text-align: center;
   /* text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); */
 }
 

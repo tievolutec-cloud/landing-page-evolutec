@@ -21,12 +21,14 @@
    ========================================= */
 .sobre-hero {
   position: relative;
-  height: 30vh;
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  height: 55vh;
+  min-height: 400px;
+  padding: 0;
 }
 
 .sobre-overlay {
