@@ -15,25 +15,25 @@
   text-align: center;
   margin-bottom: 3rem;
   max-width: 1200px;
-  font-size: larger;
+  font-size: 1rem;
   margin-left: auto;
   margin-right: auto;
- font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .galeria-title {
-  font-size: 4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--background-color);
   margin-bottom: 1rem;
 }
 
 .galeria-subtitle {
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   color: var(--background-color);
   max-width: 1000px;
   margin: 0 auto;
-  line-height:2;
+  line-height:1.5;
   font-style: bold;
 }
 
@@ -95,6 +95,6 @@
   }
 
   .galeria-title {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 }

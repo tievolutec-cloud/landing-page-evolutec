@@ -51,8 +51,8 @@
 .estat-icon-wrapper {
   background-color: transparent; 
   color: #ffffff;
-  width: 60px; /* Reduced to match smaller text */
-  height: 60px;
+  width: 50px; /* Reduced to match smaller text */
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center; /* Centers the SVG inside the wrapper */
@@ -73,7 +73,7 @@
 }
 
 .estat-number {
-  font-size: 2rem; /* Reduced from 2.5rem */
+  font-size: 1.6rem;
   font-weight: 800;
   color: #fff;
   line-height: 1.1;
@@ -81,7 +81,7 @@
 }
 
 .estat-label {
-  font-size: 0.95rem; /* Reduced from 1.1rem */
+  font-size: 0.9rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.3;

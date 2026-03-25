@@ -51,7 +51,7 @@
   padding: 6px 12px;
   border-radius: 20px;
   font-family: 'Poppins', sans-serif !important;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--card-highlight);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -78,7 +78,7 @@
 
 .category {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-gray);
@@ -89,7 +89,7 @@
 .card-title {
   font-family: 'Poppins', sans-serif !important;
   margin: 0 0 12px 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.4;
@@ -103,7 +103,7 @@
   margin-top: auto; /* Empurra para baixo */
   padding-bottom: 16px;
   border-bottom: 1px solid #f0f0f0;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--text-gray);
 }
 
@@ -136,7 +136,7 @@
   color: var(--text-gray);
   padding: 4px 10px;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   font-family: 'Poppins', sans-serif !important;
 }
@@ -147,7 +147,7 @@
   cursor: pointer;
   color: var(--primary-color);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -182,7 +182,7 @@
 
 .cursos-titulo {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--text-dark);
   margin: 0 0 12px 0;
@@ -190,7 +190,7 @@
 
 .cursos-subtitulo {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: var(--text-gray);
   margin: 0;
 }
@@ -215,9 +215,9 @@
   gap: 0.75rem;
   background: var(--primary-color);
   color: var(--white);
-  padding: 0.9rem 2.5rem;
+  padding: 0.7rem 2rem;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif !important;
   text-decoration: none;
@@ -245,11 +245,11 @@
   }
 
   .cursos-titulo {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   .cursos-subtitulo {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .cursos-grid {

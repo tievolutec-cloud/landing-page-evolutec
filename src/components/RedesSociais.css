@@ -5,7 +5,7 @@
 }
 
 .redes-container {
-  max-width: 1400px;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   gap: 40px;
@@ -68,11 +68,12 @@
 }
 
 .redes-titulo {
-  font-size: 64px;
+  font-size: 44px;
   font-weight: bolder;
   color: var(--primary-color);
   line-height: 1.1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
 }

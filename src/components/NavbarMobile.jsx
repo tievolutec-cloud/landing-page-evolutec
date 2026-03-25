@@ -18,41 +18,39 @@ function Navbar() {
         </button>
       </div>
 
-
-      {/* Removido overlay escuro para manter fundo claro */}
-
+      {/* Overlay escuro — fecha o menu ao clicar fora */}
+      {menuOpen && <div className="navbar-overlay" onClick={closeMenu} />}
 
       <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
-        <li className="drawer-header" style={{ background: '#fff', padding: 0, margin: 0 }}>
-          <img src="/logo-evolutec.png" alt="Logo Evolutec" className="drawer-logo" style={{ width: '100%', background: '#fff', padding: '1.5rem 0', objectFit: 'contain' }} />
+        <li className="drawer-header">
+          <img src="/logo-sidebar.png" alt="Logo Evolutec" className="drawer-logo" />
         </li>
 
-
-        <DrawerItem to="/" icon={<Home size={24} />} title="Home" desc="Página principal" onClick={closeMenu} />
-        <DrawerItem to="/cursos" icon={<GraduationCap size={24} />} title="Cursos" desc="Grade de formações" onClick={closeMenu} />
-        <DrawerItem to="/unidades" icon={<MapPin size={24} />} title="Unidades" desc="Pólos e laboratórios" onClick={closeMenu} />
-        <DrawerItem to="/sobre" icon={<Building2 size={24} />} title="Sobre Nós" desc="Nossa história" onClick={closeMenu} />
-        <DrawerItem to="/blog" icon={<BookOpenText size={24} />} title="Conteúdos" desc="Blog e materiais" onClick={closeMenu} />
+        <DrawerItem to="/" icon={<Home size={20} />} title="Home" desc="Página principal" onClick={closeMenu} />
+        <DrawerItem to="/cursos" icon={<GraduationCap size={20} />} title="Cursos" desc="Grade de formações" onClick={closeMenu} />
+        <DrawerItem to="/unidades" icon={<MapPin size={20} />} title="Unidades" desc="Pólos e laboratórios" onClick={closeMenu} />
+        <DrawerItem to="/sobre" icon={<Building2 size={20} />} title="Sobre Nós" desc="Nossa história" onClick={closeMenu} />
+        <DrawerItem to="/blog" icon={<BookOpenText size={20} />} title="Conteúdos" desc="Blog e materiais" onClick={closeMenu} />
 
         <li className="drawer-action-container">
-          <button className="btn-matricula-drawer"><UserCircle2 size={20} /> Matricule-se</button>
-          <Link to="/trabalhe-conosco" className="btn-trabalhe-drawer" onClick={closeMenu}>Trabalhe Conosco</Link>
+          <button className="btn-matricula-drawer">Matricule-se</button>
+          <button className="btn-trabalhe-drawer">Trabalhe Conosco</button>
         </li>
       </ul>
     </nav>
   );
 }
 
-
-// Sub-componente para manter o alinhamento correto
 const DrawerItem = ({ to, icon, title, desc, onClick }) => (
-  <li style={{ alignItems: 'flex-start' }}>
-    <Link to={to} className="navbar-mobile-link" onClick={onClick} style={{ flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', gap: 0 }}>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', width: '100%' }}>
+  <li>
+    <Link to={to} className="drawer-item" onClick={onClick}>
+      <span className="drawer-item-icon">
         {icon}
-        <span className="navbar-link-title">{title}</span>
       </span>
-      <span className="navbar-link-subtitle">{desc}</span>
+      <span className="drawer-item-text">
+        <span className="drawer-item-title">{title}</span>
+        <span className="drawer-item-desc">{desc}</span>
+      </span>
     </Link>
   </li>
 );

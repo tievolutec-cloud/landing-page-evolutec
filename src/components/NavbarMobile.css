@@ -1,27 +1,21 @@
 /* Configurações da Gaveta Mobile */
 @media (max-width: 1024px) {
   .navbar-links {
-/* Configurações da Gaveta Mobile */
-@media (max-width: 1024px) {
-  .navbar-links {
     position: fixed;
     top: 0;
     right: -100%;
     width: 280px;
     height: 100vh;
     background-color: #ffffff;
-    .drawer-item-desc,
-    .navbar-mobile .navbar-links li {
-      border-bottom: 1.5px solid #e0e4ed;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
-    }
     flex-direction: column;
     z-index: 2000;
     transition: right 0.3s ease;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
   .navbar-links.active {
@@ -32,49 +26,56 @@
   .drawer-header {
     width: 100%;
     height: 110px;
-    background-color: #fff;
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
-    padding: 0;
+    margin-bottom: 0;
+    padding: 0 20px;
+    flex-shrink: 0;
   }
 
   .drawer-logo {
     width: 140px;
     filter: none;
-    background: #fff;
-    padding: 1.5rem 0;
+    
+    padding: 0;
     object-fit: contain;
   }
 
-  /* Item da Lista - O CORAÇÃO DO ALINHAMENTO */
+  /* Item da Lista */
+  .navbar-links li {
+    border-bottom: 1.5px solid #e0e4ed;
+    display: flex;
+    width: 100%;
+  }
+
   .drawer-item {
     display: flex;
-    align-items: center; /* Alinha verticalmente ícone e texto */
+    align-items: center;
     gap: 15px;
-    padding: 12px 20px;
+    padding: 14px 20px;
     text-decoration: none;
-    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
   }
 
   .navbar-mobile .navbar-links li a,
   .navbar-mobile .navbar-btn {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
-    height: auto; 
-    padding: 0.85rem 1.2rem 0.5rem 1.2rem; 
-    font-size: 1rem; 
-    color: #111a31; 
-    text-decoration: none; 
-    background: none; 
-    border: none; 
-    width: 100%; 
-    transition: background 0.18s; 
-    text-align: left; 
-    gap: 0.85rem; 
+    height: auto;
+    padding: 14px 20px;
+    font-size: 1rem;
+    color: #111a31;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    transition: background 0.18s;
+    text-align: left;
+    gap: 15px;
   }
 
   .navbar-mobile .navbar-links li a:hover,
@@ -82,41 +83,31 @@
     background: #f2f6ff;
   }
 
-  .navbar-mobile .navbar-link-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #1742a0;
-    display: block;
-     margin-left: 0;
-  }
-
-  .navbar-mobile .navbar-link-subtitle {
-    font-size: 0.87rem;
-    color: #7b869a;
-    margin-top: 2px;
-    margin-left: 0; 
-    display: block;
-    font-weight: 400;
-  }
-  }
-
+  /* Ícone quadrado estilizado (letra) */
   .drawer-item-icon {
-    color: #ffb800; /* var(--highlight-color) */
+    width: 36px;
+    height: 36px;
+    border-radius: 40px;
+    min-width: 36px;
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;
-    flex-shrink: 0; 
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
   }
 
+  /* Texto do item */
   .drawer-item-text {
     display: flex;
-    flex-direction: column; /* Título em cima da descrição */
+    flex-direction: column;
     text-align: left;
-  } 
+  }
 
   .drawer-item-title {
     font-size: 1rem;
-    font-weight: 600;
-    color: #1a4da3; /* var(--primary-color) */
+    font-weight: 500;
+    color: #111a31;
     line-height: 1.2;
   }
 
@@ -125,38 +116,55 @@
     color: #666;
   }
 
+  /* Títulos de link no mobile */
+  .navbar-mobile .navbar-link-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111a31;
+    display: block;
+    margin-left: 0;
+  }
+
+  .navbar-mobile .navbar-link-subtitle {
+    font-size: 0.87rem;
+    color: #7b869a;
+    margin-top: 2px;
+    margin-left: 0;
+    display: block;
+    font-weight: 400;
+  }
+
   /* Botões de Ação Inferiores */
   .drawer-action-container {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: auto; /* Empurra para o final da gaveta */
+    margin-top: auto;
     padding-bottom: 40px;
+    border-top: 1.5px solid #e0e4ed;
   }
 
   .btn-matricula-drawer {
-    background-color: #ffb800;
-    color: #111a31;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-transform: uppercase;
+  padding: 7px 15px;
+  font-size: 1rem;
+  color: #0f2357;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif !important;
+  background: var(--highlight-color);
+  border: none;
+
   }
 
   .btn-trabalhe-drawer {
-    border: 2px solid #1a4da3;
-    color: #1a4da3;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
+  padding: 7px 15px;
+  font-size: 1rem;
+  color: #ffffff;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif !important;
+  background: var(--primary-color);
+  border: none;
+
   }
 }
 
@@ -165,5 +173,4 @@
   top: 0; left: 0; width: 100%; height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 1999;
-}
 }
