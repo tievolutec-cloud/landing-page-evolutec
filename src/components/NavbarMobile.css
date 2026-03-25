@@ -1,0 +1,169 @@
+/* Configurações da Gaveta Mobile */
+@media (max-width: 1024px) {
+  .navbar-links {
+/* Configurações da Gaveta Mobile */
+@media (max-width: 1024px) {
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    .drawer-item-desc,
+    .navbar-mobile .navbar-links li {
+      border-bottom: 1.5px solid #e0e4ed;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+    flex-direction: column;
+    z-index: 2000;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  /* Cabeçalho do Menu (Imagem de fundo) */
+  .drawer-header {
+    width: 100%;
+    height: 110px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .drawer-logo {
+    width: 140px;
+    filter: none;
+    background: #fff;
+    padding: 1.5rem 0;
+    object-fit: contain;
+  }
+
+  /* Item da Lista - O CORAÇÃO DO ALINHAMENTO */
+  .drawer-item {
+    display: flex;
+    align-items: center; /* Alinha verticalmente ícone e texto */
+    gap: 15px;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .navbar-mobile .navbar-links li a,
+  .navbar-mobile .navbar-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto; 
+    padding: 0.85rem 1.2rem 0.5rem 1.2rem; 
+    font-size: 1rem; 
+    color: #111a31; 
+    text-decoration: none; 
+    background: none; 
+    border: none; 
+    width: 100%; 
+    transition: background 0.18s; 
+    text-align: left; 
+    gap: 0.85rem; 
+  }
+
+  .navbar-mobile .navbar-links li a:hover,
+  .navbar-mobile .navbar-btn:hover {
+    background: #f2f6ff;
+  }
+
+  .navbar-mobile .navbar-link-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1742a0;
+    display: block;
+     margin-left: 0;
+  }
+
+  .navbar-mobile .navbar-link-subtitle {
+    font-size: 0.87rem;
+    color: #7b869a;
+    margin-top: 2px;
+    margin-left: 0; 
+    display: block;
+    font-weight: 400;
+  }
+  }
+
+  .drawer-item-icon {
+    color: #ffb800; /* var(--highlight-color) */
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; 
+  }
+
+  .drawer-item-text {
+    display: flex;
+    flex-direction: column; /* Título em cima da descrição */
+    text-align: left;
+  } 
+
+  .drawer-item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a4da3; /* var(--primary-color) */
+    line-height: 1.2;
+  }
+
+  .drawer-item-desc {
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  /* Botões de Ação Inferiores */
+  .drawer-action-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto; /* Empurra para o final da gaveta */
+    padding-bottom: 40px;
+  }
+
+  .btn-matricula-drawer {
+    background-color: #ffb800;
+    color: #111a31;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+  }
+
+  .btn-trabalhe-drawer {
+    border: 2px solid #1a4da3;
+    color: #1a4da3;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.navbar-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1999;
+}
+}

@@ -1,8 +1,11 @@
 /* ===== Seção Contato ===== */
 .contato {
   background-color: var(--primary-color);
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   overflow: visible;
+  display: flex;
+  align-items: center;
+
   position: relative;
 }
 

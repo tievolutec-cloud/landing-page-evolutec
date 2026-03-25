@@ -1,7 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { MessageCircle } from 'lucide-react'
-import './Navbar.css'
+
+import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { MessageCircle, ChevronDown } from 'lucide-react';
+import './Navbar.css';
+import ContatoModal from './contatoModal';
+import NavbarMobile from './NavbarMobile';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -10,42 +13,45 @@ function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null)
   const dropdownTimeout = useRef(null)
   const location = useLocation()
+  const [showModal, setShowModal] = useState(false)
+  const [contatoModalOpen, setContatoModalOpen] = useState(false)
 
   const toggleMenu = () => {
-    setMenuOpen(prev => {
-      console.log('Menu toggle:', !prev)
-      return !prev
-    })
+    setMenuOpen(prev => !prev)
   }
   const closeMenu = () => setMenuOpen(false)
 
-  const DROPDOWN_DELAY = 200; // ms
+  const DROPDOWN_DELAY = 200
 
+  // Desktop: hover com delay
   const openDropdownDelayed = (name) => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    if (isMobile) return
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
     dropdownTimeout.current = setTimeout(() => {
-      setOpenDropdown(name);
-    }, DROPDOWN_DELAY);
-  };
+      setOpenDropdown(name)
+    }, DROPDOWN_DELAY)
+  }
 
   const closeDropdownDelayed = () => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    if (isMobile) return
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
     dropdownTimeout.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, DROPDOWN_DELAY);
-  };
+      setOpenDropdown(null)
+    }, DROPDOWN_DELAY)
+  }
 
+  // Mobile: toggle por tap
   const toggleDropdown = (name) => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setOpenDropdown(prev => prev === name ? null : name);
-  };
+    if (!isMobile) return
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
+    setOpenDropdown(prev => (prev === name ? null : name))
+  }
 
   const closeDropdown = () => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setOpenDropdown(null);
-  };
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
+    setOpenDropdown(null)
+  }
 
-  // Detecta mudanças no tamanho da tela
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 1024
@@ -54,7 +60,6 @@ function Navbar() {
         closeMenu()
       }
     }
-    
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [menuOpen])
@@ -62,7 +67,9 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const windowHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
       const scroll = `${totalScroll / windowHeight}`
       setScrollProgress(Number(scroll))
     }
@@ -70,7 +77,6 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Scroll para seção quando a URL contém hash
   useEffect(() => {
     if (location.hash) {
       setTimeout(() => {
@@ -82,40 +88,43 @@ function Navbar() {
     }
   }, [location])
 
-  // Fecha o menu ao clicar fora dele em mobile
+  // Fecha o menu ao clicar fora (mobile)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuOpen && !event.target.closest('.navbar-container')) {
         closeMenu()
       }
     }
-
     if (menuOpen) {
       document.addEventListener('click', handleClickOutside)
     }
-
     return () => {
       document.removeEventListener('click', handleClickOutside)
     }
   }, [menuOpen])
 
-  // (Removido: fechamento ao clicar fora da navbar)
+  // Trava o scroll do body quando menu mobile está aberto
+  useEffect(() => {
+    if (menuOpen && isMobile) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen, isMobile])
 
   // Fecha dropdown ao navegar
   useEffect(() => {
     setOpenDropdown(null)
   }, [location])
 
-  // Função para lidar com navegação de âncoras
   const handleAnchorClick = (e, anchor) => {
     closeMenu()
-    
-    // Se o link for para a página de unidades, não faz scroll, apenas redireciona
     if (anchor === '#unidades') {
-      return;
+      return
     }
-    
-    // Se já estamos na home
     if (location.pathname === '/') {
       e.preventDefault()
       const element = document.querySelector(anchor)
@@ -123,14 +132,10 @@ function Navbar() {
         element.scrollIntoView({ behavior: 'smooth' })
       }
     }
-    // Se não estamos na home, deixa o Link redirecionar
   }
 
-  // Função especial para link de cursos
   const handleCursosClick = (e) => {
     closeMenu()
-    
-    // Se estamos na home, scroll para seção
     if (location.pathname === '/') {
       e.preventDefault()
       const element = document.querySelector('#cursos')
@@ -138,7 +143,39 @@ function Navbar() {
         element.scrollIntoView({ behavior: 'smooth' })
       }
     }
-    // Se não estamos na home, vai para página de cursos
+  }
+
+  // Handler para item de dropdown com link + seta no mobile
+  const handleDropdownLinkClick = (e, name, linkAction) => {
+    if (isMobile) {
+      // No mobile, o toque na seta ou no texto do pai abre/fecha o submenu
+      // apenas o link filho navega
+      e.preventDefault()
+      toggleDropdown(name)
+    } else {
+      // Desktop: executa a ação normal do link
+      if (linkAction) linkAction(e)
+    }
+  }
+
+  const openModal = () => {
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
+  const openContatoModal = () => {
+    setContatoModalOpen(true)
+  }
+
+  const closeContatoModal = () => {
+    setContatoModalOpen(false)
+  }
+
+  if (isMobile) {
+    return <NavbarMobile />;
   }
 
   return (
@@ -152,162 +189,191 @@ function Navbar() {
           </a>
           <div className="top-bar-right">
             <a href="cta0" className="top-bar-link">
-              Venha você também fazer parte do Evolutec !
+              Venha você também fazer parte do Evolutec!
             </a>
           </div>
         </div>
       </div>
-      
+
       {/* Main Navbar */}
       <nav className="navbar">
         <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <img src="/logo-evolutec.png" alt="Evolutec Logo" className="logo-img"/>
-        </Link>
-
-        <button 
-          className={`navbar-toggle${menuOpen ? ' open' : ''}`} 
-          onClick={toggleMenu} 
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={menuOpen}
-          aria-controls="navbar-menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-        <ul 
-          id="navbar-menu"
-          className={`navbar-links${menuOpen ? ' active' : ''}`}
-          role="navigation"
-        >
-          <li><Link to="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>Home</Link></li>
-          <li className={`dropdown${openDropdown === 'conteudos' ? ' is-open' : ''}`}
-            onMouseEnter={() => openDropdownDelayed('conteudos')}
-            onMouseLeave={closeDropdownDelayed}
+          <img src="/logo-evolutec.png" alt="Evolutec Logo" className="logo-img" />
+          <Link to="/" className="navbar-logo"></Link>
+          <ul
+            id="navbar-menu"
+            className={`navbar-links`}
+            role="navigation"
           >
-            <Link>
-              Conteúdos
-            </Link>
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/blog" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Blog</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/ebooks" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>E-books</strong>
-                </Link>
-              </li>
-              
-            </ul>
-          </li>
-          <li className={`dropdown${openDropdown === 'cursos' ? ' is-open' : ''}`}
-            onMouseEnter={() => openDropdownDelayed('cursos')}
-            onMouseLeave={closeDropdownDelayed}
-          >
-            <Link 
-              to={location.pathname === '/' ? '/#cursos' : '/cursos'} 
-              onClick={(e) => { handleCursosClick(e); toggleDropdown('cursos') }}
+            <li>
+              <Link to="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>
+                Home
+              </Link>
+            </li>
+            {/* Dropdown: Conteúdos */}
+            <li
+              className={`dropdown${openDropdown === 'conteudos' ? ' is-open' : ''}`}
+              onMouseEnter={() => openDropdownDelayed('conteudos')}
+              onMouseLeave={closeDropdownDelayed}
             >
-              Cursos
-            </Link>
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/cursos?categoria=GESTÃO" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Gestão</strong>
+              <div className="dropdown-trigger">
+                <Link
+                  onClick={(e) => handleDropdownLinkClick(e, 'conteudos', null)}
+                >
+                  Conteúdos
                 </Link>
-              </li>
-              <li>
-                <Link to="/cursos?categoria=SAÚDE" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Saúde</strong>
+                <button
+                  className="dropdown-chevron"
+                  onClick={() => toggleDropdown('conteudos')}
+                  aria-label="Abrir submenu Conteúdos"
+                  tabIndex={-1}
+                >
+                  <ChevronDown size={16} />
+                </button>
+              </div>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/blog" onClick={() => { closeMenu(); closeDropdown() }}>
+                    <strong>Blog</strong>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/ebooks" onClick={() => { closeMenu(); closeDropdown() }}>
+                    <strong>E-books</strong>
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            {/* Dropdown: Cursos */}
+            <li
+              className={`dropdown${openDropdown === 'cursos' ? ' is-open' : ''}`}
+              onMouseEnter={() => openDropdownDelayed('cursos')}
+              onMouseLeave={closeDropdownDelayed}
+            >
+              <div className="dropdown-trigger">
+                <Link
+                  to={location.pathname === '/' ? '/#cursos' : '/cursos'}
+                  onClick={handleCursosClick}
+                >
+                  Cursos
                 </Link>
-              </li>
-              <li>
-                <Link to="/cursos?categoria=TECNOLOGIA" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Tecnologia</strong>
+                <button
+                  className="dropdown-chevron"
+                  onClick={() => toggleDropdown('cursos')}
+                  aria-label="Abrir submenu Cursos"
+                  tabIndex={-1}
+                >
+                  <ChevronDown size={16} />
+                </button>
+              </div>
+              <ul className="dropdown-menu">
+                {[
+                  { categoria: 'GESTÃO', label: 'Gestão' },
+                  { categoria: 'SAÚDE', label: 'Saúde' },
+                  { categoria: 'TECNOLOGIA', label: 'Tecnologia' },
+                  { categoria: 'MARKETING', label: 'Marketing' },
+                  { categoria: 'SEGURANÇA', label: 'Segurança' },
+                  { categoria: 'DESIGN', label: 'Design' },
+                ].map(({ categoria, label }) => (
+                  <li key={categoria}>
+                    <Link
+                      to={`/cursos?categoria=${categoria}`}
+                      onClick={() => { closeMenu(); closeDropdown() }}
+                    >
+                      <strong>{label}</strong>
+                    </Link>
+                  </li>
+                ))}
+                <li className="dropdown-ver-todos">
+                  <Link to="/cursos" onClick={() => { closeMenu(); closeDropdown() }}>
+                    <strong>Ver todos os cursos →</strong>
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            {/* Dropdown: Unidades */}
+            <li
+              className={`dropdown${openDropdown === 'unidades' ? ' is-open' : ''}`}
+              onMouseEnter={() => openDropdownDelayed('unidades')}
+              onMouseLeave={closeDropdownDelayed}
+            >
+              <div className="dropdown-trigger">
+                <Link
+                  to="/unidades"
+                  onClick={(e) => handleAnchorClick(e, '#unidades')}
+                >
+                  Unidades
                 </Link>
-              </li>
-              <li>
-                <Link to="/cursos?categoria=MARKETING" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Marketing</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/cursos?categoria=SEGURANÇA" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Segurança</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/cursos?categoria=DESIGN" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Design</strong>
-                </Link>
-              </li>
-              <li className="dropdown-ver-todos">
-                <Link to="/cursos" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Ver todos os cursos →</strong>
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li className={`dropdown${openDropdown === 'unidades' ? ' is-open' : ''}`}
-            onMouseEnter={() => openDropdownDelayed('unidades')}
-            onMouseLeave={closeDropdownDelayed}
-          >
-            <Link to="/unidades" onClick={(e) => { handleAnchorClick(e, '#unidades'); toggleDropdown('unidades') }}>Unidades</Link>
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/unidades?unidade=1" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Castanhal - PA</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades?unidade=2" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Marapanim - PA</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades?unidade=3" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Curuçá - PA</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades?unidade=4" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Maracanã - PA</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades?unidade=5" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>Irituia - PA</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades?unidade=6" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>São Domingos do Capim - PA</strong>
-                </Link>
-              </li>
-              <li>
-                <Link to="/unidades?unidade=7" onClick={() => { closeMenu(); closeDropdown() }}>
-                  <strong>São Miguel do Guamá - PA</strong>
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li><Link to="/sobre" onClick={closeMenu}>Sobre Evolutec</Link></li>
-          <li><Link to="/#matricule" onClick={(e) => handleAnchorClick(e, '#matricule')}>Matricule-se</Link></li>
-          <li className="navbar-btn-item">
-            <Link to="/trabalhe-conosco" className="navbar-btn navbar-btn--yellow" onClick={closeMenu}>Trabalhe Conosco</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="progress-container">
-        <div className="progress-bar" style={{ width: `${scrollProgress * 100}%` }}></div>
-      </div>
-    </nav>
+                <button
+                  className="dropdown-chevron"
+                  onClick={() => toggleDropdown('unidades')}
+                  aria-label="Abrir submenu Unidades"
+                  tabIndex={-1}
+                >
+                  <ChevronDown size={16} />
+                </button>
+              </div>
+              <ul className="dropdown-menu">
+                {[
+                  { id: 1, label: 'Castanhal - PA' },
+                  { id: 2, label: 'Marapanim - PA' },
+                  { id: 3, label: 'Curuçá - PA' },
+                  { id: 4, label: 'Maracanã - PA' },
+                  { id: 5, label: 'Irituia - PA' },
+                  { id: 6, label: 'São Domingos do Capim - PA' },
+                  { id: 7, label: 'São Miguel do Guamá - PA' },
+                ].map(({ id, label }) => (
+                  <li key={id}>
+                    <Link
+                      to={`/unidades?unidade=${id}`}
+                      onClick={() => { closeMenu(); closeDropdown() }}
+                    >
+                      <strong>{label}</strong>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li>
+              <Link to="/sobre" onClick={closeMenu}>
+                Sobre Evolutec
+              </Link>
+            </li>
+            <li className='navbar-btn-item'>
+              <a
+                href="#abrir-matricula"
+                className="navbar-btn navbar-btn--yellow"
+                onClick={e => { e.preventDefault(); setContatoModalOpen(true); closeMenu(); }}
+                role="menuitem"
+                tabIndex={0}
+              >
+                Matricule-se
+              </a>
+            </li>
+            <li className="navbar-btn-item">
+              <Link
+                to="/trabalhe-conosco"
+                className="navbar-btn navbar-btn--blue"
+                onClick={closeMenu}
+              >
+                Trabalhe Conosco
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="progress-container">
+          <div
+            className="progress-bar"
+            style={{ width: `${scrollProgress * 100}%` }}
+          />
+        </div>
+      </nav>
+      <ContatoModal
+        isOpen={contatoModalOpen}
+        onClose={closeContatoModal}
+      />
     </>
-  )
+  );
 }
 
 export default Navbar

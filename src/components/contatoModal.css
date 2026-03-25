@@ -1,0 +1,251 @@
+/* Importação da Poppins (adicione no topo do seu arquivo CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+/* ===== Configuração Global do Modal ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  /* Aplica Poppins a todos os descendentes */
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-backdrop--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Modal Box ===== */
+.modal-box {
+  position: relative;
+  background-color: #004691;
+  border-radius: 20px;
+  padding: 3.5rem 2.5rem;
+  width: 100%;
+  max-width: 950px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ===== Botão Fechar ===== */
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 30;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+
+/* ===== Layout Container ===== */
+.contato-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5rem;
+}
+
+/* ===== Lado Esquerdo (Avatar e Ícones) ===== */
+.contato-visual {
+  position: relative;
+  flex-shrink: 0;
+  width: 240px; 
+  height: 300px; 
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.contato-avatar {
+  height: 260px; /* Altura reduzida conforme solicitado */
+  width: auto;
+  object-fit: contain;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.contato-avatar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ícones Sociais Flutuantes */
+.contato-social {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.contato-social--whatsapp { 
+  background: #25d366; top: 15px; right: 5%; 
+  animation: float 3s ease-in-out infinite;
+}
+.contato-social--facebook { 
+  background: #1877f2; top: 110px; left: 10%; 
+  animation: float 3.5s ease-in-out infinite;
+}
+.contato-social--instagram { 
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); 
+  bottom: 70px; left: -5%; 
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===== Lado Direito (Formulário) ===== */
+.contato-form-wrapper {
+  flex: 1;
+}
+
+.contato-titulo {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800; /* Peso forte da Poppins */
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contato-form input, 
+.contato-form select {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif; /* Garante a fonte nos inputs */
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.2s;
+}
+
+.contato-form input:focus,
+.contato-form select:focus {
+  outline: none;
+  border-color: #f4d000;
+}
+
+.contato-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.contato-row input, 
+.contato-row select {
+  flex: 1;
+}
+
+.contato-lgpd {
+  display: flex;
+  gap: 0.8rem;
+  color: #ffffffd0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.contato-lgpd input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: #f4d000;
+}
+
+.contato-btn {
+  background-color: #f4d000;
+  color: #000;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+}
+
+.contato-btn:hover:not(:disabled) {
+  background-color: #ffeb3b;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(244, 208, 0, 0.3);
+}
+
+.contato-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Responsivo (Mobile) ===== */
+@media (max-width: 768px) {
+  .contato-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .contato-visual {
+    height: 180px;
+    width: 100%;
+  }
+  
+  .contato-avatar {
+    height: 160px;
+  }
+
+  .contato-titulo {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .contato-row {
+    flex-direction: column;
+  }
+}
