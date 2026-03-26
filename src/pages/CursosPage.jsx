@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { cursosData } from '../data/coursesData';
 import './CursosPage.css';
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 4;
 
 // Ícones
 const SearchIcon = () => (
@@ -188,38 +188,6 @@ function CursosPage() {
               ))}
             </div>
           </div>
-
-          {/* Modalidade */}
-          <div className="filter-group">
-            <label>Modalidade</label>
-            <div className="filter-options">
-              {modes.map(mode => (
-                <button
-                  key={mode}
-                  className={`filter-btn ${selectedMode === mode ? 'active' : ''}`}
-                  onClick={() => setSelectedMode(mode)}
-                >
-                  {mode}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Tipo de Curso */}
-          <div className="filter-group">
-            <label>Tipo de Curso</label>
-            <div className="filter-options">
-              {tags.map(tag => (
-                <button
-                  key={tag}
-                  className={`filter-btn ${selectedTag === tag ? 'active' : ''}`}
-                  onClick={() => setSelectedTag(tag)}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          </div>
         </aside>
 
         {/* Conteúdo Principal */}
@@ -394,17 +362,6 @@ function CursosPage() {
           )}
         </main>
       </div>
-
-      {/* Nova Seção de CTA */}
-      <section className="cursos-page-cta">
-        <div className="cta-content">
-          <h2>Não encontrou o que procurava?</h2>
-          <p>Entre em contato conosco e receba uma orientação personalizada para sua carreira.</p>
-          <Link to="/#matricule" className="btn-cta-contato">
-            Falar com um Consultor
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }

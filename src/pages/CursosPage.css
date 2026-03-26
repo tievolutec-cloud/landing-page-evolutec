@@ -2,8 +2,8 @@
 
 /* ===== Página de Cursos ===== */
 .cursos-page {
-  min-height: 100vh;
-  background-color: #f9fafb;
+  min-height: 88vh;
+  background-color: #e2e2e2;
   margin-top: 88px;
   align-items: center;
 }
@@ -11,6 +11,9 @@
 @media (max-width: 900px) {
   .cursos-page {
     margin-top: 70px;
+  }
+  .cursos-page-hero {
+    height:30vh !important;
   }
 }
 
@@ -28,37 +31,22 @@
 
 /* ===== Hero Section ===== */
 .cursos-page-hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  height: 55vh;
-  min-height: 400px;
+  background-color: var(--primary-color);
+  height: 44vh;
+  min-height: 200px;
   padding: 0;
   text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
+  align-items: center ;
+  color: #E5E7EB;
   
   font-family: 'Poppins', sans-serif !important;
 }
 
-.cursos-page-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.3;
-}
-
 .cursos-page-hero-content {
-  z-index: 1;
-  max-width: 800px;
-  margin-top: 200px;
+  padding-top: 8%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   font-family: 'Poppins', sans-serif !important;
 }
 
@@ -80,7 +68,8 @@
 /* ===== Container Principal ===== */
 .cursos-page-container {
   max-width: 1400px;
-  margin: -3rem auto 0;
+  top: -50px;
+  margin: auto;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 280px 1fr;

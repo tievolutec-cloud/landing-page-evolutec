@@ -1,15 +1,14 @@
 .blog-page {
-  min-height: 100vh;
-  background-color: #f9fafb;
-  padding-top: 126px; /* Espaço para a navbar fixa */
-  padding-bottom: 4rem;
+  min-height: 20vh;
+  background-color: #eeeeee;
+  align-items: center;
 }
 
 .blog-page-header {
+  height: 44vh;
   background-color: var(--primary-color);
   color: white;
   text-align: center;
-  padding: 4rem 2rem;
   margin-bottom: 3rem;
 }
 
@@ -140,12 +139,11 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .blog-page {
-    padding-top: 90px;
+  .blog-page{
+    
   }
-
   .blog-page-header {
-    padding: 3rem 1.5rem;
+    padding-top: 30%;
   }
 
   .blog-page-header h1 {
