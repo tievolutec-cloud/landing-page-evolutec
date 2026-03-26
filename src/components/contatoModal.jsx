@@ -118,10 +118,6 @@ function ContatoModal({ isOpen, onClose }) {
       aria-label="Formulário de contato"
     >
       <div className="modal-box" ref={modalRef}>
-        {/* Botão fechar */}
-        <button className="modal-close" onClick={onClose} aria-label="Fechar modal">
-          ✕
-        </button>
 
         <div className={`contato-container ${status === 'success' ? 'contato-container--success' : ''}`}>
 
