@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Contato } from './contatoModal';
+import ContatoModal from './contatoModal';
 import { Menu, X, Home, GraduationCap, MapPin, Building2, BookOpenText, UserCircle2, Book, ArrowUp } from 'lucide-react';
 import './NavbarMobile.css';
 
@@ -51,15 +51,14 @@ function Navbar() {
           <DrawerItem to="/ebooks" icon={<Book size={20} />} title="Ebooks" desc="Materiais Gratuitos" onClick={closeMenu} />
 
           <li className="drawer-action-container">
-            <button className="btn-matricula-drawer">    <a
-                href="#abrir-matricula"
-                className="navbar-btn navbar-btn--yellow"
-                onClick={e => { e.preventDefault(); setContatoModalOpen(true); closeMenu(); }}
-                role="menuitem"
-                tabIndex={0}
-              >
-                Matricule-se
-              </a></button>
+            <button
+              className="btn-matricula-drawer navbar-btn navbar-btn--yellow"
+              onClick={e => { e.preventDefault(); setContatoModalOpen(true); closeMenu(); }}
+              role="menuitem"
+              tabIndex={0}
+            >
+              Matricule-se
+            </button>
             <button className="btn-trabalhe-drawer">Trabalhe Conosco</button>
           </li>
         </ul>
@@ -69,7 +68,7 @@ function Navbar() {
           <ArrowUp size={28} />
         </button>
       )}
-      {contatoModalOpen && <ContatoModal onClose={() => setContatoModalOpen(false)} />}
+      <ContatoModal isOpen={contatoModalOpen} onClose={() => setContatoModalOpen(false)} />
     </>
   );
 }
@@ -88,46 +87,5 @@ const DrawerItem = ({ to, icon, title, desc, onClick }) => (
   </li>
 );
 
-const ContatoModal = ({ onClose }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você pode enviar os dados para o servidor
-    console.log({ name, email, phone, message });
-    onClose();
-  };
-
-  return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <h2>Contato</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Nome</label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div>
-            <label>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
-          <div>
-            <label>Telefone</label>
-            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          </div>
-          <div>
-            <label>Mensagem</label>
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-          </div>
-          <button type="submit">Enviar</button>
-          <button type="button" onClick={onClose}>Fechar</button>
-        </form>
-      </div>
-    </div>
-  );
-};
 
 export default Navbar;

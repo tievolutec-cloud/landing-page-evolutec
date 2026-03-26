@@ -1,0 +1,34 @@
+/* Todas as classes agora são prefixadas com .modal- para evitar conflito global */
+
+.modal-backdrop { ...existing code from .modal-backdrop... }
+.modal-backdrop--open { ...existing code from .modal-backdrop--open... }
+.modal-box { ...existing code from .modal-box... }
+.modal-close { ...existing code from .modal-close... }
+.modal-close:hover { ...existing code from .modal-close:hover... }
+.modal-container { ...existing code from .contato-container... }
+.modal-visual { ...existing code from .contato-visual... }
+.modal-avatar { ...existing code from .contato-avatar... }
+.modal-avatar.visible { ...existing code from .contato-avatar.visible... }
+.modal-social { ...existing code from .contato-social... }
+.modal-social--whatsapp { ...existing code from .contato-social--whatsapp... }
+.modal-social--facebook { ...existing code from .contato-social--facebook... }
+.modal-social--instagram { ...existing code from .contato-social--instagram... }
+.modal-form-wrapper { ...existing code from .contato-form-wrapper... }
+.modal-titulo { ...existing code from .contato-titulo... }
+.modal-form { ...existing code from .contato-form... }
+.modal-form input, .modal-form select { ...existing code from .contato-form input, .contato-form select... }
+.modal-form input:focus, .modal-form select:focus { ...existing code from .contato-form input:focus, .contato-form select:focus... }
+.modal-row { ...existing code from .contato-row... }
+.modal-row input, .modal-row select { ...existing code from .contato-row input, .contato-row select... }
+.modal-lgpd { ...existing code from .contato-lgpd... }
+.modal-lgpd input { ...existing code from .contato-lgpd input... }
+.modal-btn { ...existing code from .contato-btn... }
+.modal-btn:hover:not(:disabled) { ...existing code from .contato-btn:hover:not(:disabled)... }
+.modal-btn:disabled { ...existing code from .contato-btn:disabled... }
+.modal-success { ...existing code from .contato-success... }
+.modal-success__icon { ...existing code from .contato-success__icon... }
+.modal-success__titulo { ...existing code from .contato-success__titulo... }
+.modal-success__texto { ...existing code from .contato-success__texto... }
+.modal-erro { ...existing code from .contato-erro... }
+
+/* Inclua também as media queries, trocando os seletores para .modal- */

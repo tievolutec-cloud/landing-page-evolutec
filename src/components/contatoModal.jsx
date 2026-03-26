@@ -29,7 +29,6 @@ function ContatoModal({ isOpen, onClose }) {
   // Anima o avatar quando o modal abre
   useEffect(() => {
     if (isOpen) {
-      // Pequeno delay para a transição de entrada do modal ocorrer primeiro
       const timer = setTimeout(() => setIsVisible(true), 300)
       return () => clearTimeout(timer)
     } else {
@@ -57,6 +56,7 @@ function ContatoModal({ isOpen, onClose }) {
       document.body.style.overflow = ''
     }
   }, [isOpen])
+
 
   // Reseta o status ao fechar
   useEffect(() => {
@@ -123,7 +123,6 @@ function ContatoModal({ isOpen, onClose }) {
           ✕
         </button>
 
-        {/* Conteúdo do modal — mesma estrutura do Contato.jsx */}
         <div className={`contato-container ${status === 'success' ? 'contato-container--success' : ''}`}>
 
           {status === 'success' ? (
