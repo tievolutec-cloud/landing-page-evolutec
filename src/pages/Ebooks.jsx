@@ -8,6 +8,10 @@ import '../components/DownloadModal.css';
 /* ── estado inicial do formulário ── */
 const FORM_INICIAL = { nome: '', email: '', telefone: '', empresa: '' };
 
+/* 🔗 Cole aqui a URL gerada pelo Google Apps Script */
+const GOOGLE_SHEET_WEBHOOK =
+  'https://script.google.com/macros/s/AKfycbxFvKdA97sUPLt5QVARw5FBfCBFkTvSwOnjckF0ImRcRFgElXO1ibsUDznSUc5Heluklg/exec';
+
 /* ── validação ── */
 function validar(formData) {
   const erros = {};
@@ -64,7 +68,6 @@ function Ebooks() {
   /* ── atualiza campo do formulário ── */
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    // limpa o erro do campo ao digitar
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
@@ -81,21 +84,26 @@ function Ebooks() {
     setLoading(true);
 
     try {
-      /*
-       * 🔌 Aqui você pode chamar sua API / CRM / planilha para salvar o lead.
-       *    Exemplo:
-       *
-       *    await fetch('/api/leads', {
-       *      method: 'POST',
-       *      headers: { 'Content-Type': 'application/json' },
-       *      body: JSON.stringify({ ...formData, ebook: ebookSelecionado.titulo }),
-       *    });
-       *
-       * Por ora, simulamos um delay de 800ms.
-       */
-      await new Promise((res) => setTimeout(res, 800));
+      /* 🔗 Envia o lead para o Google Sheets via Apps Script */
+      await fetch(GOOGLE_SHEET_WEBHOOK, {
+        method: 'POST',
+        /*
+         * O Apps Script não suporta Content-Type: application/json com CORS
+         * em modo "no-cors", então usamos text/plain e parseamos no script.
+         * O fetch com mode: 'no-cors' não retorna a resposta, mas o dado é
+         * registrado normalmente na planilha.
+         */
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          nome:     formData.nome,
+          email:    formData.email,
+          telefone: formData.telefone,
+          ebook:    ebookSelecionado.titulo,
+        }),
+      });
 
-      // dispara o download programaticamente
+      /* dispara o download programaticamente */
       const link = document.createElement('a');
       link.href     = ebookSelecionado.downloadUrl;
       link.download = '';
@@ -160,11 +168,6 @@ function Ebooks() {
                   <p className="ebook-descricao">{ebook.descricao}</p>
                   <span className="ebook-paginas">{ebook.paginas} páginas</span>
 
-                  {/*
-                   * ⚡ Substituímos o <a download> por um <button> que
-                   *    abre o modal. O download só ocorre após o formulário
-                   *    ser validado e enviado.
-                   */}
                   <button
                     className="ebook-download-btn"
                     onClick={() => abrirModal(ebook)}
