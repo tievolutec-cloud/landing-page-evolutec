@@ -21,7 +21,7 @@ export const ebooksData = [
     descricao: 'Informações práticas para quem deseja atuar como atendente de farmácia. Dicas sobre atendimento, organização e segurança no ambiente farmacêutico.',
     categoria: 'Saúde',
     capa: '/guia-para-atendente-de-farmacia.png',
-    downloadUrl: '/guia-para-atendente-de-farmacia.png', // ⚠️ PDF não encontrado no repositório
+    downloadUrl: '/Ebook O Guia para Começar a Trabalhar em Farmácias do Zero .pdf',
   },
   {
     id: 4,
