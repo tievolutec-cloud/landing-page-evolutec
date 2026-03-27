@@ -1,12 +1,12 @@
 export const ebooksData = [
   {
     id: 1,
-    titulo: 'Guia Prático de Inteligência Artificial para Iniciantes',
-    descricao: 'Introdução clara e acessível à inteligência artificial, ideal para iniciantes. Explica conceitos, algoritmos e aplicações com exemplos práticos.',
-    categoria: 'Tecnologia',
-    capa: '/guia-pratico-de-inteligencia-artificial-para-iniciantes.png',
-    downloadUrl: '/Como usar IA para estudar, trabalhar e criar novas oportunidades no mercado de trabalho moderno..pdf',
-  },
+    titulo: 'Guia para atendente de farmácia',
+    descricao: 'Informações práticas para quem deseja atuar como atendente de farmácia. Dicas sobre atendimento, organização e segurança no ambiente farmacêutico.',
+    categoria: 'Saúde',
+    capa: '/guia-para-atendente-de-farmacia.png',
+    downloadUrl: '/Ebook O Guia para Começar a Trabalhar em Farmácias do Zero .pdf',
+  },  
   {
     id: 2,
     titulo: 'Passo a passo para se tornar um vendedor profissional',
@@ -15,13 +15,14 @@ export const ebooksData = [
     capa: '/passo-a-passo-vendedor-profissional.png',
     downloadUrl: '/Ebook passo a passo para se tornar um vendedor profissional.pdf',
   },
+
   {
     id: 3,
-    titulo: 'Guia para atendente de farmácia',
-    descricao: 'Informações práticas para quem deseja atuar como atendente de farmácia. Dicas sobre atendimento, organização e segurança no ambiente farmacêutico.',
-    categoria: 'Saúde',
-    capa: '/guia-para-atendente-de-farmacia.png',
-    downloadUrl: '/Ebook O Guia para Começar a Trabalhar em Farmácias do Zero .pdf',
+    titulo: 'Guia Prático de Inteligência Artificial para Iniciantes',
+    descricao: 'Introdução clara e acessível à inteligência artificial, ideal para iniciantes. Explica conceitos, algoritmos e aplicações com exemplos práticos.',
+    categoria: 'Tecnologia',
+    capa: '/guia-pratico-de-inteligencia-artificial-para-iniciantes.png',
+    downloadUrl: '/Como usar IA para estudar, trabalhar e criar novas oportunidades no mercado de trabalho moderno..pdf',
   },
   {
     id: 4,
