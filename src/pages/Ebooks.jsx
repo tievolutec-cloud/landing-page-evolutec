@@ -166,7 +166,6 @@ function Ebooks() {
                   </span>
                   <h3 className="ebook-titulo">{ebook.titulo}</h3>
                   <p className="ebook-descricao">{ebook.descricao}</p>
-                  <span className="ebook-paginas">{ebook.paginas} páginas</span>
 
                   <button
                     className="ebook-download-btn"
