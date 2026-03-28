@@ -62,12 +62,13 @@
 .unidades-hero h1 {
   font-family: 'poppins', sans-serif;
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 600;
   margin: 0 0 0.5rem 0;
   text-shadow: none;
 }
 
 .unidades-hero p {
+  text-align: center;
   font-size: 1.25rem;
   opacity: 0.95;
   line-height: 1.6;
@@ -97,6 +98,7 @@
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.24);
   display: flex;
+  align-items: center;
   flex-direction: column;
   font-size: 1.15rem;
   color: rgba(255, 255, 255, 0.85);
