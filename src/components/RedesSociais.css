@@ -35,11 +35,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon svg {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 .social-icon:hover {
@@ -154,20 +159,17 @@
   margin-bottom: 10px;
 }
 
-.action-icons i {
-  font-size: 22px;
+.action-icons svg {
+  width: 22px;
+  height: 22px;
   color: #333;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.action-icons i:hover {
+.action-icons svg:hover {
   color: #76b82a;
   transform: scale(1.2);
-}
-
-.action-icons .fa-heart:hover {
-  color: #e74c3c;
 }
 
 .post-date {
