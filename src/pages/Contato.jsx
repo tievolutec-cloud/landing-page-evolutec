@@ -109,7 +109,7 @@ function Contato() {
           <div className="contato-card-bg" />
           <img
             ref={avatarRef}
-            src="/mascote.png"
+            src="/mascote.webp"
             alt="Mascote Evolutec"
             className={`contato-avatar ${isVisible ? 'visible' : ''}`}
           />

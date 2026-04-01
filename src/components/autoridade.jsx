@@ -11,12 +11,12 @@ const HeroEducation = () => {
   ];
 
   const graduationImages = [
-    "formatura.jpeg",
-    "formatura2.jpeg",
-    "formatura3.jpeg",
-    "formatura4.jpeg",
-    "formatura5.jpeg",
-    "formatura6.jpeg",
+    "formatura.webp",
+    "formatura2.webp",
+    "formatura3.webp",
+    "formatura4.webp",
+    "formatura5.webp",
+    "formatura6.webp",
 
   ];
 

@@ -1,7 +1,7 @@
 export const blogData = [
   {
         id: 'caminhos-apos-ensino-medio',
-        imagem: '/Ensino-medio-6-maneiras.jpg',
+  imagem: '/Ensino-medio-6-maneiras.webp',
         tags: ['#CARREIRA', '#EDUCAÇÃO'],
         titulo: 'O Que Fazer Depois do Ensino Médio? 6 Caminhos Para Começar a Carreira',
         subtitulo: 'Veja opções para iniciar a carreira e se preparar para o mercado de trabalho.',
@@ -29,7 +29,7 @@ export const blogData = [
     },
     {
       id: 'profissoes-crescimento-2026',
-      imagem: '/10-profissoes-que-crescem-2026.jpg',
+      imagem: '/10-profissoes-que-crescem-2026.webp',
       tags: ['#CARREIRA', '#OPORTUNIDADE'],
       titulo: '10 Profissões que Devem Crescer Muito no Brasil em 2026 (Mesmo Sem Faculdade)',
       subtitulo: 'Veja áreas promissoras para quem busca qualificação prática e oportunidades de emprego.',
@@ -60,7 +60,7 @@ export const blogData = [
   },
   {
     id: 'formatura-setembro',
-    imagem: '/formatura.jpeg',
+    imagem: '/formatura.webp',
     tags: ['#FORMATURA', '#ALUNOS'],
     titulo: 'Formatura evolutec setembro',
     subtitulo: 'Mais uma turma de profissionais prontos para o mercado.',
@@ -74,7 +74,7 @@ export const blogData = [
   },
   {
     id: 'faculdade-vs-profissionalizante-2026',
-    imagem: '/vale-mais-faculdade-ou-profissional.jpg',
+    imagem: '/vale-mais-faculdade-ou-profissional.webp',
     tags: ['#CARREIRA', '#ORIENTAÇÃO'],
     titulo: 'Vale Mais a Pena Fazer Faculdade ou Curso Profissionalizante em 2026?',
     subtitulo: 'Entenda as diferenças e escolha o melhor caminho para sua carreira.',
@@ -84,7 +84,7 @@ export const blogData = [
   },
   {
       id: 'primeiro-emprego-habilidades',
-      imagem: '/primeiro-emprego.png',
+      imagem: '/primeiro-emprego.webp',
       tags: ['#CARREIRA', '#DICAS'],
       titulo: 'Primeiro Emprego: 8 Habilidades que as Empresas Mais Procuram em Jovens',
       subtitulo: 'Descubra quais competências aumentam suas chances de conquistar a primeira vaga.',
@@ -119,7 +119,7 @@ export const blogData = [
   },
   {
     id: 'ia-empregos-2030',
-    imagem: '/inteligencia-vai-tirar-empregos.jpg',
+    imagem: '/inteligencia-vai-tirar-empregos.webp',
     tags: ['#TECNOLOGIA', '#MERCADO'],
     titulo: 'Inteligência Artificial Vai Tirar Empregos? Veja as Profissões que Devem Crescer',
     subtitulo: 'Descubra como a IA está transformando o mercado de trabalho e quais áreas vão crescer.',

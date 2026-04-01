@@ -4,17 +4,17 @@ function RedesSociais() {
   const posts = [
     {
       id: 1,
-      imagem: '/instagram1.png',
+      imagem: '/instagram1.webp',
       data: '14 de fevereiro de 2026'
     },
     {
       id: 2,
-      imagem: '/instagram2.png',
+      imagem: '/instagram2.webp',
       data: '14 de fevereiro de 2026'
     },
     {
       id: 3,
-      imagem: '/instagram3.png',
+      imagem: '/instagram3.webp',
       data: '14 de fevereiro de 2026'
     }
   ];

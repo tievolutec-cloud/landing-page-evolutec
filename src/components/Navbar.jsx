@@ -69,16 +69,50 @@ function Navbar() {
   }, [menuOpen])
 
   useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollTop
-      const windowHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-      const scroll = `${totalScroll / windowHeight}`
-      setScrollProgress(Number(scroll))
+    const maxScrollRef = { current: 1 }
+    const pendingProgressRef = { current: 0 }
+    const lastProgressRef = { current: -1 }
+    let rafId = 0
+
+    const updateMaxScroll = () => {
+      const doc = document.documentElement
+      maxScrollRef.current = Math.max(1, doc.scrollHeight - doc.clientHeight)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    const commitProgress = () => {
+      rafId = 0
+      const next = pendingProgressRef.current
+      if (Math.abs(next - lastProgressRef.current) < 0.001) return
+      lastProgressRef.current = next
+      setScrollProgress(next)
+    }
+
+    const handleScroll = () => {
+      const doc = document.documentElement
+      const scrollTop = doc.scrollTop || window.scrollY || 0
+      const next = Math.max(0, Math.min(1, scrollTop / maxScrollRef.current))
+      pendingProgressRef.current = next
+      if (rafId) return
+      rafId = window.requestAnimationFrame(commitProgress)
+    }
+
+    const handleResize = () => {
+      updateMaxScroll()
+      handleScroll()
+    }
+
+    updateMaxScroll()
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleResize, { passive: true })
+    window.addEventListener('load', handleResize, { once: true, passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+      if (rafId) window.cancelAnimationFrame(rafId)
+    }
   }, [])
 
   useEffect(() => {
@@ -211,7 +245,7 @@ function Navbar() {
       {/* Main Navbar */}
       <nav className="navbar">
         <div className="navbar-container">
-          <img src="/logo-evolutec.png" alt="Evolutec Logo" className="logo-img" />
+          <img src="/logo-evolutec.webp" alt="Evolutec Logo" className="logo-img" />
           <Link to="/" className="navbar-logo"></Link>
           <ul
             id="navbar-menu"

@@ -206,7 +206,7 @@ const Sobre = () => {
 
           <div className="units-content-wrapper">
             <div className="units-map-image">
-              <img src="/mapa-pará-escola.png" alt="Mapa de atuação Evolutec no Pará" />
+              <img src="/mapa-pará-escola.webp" alt="Mapa de atuação Evolutec no Pará" />
             </div>
 
             <div className="units-list-container">

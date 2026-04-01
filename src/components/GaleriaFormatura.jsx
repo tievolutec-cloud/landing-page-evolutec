@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react'
 import './GaleriaFormatura.css'
 
 const allImages = [
-  { id: 1, src: '/formatura6.jpeg', alt: 'Formatura Turma 2024', type: 'large' },
-  { id: 2, src: '/formatura5.jpeg', alt: 'Momentos Especiais', type: 'standard' },
-  { id: 3, src: '/formatura3.jpeg', alt: 'Novos Profissionais', type: 'standard' },
-  { id: 4, src: '/formatura4.jpeg', alt: 'Orgulho Evolutec', type: 'standard' },
-  { id: 5, src: '/formatura2.jpeg', alt: 'Conquista', type: 'standard' },
-  { id: 6, src: '/formatura.jpeg', alt: 'Formatura Geral', type: 'large' },
-  { id: 7, src: '/a.jpg', alt: 'Evento Evolutec', type: 'standard' },
-  { id: 8, src: '/b.jpg', alt: 'Alunos Evolutec', type: 'standard' },
-  { id: 9, src: '/c.jpg', alt: 'Confraternização', type: 'standard' },
+  { id: 1, src: '/formatura6.webp', alt: 'Formatura Turma 2024', type: 'large' },
+  { id: 2, src: '/formatura5.webp', alt: 'Momentos Especiais', type: 'standard' },
+  { id: 3, src: '/formatura3.webp', alt: 'Novos Profissionais', type: 'standard' },
+  { id: 4, src: '/formatura4.webp', alt: 'Orgulho Evolutec', type: 'standard' },
+  { id: 5, src: '/formatura2.webp', alt: 'Conquista', type: 'standard' },
+  { id: 6, src: '/formatura.webp', alt: 'Formatura Geral', type: 'large' },
+  { id: 7, src: '/a.webp', alt: 'Evento Evolutec', type: 'standard' },
+  { id: 8, src: '/b.webp', alt: 'Alunos Evolutec', type: 'standard' },
+  { id: 9, src: '/c.webp', alt: 'Confraternização', type: 'standard' },
 ]
 
 // Define slots and their required image type

@@ -4,9 +4,9 @@ import 'leaflet/dist/leaflet.css'
 import './Mapa.css'
 import L from 'leaflet'
 
-// Criar um ícone customizado usando a imagem pin.png
+// Criar um ícone customizado usando a imagem pin.webp
 const customIcon = L.icon({
-  iconUrl: '/pin.png',
+  iconUrl: '/pin.webp',
   iconSize: [45, 45],
   iconAnchor: [20, 40],
   popupAnchor: [0, -40]

@@ -8,7 +8,7 @@ const depoimentos = [
     texto:
       'A jornada de Taiana, uma jovem que enfrenta grandes desafios de locomoção e financeiros para estudar informática, mostrando a importância da perseverança e do apoio familiar para alcançar seus sonhos. Ela é um exemplo de dedicação, superando obstáculos diários para construir seu futuro.',
     videoId: 'lOUrBKfGwhk',
-    imagem: '/banner-video-depoimento.png',
+    imagem: '/banner-video-depoimento.webp',
   },
   {
     nome: 'Maria Clara Figueiredo',
@@ -16,7 +16,7 @@ const depoimentos = [
     texto:
       'Com apenas 16 anos, já sabia em qual área seguir no mercado de trabalho: Enfermagem. Através da Evolutec, iniciou sua formação técnica e teve a oportunidade de aprender sobre o corpo humano e processos clínicos nas aulas teóricas e práticas.',
     videoId: 'lOUrBKfGwhk',
-    imagem: '/formatura.jpeg',
+    imagem: '/formatura.webp',
   },
   {
     nome: 'João Victor Andrade',
@@ -24,7 +24,7 @@ const depoimentos = [
     texto:
       'O curso mudou completamente minha visão sobre o mercado. Hoje trabalho numa grande empresa do setor e devo muito ao aprendizado que tive aqui. A Evolutec me preparou de verdade para o mundo profissional.',
     videoId: 'lOUrBKfGwhk',
-    imagem: '/formatura2.jpeg',
+    imagem: '/formatura2.webp',
   },
 ]
 

@@ -29,7 +29,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <img src="/logo-evolutec.png" alt="Evolutec Logo" className="logo-img" />
+          <img src="/logo-evolutec.webp" alt="Evolutec Logo" className="logo-img" />
           <button className="navbar-toggle" onClick={toggleMenu}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -40,7 +40,7 @@ function Navbar() {
 
         <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
           <li className="drawer-header">
-            <img src="/logo-sidebar.png" alt="Logo Evolutec" className="drawer-logo" />
+            <img src="/logo-sidebar.webp" alt="Logo Evolutec" className="drawer-logo" />
           </li>
 
           <DrawerItem to="/" icon={<Home size={20} />} title="Home" desc="Página principal" onClick={closeMenu} />
