@@ -10,7 +10,13 @@
 .top-bar-link,
 .btn-red,
 .btn-yellow,
-.navbar-links li a {
+.navbar-links li a,
+.drawer-item,
+.drawer-item-title,
+.drawer-item-desc,
+.drawer-action-container,
+.navbar-toggle,
+.btn-scroll-top {
   font-family: 'Poppins', sans-serif !important;
 }
 

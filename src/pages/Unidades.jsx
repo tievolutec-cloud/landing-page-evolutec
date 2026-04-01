@@ -26,7 +26,7 @@ function Unidades() {
         <div className="unidades-hero-content">
           <div className="unidades-hero-text">
             <h1>Conheça as nossas Unidades</h1>
-            <p>Estamos localizados nas principais cidades do Pará</p>
+            <p>Evolutec • Unidades</p>
             {poloAtivo && poloAtivo.id !== 'todos' && (
               <div className="hero-polo-endereco">
                 <strong>{poloAtivo.nome}</strong>

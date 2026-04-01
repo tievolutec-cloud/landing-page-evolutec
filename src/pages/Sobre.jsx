@@ -58,6 +58,7 @@ const Sobre = () => {
 
   return (
     <div className="sobre-page">
+
       {/* 1. Hero / Banner Section */}
       <section className="sobre-hero">
         <div className="sobre-overlay"></div>
@@ -82,33 +83,36 @@ const Sobre = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="about-text">
             <span className="section-subtitle">SOBRE A EVOLUTEC</span>
-            <h2 className="section-title">O caminho mais rápido para o seu <span className="highlight">sucesso profissional</span></h2>
+            <h2 className="section-title">
+              O caminho mais rápido para o seu{' '}
+              <span className="highlight">sucesso profissional</span>
+            </h2>
             <p className="section-desc">
               A Evolutec é referência em ensino profissionalizante no Pará, transformando vidas através da educação. 
               Nosso objetivo é preparar jovens e adultos para os desafios do mercado de trabalho com excelência e inovação.
             </p>
-            
+
             <div className="about-features">
               <div className="feature-col">
                 <div className="feature-item">
-                  <CheckCircle size={20} className="check-icon" />
+                  <CheckCircle size={18} className="check-icon" />
                   <span>Metodologia Prática</span>
                 </div>
                 <div className="feature-item">
-                  <CheckCircle size={20} className="check-icon" />
+                  <CheckCircle size={18} className="check-icon" />
                   <span>Certificado Reconhecido</span>
                 </div>
               </div>
               <div className="feature-col">
                 <div className="feature-item">
-                  <CheckCircle size={20} className="check-icon" />
+                  <CheckCircle size={18} className="check-icon" />
                   <span>Professores Especialistas</span>
                 </div>
                 <div className="feature-item">
-                  <CheckCircle size={20} className="check-icon" />
+                  <CheckCircle size={18} className="check-icon" />
                   <span>Aulas Dinâmicas</span>
                 </div>
               </div>
@@ -123,7 +127,7 @@ const Sobre = () => {
               <div className="google-rating-right">
                 <div className="google-rating-stars">
                   {[1,2,3,4,5].map(i => (
-                    <Star key={i} size={22} className={i <= 4 ? 'star-filled' : 'star-half'} />
+                    <Star key={i} size={20} className={i <= 4 ? 'star-filled' : 'star-half'} />
                   ))}
                 </div>
                 <div className="google-rating-text">
@@ -140,35 +144,39 @@ const Sobre = () => {
 
       {/* 3. Stats Bar */}
       <Estatisticas />
-      <InfoCards/>
+      <InfoCards />
+
       {/* 4. Mission Section (Text Left, Image Right) */}
       <section className="sobre-mission-section">
         <div className="container mission-container">
           <div className="mission-text">
-            <span className="section-subtitle">NOSSA MISSÃO</span>
-            <h2 className="section-title">Nosso principal objetivo é qualificar você para o <span className="highlight-alt">Futuro</span></h2>
-            
+            <span className="section-subtitle">NOSSA ESSÊNCIA</span>
+            <h2 className="section-title">
+              Nosso principal objetivo é qualificar você para o{' '}
+              <span className="highlight-alt">Futuro</span>
+            </h2>
+
             <div className="mission-tabs">
-              <button 
+              <button
                 className={`tab-btn ${activeTab === 'missao' ? 'active' : ''}`}
                 onClick={() => setActiveTab('missao')}
               >
                 Nossa Missão
               </button>
-              <button 
+              <button
                 className={`tab-btn ${activeTab === 'visao' ? 'active' : ''}`}
                 onClick={() => setActiveTab('visao')}
               >
                 Nossa Visão
               </button>
-              <button 
+              <button
                 className={`tab-btn ${activeTab === 'valores' ? 'active' : ''}`}
                 onClick={() => setActiveTab('valores')}
               >
                 Valores
               </button>
             </div>
-            
+
             {renderTabContent()}
           </div>
 
@@ -182,11 +190,17 @@ const Sobre = () => {
       <section className="sobre-units-section">
         <div className="container">
           <div className="units-header">
-            <span className="section-subtitle">NOSSAS UNIDADES</span>
-            <h2 className="section-title">Estamos perto de <span className="highlight">você</span></h2>
-            <p className="section-desc">Encontre a unidade Evolutec mais próxima e comece sua transformação profissional hoje mesmo.</p>
+            <span className="section-subtitle" style={{ color: 'rgba(255,175,0,0.8)', justifyContent: 'center' }}>
+              NOSSAS UNIDADES
+            </span>
+            <h2 className="section-title">
+              Estamos perto de <span className="highlight">você</span>
+            </h2>
+            <p className="section-desc">
+              Encontre a unidade Evolutec mais próxima e comece sua transformação profissional hoje mesmo.
+            </p>
           </div>
-          
+
           <div className="units-content-wrapper">
             <div className="units-map-image">
               <img src="/mapa-pará-escola.png" alt="Mapa de atuação Evolutec no Pará" />
@@ -194,60 +208,52 @@ const Sobre = () => {
 
             <div className="units-list-container">
               <ul className="units-list">
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">Castanhal</span>
-                    <span className="unit-address">Tv. Cônego Luíz Leitão, 2479 - Centro, Castanhal - PA, 68743-020</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">Marapanim</span>
-                    <span className="unit-address">R. Edmundo Botelho, 544 - Centro, Marapanim - PA, 68760-000</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">Curuçá</span>
-                    <span className="unit-address">Tv. Sete de Setembro, 151 - Centro, Curuçá - PA, 68750-000</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">Maracanã</span>
-                    <span className="unit-address">Rua Cantidio Guimarães, Tv. Ernesto Gomes, 53 - Qd 44 - Centro, Maracanã - PA, 68710-000</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">Irituia</span>
-                    <span className="unit-address">Tv. Ceará - Centro, Irituia - PA, 68655-000</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">São Domingos do Capim</span>
-                    <span className="unit-address">Av. Dr. Lauro Sodré, 70 - Centro, São Domingos do Capim - PA, 68635-000</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="unit-bullet"><MapPin size={18} /></div>
-                  <div className="unit-info">
-                    <span className="unit-name">São Miguel do Guamá</span>
-                    <span className="unit-address">Tv. Américo Lopes, 297 - São Manoel, São Miguel do Guamá - PA, 68660-000</span>
-                  </div>
-                </li>
+                {[
+                  {
+                    name: 'Castanhal',
+                    address: 'Tv. Cônego Luíz Leitão, 2479 - Centro, Castanhal - PA, 68743-020'
+                  },
+                  {
+                    name: 'Marapanim',
+                    address: 'R. Edmundo Botelho, 544 - Centro, Marapanim - PA, 68760-000'
+                  },
+                  {
+                    name: 'Curuçá',
+                    address: 'Tv. Sete de Setembro, 151 - Centro, Curuçá - PA, 68750-000'
+                  },
+                  {
+                    name: 'Maracanã',
+                    address: 'Rua Cantidio Guimarães, Tv. Ernesto Gomes, 53 - Qd 44 - Centro, Maracanã - PA, 68710-000'
+                  },
+                  {
+                    name: 'Irituia',
+                    address: 'Tv. Ceará - Centro, Irituia - PA, 68655-000'
+                  },
+                  {
+                    name: 'São Domingos do Capim',
+                    address: 'Av. Dr. Lauro Sodré, 70 - Centro, São Domingos do Capim - PA, 68635-000'
+                  },
+                  {
+                    name: 'São Miguel do Guamá',
+                    address: 'Tv. Américo Lopes, 297 - São Manoel, São Miguel do Guamá - PA, 68660-000'
+                  },
+                ].map((unit) => (
+                  <li key={unit.name}>
+                    <div className="unit-bullet">
+                      <MapPin size={17} />
+                    </div>
+                    <div className="unit-info">
+                      <span className="unit-name">{unit.name}</span>
+                      <span className="unit-address">{unit.address}</span>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

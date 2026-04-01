@@ -31,38 +31,113 @@
 
 /* ===== Hero Section ===== */
 .cursos-page-hero {
-  background-color: var(--primary-color);
-  height: 44vh;
-  min-height: 200px;
+  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(13, 54, 90, 0.92) 0%,
+      rgba(26, 93, 148, 0.75) 60%,
+      rgba(26, 93, 148, 0.6) 100%
+    ),
+    var(--primary-color);
+  height: 62vh;
+  min-height: 440px;
   padding: 0;
   text-align: center;
-  align-items: center ;
-  color: #E5E7EB;
-  
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   font-family: 'Poppins', sans-serif !important;
 }
 
+.cursos-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(26,93,148,0.3) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.cursos-page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+}
+
 .cursos-page-hero-content {
-  padding-top: 8%;
+  position: relative;
+  z-index: 3;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif !important;
+  animation: cursosHeroFadeUp 0.8s ease-out both;
+}
+
+/* Decorative line moved to the left of the title (like Unidades) */
+.cursos-page-hero-content::before {
+  content: none;
 }
 
 .cursos-page-hero h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  margin: 0 0 1rem 0;
+  position: relative;
+  width: fit-content;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 auto 1rem;
   text-align: center;
+  line-height: 1.05;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.2);
   font-family: 'Poppins', sans-serif !important;
+  animation: cursosHeroFadeUp 0.8s 0.1s ease-out both;
+}
+
+.cursos-page-hero h1::before {
+  content: '';
+  position: absolute;
+  left: -84px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--action-color);
+  border-radius: 2px;
 }
 
 .cursos-page-hero p {
-  font-size: 1.25rem;
-  opacity: 0.95;
+  font-size: 0.8rem;
   line-height: 1.6;
   font-family: 'Poppins', sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  opacity: 0.82;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--action-color);
+  animation: cursosHeroFadeUp 0.8s 0.25s ease-out both;
+}
+
+@keyframes cursosHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Container Principal ===== */
@@ -660,11 +735,13 @@
   }
 
   .cursos-page-hero h1 {
-    font-size: 2rem;
+    font-size: 2.8rem;
+    letter-spacing: -0.5px;
   }
 
   .cursos-page-hero p {
-    font-size: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
   }
 
   .cursos-page-container {
@@ -704,7 +781,11 @@
   }
 
   .cursos-page-hero h1 {
-    font-size: 1.75rem;
+    font-size: 2.2rem;
+  }
+
+  .cursos-page-hero h1::before {
+    display: none;
   }
 
   .cursos-list.grid {

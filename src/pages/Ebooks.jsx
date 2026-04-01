@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { BookOpen, Tag } from 'lucide-react';
 import { ebooksData, categorias } from '../data/ebooksData';
 import DownloadModal from '../components/DownloadModal';
+import { Link } from 'react-router-dom';
 import './Ebooks.css';
 import '../components/DownloadModal.css';
 
@@ -126,10 +127,7 @@ function Ebooks() {
         <div className="ebooks-header-overlay" />
         <div className="ebooks-header-content">
           <h1>E-books Gratuitos</h1>
-          <p>
-            Amplie seus conhecimentos com nossos materiais exclusivos. Baixe
-            gratuitamente e estude no seu ritmo.
-          </p>
+          <p>Evolutec • E-books</p>
         </div>
       </div>
 
@@ -155,7 +153,12 @@ function Ebooks() {
         ) : (
           <div className="ebooks-grid">
             {ebooksFiltrados.map((ebook) => (
-              <div key={ebook.id} className="ebook-card">
+              <Link
+                key={ebook.id}
+                to={`/ebooks/${ebook.slug}`}
+                className="ebook-card"
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
                 <div className="ebook-card-capa">
                   <img src={ebook.capa} alt={ebook.titulo} />
                 </div>
@@ -166,16 +169,9 @@ function Ebooks() {
                   </span>
                   <h3 className="ebook-titulo">{ebook.titulo}</h3>
                   <p className="ebook-descricao">{ebook.descricao}</p>
-
-                  <button
-                    className="ebook-download-btn"
-                    onClick={() => abrirModal(ebook)}
-                    aria-label={`Baixar e-book: ${ebook.titulo}`}
-                  >
-                    Baixar Grátis
-                  </button>
+                  {/* Remover botão de download do card-link, pois o card agora é um link */}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
