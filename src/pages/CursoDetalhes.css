@@ -79,9 +79,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    height: 55vh;
-    min-height: 400px;
-    padding: 0;
+  height: var(--page-hero-height, 62vh);
+  min-height: var(--page-hero-min-height, 440px);
+  padding: 0;
   color: white;
   position: relative;
   overflow: hidden;

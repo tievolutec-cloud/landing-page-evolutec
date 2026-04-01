@@ -64,7 +64,10 @@ const Sobre = () => {
         <div className="sobre-overlay"></div>
         <div className="sobre-hero-content">
           <h1>Sobre Nós</h1>
-          <p>Evolutec • Quem Somos</p>
+          <p className="sobre-hero-tagline">Evolutec • Sobre</p>
+          <p className="sobre-hero-subtext">
+            Transformando vidas por meio da educação profissionalizante.
+          </p>
         </div>
       </section>
 

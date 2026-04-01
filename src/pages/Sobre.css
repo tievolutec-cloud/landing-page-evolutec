@@ -28,8 +28,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 62vh;
-  min-height: 440px;
+  height: var(--page-hero-height, 62vh);
+  min-height: var(--page-hero-min-height, 440px);
   padding: 0;
   overflow: hidden;
 }
@@ -95,7 +95,7 @@
   text-shadow: 0 4px 24px rgba(0,0,0,0.2);
 }
 
-.sobre-hero-content p {
+.sobre-hero-tagline {
   font-family: 'Poppins', sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
@@ -105,6 +105,22 @@
   display: inline-block;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--sobre-secondary);
+}
+
+.sobre-hero-subtext {
+  font-family: 'Poppins', sans-serif;
+  margin: 1.25rem auto 0;
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.88;
+  color: rgba(255, 255, 255, 0.88);
+  display: block;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 /* =========================================
@@ -809,8 +825,12 @@
   animation: heroFadeUp 0.8s 0.1s ease-out both;
 }
 
-.sobre-hero-content p {
+.sobre-hero-tagline {
   animation: heroFadeUp 0.8s 0.25s ease-out both;
+}
+
+.sobre-hero-subtext {
+  animation: heroFadeUp 0.8s 0.35s ease-out both;
 }
 
 /* =========================================
@@ -910,10 +930,6 @@
 @media (max-width: 480px) {
   .sobre-hero-content h1 {
     font-size: 2.2rem;
-  }
-
-  .sobre-hero {
-    height: 52vh;
   }
 
   .mission-tabs {

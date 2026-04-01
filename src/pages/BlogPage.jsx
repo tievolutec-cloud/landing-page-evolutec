@@ -12,7 +12,8 @@ function BlogPage() {
     <div className="blog-page">
       <div className="blog-page-headers">
         <h1>Blog</h1>
-        <p>Evolutec • Blog</p>
+        <p className="blog-page-tagline">Evolutec • Blog</p>
+        <p className="blog-page-subtext">Conteúdos, novidades e dicas para evoluir na sua carreira.</p>
       </div>
 
       <div className="blog-page-container">

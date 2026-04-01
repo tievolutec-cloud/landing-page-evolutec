@@ -6,14 +6,29 @@
   background-color: #e2e2e2;
   margin-top: 88px;
   align-items: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.cursos-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(26, 93, 148, 0.12) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cursos-page > * {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {
   .cursos-page {
     margin-top: 70px;
-  }
-  .cursos-page-hero {
-    height:30vh !important;
   }
 }
 
@@ -40,8 +55,8 @@
       rgba(26, 93, 148, 0.6) 100%
     ),
     var(--primary-color);
-  height: 62vh;
-  min-height: 440px;
+  height: var(--page-hero-height, 62vh);
+  min-height: var(--page-hero-min-height, 440px);
   padding: 0;
   text-align: center;
   color: #ffffff;
@@ -115,7 +130,7 @@
   border-radius: 2px;
 }
 
-.cursos-page-hero p {
+.cursos-page-tagline {
   font-size: 0.8rem;
   line-height: 1.6;
   font-family: 'Poppins', sans-serif !important;
@@ -127,6 +142,23 @@
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--action-color);
   animation: cursosHeroFadeUp 0.8s 0.25s ease-out both;
+}
+
+.cursos-page-subtext {
+  margin: 1.1rem auto 0;
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.88;
+  color: rgba(255, 255, 255, 0.88);
+  display: block;
+  padding-bottom: 0;
+  border-bottom: none;
+  animation: cursosHeroFadeUp 0.8s 0.35s ease-out both;
 }
 
 @keyframes cursosHeroFadeUp {
@@ -739,9 +771,13 @@
     letter-spacing: -0.5px;
   }
 
-  .cursos-page-hero p {
+  .cursos-page-tagline {
     font-size: 0.75rem;
     letter-spacing: 4px;
+  }
+
+  .cursos-page-subtext {
+    font-size: 0.95rem;
   }
 
   .cursos-page-container {

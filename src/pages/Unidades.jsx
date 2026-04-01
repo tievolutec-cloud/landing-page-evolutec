@@ -26,7 +26,8 @@ function Unidades() {
         <div className="unidades-hero-content">
           <div className="unidades-hero-text">
             <h1>Conheça as nossas Unidades</h1>
-            <p>Evolutec • Unidades</p>
+            <p className="unidades-hero-tagline">Evolutec • Unidades</p>
+            <p className="unidades-hero-subtext">Encontre a unidade Evolutec mais próxima de você.</p>
             {poloAtivo && poloAtivo.id !== 'todos' && (
               <div className="hero-polo-endereco">
                 <strong>{poloAtivo.nome}</strong>

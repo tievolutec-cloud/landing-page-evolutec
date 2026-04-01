@@ -141,7 +141,8 @@ function CursosPage() {
       <section className="cursos-page-hero">
         <div className="cursos-page-hero-content">
           <h1>Nossos Cursos</h1>
-          <p>Evolutec • Cursos</p>
+          <p className="cursos-page-tagline">Evolutec • Cursos</p>
+          <p className="cursos-page-subtext">Escolha o curso ideal e dê o próximo passo na sua carreira.</p>
         </div>
       </section>
 

@@ -8,6 +8,23 @@
   --text-color: #333;
   --background-color: #f5f5f5;
   --white: #ffffff;
+
+  /* Shared page hero sizing */
+  --page-hero-height: 62vh;
+  --page-hero-min-height: 440px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-hero-height: 52vh;
+    --page-hero-min-height: 360px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --page-hero-min-height: 340px;
+  }
 }
 
 *,

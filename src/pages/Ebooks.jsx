@@ -127,7 +127,8 @@ function Ebooks() {
         <div className="ebooks-header-overlay" />
         <div className="ebooks-header-content">
           <h1>E-books Gratuitos</h1>
-          <p>Evolutec • E-books</p>
+          <p className="ebooks-header-tagline">Evolutec • E-books</p>
+          <p className="ebooks-header-subtext">Materiais gratuitos para acelerar seu aprendizado.</p>
         </div>
       </div>
 
