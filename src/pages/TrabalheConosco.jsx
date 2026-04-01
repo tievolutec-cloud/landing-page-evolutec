@@ -301,8 +301,9 @@ function TrabalheConosco() {
     <div className="trabalhe-conosco-page">
       <section className="tc-hero">
         <div className="tc-hero-content">
-          <span className="hero-pretitle">Junte-se ao nosso time</span>
+          <span className="tc-hero-pretitle">Junte-se ao nosso time</span>
           <h1>Trabalhe Conosco</h1>
+          <p>Evolutec • Trabalhe Conosco</p>
         </div>
       </section>
 

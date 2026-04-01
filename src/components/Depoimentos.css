@@ -12,6 +12,24 @@
   text-align: center;
   overflow: hidden;
   font-family: 'Poppins', sans-serif !important;
+  position: relative;
+  isolation: isolate;
+}
+
+.dep-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(26, 93, 148, 0.12) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dep-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Título ── */

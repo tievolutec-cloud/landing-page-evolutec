@@ -165,13 +165,26 @@
   padding: 80px 20px 220px 20px;
   background-color: #f9fafb;
   position: relative;
-  
+  isolation: isolate;
+}
+
+.cursos-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(26, 93, 148, 0.12) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .cursos-container {
   max-width: 1200px;
   height: fit-content;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cursos-header {
