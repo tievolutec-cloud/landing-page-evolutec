@@ -4,8 +4,8 @@ import './Banner.css'
 const slides = [
   {
     id: 1,
-    imageDesktop: '/banner1.webp',
-    imageMobile: '/banner1.webp', // Substitua depois pela versão mobile
+    imageDesktop: '/TESTANDO.png',
+    imageMobile: '/TESTANDO.png', // Substitua depois pela versão mobile
     title: 'Aprenda Tecnologia na Prática',
     subtitle: 'Cursos de programação, robótica e muito mais para transformar seu futuro.',
     cta: 'Conheça Nossos Cursos',

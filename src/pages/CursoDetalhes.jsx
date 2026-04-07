@@ -178,9 +178,9 @@ function CursoDetalhes() {
             {curso.curriculum.map((item, index) => (
               <div key={index} className="curriculum-card">
                 <h3 className="curriculum-module-title">{item.module}</h3>
-                <ul className="curriculum-topics">
+                <ul className="curriculum-topics curriculum-topics-horizontal">
                   {item.topics.map((topic, topicIndex) => (
-                    <li key={topicIndex}>
+                    <li key={`${topicIndex}-${topic}`}>
                       <CheckIcon />
                       <span>{topic}</span>
                     </li>

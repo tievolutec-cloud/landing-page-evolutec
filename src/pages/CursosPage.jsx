@@ -60,6 +60,13 @@ const ArrowRightIcon = () => (
   </svg>
 );
 
+const SalaryIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="1" x2="12" y2="23"/>
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+  </svg>
+);
+
 function CursosPage() {
   const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
@@ -133,6 +140,11 @@ function CursosPage() {
     if (currentPage <= 4) return [1, 2, 3, 4, 5, '...', totalPages];
     if (currentPage >= totalPages - 3) return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
     return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+  };
+
+  const getMarketPreview = (marketInfo) => {
+    if (!marketInfo) return '';
+    return marketInfo.length > 150 ? `${marketInfo.slice(0, 147)}...` : marketInfo;
   };
 
   return (
@@ -295,21 +307,41 @@ function CursosPage() {
 
                   <div className="curso-card-content">
                     <div className="curso-card-header">
-                      <span className="curso-card-category">{curso.category}</span>
-                      <span className="curso-card-tag">{curso.tag}</span>
+                      <div className="curso-card-badges">
+                        <span className="curso-card-category">{curso.category}</span>
+                        <span className="curso-card-tag">{curso.tag}</span>
+                      </div>
+                      <span className="curso-card-salary">{curso.salary}</span>
                     </div>
 
                     <h3 className="curso-card-title">{curso.title}</h3>
                     <p className="curso-card-description">{curso.description}</p>
 
+                    <p className="curso-card-market">{getMarketPreview(curso.marketInfo)}</p>
+
+                    <div className="curso-card-highlights">
+                      {(curso.objectives || []).slice(0, 2).map((objective) => (
+                        <span key={`${curso.id}-${objective}`} className="highlight-item">
+                          {objective}
+                        </span>
+                      ))}
+                    </div>
+
                     <div className="curso-card-meta">
                       <div className="meta-item">
                         <ClockIcon />
-                        <span>{curso.duration}</span>
+                        <span className="meta-label">Duracao</span>
+                        <span className="meta-value">{curso.duration}</span>
                       </div>
                       <div className="meta-item">
                         <BookIcon />
-                        <span>{curso.hours}</span>
+                        <span className="meta-label">Carga</span>
+                        <span className="meta-value">{curso.hours}</span>
+                      </div>
+                      <div className="meta-item">
+                        <SalaryIcon />
+                        <span className="meta-label">Modalidade</span>
+                        <span className="meta-value">{curso.mode}</span>
                       </div>
                     </div>
 

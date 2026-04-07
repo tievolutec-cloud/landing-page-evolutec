@@ -358,9 +358,9 @@
 }
 
 .curriculum-card {
-  background: #f9fafb;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
@@ -380,11 +380,22 @@
 
 .curriculum-topics {
   list-style: none;
-  padding: 0;
+  padding: 0.9rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  background: #f8fbff;
+  border: 1px solid #dbe6f3;
+  border-radius: 10px;
+}
+
+.curriculum-topics-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  overflow: visible;
+  white-space: normal;
 }
 
 .curriculum-topics li {
@@ -393,6 +404,21 @@
   gap: 0.75rem;
   font-size: 0.95rem;
   color: #4B5563;
+}
+
+.curriculum-topics-horizontal li {
+  flex: 0 1 auto;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d7e2f0;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  max-width: 100%;
+}
+
+.curriculum-topics-horizontal li span {
+  white-space: normal;
 }
 
 .curriculum-topics li svg {
