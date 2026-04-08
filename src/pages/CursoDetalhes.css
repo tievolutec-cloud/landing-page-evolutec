@@ -478,6 +478,10 @@
   color: #d08c00;
 }
 
+.curriculum-timeline-step {
+  display: none;
+}
+
 @keyframes curriculumTitleIn {
   from {
     opacity: 0;
@@ -588,32 +592,70 @@
 
 @media (max-width: 900px) {
   .curriculum-timeline::before {
-    left: var(--timeline-line-x);
-    transform: translateX(-50%);
+    display: none;
   }
 
   .curriculum-timeline {
-    --timeline-line-x: 0.95rem;
+    --timeline-line-x: 0;
+    gap: 0.9rem;
+    margin-top: 1rem;
   }
 
   .curriculum-timeline-item {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    padding: 0.9rem;
+    padding: 1rem 1rem 1rem 4rem;
+    border-radius: 18px;
+    border-left: 4px solid #b9cfe6;
+    box-shadow: 0 10px 24px rgba(20, 52, 84, 0.08);
   }
 
   .curriculum-timeline-item::before {
-    left: var(--timeline-line-x) !important;
-    transform: translateX(-50%) !important;
+    left: 1rem !important;
+    top: 1rem;
+    transform: translateX(0) !important;
     right: auto !important;
   }
 
   .curriculum-timeline-item::after {
-    left: calc(var(--timeline-line-x) + (var(--timeline-line-width) / 2) - 8px) !important;
-    right: auto !important;
-    border-left: none !important;
-    border-right: 8px solid #d9e5f3 !important;
+    display: none;
+  }
+
+  .curriculum-timeline-step {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 0.55rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 176, 0, 0.14);
+    border: 1px solid rgba(255, 176, 0, 0.28);
+    color: #8f5d00;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+  }
+
+  .curriculum-timeline-module {
+    margin-bottom: 0.6rem;
+  }
+
+  .curriculum-timeline-topic {
+    font-size: 1rem;
+  }
+
+  .curriculum-timeline-meta {
+    margin-top: 0.55rem;
+  }
+
+  .curriculum-timeline-description {
+    font-size: 0.84rem;
+  }
+
+  .curriculum-timeline-item:hover {
+    transform: translateY(0) scale(1);
   }
 }
 

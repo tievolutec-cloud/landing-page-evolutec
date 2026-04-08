@@ -289,6 +289,7 @@ function CursoDetalhes() {
                 className="curriculum-timeline-item"
                 style={{ '--item-index': index }}
               >
+                <span className="curriculum-timeline-step">Etapa {item.step}</span>
                 <span className="curriculum-timeline-module">{item.module}</span>
                 <h3 className="curriculum-timeline-topic">{item.topicTitle}</h3>
                 <div className="curriculum-timeline-meta">
