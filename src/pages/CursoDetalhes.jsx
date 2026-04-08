@@ -280,7 +280,7 @@ function CursoDetalhes() {
         <section
           ref={timelineSectionRef}
           className={`curriculum-timeline-section ${isTimelineVisible ? 'is-visible' : ''}`.trim()}
-        >
+        >x
           <h2 className="section-title-destaque">Conteudos da Formacao</h2>
           <div className="curriculum-timeline">
             {curriculumTimelineItems.map((item, index) => (
