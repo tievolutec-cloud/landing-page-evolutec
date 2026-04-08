@@ -25,7 +25,7 @@ const MapUpdater = ({ center, zoom }) => {
   return null
 }
 
-const Mapa = ({ initialPoloId, onPoloChange }) => {
+const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
   const polos = [
     {
       id: 'todos',
@@ -85,14 +85,15 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
     }
   ]
 
-  const [poloSelecionado, setPoloSelecionado] = useState(polos[0])
+  // Usar poloSelecionado da prop, ou 'todos' como padrão
+  const poloAtualState = poloSelecionado || 'todos';
+  const poloChosen = polos.find(p => p.id.toString() === poloAtualState.toString()) || polos[0];
 
   // Seleciona polo vindo de prop externa (ex: navbar dropdown)
   useEffect(() => {
     if (initialPoloId) {
       const polo = polos.find(p => p.id.toString() === initialPoloId.toString())
       if (polo) {
-        setPoloSelecionado(polo)
         onPoloChange && onPoloChange(polo)
       }
     }
@@ -100,7 +101,6 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
 
   const handlePoloChange = (e) => {
     const polo = polos.find(p => p.id.toString() === e.target.value)
-    setPoloSelecionado(polo)
     onPoloChange && onPoloChange(polo)
   }
 
@@ -110,18 +110,18 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
         <div className="mapa-layout">
           <div className="mapa-content">
           <MapContainer 
-            center={poloSelecionado.position} 
-            zoom={poloSelecionado.zoom || 13} 
+            center={poloChosen.position} 
+            zoom={poloChosen.zoom || 13} 
             scrollWheelZoom={true}
             className="mapa-leaflet"
           >
-            <MapUpdater center={poloSelecionado.position} zoom={poloSelecionado.zoom} />
+            <MapUpdater center={poloChosen.position} zoom={poloChosen.zoom} />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             
-            {poloSelecionado.id === 'todos' ? (
+            {poloChosen.id === 'todos' ? (
               polos.slice(1).map((polo) => (
                 <Marker key={polo.id} position={polo.position} icon={customIcon}>
                   <Popup>
@@ -140,16 +140,16 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
                 </Marker>
               ))
             ) : (
-              <Marker position={poloSelecionado.position} icon={customIcon}>
+              <Marker position={poloChosen.position} icon={customIcon}>
                 <Popup>
                   <div className="popup-content">
-                    <h3>{poloSelecionado.nome}</h3>
-                    {poloSelecionado.endereco && (
+                    <h3>{poloChosen.nome}</h3>
+                    {poloChosen.endereco && (
                       <p className="popup-endereco">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                         </svg>
-                        {poloSelecionado.endereco}
+                        {poloChosen.endereco}
                       </p>
                     )}
                   </div>
@@ -160,24 +160,7 @@ const Mapa = ({ initialPoloId, onPoloChange }) => {
         </div>
         
         <div className="mapa-sidebar">
-          <div className="polo-selector-container">
-            <label htmlFor="polo-select" className="polo-selector-label">
-              Selecione sua cidade:
-            </label>
-            <select 
-              id="polo-select"
-              className="polo-selector"
-              value={poloSelecionado.id}
-              onChange={handlePoloChange}
-            >
-              <option value="todos" disabled hidden>Cidade</option>
-              {polos.map((polo) => (
-                <option key={polo.id} value={polo.id}>
-                  {polo.nome}
-                </option>
-              ))}
-            </select>
-          </div>
+          {/* Sidebar vazia - seletor agora está no header */}
         </div>
       </div>
     </div>

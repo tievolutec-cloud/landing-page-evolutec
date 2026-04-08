@@ -82,6 +82,15 @@ function CursoDetalhes() {
     .filter(c => c.id !== curso.id)
     .slice(0, 3);
 
+  const curriculumTimelineItems = curso.curriculum.flatMap((moduleItem, moduleIndex) =>
+    moduleItem.topics.map((topic, topicIndex) => ({
+      id: `${moduleIndex}-${topicIndex}-${topic}`,
+      module: moduleItem.module,
+      topic,
+      step: topicIndex + 1,
+    }))
+  );
+
   return (
     <div className="curso-detalhes-container">
       {/* Botão Voltar */}
@@ -90,7 +99,7 @@ function CursoDetalhes() {
         <span>Voltar</span>
       </button>
 
-      {/* Hero Section Verde */}
+      {/* Hero Section */}
       <section 
         className="curso-hero-verde"
         style={{ backgroundImage: `url(${curso.image})` }}
@@ -100,156 +109,151 @@ function CursoDetalhes() {
           <div className="curso-hero-left">
             <div className="curso-badges">
               <span className="badge-categoria">{curso.category}</span>
-              <span className="badge-inscricao">Inscreva-se</span>
+              <span className="badge-inscricao">{curso.tag}</span>
             </div>
             
             <h1 className="curso-titulo-principal">{curso.title}</h1>
+
+            <p className="curso-subtitulo-principal">{curso.description}</p>
+
+            <div className="curso-meta-hero">
+              <span>{curso.duration}</span>
+              <span>{curso.hours}</span>
+              <span>{curso.mode}</span>
+            </div>
             
             <div className="curso-salario">
-              <span className="salario-label">Média salarial nacional</span>
+              <span className="salario-label">Faixa de entrada no mercado</span>
               <span className="salario-valor">{curso.salary}</span>
             </div>
 
-            <button className="btn-inscreva-se" onClick={handleMatriculaClick}>
-              Inscreva-se →
-            </button>
           </div>
         </div>
       </section>
 
       {/* Conteúdo Principal */}
       <div className="curso-content-wrapper">
-        {/* Sobre o Curso */}
-        <section className="curso-section-info">
-          <h2 className="section-title-novo">Sobre o curso</h2>
-          <p className="section-text-novo">{curso.fullDescription}</p>
-        </section>
+        <div className="curso-main-grid">
+          <div className="curso-main-content">
+            {/* Sobre o Curso */}
+            <section className="curso-section-info">
+              <h2 className="section-title-novo">Sobre o curso</h2>
+              <p className="section-text-novo">{curso.fullDescription}</p>
+            </section>
 
-        {/* Mercado de Trabalho */}
-        <section className="curso-section-info">
-          <h2 className="section-title-novo">Mercado de trabalho</h2>
-          <p className="section-text-novo">{curso.marketInfo}</p>
-        </section>
+            {/* Mercado de Trabalho */}
+            <section className="curso-section-info">
+              <h2 className="section-title-novo">Mercado de trabalho</h2>
+              <p className="section-text-novo">{curso.marketInfo}</p>
+            </section>
 
-        {/* Cards de Informações */}
-        <div className="curso-info-cards">
-          <div className="info-card-verde">
-            <ClockIcon />
-            <div className="info-card-content">
-              <span className="info-card-label">Duração</span>
-              <span className="info-card-value">{curso.duration}</span>
-            </div>
+            {/* Objetivos do Curso */}
+            <section className="curso-section-detalhes">
+              <h2 className="section-title-destaque">Objetivos do Curso</h2>
+              <div className="objectives-list">
+                {curso.objectives.map((objective, index) => (
+                  <div key={index} className="objective-item-novo">
+                    <CheckIcon />
+                    <span>{objective}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Oportunidades de Carreira */}
+            <section className="curso-section-detalhes">
+              <h2 className="section-title-destaque">
+                <BriefcaseIcon />
+                Oportunidades de Carreira
+              </h2>
+              <div className="career-tags">
+                {curso.careerOpportunities.map((career, index) => (
+                  <span key={index} className="career-tag">
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </section>
           </div>
 
-          <div className="info-card-verde">
-            <AwardIcon />
-            <div className="info-card-content">
-              <span className="info-card-label">Certificação conferida</span>
-              <span className="info-card-value">{curso.tag}</span>
-            </div>
-          </div>
+          <aside className="curso-side-panel">
+            <div className="curso-info-cards">
+              <div className="info-card-verde">
+                <ClockIcon />
+                <div className="info-card-content">
+                  <span className="info-card-label">Duracao</span>
+                  <span className="info-card-value">{curso.duration}</span>
+                </div>
+              </div>
 
-          <div className="info-card-verde">
-            <BookIcon />
-            <div className="info-card-content">
-              <span className="info-card-label">Modelo de Ensino</span>
-              <span className="info-card-value">{curso.mode}</span>
+              <div className="info-card-verde">
+                <AwardIcon />
+                <div className="info-card-content">
+                  <span className="info-card-label">Certificacao</span>
+                  <span className="info-card-value">{curso.tag}</span>
+                </div>
+              </div>
+
+              <div className="info-card-verde">
+                <BookIcon />
+                <div className="info-card-content">
+                  <span className="info-card-label">Modalidade</span>
+                  <span className="info-card-value">{curso.mode}</span>
+                </div>
+              </div>
             </div>
-          </div>
+
+            {/* Conheça Outros Cursos - Sidebar */}
+            <div className="curso-conheca-sidebar">
+              <h3 className="sidebar-cursos-titulo">Conheça outros cursos</h3>
+              <div className="sidebar-cursos-list">
+                {cursosRelacionados.map(cursoItem => (
+                  <Link
+                    key={cursoItem.id}
+                    to={`/curso/${cursoItem.slug}`}
+                    className="sidebar-curso-item"
+                  >
+                    <div className="sidebar-curso-imagem">
+                      <img src={cursoItem.image} alt={cursoItem.title} loading="lazy" decoding="async"/>
+                    </div>
+                    <div className="sidebar-curso-info">
+                      <h4 className="sidebar-curso-titulo-item">{cursoItem.title}</h4>
+                      <span className="sidebar-curso-categoria">{cursoItem.category}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <Link to="/cursos" className="sidebar-ver-todos">
+                Ver todos os cursos <ArrowRight />
+              </Link>
+            </div>
+
+            <div className="curso-side-cta">
+              <h3>Pronto para comecar?</h3>
+              <p>Garanta sua vaga e receba o contato da nossa equipe para orientacao da matricula.</p>
+              <button className="btn-inscreva-se side" onClick={handleMatriculaClick}>
+                Falar com consultor
+              </button>
+            </div>
+          </aside>
         </div>
 
-        {/* Objetivos do Curso */}
-        <section className="curso-section-detalhes">
-          <h2 className="section-title-destaque">Objetivos do Curso</h2>
-          <div className="objectives-list">
-            {curso.objectives.map((objective, index) => (
-              <div key={index} className="objective-item-novo">
-                <CheckIcon />
-                <span>{objective}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Grade Curricular */}
-        <section className="curso-section-detalhes">
-          <h2 className="section-title-destaque">Grade Curricular</h2>
-          <div className="curriculum-grid">
-            {curso.curriculum.map((item, index) => (
-              <div key={index} className="curriculum-card">
-                <h3 className="curriculum-module-title">{item.module}</h3>
-                <ul className="curriculum-topics curriculum-topics-horizontal">
-                  {item.topics.map((topic, topicIndex) => (
-                    <li key={`${topicIndex}-${topic}`}>
-                      <CheckIcon />
-                      <span>{topic}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Oportunidades de Carreira */}
-        <section className="curso-section-detalhes">
-          <h2 className="section-title-destaque">
-            <BriefcaseIcon />
-            Oportunidades de Carreira
-          </h2>
-          <div className="career-tags">
-            {curso.careerOpportunities.map((career, index) => (
-              <span key={index} className="career-tag">
-                {career}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* Seção de Cursos Relacionados */}
-        <section className="outros-cursos-section">
-          <h2 className="section-title-outros-cursos">Conheça outros cursos</h2>
-          <p className="section-subtitle-cursos">Explore mais opções de formação disponíveis</p>
-          
-          <div className="outros-cursos-grid">
-            {cursosRelacionados.map(cursoItem => (
-              <Link
-                key={cursoItem.id}
-                to={`/curso/${cursoItem.slug}`}
-                className="curso-card-mini"
-              >
-                <div className="curso-card-mini-image">
-                  <img src={cursoItem.image} alt={cursoItem.title}  loading="lazy" decoding="async"/>
-                  <span className="curso-card-mini-badge">{cursoItem.mode}</span>
+        {/* Conteudos da Formacao - Timeline */}
+        <section className="curriculum-timeline-section">
+          <h2 className="section-title-destaque">Conteudos da Formacao</h2>
+          <div className="curriculum-timeline">
+            {curriculumTimelineItems.map((item, index) => (
+              <article key={item.id} className="curriculum-timeline-item">
+                <span className="curriculum-timeline-module">{item.module}</span>
+                <h3 className="curriculum-timeline-topic">{item.topic}</h3>
+                <div className="curriculum-timeline-meta">
+                  <CheckIcon />
+                  <span>Etapa {item.step}</span>
                 </div>
-                
-                <div className="curso-card-mini-content">
-                  <span className="curso-card-mini-category">{cursoItem.category}</span>
-                  <h3 className="curso-card-mini-title">{cursoItem.title}</h3>
-                  <p className="curso-card-mini-description">{cursoItem.description}</p>
-                  
-                  <div className="curso-card-mini-footer">
-                    <div className="curso-card-mini-info">
-                      <ClockIcon />
-                      <span>{cursoItem.duration}</span>
-                    </div>
-                    <span className="ver-mais">
-                      Ver mais <ArrowRight />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+              </article>
             ))}
           </div>
-
-          <div className="btn-ver-todos-container">
-            <Link to="/cursos" className="btn-ver-todos-cursos">
-              Ver todos os cursos
-            </Link>
-          </div>
         </section>
-
-    
       </div>
     </div>
   );

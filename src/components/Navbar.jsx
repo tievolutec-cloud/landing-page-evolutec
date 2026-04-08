@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { MessageCircle, ChevronDown } from 'lucide-react';
+import { categoriasCursos } from '../data/coursesData';
 import './Navbar.css';
 import ContatoModal from './contatoModal';
 import NavbarMobile from './NavbarMobile';
@@ -314,20 +315,15 @@ function Navbar() {
                 </button>
               </div>
               <ul className="dropdown-menu" {...dropdownMenuProps()}>
-                {[
-                  { categoria: 'GESTÃO', label: 'Gestão' },
-                  { categoria: 'SAÚDE', label: 'Saúde' },
-                  { categoria: 'TECNOLOGIA', label: 'Tecnologia' },
-                  { categoria: 'MARKETING', label: 'Marketing' },
-                  { categoria: 'SEGURANÇA', label: 'Segurança' },
-                  { categoria: 'DESIGN', label: 'Design' },
-                ].map(({ categoria, label }) => (
+                {categoriasCursos
+                  .filter((categoria) => categoria !== 'Todos')
+                  .map((categoria) => (
                   <li key={categoria}>
                     <Link
                       to={`/cursos?categoria=${categoria}`}
                       onClick={() => { closeMenu(); closeDropdown() }}
                     >
-                      <strong>{label}</strong>
+                      <strong>{categoria}</strong>
                     </Link>
                   </li>
                 ))}

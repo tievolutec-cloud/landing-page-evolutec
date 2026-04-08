@@ -8,6 +8,25 @@ function Unidades() {
   const [searchParams] = useSearchParams();
   const unidadeId = searchParams.get('unidade');
   const [poloAtivo, setPoloAtivo] = useState(null);
+  const [poloSelecionado, setPoloSelecionado] = useState('todos');
+
+  const polos = [
+    {
+      id: 'todos',
+      nome: 'Todos os Polos',
+    },
+    { id: 1, nome: 'Castanhal - PA' },
+    { id: 2, nome: 'Marapanim - PA' },
+    { id: 3, nome: 'Curuçá - PA' },
+    { id: 4, nome: 'Maracanã - PA' },
+    { id: 5, nome: 'Irituia - PA' },
+    { id: 6, nome: 'São Domingos do Capim - PA' },
+    { id: 7, nome: 'São Miguel do Guamá - PA' },
+  ];
+
+  const handlePoloChange = (e) => {
+    setPoloSelecionado(e.target.value);
+  };
 
   useEffect(() => {
     if (unidadeId) {
@@ -43,6 +62,24 @@ function Unidades() {
                 </span>
               </div>
             )}
+          </div>
+          <div className="hero-selector-container">
+            <label htmlFor="polo-select-header" className="polo-selector-label">
+              Selecione sua cidade:
+            </label>
+            <select 
+              id="polo-select-header"
+              className="polo-selector"
+              value={poloSelecionado}
+              onChange={handlePoloChange}
+            >
+              <option value="todos" disabled hidden>Cidade</option>
+              {polos.map((polo) => (
+                <option key={polo.id} value={polo.id}>
+                  {polo.nome}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </section>
