@@ -172,7 +172,7 @@ function VagaDetalhe({ vaga, onVoltar }) {
       </button>
 
       <div className="vd-hero">
-        <img src={vaga.imagem} alt={vaga.cargo} className="vd-hero-img" />
+        <img src={vaga.imagem} alt={vaga.cargo} className="vd-hero-img"  loading="lazy" decoding="async"/>
         <div className="vd-hero-overlay" />
         <div className="vd-hero-content">
           <span className="vd-badge-area">{vaga.area}</span>
@@ -265,7 +265,7 @@ function VagaCard({ vaga, onClick }) {
   return (
     <article className="vaga-card" onClick={onClick}>
       <div className="vaga-card-img-wrap">
-        <img src={vaga.imagem} alt={vaga.cargo} className="vaga-card-img" />
+        <img src={vaga.imagem} alt={vaga.cargo} className="vaga-card-img"  loading="lazy" decoding="async"/>
         {vaga.destaque && <span className="vaga-badge-destaque">Destaque</span>}
       </div>
       <div className="vaga-card-body">

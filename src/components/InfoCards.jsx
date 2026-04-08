@@ -33,7 +33,7 @@ export default function InfoCards() {
           <div className="ic-card" key={card.title}>
             <h3 className="ic-title">{card.title}</h3>
             <p className="ic-body">{card.text}</p>
-            <img src={card.image} alt={card.title} className="ic-img" />
+            <img src={card.image} alt={card.title} className="ic-img"  loading="lazy" decoding="async"/>
           </div>
         ))}
       </div>

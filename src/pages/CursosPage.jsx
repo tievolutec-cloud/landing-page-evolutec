@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { cursosData } from '../data/coursesData';
+import { cursosData, categoriasCursos } from '../data/coursesData';
 import './CursosPage.css';
 
 const ITEMS_PER_PAGE = 4;
@@ -60,13 +60,6 @@ const ArrowRightIcon = () => (
   </svg>
 );
 
-const SalaryIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="12" y1="1" x2="12" y2="23"/>
-    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-  </svg>
-);
-
 function CursosPage() {
   const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
@@ -84,7 +77,7 @@ function CursosPage() {
   }, [searchParams]);
 
   // Extrair categorias, modos e tags únicos
-  const categories = ['Todos', ...new Set(cursosData.map(curso => curso.category))];
+  const categories = categoriasCursos;
   const modes = ['Todos', ...new Set(cursosData.map(curso => curso.mode))];
   const tags = ['Todos', ...new Set(cursosData.map(curso => curso.tag))];
 
@@ -140,11 +133,6 @@ function CursosPage() {
     if (currentPage <= 4) return [1, 2, 3, 4, 5, '...', totalPages];
     if (currentPage >= totalPages - 3) return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
     return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
-  };
-
-  const getMarketPreview = (marketInfo) => {
-    if (!marketInfo) return '';
-    return marketInfo.length > 150 ? `${marketInfo.slice(0, 147)}...` : marketInfo;
   };
 
   return (
@@ -301,31 +289,12 @@ function CursosPage() {
                   className={`curso-card ${viewMode}`}
                 >
                   <div className="curso-card-image">
-                    <img src={curso.image} alt={curso.title} />
-                    <span className="curso-card-badge">{curso.mode}</span>
+                    <img src={curso.image} alt={curso.title}  loading="lazy" decoding="async"/>
                   </div>
 
                   <div className="curso-card-content">
-                    <div className="curso-card-header">
-                      <div className="curso-card-badges">
-                        <span className="curso-card-category">{curso.category}</span>
-                        <span className="curso-card-tag">{curso.tag}</span>
-                      </div>
-                      <span className="curso-card-salary">{curso.salary}</span>
-                    </div>
-
                     <h3 className="curso-card-title">{curso.title}</h3>
                     <p className="curso-card-description">{curso.description}</p>
-
-                    <p className="curso-card-market">{getMarketPreview(curso.marketInfo)}</p>
-
-                    <div className="curso-card-highlights">
-                      {(curso.objectives || []).slice(0, 2).map((objective) => (
-                        <span key={`${curso.id}-${objective}`} className="highlight-item">
-                          {objective}
-                        </span>
-                      ))}
-                    </div>
 
                     <div className="curso-card-meta">
                       <div className="meta-item">
@@ -337,11 +306,6 @@ function CursosPage() {
                         <BookIcon />
                         <span className="meta-label">Carga</span>
                         <span className="meta-value">{curso.hours}</span>
-                      </div>
-                      <div className="meta-item">
-                        <SalaryIcon />
-                        <span className="meta-label">Modalidade</span>
-                        <span className="meta-value">{curso.mode}</span>
                       </div>
                     </div>
 

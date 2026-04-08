@@ -53,7 +53,7 @@ const HeroEducation = () => {
               src={graduationImages[currentImage]} 
               alt="Estudantes formados" 
               className="main-image"
-            />
+             loading="lazy" decoding="async"/>
             
           </div>
           <div className="carousel-controls">

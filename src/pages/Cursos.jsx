@@ -21,7 +21,7 @@ const CourseCard = ({
   title, 
   category, 
   image, 
-  mode = "EAD", // Padrão EAD
+  mode,
   duration, 
   hours, 
   tag
@@ -35,7 +35,7 @@ const CourseCard = ({
             <span className="badge-dot"></span>
             {mode}
           </div>
-          <img src={image} alt={title} className="card-image" />
+          <img src={image} alt={title} className="card-image"  loading="lazy" decoding="async"/>
         </div>
 
         {/* Conteúdo */}

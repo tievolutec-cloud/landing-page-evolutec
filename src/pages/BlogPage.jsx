@@ -21,7 +21,7 @@ function BlogPage() {
           {blogData.map((noticia) => (
             <Link key={noticia.id} to={`/noticia/${noticia.id}`} className="blog-page-card">
               <div className="blog-page-img-wrapper">
-                <img src={noticia.imagem} alt={noticia.titulo} />
+                <img src={noticia.imagem} alt={noticia.titulo}  loading="lazy" decoding="async"/>
                 <div className="blog-page-tags">
                   {noticia.tags.map(tag => (
                     <span key={tag} className="blog-page-tag">{tag}</span>

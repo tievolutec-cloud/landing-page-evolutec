@@ -814,6 +814,19 @@ export const cursosData = [
   }
 ];
 
+export const categoriasCursos = [
+  "Todos",
+  "Saúde",
+  "Administração",
+  "Tecnologia",
+  "Gestão",
+  "Turismo",
+  "Marketing",
+  "Comercio",
+  "Dados",
+  "Design"
+];
+
 export const getCourseBySlug = (slug) => {
   return cursosData.find((curso) => curso.slug === slug);
 };

@@ -66,7 +66,7 @@ function DownloadModal({ ebook, onClose, formData, onChange, errors, loading, on
         {/* Imagem do livro */}
         {ebook.capa && (
           <div className="dm-ebook-capa">
-            <img src={ebook.capa} alt={ebook.titulo} className="dm-ebook-capa-img" />
+            <img src={ebook.capa} alt={ebook.titulo} className="dm-ebook-capa-img"  loading="lazy" decoding="async"/>
           </div>
         )}
 

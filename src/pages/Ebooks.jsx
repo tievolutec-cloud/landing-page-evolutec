@@ -160,7 +160,7 @@ function Ebooks() {
                 onClick={() => abrirModal(ebook)}
               >
                 <div className="ebook-card-capa">
-                  <img src={ebook.capa} alt={ebook.titulo} />
+                  <img src={ebook.capa} alt={ebook.titulo}  loading="lazy" decoding="async"/>
                 </div>
                 <div className="ebook-card-body">
                   <span className="ebook-categoria">

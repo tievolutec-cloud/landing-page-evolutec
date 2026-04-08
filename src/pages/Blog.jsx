@@ -23,7 +23,7 @@ function Blog() {
         {/* Card destaque (esquerda) */}
         {destaque && (
           <Link to={`/noticia/${destaque.id}`} className="blog-destaque">
-            <img src={destaque.imagem} alt={destaque.titulo} className="blog-destaque-img" />
+            <img src={destaque.imagem} alt={destaque.titulo} className="blog-destaque-img"  loading="lazy" decoding="async"/>
             <div className="blog-destaque-overlay" />
             <div className="blog-destaque-content">
               <div className="blog-destaque-tags">
@@ -42,7 +42,7 @@ function Blog() {
           {noticias.map((noticia) => (
             <Link key={noticia.id} to={`/noticia/${noticia.id}`} className="blog-card">
               <div className="blog-card-img-wrapper">
-                <img src={noticia.imagem} alt={noticia.titulo} className="blog-card-img" />
+                <img src={noticia.imagem} alt={noticia.titulo} className="blog-card-img"  loading="lazy" decoding="async"/>
               </div>
               <div className="blog-card-info">
                 <span className="blog-card-data">{noticia.data}</span>

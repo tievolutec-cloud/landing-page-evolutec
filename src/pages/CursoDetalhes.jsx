@@ -219,7 +219,7 @@ function CursoDetalhes() {
                 className="curso-card-mini"
               >
                 <div className="curso-card-mini-image">
-                  <img src={cursoItem.image} alt={cursoItem.title} />
+                  <img src={cursoItem.image} alt={cursoItem.title}  loading="lazy" decoding="async"/>
                   <span className="curso-card-mini-badge">{cursoItem.mode}</span>
                 </div>
                 

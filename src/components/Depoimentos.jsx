@@ -115,7 +115,7 @@ export default function Depoimentos() {
                       src={`https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg`}
                       alt={v.titulo}
                       className="dep-thumb"
-                    />
+                     loading="lazy" decoding="async"/>
                     <div className="dep-card-overlay">
                       <PlayIcon />
                       <span className="dep-yt-logo">

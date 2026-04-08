@@ -56,7 +56,7 @@ function ChamadaMatricula() {
                 src={img} 
                 alt={`Alunos estudando ${index + 1}`} 
                 className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
-              />
+               loading="lazy" decoding="async"/>
             ))}
             <button className="carousel-btn prev" onClick={prevImage} aria-label="Imagem anterior">
               <ChevronLeft size={24} />

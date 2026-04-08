@@ -36,7 +36,7 @@ function Noticia() {
           </div>
 
           <div className="noticia-imagem-container">
-            <img src={noticia.imagem} alt={noticia.titulo} className="noticia-imagem" />
+            <img src={noticia.imagem} alt={noticia.titulo} className="noticia-imagem"  loading="lazy" decoding="async"/>
           </div>
 
           <div 
@@ -60,7 +60,7 @@ function Noticia() {
               {outrasNoticias.map(item => (
                 <Link key={item.id} to={`/noticia/${item.id}`} className="outra-noticia-card">
                   <div className="outra-noticia-img-wrapper">
-                    <img src={item.imagem} alt={item.titulo} />
+                    <img src={item.imagem} alt={item.titulo}  loading="lazy" decoding="async"/>
                   </div>
                   <div className="outra-noticia-info">
                     <span className="outra-noticia-data">{item.data}</span>

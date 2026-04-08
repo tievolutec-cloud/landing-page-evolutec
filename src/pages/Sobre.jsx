@@ -76,10 +76,10 @@ const Sobre = () => {
         <div className="container about-container">
           <div className="about-images">
             <div className="img-wrapper main-img">
-              <img src="/evolutec-sobre-1.webp" alt="Equipe Evolutec" />
+              <img src="/evolutec-sobre-1.webp" alt="Equipe Evolutec"  loading="lazy" decoding="async"/>
             </div>
             <div className="img-wrapper sub-img">
-              <img src="/evolutec-sobre-2.webp" alt="Alunos estudando" />
+              <img src="/evolutec-sobre-2.webp" alt="Alunos estudando"  loading="lazy" decoding="async"/>
               <div className="experience-badge">
                 <span className="years">15+</span>
                 <span className="text">Anos de<br/>Experiência</span>
@@ -184,7 +184,7 @@ const Sobre = () => {
           </div>
 
           <div className="mission-image">
-            <img src="/evolutec-sobre.webp" alt="Nossa Missão" />
+            <img src="/evolutec-sobre.webp" alt="Nossa Missão"  loading="lazy" decoding="async"/>
           </div>
         </div>
       </section>
@@ -206,7 +206,7 @@ const Sobre = () => {
 
           <div className="units-content-wrapper">
             <div className="units-map-image">
-              <img src="/mapa-pará-escola.webp" alt="Mapa de atuação Evolutec no Pará" />
+              <img src="/mapa-pará-escola.webp" alt="Mapa de atuação Evolutec no Pará"  loading="lazy" decoding="async"/>
             </div>
 
             <div className="units-list-container">

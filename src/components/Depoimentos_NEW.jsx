@@ -115,7 +115,7 @@ export default function Depoimentos() {
 
         {/* Painel direito — imagem */}
         <div className={`dep-panel dep-panel--right ${animating ? 'dep-fade' : ''}`}>
-          <img src={dep.imagem} alt={dep.nome} className="dep-img" />
+          <img src={dep.imagem} alt={dep.nome} className="dep-img"  loading="lazy" decoding="async"/>
         </div>
 
       </section>

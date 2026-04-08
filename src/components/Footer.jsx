@@ -7,7 +7,7 @@ function Footer() {
         {/* Coluna 1 — Logo e descrição */}
         <div className="footer-col footer-col--brand">
           <div className="footer-logo">
-            <img src="/logo-evolutec.webp" alt="Evolutec Logo" className="footer-logo-image" />
+            <img src="/logo-evolutec.webp" alt="Evolutec Logo" className="footer-logo-image"  loading="lazy" decoding="async"/>
           </div>
           <p className="footer-descricao">
             Transformando o futuro através da educação e tecnologia. Cursos profissionalizantes que preparam você para o mercado de trabalho.
