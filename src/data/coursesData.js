@@ -23,13 +23,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Apresenta fundamentos e aplicacoes de atendente de farmacia para voce executar tarefas com mais eficiencia.",
         topics: [
-          "Atendimento ao cliente em farmacia",
-          "Rotinas do setor farmaceutico",
-          "Organizacao e armazenamento de medicamentos",
-          "Nocoes basicas sobre medicamentos",
-          "Comunicacao profissional",
-          "Postura no ambiente de trabalho"
+          {
+            title: "Atendimento ao cliente em farmacia",
+            description: "No curso Atendente de Farmacia, atendimento ao cliente em farmacia fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          },
+          {
+            title: "Rotinas do setor farmaceutico",
+            description: "No curso Atendente de Farmacia, voce aplica rotinas do setor farmaceutico em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Organizacao e armazenamento de medicamentos",
+            description: "No curso Atendente de Farmacia, voce aplica organizacao e armazenamento de medicamentos em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Nocoes basicas sobre medicamentos",
+            description: "No contexto de Atendente de Farmacia, nocoes basicas sobre medicamentos conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Comunicacao profissional",
+            description: "No curso Atendente de Farmacia, voce aplica comunicacao profissional em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Postura no ambiente de trabalho",
+            description: "Em Atendente de Farmacia, postura no ambiente de trabalho e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          }
         ]
       }
     ],
@@ -70,17 +89,48 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Explora auxiliar administrativo na pratica para aumentar sua seguranca tecnica e qualidade de entrega.",
         topics: [
-          "Rotinas administrativas",
-          "Credito e cobranca",
-          "Telemarketing",
-          "Atendimento ao cliente",
-          "Tecnicas de vendas",
-          "Comunicacao no ambiente de trabalho",
-          "Trabalho em equipe",
-          "Empreendedorismo",
-          "Criatividade no trabalho",
-          "Desenvolvimento profissional"
+          {
+            title: "Rotinas administrativas",
+            description: "No contexto de Auxiliar Administrativo, rotinas administrativas conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Credito e cobranca",
+            description: "Em Auxiliar Administrativo, credito e cobranca e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Telemarketing",
+            description: "No curso Auxiliar Administrativo, telemarketing combina estrategia, conteudo e performance para gerar crescimento digital."
+          },
+          {
+            title: "Atendimento ao cliente",
+            description: "No curso Auxiliar Administrativo, atendimento ao cliente fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          },
+          {
+            title: "Tecnicas de vendas",
+            description: "Em Auxiliar Administrativo, tecnicas de vendas integra abordagem consultiva e estrategia comercial para aumentar conversao."
+          },
+          {
+            title: "Comunicacao no ambiente de trabalho",
+            description: "No curso Auxiliar Administrativo, comunicacao no ambiente de trabalho e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Trabalho em equipe",
+            description: "No curso Auxiliar Administrativo, trabalho em equipe e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Empreendedorismo",
+            description: "No curso Auxiliar Administrativo, empreendedorismo e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Criatividade no trabalho",
+            description: "No curso Auxiliar Administrativo, voce aplica criatividade no trabalho em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Desenvolvimento profissional",
+            description: "Neste modulo de Auxiliar Administrativo, voce domina desenvolvimento profissional com foco em qualidade, produtividade e padroes de mercado."
+          }
         ]
       }
     ],
@@ -121,15 +171,40 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Explora desenvolvedor de games e apps na pratica para aumentar sua seguranca tecnica e qualidade de entrega.",
         topics: [
-          "Logica de programacao",
-          "Python",
-          "Scratch",
-          "Desenvolvimento de games (niveis I, II e III)",
-          "Criacao de apps com Angular",
-          "Desenvolvimento mobile com Cordova",
-          "Pixel art",
-          "Projetos praticos"
+          {
+            title: "Logica de programacao",
+            description: "Em Desenvolvedor de Games e Apps, logica de programacao e aplicado em desafios praticos para consolidar logica, codigo limpo e entrega funcional."
+          },
+          {
+            title: "Python",
+            description: "Em Desenvolvedor de Games e Apps, python e aplicado em desafios praticos para consolidar logica, codigo limpo e entrega funcional."
+          },
+          {
+            title: "Scratch",
+            description: "No curso Desenvolvedor de Games e Apps, scratch e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Desenvolvimento de games (niveis I, II e III)",
+            description: "Em Desenvolvedor de Games e Apps, desenvolvimento de games (niveis i, ii e iii) e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Criacao de apps com Angular",
+            description: "Em Desenvolvedor de Games e Apps, criacao de apps com angular e aplicado em desafios praticos para consolidar logica, codigo limpo e entrega funcional."
+          },
+          {
+            title: "Desenvolvimento mobile com Cordova",
+            description: "Em Desenvolvedor de Games e Apps, desenvolvimento mobile com cordova e aplicado em desafios praticos para consolidar logica, codigo limpo e entrega funcional."
+          },
+          {
+            title: "Pixel art",
+            description: "No curso Desenvolvedor de Games e Apps, voce aplica pixel art em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Projetos praticos",
+            description: "No curso Desenvolvedor de Games e Apps, voce aplica projetos praticos em situacoes reais para ganhar seguranca e consistencia tecnica."
+          }
         ]
       }
     ],
@@ -171,13 +246,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Capacita voce em gerenciamento de pessoas com exemplos reais e boas praticas usadas no dia a dia profissional.",
         topics: [
-          "Gestao de pessoas",
-          "Departamento pessoal",
-          "Ferramentas de produtividade",
-          "Comunicacao no ambiente de trabalho",
-          "Trabalho em equipe",
-          "Desenvolvimento profissional"
+          {
+            title: "Gestao de pessoas",
+            description: "No curso Gerenciamento de Pessoas, voce aplica gestao de pessoas em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Departamento pessoal",
+            description: "Em Gerenciamento de Pessoas, departamento pessoal e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Ferramentas de produtividade",
+            description: "No curso Gerenciamento de Pessoas, ferramentas de produtividade e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Comunicacao no ambiente de trabalho",
+            description: "No contexto de Gerenciamento de Pessoas, comunicacao no ambiente de trabalho conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Trabalho em equipe",
+            description: "No curso Gerenciamento de Pessoas, voce aplica trabalho em equipe em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Desenvolvimento profissional",
+            description: "No curso Gerenciamento de Pessoas, desenvolvimento profissional e explorado passo a passo para voce executar tarefas com mais autonomia."
+          }
         ]
       }
     ],
@@ -218,19 +312,56 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Desenvolve competencias em gestao empresarial com exercicios orientados para situacoes de mercado.",
         topics: [
-          "Assistente de recursos humanos",
-          "Assistente contabil",
-          "Matematica financeira (HP12C)",
-          "Word",
-          "Documentos Google",
-          "Outlook (email profissional)",
-          "Desenvolvimento profissional",
-          "Empreendedorismo",
-          "Criatividade no trabalho",
-          "Comunicacao empresarial",
-          "Atendimento ao cliente",
-          "Tecnicas de vendas"
+          {
+            title: "Assistente de recursos humanos",
+            description: "No curso Gestao Empresarial, assistente de recursos humanos e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Assistente contabil",
+            description: "Durante Gestao Empresarial, assistente contabil e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Matematica financeira (HP12C)",
+            description: "Em Gestao Empresarial, matematica financeira (hp12c) e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Word",
+            description: "Neste modulo de Gestao Empresarial, voce domina word com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Documentos Google",
+            description: "Neste modulo de Gestao Empresarial, voce domina documentos google com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Outlook (email profissional)",
+            description: "No curso Gestao Empresarial, outlook (email profissional) e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Desenvolvimento profissional",
+            description: "Em Gestao Empresarial, desenvolvimento profissional e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Empreendedorismo",
+            description: "No contexto de Gestao Empresarial, empreendedorismo conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Criatividade no trabalho",
+            description: "Em Gestao Empresarial, criatividade no trabalho e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Comunicacao empresarial",
+            description: "No curso Gestao Empresarial, comunicacao empresarial e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Atendimento ao cliente",
+            description: "No curso Gestao Empresarial, atendimento ao cliente fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          },
+          {
+            title: "Tecnicas de vendas",
+            description: "Em Gestao Empresarial, tecnicas de vendas integra abordagem consultiva e estrategia comercial para aumentar conversao."
+          }
         ]
       }
     ],
@@ -271,13 +402,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Explora hotelaria e turismo na pratica para aumentar sua seguranca tecnica e qualidade de entrega.",
         topics: [
-          "Fundamentos de hotelaria",
-          "Atendimento ao cliente",
-          "Rotinas de recepcao",
-          "Comunicacao profissional",
-          "Postura no ambiente de trabalho",
-          "Organizacao de atendimento"
+          {
+            title: "Fundamentos de hotelaria",
+            description: "Em Hotelaria e Turismo, fundamentos de hotelaria e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Atendimento ao cliente",
+            description: "No curso Hotelaria e Turismo, atendimento ao cliente fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          },
+          {
+            title: "Rotinas de recepcao",
+            description: "No curso Hotelaria e Turismo, voce aplica rotinas de recepcao em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Comunicacao profissional",
+            description: "No curso Hotelaria e Turismo, voce aplica comunicacao profissional em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Postura no ambiente de trabalho",
+            description: "Em Hotelaria e Turismo, postura no ambiente de trabalho e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Organizacao de atendimento",
+            description: "No curso Hotelaria e Turismo, organizacao de atendimento fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          }
         ]
       }
     ],
@@ -318,15 +468,40 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Capacita voce em informatica completa com exemplos reais e boas praticas usadas no dia a dia profissional.",
         topics: [
-          "Introducao a informatica",
-          "Sistema operacional (Windows)",
-          "Word",
-          "Excel",
-          "PowerPoint",
-          "Internet e navegacao",
-          "Organizacao de arquivos",
-          "Uso de dispositivos digitais"
+          {
+            title: "Introducao a informatica",
+            description: "Neste modulo de Informatica Completa, voce domina introducao a informatica com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Sistema operacional (Windows)",
+            description: "No curso Informatica Completa, sistema operacional (windows) e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Word",
+            description: "Neste modulo de Informatica Completa, voce domina word com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Excel",
+            description: "No curso Informatica Completa, excel desenvolve analise, organizacao de dados e produtividade em planilhas."
+          },
+          {
+            title: "PowerPoint",
+            description: "Em Informatica Completa, powerpoint e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Internet e navegacao",
+            description: "No curso Informatica Completa, internet e navegacao e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Organizacao de arquivos",
+            description: "Em Informatica Completa, organizacao de arquivos e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Uso de dispositivos digitais",
+            description: "Neste modulo de Informatica Completa, voce domina uso de dispositivos digitais com foco em qualidade, produtividade e padroes de mercado."
+          }
         ]
       }
     ],
@@ -366,12 +541,28 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Capacita voce em manutencao de celulares com exemplos reais e boas praticas usadas no dia a dia profissional.",
         topics: [
-          "Fundamentos de hardware",
-          "Manutencao de computadores",
-          "Manutencao de notebook",
-          "Seguranca digital",
-          "Diagnostico basico de problemas"
+          {
+            title: "Fundamentos de hardware",
+            description: "Durante Manutencao de Celulares, fundamentos de hardware e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Manutencao de computadores",
+            description: "No curso Manutencao de Celulares, voce aplica manutencao de computadores em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Manutencao de notebook",
+            description: "Durante Manutencao de Celulares, manutencao de notebook e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Seguranca digital",
+            description: "No curso Manutencao de Celulares, seguranca digital e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Diagnostico basico de problemas",
+            description: "Em Manutencao de Celulares, diagnostico basico de problemas e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          }
         ]
       }
     ],
@@ -412,14 +603,36 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Integra canais, conteudo e metricas para ampliar resultado nas acoes de marketing digital.",
         topics: [
-          "Fundamentos de marketing",
-          "Marketing digital I e II",
-          "Estrategias de conteudo",
-          "Trafego pago",
-          "Criacao de campanhas online",
-          "Canal no YouTube",
-          "Posicionamento digital"
+          {
+            title: "Fundamentos de marketing",
+            description: "No curso Marketing Digital, fundamentos de marketing combina estrategia, conteudo e performance para gerar crescimento digital."
+          },
+          {
+            title: "Marketing digital I e II",
+            description: "No curso Marketing Digital, marketing digital i e ii combina estrategia, conteudo e performance para gerar crescimento digital."
+          },
+          {
+            title: "Estrategias de conteudo",
+            description: "No contexto de Marketing Digital, estrategias de conteudo conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Trafego pago",
+            description: "No curso Marketing Digital, trafego pago e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Criacao de campanhas online",
+            description: "Neste modulo de Marketing Digital, voce domina criacao de campanhas online com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Canal no YouTube",
+            description: "Durante Marketing Digital, canal no youtube e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Posicionamento digital",
+            description: "Neste modulo de Marketing Digital, voce domina posicionamento digital com foco em qualidade, produtividade e padroes de mercado."
+          }
         ]
       }
     ],
@@ -460,13 +673,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Apresenta fundamentos e aplicacoes de operador de caixa para voce executar tarefas com mais eficiencia.",
         topics: [
-          "Operacao de caixa",
-          "Abertura e fechamento de caixa",
-          "Atendimento ao cliente",
-          "Tecnicas de vendas",
-          "Comunicacao profissional",
-          "Postura no ambiente de trabalho"
+          {
+            title: "Operacao de caixa",
+            description: "Neste modulo de Operador de Caixa, voce domina operacao de caixa com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Abertura e fechamento de caixa",
+            description: "No curso Operador de Caixa, abertura e fechamento de caixa e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Atendimento ao cliente",
+            description: "No curso Operador de Caixa, atendimento ao cliente fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          },
+          {
+            title: "Tecnicas de vendas",
+            description: "Em Operador de Caixa, tecnicas de vendas integra abordagem consultiva e estrategia comercial para aumentar conversao."
+          },
+          {
+            title: "Comunicacao profissional",
+            description: "Neste modulo de Operador de Caixa, voce domina comunicacao profissional com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Postura no ambiente de trabalho",
+            description: "No curso Operador de Caixa, postura no ambiente de trabalho e explorado passo a passo para voce executar tarefas com mais autonomia."
+          }
         ]
       }
     ],
@@ -508,13 +740,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Trabalha power bi com foco em resultado, organizacao e padroes valorizados pelas empresas.",
         topics: [
-          "Power BI essencial",
-          "Power BI intermediario",
-          "Power BI avancado",
-          "Criacao de dashboards",
-          "Analise de dados",
-          "Visualizacao de informacoes"
+          {
+            title: "Power BI essencial",
+            description: "Em Power BI, power bi essencial transforma dados em indicadores visuais para apoiar decisoes com mais confianca."
+          },
+          {
+            title: "Power BI intermediario",
+            description: "Em Power BI, power bi intermediario transforma dados em indicadores visuais para apoiar decisoes com mais confianca."
+          },
+          {
+            title: "Power BI avancado",
+            description: "Em Power BI, power bi avancado transforma dados em indicadores visuais para apoiar decisoes com mais confianca."
+          },
+          {
+            title: "Criacao de dashboards",
+            description: "Neste modulo de Power BI, voce domina criacao de dashboards com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Analise de dados",
+            description: "No curso Power BI, analise de dados e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Visualizacao de informacoes",
+            description: "No contexto de Power BI, visualizacao de informacoes conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          }
         ]
       }
     ],
@@ -555,13 +806,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Apresenta fundamentos e aplicacoes de designer para voce executar tarefas com mais eficiencia.",
         topics: [
-          "Corel Draw",
-          "Photoshop",
-          "Illustrator",
-          "Edicao de imagens",
-          "Criacao de artes para redes sociais",
-          "Desenvolvimento de identidade visual"
+          {
+            title: "Corel Draw",
+            description: "No contexto de Designer, corel draw conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Photoshop",
+            description: "Em Designer, photoshop e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Illustrator",
+            description: "No curso Designer, voce aplica illustrator em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Edicao de imagens",
+            description: "Durante Designer, edicao de imagens e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Criacao de artes para redes sociais",
+            description: "No curso Designer, criacao de artes para redes sociais desenvolve capacidade tecnica para implantar, configurar e manter ambientes estaveis."
+          },
+          {
+            title: "Desenvolvimento de identidade visual",
+            description: "Durante Designer, desenvolvimento de identidade visual e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          }
         ]
       }
     ],
@@ -602,12 +872,28 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Mostra como aplicar profissional em animacao 3d em rotinas profissionais, reduzindo erros e ganhando produtividade.",
         topics: [
-          "SketchUp",
-          "3D Studio Max",
-          "Modelagem 3D",
-          "Criacao de ambientes",
-          "Projetos visuais"
+          {
+            title: "SketchUp",
+            description: "No curso Profissional em Animacao 3D, voce aplica sketchup em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "3D Studio Max",
+            description: "No curso Profissional em Animacao 3D, voce aplica 3d studio max em situacoes reais para ganhar seguranca e consistencia tecnica."
+          },
+          {
+            title: "Modelagem 3D",
+            description: "Durante Profissional em Animacao 3D, modelagem 3d e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Criacao de ambientes",
+            description: "Neste modulo de Profissional em Animacao 3D, voce domina criacao de ambientes com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Projetos visuais",
+            description: "Durante Profissional em Animacao 3D, projetos visuais e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          }
         ]
       }
     ],
@@ -648,14 +934,36 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Apresenta fundamentos e aplicacoes de operador de caixa para voce executar tarefas com mais eficiencia.",
         topics: [
-          "Operacao de caixa",
-          "Abertura e fechamento de caixa",
-          "Atendimento ao cliente",
-          "Tecnicas de vendas",
-          "Comunicacao profissional",
-          "Informatica basica",
-          "Postura no ambiente de trabalho"
+          {
+            title: "Operacao de caixa",
+            description: "Neste modulo de Operador de Caixa (Formacao Completa), voce domina operacao de caixa com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Abertura e fechamento de caixa",
+            description: "Durante Operador de Caixa (Formacao Completa), abertura e fechamento de caixa e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Atendimento ao cliente",
+            description: "No curso Operador de Caixa (Formacao Completa), atendimento ao cliente fortalece comunicacao, postura e experiencia do cliente em cada interacao."
+          },
+          {
+            title: "Tecnicas de vendas",
+            description: "Em Operador de Caixa (Formacao Completa), tecnicas de vendas integra abordagem consultiva e estrategia comercial para aumentar conversao."
+          },
+          {
+            title: "Comunicacao profissional",
+            description: "No contexto de Operador de Caixa (Formacao Completa), comunicacao profissional conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Informatica basica",
+            description: "No curso Operador de Caixa (Formacao Completa), informatica basica e explorado passo a passo para voce executar tarefas com mais autonomia."
+          },
+          {
+            title: "Postura no ambiente de trabalho",
+            description: "No curso Operador de Caixa (Formacao Completa), postura no ambiente de trabalho e explorado passo a passo para voce executar tarefas com mais autonomia."
+          }
         ]
       }
     ],
@@ -696,13 +1004,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Explora profissional em planilhas na pratica para aumentar sua seguranca tecnica e qualidade de entrega.",
         topics: [
-          "Excel basico",
-          "Excel intermediario",
-          "Excel avancado",
-          "Criacao de planilhas profissionais",
-          "Formulas e funcoes",
-          "Organizacao e analise de dados"
+          {
+            title: "Excel basico",
+            description: "No curso Profissional em Planilhas, excel basico desenvolve analise, organizacao de dados e produtividade em planilhas."
+          },
+          {
+            title: "Excel intermediario",
+            description: "No curso Profissional em Planilhas, excel intermediario desenvolve analise, organizacao de dados e produtividade em planilhas."
+          },
+          {
+            title: "Excel avancado",
+            description: "No curso Profissional em Planilhas, excel avancado desenvolve analise, organizacao de dados e produtividade em planilhas."
+          },
+          {
+            title: "Criacao de planilhas profissionais",
+            description: "Durante Profissional em Planilhas, criacao de planilhas profissionais e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Formulas e funcoes",
+            description: "Neste modulo de Profissional em Planilhas, voce domina formulas e funcoes com foco em qualidade, produtividade e padroes de mercado."
+          },
+          {
+            title: "Organizacao e analise de dados",
+            description: "Durante Profissional em Planilhas, organizacao e analise de dados e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          }
         ]
       }
     ],
@@ -743,13 +1070,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Explora redes e infraestrutura na pratica para aumentar sua seguranca tecnica e qualidade de entrega.",
         topics: [
-          "Redes de computadores",
-          "Cabeamento estruturado",
-          "Configuracao de redes",
-          "Seguranca digital",
-          "Infraestrutura de TI",
-          "Nocoes de manutencao"
+          {
+            title: "Redes de computadores",
+            description: "No curso Redes e Infraestrutura, redes de computadores desenvolve capacidade tecnica para implantar, configurar e manter ambientes estaveis."
+          },
+          {
+            title: "Cabeamento estruturado",
+            description: "No curso Redes e Infraestrutura, cabeamento estruturado desenvolve capacidade tecnica para implantar, configurar e manter ambientes estaveis."
+          },
+          {
+            title: "Configuracao de redes",
+            description: "No curso Redes e Infraestrutura, configuracao de redes desenvolve capacidade tecnica para implantar, configurar e manter ambientes estaveis."
+          },
+          {
+            title: "Seguranca digital",
+            description: "No contexto de Redes e Infraestrutura, seguranca digital conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Infraestrutura de TI",
+            description: "No curso Redes e Infraestrutura, infraestrutura de ti desenvolve capacidade tecnica para implantar, configurar e manter ambientes estaveis."
+          },
+          {
+            title: "Nocoes de manutencao",
+            description: "No contexto de Redes e Infraestrutura, nocoes de manutencao conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          }
         ]
       }
     ],
@@ -790,13 +1136,32 @@ export const cursosData = [
     curriculum: [
       {
         module: "Conteudos da Formacao",
+        description: "Mostra como aplicar tecnologia em rotinas profissionais, reduzindo erros e ganhando produtividade.",
         topics: [
-          "Informatica basica",
-          "Uso do computador",
-          "Internet e navegacao",
-          "Ferramentas digitais",
-          "Introducao a tecnologia",
-          "Nocoes basicas de logica"
+          {
+            title: "Informatica basica",
+            description: "Em Tecnologia, informatica basica e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Uso do computador",
+            description: "Durante Tecnologia, uso do computador e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Internet e navegacao",
+            description: "No contexto de Tecnologia, internet e navegacao conecta teoria e pratica para resultados mais eficientes no dia a dia."
+          },
+          {
+            title: "Ferramentas digitais",
+            description: "Durante Tecnologia, ferramentas digitais e desenvolvido com exercicios objetivos para melhorar sua tomada de decisao."
+          },
+          {
+            title: "Introducao a tecnologia",
+            description: "Em Tecnologia, introducao a tecnologia e trabalhado com pratica orientada para acelerar sua evolucao profissional."
+          },
+          {
+            title: "Nocoes basicas de logica",
+            description: "No curso Tecnologia, voce aplica nocoes basicas de logica em situacoes reais para ganhar seguranca e consistencia tecnica."
+          }
         ]
       }
     ],

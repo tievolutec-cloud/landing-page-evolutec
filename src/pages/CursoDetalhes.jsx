@@ -1,5 +1,5 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { getCourseBySlug, cursosData } from '../data/coursesData';
 import './CursoDetalhes.css';
 
@@ -55,9 +55,43 @@ function CursoDetalhes() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const curso = getCourseBySlug(slug);
+  const timelineSectionRef = useRef(null);
+  const [isTimelineVisible, setIsTimelineVisible] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [slug]);
+
+  useEffect(() => {
+    const timelineSection = timelineSectionRef.current;
+
+    if (!timelineSection) {
+      return undefined;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsTimelineVisible(true);
+      return undefined;
+    }
+
+    setIsTimelineVisible(false);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTimelineVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    observer.observe(timelineSection);
+
+    return () => observer.disconnect();
   }, [slug]);
 
   if (!curso) {
@@ -84,9 +118,13 @@ function CursoDetalhes() {
 
   const curriculumTimelineItems = curso.curriculum.flatMap((moduleItem, moduleIndex) =>
     moduleItem.topics.map((topic, topicIndex) => ({
-      id: `${moduleIndex}-${topicIndex}-${topic}`,
+      id: `${moduleIndex}-${topicIndex}-${typeof topic === 'string' ? topic : topic.title}`,
       module: moduleItem.module,
-      topic,
+      topicTitle: typeof topic === 'string' ? topic : topic.title,
+      topicDescription:
+        typeof topic === 'string'
+          ? ''
+          : topic.description || '',
       step: topicIndex + 1,
     }))
   );
@@ -239,16 +277,24 @@ function CursoDetalhes() {
         </div>
 
         {/* Conteudos da Formacao - Timeline */}
-        <section className="curriculum-timeline-section">
+        <section
+          ref={timelineSectionRef}
+          className={`curriculum-timeline-section ${isTimelineVisible ? 'is-visible' : ''}`.trim()}
+        >
           <h2 className="section-title-destaque">Conteudos da Formacao</h2>
           <div className="curriculum-timeline">
             {curriculumTimelineItems.map((item, index) => (
-              <article key={item.id} className="curriculum-timeline-item">
+              <article
+                key={item.id}
+                className="curriculum-timeline-item"
+                style={{ '--item-index': index }}
+              >
                 <span className="curriculum-timeline-module">{item.module}</span>
-                <h3 className="curriculum-timeline-topic">{item.topic}</h3>
+                <h3 className="curriculum-timeline-topic">{item.topicTitle}</h3>
                 <div className="curriculum-timeline-meta">
-                  <CheckIcon />
-                  <span>Etapa {item.step}</span>
+                  {item.topicDescription && (
+                    <p className="curriculum-timeline-description">{item.topicDescription}</p>
+                  )}
                 </div>
               </article>
             ))}
