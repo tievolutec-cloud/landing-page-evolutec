@@ -8,17 +8,12 @@ import NavbarMobile from './NavbarMobile';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
   const [openDropdown, setOpenDropdown] = useState(null)
   const dropdownTimeout = useRef(null)
   const location = useLocation()
-  const [showModal, setShowModal] = useState(false)
   const [contatoModalOpen, setContatoModalOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setMenuOpen(prev => !prev)
-  }
   const closeMenu = () => setMenuOpen(false)
 
   const DROPDOWN_DELAY = 150
@@ -70,53 +65,6 @@ function Navbar() {
   }, [menuOpen])
 
   useEffect(() => {
-    const maxScrollRef = { current: 1 }
-    const pendingProgressRef = { current: 0 }
-    const lastProgressRef = { current: -1 }
-    let rafId = 0
-
-    const updateMaxScroll = () => {
-      const doc = document.documentElement
-      maxScrollRef.current = Math.max(1, doc.scrollHeight - doc.clientHeight)
-    }
-
-    const commitProgress = () => {
-      rafId = 0
-      const next = pendingProgressRef.current
-      if (Math.abs(next - lastProgressRef.current) < 0.001) return
-      lastProgressRef.current = next
-      setScrollProgress(next)
-    }
-
-    const handleScroll = () => {
-      const doc = document.documentElement
-      const scrollTop = doc.scrollTop || window.scrollY || 0
-      const next = Math.max(0, Math.min(1, scrollTop / maxScrollRef.current))
-      pendingProgressRef.current = next
-      if (rafId) return
-      rafId = window.requestAnimationFrame(commitProgress)
-    }
-
-    const handleResize = () => {
-      updateMaxScroll()
-      handleScroll()
-    }
-
-    updateMaxScroll()
-    handleScroll()
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    window.addEventListener('resize', handleResize, { passive: true })
-    window.addEventListener('load', handleResize, { once: true, passive: true })
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
-      if (rafId) window.cancelAnimationFrame(rafId)
-    }
-  }, [])
-
-  useEffect(() => {
     if (location.hash) {
       setTimeout(() => {
         const element = document.querySelector(location.hash)
@@ -154,11 +102,6 @@ function Navbar() {
     }
   }, [menuOpen, isMobile])
 
-  // Fecha dropdown ao navegar
-  useEffect(() => {
-    setOpenDropdown(null)
-  }, [location])
-
   const handleAnchorClick = (e, anchor) => {
     closeMenu()
     if (anchor === '#unidades') {
@@ -192,18 +135,6 @@ function Navbar() {
     } else {
       if (linkAction) linkAction(e)
     }
-  }
-
-  const openModal = () => {
-    setShowModal(true)
-  }
-
-  const closeModal = () => {
-    setShowModal(false)
-  }
-
-  const openContatoModal = () => {
-    setContatoModalOpen(true)
   }
 
   const closeContatoModal = () => {
@@ -413,12 +344,6 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-        </div>
-        <div className="progress-container">
-          <div
-            className="progress-bar"
-            style={{ width: `${scrollProgress * 100}%` }}
-          />
         </div>
       </nav>
       <ContatoModal

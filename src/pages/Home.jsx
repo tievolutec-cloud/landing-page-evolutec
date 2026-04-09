@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState, Suspense, lazy } from 'react'
 import { useLocation } from 'react-router-dom'
 import Banner from '../components/Banner'
-import Cursos from './Cursos'
-import Contato from './Contato'
-import Estatisticas from '../components/Estatisticas'
+
+const Estatisticas = lazy(() => import('../components/Estatisticas'))
+const Cursos = lazy(() => import('./Cursos'))
+const Contato = lazy(() => import('./Contato'))
 
 const GaleriaFormatura = lazy(() => import('../components/GaleriaFormatura'))
 const Depoimentos = lazy(() => import('../components/Depoimentos'))
@@ -56,10 +57,16 @@ function Home() {
   return (
     <>
       <Banner/>
-      <Estatisticas/>
-      <Cursos/>
-      <Contato/>
       <Suspense fallback={null}>
+        <DeferredSection minHeight={160}>
+          <Estatisticas/>
+        </DeferredSection>
+        <DeferredSection minHeight={640}>
+          <Cursos/>
+        </DeferredSection>
+        <DeferredSection minHeight={520}>
+          <Contato/>
+        </DeferredSection>
         <DeferredSection minHeight={380}>
           <GaleriaFormatura/>
         </DeferredSection>
