@@ -3,15 +3,6 @@ import './Banner.css'
 
 const slides = [
   {
-    id: 1,
-    imageDesktop: '/TESTANDO.png',
-    imageMobile: '/TESTANDO.png', // Substitua depois pela versão mobile
-    title: 'Aprenda Tecnologia na Prática',
-    subtitle: 'Cursos de programação, robótica e muito mais para transformar seu futuro.',
-    cta: 'Conheça Nossos Cursos',
-    ctaLink: '#cursos',
-  },
-  {
     id: 2,
     imageDesktop: '/banner2.webp',
     imageMobile: '/banner2.webp', // Substitua depois pela versão mobile
