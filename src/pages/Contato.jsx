@@ -112,7 +112,11 @@ function Contato() {
             src="/mascote.webp"
             alt="Mascote Evolutec"
             className={`contato-avatar ${isVisible ? 'visible' : ''}`}
-           loading="lazy" decoding="async"/>
+            loading="lazy"
+            decoding="async"
+            width="700"
+            height="700"
+          />
 
           <div className="contato-social contato-social--whatsapp">
             <svg viewBox="0 0 24 24" fill="#fff" width="32" height="32">

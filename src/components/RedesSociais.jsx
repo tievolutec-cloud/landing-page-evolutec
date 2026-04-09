@@ -89,7 +89,14 @@ function RedesSociais() {
               {posts.map((post) => (
                 <div key={`post-${post.id}`} className="instagram-post">
                   <div className="post-image-container">
-                    <img src={post.imagem} alt={`Post ${post.id}`}  loading="lazy" decoding="async"/>
+                    <img
+                      src={post.imagem}
+                      alt={`Post ${post.id}`}
+                      loading="lazy"
+                      decoding="async"
+                      width="1080"
+                      height="1080"
+                    />
                   </div>
                   <div className="post-actions">
                     <div className="action-icons">
@@ -105,7 +112,14 @@ function RedesSociais() {
               {posts.map((post) => (
                 <div key={`post-duplicate-${post.id}`} className="instagram-post">
                   <div className="post-image-container">
-                    <img src={post.imagem} alt={`Post ${post.id}`}  loading="lazy" decoding="async"/>
+                    <img
+                      src={post.imagem}
+                      alt={`Post ${post.id}`}
+                      loading="lazy"
+                      decoding="async"
+                      width="1080"
+                      height="1080"
+                    />
                   </div>
                   <div className="post-actions">
                     <div className="action-icons">

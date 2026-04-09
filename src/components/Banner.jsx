@@ -60,8 +60,12 @@ function Banner() {
                 <img
                   src={slide.imageDesktop}
                   alt={slide.title}
-                  loading="lazy"
-                className="banner-image"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={index === 0 ? 'high' : 'low'}
+                  decoding="async"
+                  width="1920"
+                  height="1080"
+                  className="banner-image"
               />
             </picture>
             

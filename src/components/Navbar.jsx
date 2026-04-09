@@ -246,7 +246,16 @@ function Navbar() {
       {/* Main Navbar */}
       <nav className="navbar">
         <div className="navbar-container">
-          <img src="/logo-evolutec.webp" alt="Evolutec Logo" className="logo-img"  loading="lazy" decoding="async"/>
+          <img
+            src="/logo-evolutec.webp"
+            alt="Evolutec Logo"
+            className="logo-img"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width="220"
+            height="64"
+          />
           <Link to="/" className="navbar-logo"></Link>
           <ul
             id="navbar-menu"

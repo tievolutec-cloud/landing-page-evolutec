@@ -35,7 +35,15 @@ const CourseCard = ({
             <span className="badge-dot"></span>
             {mode}
           </div>
-          <img src={image} alt={title} className="card-image"  loading="lazy" decoding="async"/>
+          <img
+            src={image}
+            alt={title}
+            className="card-image"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="360"
+          />
         </div>
 
         {/* Conteúdo */}

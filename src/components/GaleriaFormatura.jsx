@@ -95,6 +95,9 @@ export default function GaleriaFormatura() {
                 src={img.src} 
                 alt={img.alt} 
                 loading="lazy" 
+                decoding="async"
+                width="1200"
+                height="800"
               />
             </div>
           )
