@@ -1,16 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import './Mapa.css'
 import L from 'leaflet'
 
-// Criar um ícone customizado usando a imagem pin.webp
-const customIcon = L.icon({
-  iconUrl: '/pin.webp',
-  iconSize: [45, 45],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -40]
-})
+const PIN_SIZE = [45, 45]
+
+function createPinIcon(isHighlighted = false) {
+  return L.divIcon({
+    className: `map-pin-wrapper${isHighlighted ? ' map-pin-wrapper--zoom' : ''}`,
+    html: '<img src="/pin.webp" alt="Pin" class="map-pin-image"/>',
+    iconSize: PIN_SIZE,
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40],
+  })
+}
 
 // Componente para atualizar o centro do mapa
 const MapUpdater = ({ center, zoom }) => {
@@ -18,7 +22,7 @@ const MapUpdater = ({ center, zoom }) => {
   
   useEffect(() => {
     if (center) {
-      map.flyTo(center, zoom || 13, { duration: 1.5 })
+      map.flyTo(center, zoom || 13, { duration: 0.65, easeLinearity: 0.35 })
     }
   }, [center, zoom, map])
   
@@ -26,6 +30,9 @@ const MapUpdater = ({ center, zoom }) => {
 }
 
 const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
+  const [highlightedPoloId, setHighlightedPoloId] = useState(null)
+  const previousPoloRef = useRef(null)
+
   const polos = [
     {
       id: 'todos',
@@ -89,6 +96,27 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
   const poloAtualState = poloSelecionado || 'todos';
   const poloChosen = polos.find(p => p.id.toString() === poloAtualState.toString()) || polos[0];
 
+  useEffect(() => {
+    onPoloChange && onPoloChange(poloChosen)
+  }, [onPoloChange, poloChosen])
+
+  useEffect(() => {
+    const isSpecificPolo = poloChosen.id !== 'todos'
+    const hasChangedPolo = previousPoloRef.current !== poloChosen.id
+
+    if (isSpecificPolo && hasChangedPolo) {
+      setHighlightedPoloId(poloChosen.id)
+      const timer = window.setTimeout(() => {
+        setHighlightedPoloId(null)
+      }, 850)
+      previousPoloRef.current = poloChosen.id
+      return () => window.clearTimeout(timer)
+    }
+
+    previousPoloRef.current = poloChosen.id
+    return undefined
+  }, [poloChosen.id])
+
   // Seleciona polo vindo de prop externa (ex: navbar dropdown)
   useEffect(() => {
     if (initialPoloId) {
@@ -123,7 +151,11 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
             
             {poloChosen.id === 'todos' ? (
               polos.slice(1).map((polo) => (
-                <Marker key={polo.id} position={polo.position} icon={customIcon}>
+                <Marker
+                  key={polo.id}
+                  position={polo.position}
+                  icon={createPinIcon(highlightedPoloId === polo.id)}
+                >
                   <Popup>
                     <div className="popup-content">
                       <h3>{polo.nome}</h3>
@@ -140,7 +172,10 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
                 </Marker>
               ))
             ) : (
-              <Marker position={poloChosen.position} icon={customIcon}>
+              <Marker
+                position={poloChosen.position}
+                icon={createPinIcon(highlightedPoloId === poloChosen.id)}
+              >
                 <Popup>
                   <div className="popup-content">
                     <h3>{poloChosen.nome}</h3>

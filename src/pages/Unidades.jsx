@@ -39,6 +39,12 @@ function Unidades() {
     }
   }, [location]);
 
+  useEffect(() => {
+    if (unidadeId) {
+      setPoloSelecionado(unidadeId);
+    }
+  }, [unidadeId]);
+
   return (
     <div className="unidades-page">
       <section className="unidades-hero">
@@ -86,7 +92,11 @@ function Unidades() {
 
       <section className="unidades-content">
         <div className="unidades-mapa-wrapper">
-          <Mapa initialPoloId={unidadeId} onPoloChange={setPoloAtivo} />
+          <Mapa
+            initialPoloId={unidadeId}
+            onPoloChange={setPoloAtivo}
+            poloSelecionado={poloSelecionado}
+          />
         </div>
       </section>
     </div>
