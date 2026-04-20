@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import './Mapa.css'
@@ -6,9 +6,9 @@ import L from 'leaflet'
 
 const PIN_SIZE = [45, 45]
 
-function createPinIcon(isHighlighted = false) {
+function createPinIcon() {
   return L.divIcon({
-    className: `map-pin-wrapper${isHighlighted ? ' map-pin-wrapper--zoom' : ''}`,
+    className: 'map-pin-wrapper',
     html: '<img src="/pin.webp" alt="Pin" class="map-pin-image"/>',
     iconSize: PIN_SIZE,
     iconAnchor: [20, 40],
@@ -22,7 +22,7 @@ const MapUpdater = ({ center, zoom }) => {
   
   useEffect(() => {
     if (center) {
-      map.flyTo(center, zoom || 13, { duration: 0.65, easeLinearity: 0.35 })
+      map.panTo(center)
     }
   }, [center, zoom, map])
   
@@ -30,9 +30,6 @@ const MapUpdater = ({ center, zoom }) => {
 }
 
 const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
-  const [highlightedPoloId, setHighlightedPoloId] = useState(null)
-  const previousPoloRef = useRef(null)
-
   const polos = [
     {
       id: 'todos',
@@ -100,23 +97,6 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
     onPoloChange && onPoloChange(poloChosen)
   }, [onPoloChange, poloChosen])
 
-  useEffect(() => {
-    const isSpecificPolo = poloChosen.id !== 'todos'
-    const hasChangedPolo = previousPoloRef.current !== poloChosen.id
-
-    if (isSpecificPolo && hasChangedPolo) {
-      setHighlightedPoloId(poloChosen.id)
-      const timer = window.setTimeout(() => {
-        setHighlightedPoloId(null)
-      }, 850)
-      previousPoloRef.current = poloChosen.id
-      return () => window.clearTimeout(timer)
-    }
-
-    previousPoloRef.current = poloChosen.id
-    return undefined
-  }, [poloChosen.id])
-
   // Seleciona polo vindo de prop externa (ex: navbar dropdown)
   useEffect(() => {
     if (initialPoloId) {
@@ -154,7 +134,7 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
                 <Marker
                   key={polo.id}
                   position={polo.position}
-                  icon={createPinIcon(highlightedPoloId === polo.id)}
+                  icon={createPinIcon()}
                 >
                   <Popup>
                     <div className="popup-content">
@@ -174,7 +154,7 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
             ) : (
               <Marker
                 position={poloChosen.position}
-                icon={createPinIcon(highlightedPoloId === poloChosen.id)}
+                icon={createPinIcon()}
               >
                 <Popup>
                   <div className="popup-content">
