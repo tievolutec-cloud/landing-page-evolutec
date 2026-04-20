@@ -26,6 +26,7 @@ function Banner() {
   const [current, setCurrent] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [isReady, setIsReady] = useState(false)
+  const [isInteractive, setIsInteractive] = useState(false)
 
   const goToSlide = useCallback((index) => {
     if (isTransitioning) return
@@ -48,8 +49,31 @@ function Banner() {
     return () => window.cancelAnimationFrame(rafId)
   }, [])
 
+  // Monta controles e slides adicionais apenas quando a thread principal estiver menos ocupada.
+  useEffect(() => {
+    let timeoutId
+    let idleId
+
+    const enableCarousel = () => setIsInteractive(true)
+
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(enableCarousel, { timeout: 1800 })
+    } else {
+      timeoutId = window.setTimeout(enableCarousel, 1200)
+    }
+
+    return () => {
+      if (typeof window !== 'undefined' && idleId && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId)
+      }
+      if (timeoutId) window.clearTimeout(timeoutId)
+    }
+  }, [])
+
   // Auto-play
   useEffect(() => {
+    if (!isInteractive) return undefined
+
     let intervalId
     const startDelay = window.setTimeout(() => {
       intervalId = window.setInterval(() => {
@@ -61,12 +85,14 @@ function Banner() {
       window.clearTimeout(startDelay)
       if (intervalId) window.clearInterval(intervalId)
     }
-  }, [nextSlide])
+  }, [isInteractive, nextSlide])
+
+  const visibleSlides = isInteractive ? slides : [slides[0]]
 
   return (
     <section className={`banner${isReady ? ' is-ready' : ''}`} id="home">
       <div className="banner-track">
-        {slides.map((slide, index) => (
+        {visibleSlides.map((slide, index) => (
           <div
             key={slide.id}
             className={`banner-slide${index === current ? ' active' : ''}`}
@@ -78,7 +104,8 @@ function Banner() {
                   alt={slide.title}
                   loading={index === 0 ? 'eager' : 'lazy'}
                   fetchPriority={index === 0 ? 'high' : 'low'}
-                  decoding="async"
+                  decoding={index === 0 ? 'sync' : 'async'}
+                  sizes="100vw"
                   width="1920"
                   height="1080"
                   className="banner-image"
@@ -94,23 +121,27 @@ function Banner() {
         ))}
       </div>
 
-      <button className="banner-arrow banner-arrow--left" onClick={prevSlide} aria-label="Anterior">
-        &#10094;
-      </button>
-      <button className="banner-arrow banner-arrow--right" onClick={nextSlide} aria-label="Próximo">
-        &#10095;
-      </button>
+      {isInteractive ? (
+        <>
+          <button className="banner-arrow banner-arrow--left" onClick={prevSlide} aria-label="Anterior">
+            &#10094;
+          </button>
+          <button className="banner-arrow banner-arrow--right" onClick={nextSlide} aria-label="Próximo">
+            &#10095;
+          </button>
 
-      <div className="banner-dots">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`banner-dot${index === current ? ' active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Slide ${index + 1}`}
-          />
-        ))}
-      </div>
+          <div className="banner-dots">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={`banner-dot${index === current ? ' active' : ''}`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      ) : null}
     </section>
   )
 }
