@@ -25,6 +25,7 @@ const slides = [
 function Banner() {
   const [current, setCurrent] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isReady, setIsReady] = useState(false)
 
   const goToSlide = useCallback((index) => {
     if (isTransitioning) return
@@ -41,14 +42,29 @@ function Banner() {
     goToSlide((current - 1 + slides.length) % slides.length)
   }, [current, goToSlide])
 
+  // Habilita animacoes apenas apos o primeiro frame para nao atrasar LCP.
+  useEffect(() => {
+    const rafId = window.requestAnimationFrame(() => setIsReady(true))
+    return () => window.cancelAnimationFrame(rafId)
+  }, [])
+
   // Auto-play
   useEffect(() => {
-    const timer = setInterval(nextSlide, 3000)
-    return () => clearInterval(timer)
+    let intervalId
+    const startDelay = window.setTimeout(() => {
+      intervalId = window.setInterval(() => {
+        if (!document.hidden) nextSlide()
+      }, 6000)
+    }, 2500)
+
+    return () => {
+      window.clearTimeout(startDelay)
+      if (intervalId) window.clearInterval(intervalId)
+    }
   }, [nextSlide])
 
   return (
-    <section className="banner" id="home">
+    <section className={`banner${isReady ? ' is-ready' : ''}`} id="home">
       <div className="banner-track">
         {slides.map((slide, index) => (
           <div

@@ -20,6 +20,11 @@ function DeferredSection({ children, minHeight = 220 }) {
   useEffect(() => {
     if (!sectionRef.current || isVisible) return
 
+    if (!(typeof window !== 'undefined' && 'IntersectionObserver' in window)) {
+      setIsVisible(true)
+      return undefined
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -27,12 +32,33 @@ function DeferredSection({ children, minHeight = 220 }) {
           observer.disconnect()
         }
       },
-      { rootMargin: '300px 0px' }
+      { rootMargin: '900px 0px' }
     )
 
     observer.observe(sectionRef.current)
 
     return () => observer.disconnect()
+  }, [isVisible])
+
+  useEffect(() => {
+    if (isVisible) return undefined
+
+    let timeoutId
+    let idleId
+    const reveal = () => setIsVisible(true)
+
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(reveal, { timeout: 2500 })
+    } else {
+      timeoutId = window.setTimeout(reveal, 2500)
+    }
+
+    return () => {
+      if (typeof window !== 'undefined' && idleId && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId)
+      }
+      if (timeoutId) window.clearTimeout(timeoutId)
+    }
   }, [isVisible])
 
   return (

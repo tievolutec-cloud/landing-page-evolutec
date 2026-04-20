@@ -1,8 +1,9 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-const Home = lazy(() => import('./pages/Home'))
+import Home from './pages/Home'
+const Footer = lazy(() => import('./components/Footer'))
+const WhatsappButton = lazy(() => import('./components/WhatsappButton'))
 const CursosPage = lazy(() => import('./pages/CursosPage'))
 const CursoDetalhes = lazy(() => import('./pages/CursoDetalhes'))
 const Unidades = lazy(() => import('./pages/Unidades'))
@@ -13,16 +14,46 @@ const TrabalheConosco = lazy(() => import('./pages/TrabalheConosco'))
 const Ebooks = lazy(() => import('./pages/Ebooks'))
 
 import './App.css'
-import WhatsappButton from './components/WhatsappButton';
+
+function useIdleMount(delay = 1200) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    let timeoutId
+    let idleId
+
+    const mount = () => setMounted(true)
+
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(mount, { timeout: delay })
+    } else {
+      timeoutId = window.setTimeout(mount, delay)
+    }
+
+    return () => {
+      if (typeof window !== 'undefined' && idleId && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId)
+      }
+      if (timeoutId) window.clearTimeout(timeoutId)
+    }
+  }, [delay])
+
+  return mounted
+}
 
 function SiteLayout() {
+  const showNonCritical = useIdleMount(1400)
+
   return (
     <>
       <Navbar />
       <Outlet />
-      <Footer />
-      {/* Botão flutuante WhatsApp */}
-      <WhatsappButton />
+      {showNonCritical ? (
+        <Suspense fallback={null}>
+          <Footer />
+          <WhatsappButton />
+        </Suspense>
+      ) : null}
     </>
   )
 }
