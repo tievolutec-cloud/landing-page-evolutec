@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './Footer.css'
-import { Mail, Headset } from 'lucide-react';
 
 const fallbackSocialLinks = {
   facebook: 'https://www.facebook.com/evolutecoficial/',
@@ -8,6 +7,26 @@ const fallbackSocialLinks = {
   tiktok: 'https://www.tiktok.com/@evoluteceducacao',
   youtube: 'https://www.youtube.com/@evolutecoficial',
 };
+
+function HeadsetIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 14v-2a9 9 0 0 1 18 0v2" />
+      <path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z" />
+      <path d="M3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z" />
+      <path d="M6 19a6 6 0 0 0 12 0" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+      <path d="m3 7 9 6 9-6" />
+    </svg>
+  );
+}
 
 function Footer() {
   const [emailContato] = useState('contato@evolutec.com.br');
@@ -88,11 +107,11 @@ function Footer() {
           <h4 className="footer-col-titulo">Contato</h4>
           <ul className="footer-links footer-links--contato">
             <li>
-              <Headset />
+              <HeadsetIcon />
               {telefoneWhatsApp}
             </li>
             <li>
-              <Mail />
+              <MailIcon />
               {emailContato}
             </li>
           </ul>

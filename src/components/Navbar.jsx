@@ -1,18 +1,43 @@
-import { useState, useEffect, useRef } from 'react';
+import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { MessageCircle, ChevronDown } from 'lucide-react';
-import { categoriasCursos } from '../data/coursesData';
 import './Navbar.css';
 import ContatoModal from './contatoModal';
-import NavbarMobile from './NavbarMobile';
+const NavbarMobile = lazy(() => import('./NavbarMobile'));
 
 const FALLBACK_WHATSAPP = 'https://wa.me/559140424250';
+const COURSE_CATEGORIES = [
+  'Saude',
+  'Administracao',
+  'Tecnologia',
+  'Gestao',
+  'Turismo',
+  'Marketing',
+  'Comercio',
+  'Dados',
+  'Design',
+];
+
+function MessageCircleIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+  );
+}
+
+function ChevronDownIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
   const [openDropdown, setOpenDropdown] = useState(null)
-  const [courseCategories] = useState(() => categoriasCursos.filter((categoria) => categoria !== 'Todos'))
+  const [courseCategories] = useState(COURSE_CATEGORIES)
   const dropdownTimeout = useRef(null)
   const location = useLocation()
   const [contatoModalOpen, setContatoModalOpen] = useState(false)
@@ -145,7 +170,11 @@ function Navbar() {
   }
 
   if (isMobile) {
-    return <NavbarMobile />;
+    return (
+      <Suspense fallback={null}>
+        <NavbarMobile />
+      </Suspense>
+    );
   }
 
   // Helper: props de hover para cada item de dropdown pai
@@ -166,7 +195,7 @@ function Navbar() {
       <div className="top-bar">
         <div className="top-bar-container">
           <a href={FALLBACK_WHATSAPP} className="top-bar-link whatsapp-link">
-            <MessageCircle size={16} />
+            <MessageCircleIcon size={16} />
             Matricule-se pelo WhatsApp
           </a>
           <div className="top-bar-right">
@@ -219,7 +248,7 @@ function Navbar() {
                   aria-label="Abrir submenu Conteúdos"
                   tabIndex={-1}
                 >
-                  <ChevronDown size={16} />
+                  <ChevronDownIcon size={16} />
                 </button>
               </div>
               <ul className="dropdown-menu" {...dropdownMenuProps()}>
@@ -254,7 +283,7 @@ function Navbar() {
                   aria-label="Abrir submenu Cursos"
                   tabIndex={-1}
                 >
-                  <ChevronDown size={16} />
+                  <ChevronDownIcon size={16} />
                 </button>
               </div>
               <ul className="dropdown-menu" {...dropdownMenuProps()}>
@@ -294,7 +323,7 @@ function Navbar() {
                   aria-label="Abrir submenu Unidades"
                   tabIndex={-1}
                 >
-                  <ChevronDown size={16} />
+                  <ChevronDownIcon size={16} />
                 </button>
               </div>
               <ul className="dropdown-menu" {...dropdownMenuProps()}>
