@@ -6,6 +6,7 @@ import './Noticia.css';
 function Noticia() {
   const { id } = useParams();
   const noticia = blogData.find(post => post.id === id);
+  const posts = blogData;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,7 +17,7 @@ function Noticia() {
   }
 
   // Pegar outras notícias para a seção "Veja também"
-  const outrasNoticias = blogData.filter(post => post.id !== id).slice(0, 3);
+  const outrasNoticias = posts.filter(post => post.id !== id).slice(0, 3);
 
   return (
     <div className="noticia-page">

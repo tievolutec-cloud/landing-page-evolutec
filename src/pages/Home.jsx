@@ -37,7 +37,11 @@ function DeferredSection({ children, minHeight = 220 }) {
 
   return (
     <div ref={sectionRef} style={!isVisible ? { minHeight } : undefined}>
-      {isVisible ? children : null}
+      {isVisible ? (
+        <Suspense fallback={<div style={{ minHeight }} aria-hidden="true" />}>
+          {children}
+        </Suspense>
+      ) : null}
     </div>
   )
 }
@@ -57,35 +61,33 @@ function Home() {
   return (
     <>
       <Banner/>
-      <Suspense fallback={null}>
-        <DeferredSection minHeight={160}>
-          <Estatisticas/>
-        </DeferredSection>
-        <DeferredSection minHeight={640}>
-          <Cursos/>
-        </DeferredSection>
-        <DeferredSection minHeight={520}>
-          <Contato/>
-        </DeferredSection>
-        <DeferredSection minHeight={380}>
-          <GaleriaFormatura/>
-        </DeferredSection>
-        <DeferredSection minHeight={280}>
-          <Depoimentos/>
-        </DeferredSection>
-        <DeferredSection minHeight={340}>
-          <Blog/>
-        </DeferredSection>
-        <DeferredSection minHeight={300}>
-          <RedesSociais/>
-        </DeferredSection>
-        <DeferredSection minHeight={240}>
-          <FAQ/>
-        </DeferredSection>
-        <DeferredSection minHeight={280}>
-          <Mapa/>
-        </DeferredSection>
-      </Suspense>
+      <DeferredSection minHeight={160}>
+        <Estatisticas/>
+      </DeferredSection>
+      <DeferredSection minHeight={640}>
+        <Cursos/>
+      </DeferredSection>
+      <DeferredSection minHeight={520}>
+        <Contato/>
+      </DeferredSection>
+      <DeferredSection minHeight={380}>
+        <GaleriaFormatura/>
+      </DeferredSection>
+      <DeferredSection minHeight={280}>
+        <Depoimentos/>
+      </DeferredSection>
+      <DeferredSection minHeight={340}>
+        <Blog/>
+      </DeferredSection>
+      <DeferredSection minHeight={300}>
+        <RedesSociais/>
+      </DeferredSection>
+      <DeferredSection minHeight={240}>
+        <FAQ/>
+      </DeferredSection>
+      <DeferredSection minHeight={280}>
+        <Mapa/>
+      </DeferredSection>
     </>
   )
 }

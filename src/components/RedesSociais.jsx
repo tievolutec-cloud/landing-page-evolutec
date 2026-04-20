@@ -1,5 +1,13 @@
+import { useState } from 'react'
 import './RedesSociais.css'
 import { Heart, MessageCircle, Send } from 'lucide-react'
+
+const fallbackSocialLinks = {
+  youtube: 'https://www.youtube.com/@evolutecoficial',
+  facebook: 'https://www.facebook.com/evolutecoficial/',
+  tiktok: 'https://www.tiktok.com/@evoluteceducacao',
+  instagram: 'https://www.instagram.com/evoluteceducacao/',
+}
 
 function SocialIconSvg({ type }) {
   if (type === 'youtube') {
@@ -38,6 +46,8 @@ function SocialIconSvg({ type }) {
 }
 
 function RedesSociais() {
+  const [socialLinks] = useState(fallbackSocialLinks)
+
   const posts = [
     {
       id: 1,
@@ -61,16 +71,16 @@ function RedesSociais() {
       <div className="redes-container">
         <div className="redes-left">
           <div className="social-icons">
-            <a href="https://www.youtube.com/@evolutecoficial" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
+            <a href={socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="social-icon youtube">
               <SocialIconSvg type="youtube" />
             </a>
-            <a href="https://www.facebook.com/evolutecoficial/" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
+            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="social-icon facebook">
               <SocialIconSvg type="facebook" />
             </a>
-            <a href="https://www.tiktok.com/@evoluteceducacao" target="_blank" rel="noopener noreferrer" className="social-icon tiktok">
+            <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="social-icon tiktok">
               <SocialIconSvg type="tiktok" />
             </a>
-            <a href="https://www.instagram.com/evoluteceducacao/" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="social-icon instagram">
               <SocialIconSvg type="instagram" />
             </a>
           </div>

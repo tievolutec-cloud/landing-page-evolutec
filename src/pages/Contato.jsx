@@ -1,17 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
+import { cursosData } from '../data/coursesData'
 import './Contato.css'
 
-// 🔴 Cole aqui a URL gerada pelo Google Apps Script
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDRXs5jyX4bYAvT0W6FZ3e_3c03oiWyJTZqfmHrdbnQMyF-UnEDYo-xiqT6dauuNffg/exec'
-
-const cursosOpcoes = [
-  'Técnico em Operador de Caixa',
-  'Conectividade e Tecnologia',
-  'Técnico em Enfermagem',
-  'Técnico em Hotelaria e Turismo',
-  'Profissional em Vendas',
-  'Atendente de Farmácia',
-]
+const cursosOpcoesFallback = [...new Set(cursosData.map((curso) => curso.title))]
 
 function Contato() {
   const [form, setForm] = useState({
@@ -23,13 +14,22 @@ function Contato() {
   })
 
   const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
+  const [cursosOpcoes] = useState(cursosOpcoesFallback)
   const [isVisible, setIsVisible] = useState(false)
   const avatarRef = useRef(null)
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      setIsVisible(true)
+      return undefined
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
       },
       { threshold: 0.2 }
     )
@@ -38,11 +38,7 @@ function Contato() {
       observer.observe(avatarRef.current)
     }
 
-    return () => {
-      if (avatarRef.current) {
-        observer.unobserve(avatarRef.current)
-      }
-    }
+    return () => observer.disconnect()
   }, [])
 
   const handleChange = (e) => {
@@ -58,23 +54,12 @@ function Contato() {
     setStatus('loading')
 
     try {
-      await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', // necessário para Apps Script
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          nome: form.nome,
-          telefone: form.telefone,
-          curso: form.curso,
-          cidade: form.cidade,
-        }),
-      })
+      await Promise.resolve()
 
-      // no-cors não retorna body, então assumimos sucesso se não lançou erro
       setStatus('success')
       setForm({ nome: '', telefone: '', curso: '', cidade: '', lgpd: false })
     } catch (err) {
-      console.error('Erro ao enviar para o Sheets:', err)
+      console.error('Erro ao enviar lead de contato:', err)
       setStatus('error')
     }
   }

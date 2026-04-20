@@ -4,6 +4,8 @@ import { blogData } from '../data/blogData';
 import './BlogPage.css';
 
 function BlogPage() {
+  const posts = blogData;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,7 +20,7 @@ function BlogPage() {
 
       <div className="blog-page-container">
         <div className="blog-page-grid">
-          {blogData.map((noticia) => (
+          {posts.map((noticia) => (
             <Link key={noticia.id} to={`/noticia/${noticia.id}`} className="blog-page-card">
               <div className="blog-page-img-wrapper">
                 <img src={noticia.imagem} alt={noticia.titulo}  loading="lazy" decoding="async"/>

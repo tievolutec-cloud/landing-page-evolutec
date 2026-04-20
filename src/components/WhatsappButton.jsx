@@ -1,10 +1,15 @@
 import React from 'react';
 import './WhatsappButton.css';
 
-const whatsappNumber = '559140424250'; //numero
 const whatsappMessage = 'Olá! Gostaria de mais informações.';
 
+function extractDigits(value) {
+  return String(value || '').replace(/\D/g, '');
+}
+
 const WhatsappButton = () => {
+  const whatsappNumber = extractDigits('559140424250');
+
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (

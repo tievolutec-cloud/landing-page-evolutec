@@ -3,8 +3,10 @@ import { blogData } from '../data/blogData';
 import './Blog.css'
 
 function Blog() {
-  const destaque = blogData.find(post => post.destaque);
-  const noticias = blogData.filter(post => !post.destaque);
+  const posts = blogData;
+
+  const destaque = posts.find(post => post.destaque);
+  const noticias = posts.filter(post => !post.destaque);
 
   return (
     <section className="blog" id="conteudos">

@@ -77,6 +77,8 @@ const CourseCard = ({
 };
 
 function Cursos() {
+  const cursos = cursosData;
+
   return (
     <section className="cursos-section" id="cursos">
       <div className="cursos-container">
@@ -88,7 +90,7 @@ function Cursos() {
         </div>
         
         <div className="cursos-grid">
-          {cursosData.map((curso) => (
+          {cursos.map((curso) => (
             <CourseCard
               key={curso.id}
               slug={curso.slug}

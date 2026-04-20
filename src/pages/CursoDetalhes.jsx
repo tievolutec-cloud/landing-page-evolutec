@@ -55,6 +55,7 @@ function CursoDetalhes() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const curso = getCourseBySlug(slug);
+  const allCourses = cursosData;
   const timelineSectionRef = useRef(null);
   const [isTimelineVisible, setIsTimelineVisible] = useState(false);
 
@@ -112,7 +113,7 @@ function CursoDetalhes() {
   };
 
   // Pegar cursos relacionados (mesma categoria ou aleatórios)
-  const cursosRelacionados = cursosData
+  const cursosRelacionados = allCourses
     .filter(c => c.id !== curso.id)
     .slice(0, 3);
 
@@ -280,7 +281,7 @@ function CursoDetalhes() {
         <section
           ref={timelineSectionRef}
           className={`curriculum-timeline-section ${isTimelineVisible ? 'is-visible' : ''}`.trim()}
-        >x
+        >
           <h2 className="section-title-destaque">Conteudos da Formacao</h2>
           <div className="curriculum-timeline">
             {curriculumTimelineItems.map((item, index) => (

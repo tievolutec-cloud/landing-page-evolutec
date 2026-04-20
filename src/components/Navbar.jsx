@@ -6,10 +6,13 @@ import './Navbar.css';
 import ContatoModal from './contatoModal';
 import NavbarMobile from './NavbarMobile';
 
+const FALLBACK_WHATSAPP = 'https://wa.me/559140424250';
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [courseCategories] = useState(() => categoriasCursos.filter((categoria) => categoria !== 'Todos'))
   const dropdownTimeout = useRef(null)
   const location = useLocation()
   const [contatoModalOpen, setContatoModalOpen] = useState(false)
@@ -162,7 +165,7 @@ function Navbar() {
       {/* Top Bar */}
       <div className="top-bar">
         <div className="top-bar-container">
-          <a href="https://wa.me/559140424250" className="top-bar-link whatsapp-link">
+          <a href={FALLBACK_WHATSAPP} className="top-bar-link whatsapp-link">
             <MessageCircle size={16} />
             Matricule-se pelo WhatsApp
           </a>
@@ -255,9 +258,7 @@ function Navbar() {
                 </button>
               </div>
               <ul className="dropdown-menu" {...dropdownMenuProps()}>
-                {categoriasCursos
-                  .filter((categoria) => categoria !== 'Todos')
-                  .map((categoria) => (
+                {courseCategories.map((categoria) => (
                   <li key={categoria}>
                     <Link
                       to={`/cursos?categoria=${categoria}`}

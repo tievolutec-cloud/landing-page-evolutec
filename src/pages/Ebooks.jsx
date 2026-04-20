@@ -8,10 +8,6 @@ import '../components/DownloadModal.css';
 /* ── estado inicial do formulário ── */
 const FORM_INICIAL = { nome: '', email: '', telefone: '', empresa: '' };
 
-/* 🔗 Cole aqui a URL gerada pelo Google Apps Script */
-const GOOGLE_SHEET_WEBHOOK =
-  'https://script.google.com/macros/s/AKfycbxFvKdA97sUPLt5QVARw5FBfCBFkTvSwOnjckF0ImRcRFgElXO1ibsUDznSUc5Heluklg/exec';
-
 /* ── validação ── */
 function validar(formData) {
   const erros = {};
@@ -35,6 +31,8 @@ function validar(formData) {
 }
 
 function Ebooks() {
+  const [ebooks, setEbooks] = useState(ebooksData);
+  const [availableCategories, setAvailableCategories] = useState(categorias);
   const [categoriaAtiva, setCategoriaAtiva] = useState('Todos');
 
   /* modal */
@@ -49,8 +47,8 @@ function Ebooks() {
 
   const ebooksFiltrados =
     categoriaAtiva === 'Todos'
-      ? ebooksData
-      : ebooksData.filter((e) => e.categoria === categoriaAtiva);
+      ? ebooks
+      : ebooks.filter((e) => e.categoria === categoriaAtiva);
 
   /* ── abre o modal ── */
   const abrirModal = (ebook) => {
@@ -84,30 +82,13 @@ function Ebooks() {
     setLoading(true);
 
     try {
-      /* 🔗 Envia o lead para o Google Sheets via Apps Script */
-      await fetch(GOOGLE_SHEET_WEBHOOK, {
-        method: 'POST',
-        /*
-         * O Apps Script não suporta Content-Type: application/json com CORS
-         * em modo "no-cors", então usamos text/plain e parseamos no script.
-         * O fetch com mode: 'no-cors' não retorna a resposta, mas o dado é
-         * registrado normalmente na planilha.
-         */
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({
-          nome:     formData.nome,
-          email:    formData.email,
-          telefone: formData.telefone,
-          ebook:    ebookSelecionado.titulo,
-        }),
-      });
+      const finalDownloadUrl = ebookSelecionado.downloadUrl;
 
       /* dispara o download programaticamente */
       const link = document.createElement('a');
-      link.href     = ebookSelecionado.downloadUrl;
+      link.href = finalDownloadUrl;
       link.download = '';
-      link.rel      = 'noopener noreferrer';
+      link.rel = 'noopener noreferrer';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -134,7 +115,7 @@ function Ebooks() {
       {/* Filtro de categorias */}
       <div className="ebooks-filtros-wrapper">
         <div className="ebooks-filtros">
-          {categorias.map((cat) => (
+          {availableCategories.map((cat) => (
             <button
               key={cat}
               className={`ebooks-filtro-btn${categoriaAtiva === cat ? ' ativo' : ''}`}

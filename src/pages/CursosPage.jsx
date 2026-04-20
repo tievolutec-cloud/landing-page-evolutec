@@ -62,6 +62,7 @@ const ArrowRightIcon = () => (
 
 function CursosPage() {
   const [searchParams] = useSearchParams();
+  const cursos = cursosData;
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(() => searchParams.get('categoria') || 'Todos');
   const [selectedMode, setSelectedMode] = useState('Todos');
@@ -78,12 +79,12 @@ function CursosPage() {
 
   // Extrair categorias, modos e tags únicos
   const categories = categoriasCursos;
-  const modes = ['Todos', ...new Set(cursosData.map(curso => curso.mode))];
-  const tags = ['Todos', ...new Set(cursosData.map(curso => curso.tag))];
+  const modes = ['Todos', ...new Set(cursos.map(curso => curso.mode).filter(Boolean))];
+  const tags = ['Todos', ...new Set(cursos.map(curso => curso.tag).filter(Boolean))];
 
   // Filtrar e ordenar cursos
   const filteredCursos = useMemo(() => {
-    let filtered = cursosData.filter(curso => {
+    let filtered = cursos.filter(curso => {
       const matchSearch = curso.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          curso.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchCategory = selectedCategory === 'Todos' || curso.category === selectedCategory;
@@ -106,7 +107,7 @@ function CursosPage() {
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, selectedMode, selectedTag, sortBy]);
+  }, [cursos, searchTerm, selectedCategory, selectedMode, selectedTag, sortBy]);
 
   const clearFilters = () => {
     setSearchTerm('');

@@ -61,7 +61,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.400",
+    salary: "A partir de R$ 1.800",
     marketInfo:
       "O setor farmaceutico e um dos que mais crescem no Brasil. O pais possui mais de 90 mil farmacias e drogarias, mantendo alta demanda por profissionais qualificados para atendimento."
   },
@@ -143,7 +143,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.500",
+    salary: "A partir de R$ 2.000",
     marketInfo:
       "A area administrativa esta entre as que mais empregam no Brasil, com alto volume de vagas e oportunidades de crescimento em diferentes segmentos."
   },
@@ -218,7 +218,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 2.500",
+    salary: "A partir de R$ 3.000",
     marketInfo:
       "O mercado de tecnologia e um dos que mais crescem no mundo, com alta demanda por desenvolvedores e forte valorizacao de profissionais da area."
   },
@@ -284,7 +284,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.800",
+    salary: "A partir de R$ 2.000",
     marketInfo:
       "A gestao de pessoas e uma area estrategica nas empresas e segue em crescimento com a valorizacao do capital humano."
   },
@@ -374,7 +374,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 2.000",
+    salary: "A partir de R$ 2.200",
     marketInfo:
       "A area de gestao empresarial e ampla e estrategica, com alta empregabilidade e grande potencial de crescimento profissional."
   },
@@ -440,7 +440,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.400",
+    salary: "A partir de R$ 1.600",
     marketInfo:
       "O setor de turismo e hotelaria vem crescendo no Brasil, com demanda por profissionais de atendimento, recepcao e suporte ao cliente."
   },
@@ -513,7 +513,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.400",
+    salary: "A partir de R$ 1.600",
     marketInfo:
       "Saber informatica e requisito obrigatorio na maioria das vagas, sendo uma base essencial para entrar e crescer no mercado de trabalho."
   },
@@ -575,7 +575,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.800",
+    salary: "A partir de R$ 2.000",
     marketInfo:
       "A demanda por manutencao e suporte de smartphones e continua, com forte oportunidade de renda para tecnicos e autonomos."
   },
@@ -645,7 +645,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 2.000",
+    salary: "A partir de R$ 3.000",
     marketInfo:
       "O marketing digital segue em forte crescimento, com alta demanda por profissionais que geram vendas e resultados online."
   },
@@ -712,7 +712,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.400",
+    salary: "A partir de R$ 1.800",
     marketInfo:
       "A funcao de operador de caixa e uma das principais portas de entrada no mercado, com alta demanda no comercio."
   },
@@ -778,7 +778,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 2.500",
+    salary: "A partir de R$ 3.500",
     marketInfo:
       "A area de dados e uma das que mais crescem, e profissionais com dominio de Power BI possuem forte vantagem competitiva."
   },
@@ -844,7 +844,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.800",
+    salary: "A partir de R$ 2.200",
     marketInfo:
       "Com o crescimento das redes sociais e do marketing digital, a demanda por designers aumentou em empresas e no mercado freelancer."
   },
@@ -906,7 +906,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 2.000",
+    salary: "A partir de R$ 2.500",
     marketInfo:
       "O mercado de modelagem e animacao 3D cresce com demanda de arquitetura, design, publicidade e entretenimento."
   },
@@ -976,7 +976,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.400",
+    salary: "A partir de R$ 1.800",
     marketInfo:
       "Profissionais que dominam atendimento e informatica basica saem na frente nos processos seletivos do comercio."
   },
@@ -1042,7 +1042,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 1.800",
+    salary: "A partir de R$ 2.000",
     marketInfo:
       "O dominio de planilhas esta entre as habilidades mais exigidas nas areas administrativas, financeiras e comerciais."
   },
@@ -1108,7 +1108,7 @@ export const cursosData = [
     ],
     requirements: "Nao informado",
     certificationType: "Profissionalizante",
-    salary: "A partir de R$ 2.000",
+    salary: "A partir de R$ 2.500",
     marketInfo:
       "A necessidade de profissionais que cuidam da infraestrutura de redes e constante, com boa valorizacao e crescimento na carreira."
   },
