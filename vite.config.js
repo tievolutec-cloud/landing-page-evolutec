@@ -10,10 +10,6 @@ export default defineConfig({
         manualChunks(id) {
           if (!id.includes('node_modules')) return undefined
 
-          if (id.includes('leaflet') || id.includes('react-leaflet')) {
-            return 'maps'
-          }
-
           if (id.includes('lucide-react')) {
             return 'icons'
           }
