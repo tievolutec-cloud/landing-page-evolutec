@@ -1,7 +1,7 @@
 import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import ContatoModal from './contatoModal';
+const ContatoModal = lazy(() => import('./contatoModal'));
 const NavbarMobile = lazy(() => import('./NavbarMobile'));
 
 const FALLBACK_WHATSAPP = 'https://wa.me/559140424250';
@@ -376,10 +376,14 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-      <ContatoModal
-        isOpen={contatoModalOpen}
-        onClose={closeContatoModal}
-      />
+      {contatoModalOpen ? (
+        <Suspense fallback={null}>
+          <ContatoModal
+            isOpen={contatoModalOpen}
+            onClose={closeContatoModal}
+          />
+        </Suspense>
+      ) : null}
     </>
   );
 }

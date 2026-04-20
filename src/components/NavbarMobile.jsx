@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ContatoModal from './contatoModal';
-import { Menu, X, Home, GraduationCap, MapPin, Building2, BookOpenText, UserCircle2, Book, ArrowUp } from 'lucide-react';
+const ContatoModal = lazy(() => import('./contatoModal'));
+import { Menu, X, Home, GraduationCap, MapPin, Building2, BookOpenText, Book, ArrowUp } from 'lucide-react';
 import './NavbarMobile.css';
 
 
@@ -85,7 +85,11 @@ function Navbar() {
           <ArrowUp size={28} />
         </button>
       )}
-      <ContatoModal isOpen={contatoModalOpen} onClose={() => setContatoModalOpen(false)} />
+      {contatoModalOpen ? (
+        <Suspense fallback={null}>
+          <ContatoModal isOpen={contatoModalOpen} onClose={() => setContatoModalOpen(false)} />
+        </Suspense>
+      ) : null}
     </>
   );
 }
