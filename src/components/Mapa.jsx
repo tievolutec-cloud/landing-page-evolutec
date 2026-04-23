@@ -16,18 +16,28 @@ function createPinIcon() {
   })
 }
 
-// Componente para atualizar o centro do mapa
-const MapUpdater = ({ center, zoom }) => {
+// Componente para atualizar centro e garantir zoom travado
+const MapUpdater = ({ center, fixedZoom }) => {
   const map = useMap()
+
+  useEffect(() => {
+    map.scrollWheelZoom.disable()
+    map.doubleClickZoom.disable()
+    map.touchZoom.disable()
+    map.boxZoom.disable()
+    map.keyboard.disable()
+  }, [map])
   
   useEffect(() => {
     if (center) {
-      map.panTo(center)
+      map.setView(center, fixedZoom, { animate: true })
     }
-  }, [center, zoom, map])
+  }, [center, fixedZoom, map])
   
   return null
 }
+
+const FIXED_MAP_ZOOM = 8
 
 const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
   const polos = [
@@ -36,7 +46,6 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
       nome: 'Todos os Polos',
       position: [-1.2949, -47.9182],
       descricao: 'Visualize todos os nossos polos de ensino.',
-      zoom: 8
     },
     {
       id: 1,
@@ -119,11 +128,18 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
           <div className="mapa-content">
           <MapContainer 
             center={poloChosen.position} 
-            zoom={poloChosen.zoom || 13} 
-            scrollWheelZoom={true}
+            zoom={FIXED_MAP_ZOOM} 
+            minZoom={FIXED_MAP_ZOOM}
+            maxZoom={FIXED_MAP_ZOOM}
+            zoomControl={false}
+            scrollWheelZoom={false}
+            doubleClickZoom={false}
+            touchZoom={false}
+            boxZoom={false}
+            keyboard={false}
             className="mapa-leaflet"
           >
-            <MapUpdater center={poloChosen.position} zoom={poloChosen.zoom} />
+            <MapUpdater center={poloChosen.position} fixedZoom={FIXED_MAP_ZOOM} />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

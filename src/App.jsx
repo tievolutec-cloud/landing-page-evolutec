@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import { CursosPageWireframe } from './components/CursosWireframe'
 const Footer = lazy(() => import('./components/Footer'))
 const WhatsappButton = lazy(() => import('./components/WhatsappButton'))
 const CursosPage = lazy(() => import('./pages/CursosPage'))
@@ -66,7 +67,14 @@ function App() {
             {/* ── Site público (com Navbar + Footer) ── */}
             <Route element={<SiteLayout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/cursos" element={<CursosPage />} />
+              <Route
+                path="/cursos"
+                element={
+                  <Suspense fallback={<CursosPageWireframe />}>
+                    <CursosPage />
+                  </Suspense>
+                }
+              />
               <Route path="/curso/:slug" element={<CursoDetalhes />} />
               <Route path="/unidades" element={<Unidades />} />
               <Route path="/noticia/:id" element={<Noticia />} />

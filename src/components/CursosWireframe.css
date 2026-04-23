@@ -1,0 +1,373 @@
+.cursos-wireframe {
+  --wire-bg: #f5f7fb;
+  --wire-surface: #ffffff;
+  --wire-border: #e5e7eb;
+  --wire-base: #e9edf4;
+  --wire-shine: #f8faff;
+  --wire-text: #1d4f82;
+}
+
+.wire-line,
+.wire-card-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--wire-base);
+}
+
+.wire-line::after,
+.wire-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--wire-shine), transparent);
+  animation: wireShimmer 1.3s ease-in-out infinite;
+}
+
+@keyframes wireShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.cursos-wireframe-home {
+  padding: 80px 20px 220px;
+  background: radial-gradient(circle at 80% 20%, #eef3fa 0%, #f8fafc 45%, #f4f6fa 100%);
+}
+
+.cursos-wireframe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wire-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.wire-heading {
+  width: min(420px, 80%);
+  height: 30px;
+  border-radius: 10px;
+}
+
+.wire-subheading {
+  width: min(500px, 88%);
+  height: 16px;
+  border-radius: 8px;
+}
+
+.wire-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.wire-grid-home {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.wire-grid-page {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.wire-card {
+  border: 1px solid var(--wire-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--wire-surface);
+}
+
+.wire-card-image {
+  height: 180px;
+}
+
+.wire-card-body {
+  padding: 20px;
+}
+
+.wire-chip {
+  width: 90px;
+  height: 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.wire-title {
+  height: 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.wire-title-short {
+  width: 74%;
+  margin-bottom: 16px;
+}
+
+.wire-meta-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.wire-meta {
+  width: 100px;
+  height: 12px;
+  border-radius: 8px;
+}
+
+.wire-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.wire-tag {
+  width: 80px;
+  height: 24px;
+  border-radius: 999px;
+}
+
+.wire-button {
+  width: 130px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.wire-cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+.wire-cta {
+  width: 220px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.cursos-wireframe-page {
+  margin-top: 88px;
+  min-height: 88vh;
+  background: var(--wire-bg);
+}
+
+.wire-page-hero {
+  height: var(--page-hero-height, 62vh);
+  min-height: var(--page-hero-min-height, 440px);
+  background: linear-gradient(135deg, #144671 0%, #2569a2 60%, #4d8cbe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.wire-page-hero-inner {
+  width: min(760px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.wire-hero-title {
+  width: min(360px, 70%);
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.wire-hero-tag {
+  width: min(220px, 55%);
+  height: 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.wire-hero-subtext {
+  width: min(520px, 90%);
+  height: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.wire-page-content {
+  max-width: 1400px;
+  margin: -50px auto 0;
+  padding: 0 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.wire-sidebar,
+.wire-main {
+  background: var(--wire-surface);
+  border: 1px solid var(--wire-border);
+  border-radius: 14px;
+}
+
+.wire-sidebar {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wire-sidebar-title {
+  width: 120px;
+  height: 18px;
+  border-radius: 8px;
+}
+
+.wire-sidebar-button {
+  width: 88px;
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.wire-input {
+  width: 100%;
+  height: 42px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.wire-filter {
+  width: 100%;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.wire-main {
+  padding: 2rem;
+}
+
+.wire-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.wire-toolbar-left {
+  width: 220px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.wire-toolbar-right {
+  width: 180px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.home-section-wireframe {
+  padding: 28px 20px;
+  background: linear-gradient(180deg, #f7f9fc 0%, #f3f6fa 100%);
+}
+
+.home-section-wireframe-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-wire-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.home-wire-title {
+  width: min(280px, 72%);
+  height: 18px;
+  border-radius: 8px;
+}
+
+.home-wire-subtitle {
+  width: min(520px, 92%);
+  height: 12px;
+  border-radius: 8px;
+}
+
+.home-wire-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.home-wire-grid.is-stacked {
+  grid-template-columns: 1fr;
+}
+
+.home-wire-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--wire-border);
+  background: var(--wire-base);
+}
+
+.home-wire-block::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--wire-shine), transparent);
+  animation: wireShimmer 1.3s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .cursos-wireframe-page {
+    margin-top: 70px;
+  }
+
+  .wire-page-content {
+    grid-template-columns: 1fr;
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursos-wireframe-home {
+    padding: 50px 15px;
+  }
+
+  .home-section-wireframe {
+    padding: 20px 15px;
+  }
+
+  .cursos-wireframe-page {
+    margin-top: 65px;
+  }
+
+  .wire-main,
+  .wire-sidebar {
+    padding: 1.25rem;
+  }
+
+  .wire-grid-home,
+  .wire-grid-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .cursos-wireframe-page {
+    margin-top: 60px;
+  }
+
+  .wire-page-content {
+    padding: 0 1rem 2rem;
+  }
+
+  .wire-page-hero {
+    min-height: 360px;
+  }
+}

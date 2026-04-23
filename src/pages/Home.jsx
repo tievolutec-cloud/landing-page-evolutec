@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, Suspense, lazy } from 'react'
 import { useLocation } from 'react-router-dom'
 import Banner from '../components/Banner'
+import { CursosHomeWireframe, HomeSectionWireframe } from '../components/CursosWireframe'
 
 const Estatisticas = lazy(() => import('../components/Estatisticas'))
 const Cursos = lazy(() => import('./Cursos'))
@@ -13,7 +14,7 @@ const RedesSociais = lazy(() => import('../components/RedesSociais'))
 const FAQ = lazy(() => import('../components/FAQ'))
 const Mapa = lazy(() => import('../components/Mapa'))
 
-function DeferredSection({ children, minHeight = 220 }) {
+function DeferredSection({ children, minHeight = 220, fallback = null }) {
   const sectionRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -64,7 +65,7 @@ function DeferredSection({ children, minHeight = 220 }) {
   return (
     <div ref={sectionRef} style={!isVisible ? { minHeight } : undefined}>
       {isVisible ? (
-        <Suspense fallback={<div style={{ minHeight }} aria-hidden="true" />}>
+        <Suspense fallback={fallback || <div style={{ minHeight }} aria-hidden="true" />}>
           {children}
         </Suspense>
       ) : null}
@@ -87,31 +88,55 @@ function Home() {
   return (
     <>
       <Banner/>
-      <DeferredSection minHeight={160}>
+      <DeferredSection
+        minHeight={160}
+        fallback={<HomeSectionWireframe label="Carregando estatisticas" blocks={4} height={90} />}
+      >
         <Estatisticas/>
       </DeferredSection>
-      <DeferredSection minHeight={640}>
+      <DeferredSection minHeight={640} fallback={<CursosHomeWireframe />}>
         <Cursos/>
       </DeferredSection>
-      <DeferredSection minHeight={520}>
+      <DeferredSection
+        minHeight={520}
+        fallback={<HomeSectionWireframe label="Carregando contato" blocks={1} stacked height={520} />}
+      >
         <Contato/>
       </DeferredSection>
-      <DeferredSection minHeight={380}>
+      <DeferredSection
+        minHeight={380}
+        fallback={<HomeSectionWireframe label="Carregando galeria" blocks={3} height={180} />}
+      >
         <GaleriaFormatura/>
       </DeferredSection>
-      <DeferredSection minHeight={280}>
+      <DeferredSection
+        minHeight={280}
+        fallback={<HomeSectionWireframe label="Carregando depoimentos" blocks={2} height={180} />}
+      >
         <Depoimentos/>
       </DeferredSection>
-      <DeferredSection minHeight={340}>
+      <DeferredSection
+        minHeight={340}
+        fallback={<HomeSectionWireframe label="Carregando blog" blocks={3} height={260} />}
+      >
         <Blog/>
       </DeferredSection>
-      <DeferredSection minHeight={300}>
+      <DeferredSection
+        minHeight={300}
+        fallback={<HomeSectionWireframe label="Carregando redes sociais" blocks={4} height={120} />}
+      >
         <RedesSociais/>
       </DeferredSection>
-      <DeferredSection minHeight={240}>
+      <DeferredSection
+        minHeight={240}
+        fallback={<HomeSectionWireframe label="Carregando perguntas frequentes" blocks={4} stacked height={56} />}
+      >
         <FAQ/>
       </DeferredSection>
-      <DeferredSection minHeight={280}>
+      <DeferredSection
+        minHeight={280}
+        fallback={<HomeSectionWireframe label="Carregando mapa" blocks={1} stacked height={280} />}
+      >
         <Mapa/>
       </DeferredSection>
     </>
