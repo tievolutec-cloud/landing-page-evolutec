@@ -4,8 +4,8 @@ import './Banner.css'
 const slides = [
   {
     id: 2,
-    imageDesktop: '/banner2.webp',
-    imageMobile: '/banner2.webp', // Substitua depois pela versão mobile
+    imageDesktop: '/BANNER-TESTE.png',
+    imageMobile: '/BANNER-TESTE.png', // Substitua depois pela versão mobile
     title: 'Educação que Transforma',
     subtitle: 'Metodologia inovadora com foco em resultados e aprendizado real.',
     cta: 'Saiba Mais',
