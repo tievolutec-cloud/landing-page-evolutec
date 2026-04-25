@@ -13,8 +13,8 @@ const slides = [
   },
   {
     id: 3,
-    imageDesktop: '/banner3.webp',
-    imageMobile: '/banner3.webp', // Substitua depois pela versão mobile
+    imageDesktop: '/BANNER-TESTE-2.webp',
+    imageMobile: '/BANNER-TESTE-2.webp', // Substitua depois pela versão mobile
     title: 'Matricule-se Agora',
     subtitle: 'Vagas limitadas! Garanta sua vaga e comece sua jornada na tecnologia.',
     cta: 'Matricule-se',
