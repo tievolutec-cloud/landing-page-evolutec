@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import './Mapa.css'
@@ -17,7 +17,7 @@ function createPinIcon() {
 }
 
 // Componente para atualizar centro e garantir zoom travado
-const MapUpdater = ({ center, fixedZoom }) => {
+const MapUpdater = ({ center, dynamicZoom }) => {
   const map = useMap()
 
   useEffect(() => {
@@ -30,14 +30,15 @@ const MapUpdater = ({ center, fixedZoom }) => {
   
   useEffect(() => {
     if (center) {
-      map.setView(center, fixedZoom, { animate: true })
+      map.setView(center, dynamicZoom, { animate: true })
     }
-  }, [center, fixedZoom, map])
+  }, [center, dynamicZoom, map])
   
   return null
 }
 
 const FIXED_MAP_ZOOM = 8
+const ZOOM_UNIT_SELECTED = 16
 
 const POLOS = [
   {
@@ -101,10 +102,22 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
   // Usar poloSelecionado da prop, ou 'todos' como padrão
   const poloAtualState = poloSelecionado || 'todos';
   const poloChosen = POLOS.find(p => p.id.toString() === poloAtualState.toString()) || POLOS[0];
+  
+  // Calcular zoom dinâmico baseado na unidade selecionada
+  const [dynamicZoom, setDynamicZoom] = useState(FIXED_MAP_ZOOM);
 
   useEffect(() => {
     onPoloChange && onPoloChange(poloChosen)
   }, [onPoloChange, poloChosen])
+
+  // Atualizar zoom quando a unidade muda
+  useEffect(() => {
+    if (poloChosen.id === 'todos') {
+      setDynamicZoom(FIXED_MAP_ZOOM)
+    } else {
+      setDynamicZoom(ZOOM_UNIT_SELECTED)
+    }
+  }, [poloChosen])
 
   // Seleciona polo vindo de prop externa (ex: navbar dropdown)
   useEffect(() => {
@@ -128,9 +141,9 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
           <div className="mapa-content">
           <MapContainer 
             center={poloChosen.position} 
-            zoom={FIXED_MAP_ZOOM} 
+            zoom={dynamicZoom} 
             minZoom={FIXED_MAP_ZOOM}
-            maxZoom={FIXED_MAP_ZOOM}
+            maxZoom={ZOOM_UNIT_SELECTED}
             zoomControl={false}
             scrollWheelZoom={false}
             doubleClickZoom={false}
@@ -139,7 +152,7 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
             keyboard={false}
             className="mapa-leaflet"
           >
-            <MapUpdater center={poloChosen.position} fixedZoom={FIXED_MAP_ZOOM} />
+            <MapUpdater center={poloChosen.position} dynamicZoom={dynamicZoom} />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
