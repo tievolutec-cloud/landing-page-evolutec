@@ -31,8 +31,8 @@ function validar(formData) {
 }
 
 function Ebooks() {
-  const [ebooks, setEbooks] = useState(ebooksData);
-  const [availableCategories, setAvailableCategories] = useState(categorias);
+  const ebooks = ebooksData;
+  const availableCategories = categorias;
   const [categoriaAtiva, setCategoriaAtiva] = useState('Todos');
 
   /* modal */

@@ -19,7 +19,7 @@ const vagas = [
     destaque: true,
     imagem: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80',
     resumo: 'Conduza aulas e acompanhe o desenvolvimento dos alunos nos cursos da Evolutec.',
-    cargaHoraria: '40 horas semanais',
+    cargaHoraria: '40h semanais',
     descricao: `Buscamos profissionais apaixonados por ensino e tecnologia para compor nosso time de instrutores. Você será responsável por conduzir aulas dinâmicas e práticas, acompanhar o progresso individual dos alunos e contribuir para a melhoria contínua do material didático.`,
     responsabilidades: [
       'Ministrar aulas presenciais e/ou online nos cursos da Evolutec',
@@ -54,42 +54,34 @@ const vagas = [
     tipo: 'CLT + Comissão',
     destaque: true,
     imagem: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
-    resumo: 'Se você é comunicativo, faz amizade rápido, é proativo, determinado e ambicioso, essa vaga é para você! Aqui você não vende cursos — você vende mudança de vida e realiza sonhos.',
-    cargaHoraria: '44 horas semanais',
-    descricao: `O Vendedor Evolutec é uma pessoa comunicativa, que faz amizade rápido onde chega, é proativa, determinada e ambiciosa — alguém que tem vontade de conquistar sua própria casa, moto, carro e viagens, e que não teme médios e grandes desafios.
-
-Aqui você não venderá cursos. Você venderá mudança de vida e sonhos para jovens e adultos que querem trabalhar, ganhar seu próprio dinheiro e evoluir. São 70 opções de cursos disponíveis. Ao mesmo tempo em que ganha dinheiro, você colabora de forma significativa para o sucesso de inúmeras pessoas — e isso é o que torna o time Evolutec único.
-
-A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do Norte do Brasil. Para crescer ainda mais, precisamos de pessoas que querem evoluir e se tornar grandes como nossa marca.`,
+    resumo: 'Se você é comunicativo, proativo e ambicioso, essa vaga é para você! Aqui você vende mudança de vida.',
+    cargaHoraria: '44h semanais',
+    descricao: `O Vendedor Evolutec é uma pessoa comunicativa, que faz amizade rápido onde chega, é proativa, determinada e ambiciosa — alguém que tem vontade de conquistar sua própria casa, moto, carro e viagens, e que não teme médios e grandes desafios.\n\nAqui você não venderá cursos. Você venderá mudança de vida e sonhos para jovens e adultos que querem trabalhar, ganhar seu próprio dinheiro e evoluir. São 70 opções de cursos disponíveis.\n\nA Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do Norte do Brasil.`,
     responsabilidades: [
       'Vender "mudança de vida" — entre as 70 opções de cursos da Evolutec',
       'Realizar visitas a domicílio, percorrendo rua por rua em bairros, vilas e cidades do interior',
-      'Atuar em ramais (estradas de chão) e municípios próximos das 8 unidades',
-      'Apresentar a marca Evolutec e ajudar jovens e adultos a mudarem de vida através da educação',
+      'Atuar em ramais e municípios próximos das 8 unidades',
+      'Apresentar a marca Evolutec e ajudar jovens e adultos a mudarem de vida',
       'Bater e superar metas mensais de vendas estipuladas pela gerência',
-      'Participar de treinamentos trimestrais sobre vendas, atendimento e relações interpessoais',
-      'Ser exemplo de determinação, ambição e proatividade dentro do time',
+      'Participar de treinamentos trimestrais sobre vendas e atendimento',
     ],
     requisitos: [
       'Ser comunicativo — não ter vergonha de falar com pessoas desconhecidas',
       'Fazer amizade rápido: chegar a um local e se conectar com todos naturalmente',
-      'Ser proativo — não se contentar com resultados baixos, sempre querer entregar mais',
-      'Ser determinado — encarar dificuldades sem medo, pois sabe que são o caminho para o sucesso',
-      'Ter ambição — saber que quanto mais vende, mais conquista: casa, carro, moto, viagens',
-      'Estar disposto a viajar pelas 8 unidades e cidades adjacentes (podendo ficar a semana toda fora)',
-      'Experiência em vendas externas (chips, planos, produtos naturais, etc.) é diferencial, mas não obrigatória — primeiro emprego também é bem-vindo!',
+      'Ser proativo — não se contentar com resultados baixos',
+      'Ser determinado — encarar dificuldades sem medo',
+      'Ter ambição — saber que quanto mais vende, mais conquista',
+      'Estar disposto a viajar pelas 8 unidades e cidades adjacentes',
     ],
     beneficios: [
-      'Salário inicial de R$ 1.621,00 + comissões (vendedores chegam a R$ 3.500–R$ 4.000/mês)',
+      'Salário inicial de R$ 1.621,00 + comissões (até R$ 4.000/mês)',
       'Prêmio em dinheiro ao bater a meta mensal',
-      'Prêmios por desafios alcançados propostos pela gerência',
-      'Viagens para lugares paradisíacos com hospedagem e alimentação pagos pela Evolutec',
-      'Treinamentos trimestrais sobre vendas, atendimento e relações interpessoais',
-      'Desconto de até 40% em procedimentos odontológicos (Centro de Saúde Estelita — Grupo Evolutec)',
-      'Cursos Evolutec gratuitos com certificação internacional (Faculdade Evolutec)',
-      'Plano de carreira: Vendedor → Supervisor de Vendas → Gerente Comercial → Diretor Comercial',
-      'Cartão de crédito para compras em supermercados (ajuda de custos alimentícios)',
-      'Veículo disponibilizado pela empresa para deslocamentos, com combustível e manutenção pagos (para habilitados)',
+      'Viagens com hospedagem e alimentação pagos pela Evolutec',
+      'Treinamentos trimestrais sobre vendas e atendimento',
+      'Desconto de até 40% em procedimentos odontológicos',
+      'Cursos Evolutec gratuitos com certificação internacional',
+      'Plano de carreira: Vendedor → Supervisor → Gerente → Diretor',
+      'Veículo + combustível para habilitados',
     ],
   },
   {
@@ -142,7 +134,7 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
     destaque: false,
     imagem: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
     resumo: 'Recepcione alunos e visitantes, gerencie agendas e apoie as rotinas administrativas.',
-    cargaHoraria: '44 horas semanais',
+    cargaHoraria: '44h semanais',
     descricao: `O Recepcionista da Evolutec é o ponto de contato que cria a primeira impressão para alunos, responsáveis e visitantes. Se você é organizado, cordial e gosta de gente, essa vaga é para você.`,
     responsabilidades: [
       'Recepcionar e orientar alunos, pais e visitantes',
@@ -164,251 +156,352 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
 
 const areas = ['Todas', ...Array.from(new Set(vagas.map(v => v.area)))]
 
-function VagaDetalhe({ vaga, onVoltar }) {
+const areaIcons = {
+  'Educação': (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+    </svg>
+  ),
+  'Comercial': (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+    </svg>
+  ),
+  'Marketing': (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+    </svg>
+  ),
+  'Administrativo': (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </svg>
+  ),
+}
+
+function IconLocation() {
   return (
-    <div className="vaga-detalhe-page">
-      <button className="btn-voltar" onClick={onVoltar}>
-        &#8592; Voltar às vagas
-      </button>
-
-      <div className="vd-hero">
-        <img src={vaga.imagem} alt={vaga.cargo} className="vd-hero-img"  loading="lazy" decoding="async"/>
-        <div className="vd-hero-overlay" />
-        <div className="vd-hero-content">
-          <span className="vd-badge-area">{vaga.area}</span>
-          <h1>{vaga.cargo}</h1>
-          <div className="vd-meta">
-            <span className="vd-meta-item">{vaga.tipo}</span>
-            <span className="vd-meta-sep">·</span>
-            {vaga.cidades.map((c, i) => (
-              <span key={i} className="vd-meta-item">
-                {c}{i < vaga.cidades.length - 1 ? ', ' : ''}
-              </span>
-            ))}
-            <span className="vd-meta-sep">·</span>
-            <span className="vd-meta-item">{vaga.cargaHoraria}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="vd-body">
-        <div className="vd-col-main">
-          <section className="vd-secao">
-            <h2>Sobre a vaga</h2>
-            <p>{vaga.descricao}</p>
-          </section>
-
-          <section className="vd-secao">
-            <h2>Responsabilidades</h2>
-            <ul className="vd-lista">
-              {vaga.responsabilidades.map((r, i) => <li key={i}>{r}</li>)}
-            </ul>
-          </section>
-
-          <section className="vd-secao">
-            <h2>Requisitos</h2>
-            <ul className="vd-lista">
-              {vaga.requisitos.map((r, i) => <li key={i}>{r}</li>)}
-            </ul>
-          </section>
-        </div>
-
-        <aside className="vd-col-aside">
-          <div className="vd-aside-card">
-            <h3>Informações da Vaga</h3>
-            <div className="vd-info-lista">
-              <div className="vd-info-row">
-                <span className="vd-info-label">Área</span>
-                <span className="vd-info-valor">{vaga.area}</span>
-              </div>
-              <div className="vd-info-row">
-                <span className="vd-info-label">Regime</span>
-                <span className="vd-info-valor">{vaga.tipo}</span>
-              </div>
-              <div className="vd-info-row">
-                <span className="vd-info-label">Carga horária</span>
-                <span className="vd-info-valor">{vaga.cargaHoraria}</span>
-              </div>
-              <div className="vd-info-row">
-                <span className="vd-info-label">Localidades</span>
-                <span className="vd-info-valor">{vaga.cidades.join(', ')}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="vd-aside-card">
-            <h3>Benefícios</h3>
-            <ul className="vd-beneficios-lista">
-              {vaga.beneficios.map((b, i) => <li key={i}>{b}</li>)}
-            </ul>
-          </div>
-
-          <div className="vd-aside-cta">
-            <h3>Interessado nesta vaga?</h3>
-            <p>Envie seu currículo para nossa equipe de Recursos Humanos.</p>
-           
-           
-           
-            <a
-            href='https://rhevolutec.base44.app/InscricaoCandidato'className="btn-candidatar"
-            >
-            Candidatar-me
-            </a>
-          </div>
-        </aside>
-      </div>
-    </div>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>
   )
 }
 
-function VagaCard({ vaga, onClick }) {
+function IconClock() {
   return (
-    <article className="vaga-card" onClick={onClick}>
-      <div className="vaga-card-img-wrap">
-        <img src={vaga.imagem} alt={vaga.cargo} className="vaga-card-img"  loading="lazy" decoding="async"/>
-        {vaga.destaque && <span className="vaga-badge-destaque">Destaque</span>}
-      </div>
-      <div className="vaga-card-body">
-        <span className="vaga-card-area">{vaga.area.toUpperCase()}</span>
-        <h3 className="vaga-card-titulo">{vaga.cargo}</h3>
-        <p className="vaga-card-resumo">{vaga.resumo}</p>
-        <div className="vaga-card-footer">
-          <span className="vaga-card-carga">{vaga.cargaHoraria}</span>
-          <button className="btn-ver-vaga">Ver Vaga</button>
-        </div>
-      </div>
-    </article>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+    </svg>
   )
 }
 
-function TrabalheConosco() {
-  const [filtro, setFiltro] = useState('Todas')
-  const [vagaSelecionada, setVagaSelecionada] = useState(null)
+function IconBriefcase() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </svg>
+  )
+}
 
-  const vagasFiltradas = filtro === 'Todas' ? vagas : vagas.filter(v => v.area === filtro)
+function IconCheck() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  )
+}
 
-  if (vagaSelecionada) {
+function IconArrowLeft() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </svg>
+  )
+}
+
+function IconShare() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+    </svg>
+  )
+}
+
+function VagaListItem({ vaga, isSelected, onClick }) {
+  return (
+    <button className={`vaga-list-item ${isSelected ? 'vaga-list-item--selected' : ''}`} onClick={onClick}>
+      {vaga.destaque && <span className="vli-destaque-dot" title="Vaga em destaque" />}
+      <div className="vli-top">
+        <span className="vli-area-badge">
+          {areaIcons[vaga.area]}
+          {vaga.area}
+        </span>
+        {vaga.destaque && <span className="vli-badge">Destaque</span>}
+      </div>
+      <h3 className="vli-cargo">{vaga.cargo}</h3>
+      <p className="vli-resumo">{vaga.resumo}</p>
+      <div className="vli-meta">
+        <span className="vli-meta-item">
+          <IconLocation />
+          {vaga.cidades.length > 1 ? `${vaga.cidades[0].split(' -')[0]} +${vaga.cidades.length - 1}` : vaga.cidades[0]}
+        </span>
+        <span className="vli-meta-item">
+          <IconBriefcase />
+          {vaga.tipo}
+        </span>
+        <span className="vli-meta-item">
+          <IconClock />
+          {vaga.cargaHoraria}
+        </span>
+      </div>
+    </button>
+  )
+}
+
+function VagaDetalhePanel({ vaga }) {
+  if (!vaga) {
     return (
-      <div className="trabalhe-conosco-page">
-        <div className="tc-inner">
-          <VagaDetalhe vaga={vagaSelecionada} onVoltar={() => setVagaSelecionada(null)} />
+      <div className="vd-empty">
+        <div className="vd-empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
         </div>
+        <p>Selecione uma vaga para ver os detalhes</p>
       </div>
     )
   }
 
   return (
+    <div className="vd-panel">
+      <div className="vd-panel-header">
+        <div className="vd-panel-header-top">
+          <span className="vd-area-badge">
+            {areaIcons[vaga.area]}
+            {vaga.area}
+          </span>
+          <button className="vd-share-btn" title="Compartilhar">
+            <IconShare />
+          </button>
+        </div>
+
+        <h1 className="vd-cargo">{vaga.cargo}</h1>
+        <p className="vd-empresa">Evolutec • Norte do Brasil</p>
+
+        <div className="vd-tags">
+          <span className="vd-tag">
+            <IconBriefcase />
+            {vaga.tipo}
+          </span>
+          <span className="vd-tag">
+            <IconClock />
+            {vaga.cargaHoraria}
+          </span>
+          <span className="vd-tag">
+            <IconLocation />
+            {vaga.cidades.length} {vaga.cidades.length === 1 ? 'cidade' : 'cidades'}
+          </span>
+        </div>
+
+        <a href="https://rhevolutec.base44.app/InscricaoCandidato" className="btn-candidatar-main">
+          Candidatar-me a esta vaga
+        </a>
+      </div>
+
+      <div className="vd-panel-body">
+        <section className="vd-secao">
+          <h2>Sobre a vaga</h2>
+          <p className="vd-descricao-texto">{vaga.descricao}</p>
+        </section>
+
+        <section className="vd-secao">
+          <h2>Responsabilidades</h2>
+          <ul className="vd-checklist">
+            {vaga.responsabilidades.map((r, i) => (
+              <li key={i}>
+                <span className="vd-check-icon"><IconCheck /></span>
+                {r}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="vd-secao">
+          <h2>Requisitos</h2>
+          <ul className="vd-checklist vd-checklist--requisitos">
+            {vaga.requisitos.map((r, i) => (
+              <li key={i}>
+                <span className="vd-check-icon"><IconCheck /></span>
+                {r}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="vd-secao">
+          <h2>Benefícios</h2>
+          <div className="vd-beneficios-chips">
+            {vaga.beneficios.map((b, i) => (
+              <span key={i} className="vd-beneficio-chip">{b}</span>
+            ))}
+          </div>
+        </section>
+
+        <section className="vd-secao">
+          <h2>Localidades</h2>
+          <div className="vd-cidades-lista">
+            {vaga.cidades.map((c, i) => (
+              <span key={i} className="vd-cidade-chip">
+                <IconLocation />
+                {c}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <div className="vd-cta-bottom">
+          <div>
+            <p className="vd-cta-label">Gostou dessa oportunidade?</p>
+            <p className="vd-cta-sub">Envie sua candidatura agora mesmo.</p>
+          </div>
+          <a href="https://rhevolutec.base44.app/InscricaoCandidato" className="btn-candidatar-main btn-candidatar-main--sm">
+            Candidatar-me
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function TrabalheConosco() {
+  const [filtro, setFiltro] = useState('Todas')
+  const [busca, setBusca] = useState('')
+  const [vagaSelecionada, setVagaSelecionada] = useState(vagas[0])
+  const [mobileView, setMobileView] = useState('lista') // 'lista' | 'detalhe'
+
+  const vagasFiltradas = vagas.filter(v => {
+    const matchArea = filtro === 'Todas' || v.area === filtro
+    const matchBusca = busca === '' ||
+      v.cargo.toLowerCase().includes(busca.toLowerCase()) ||
+      v.area.toLowerCase().includes(busca.toLowerCase()) ||
+      v.cidades.some(c => c.toLowerCase().includes(busca.toLowerCase()))
+    return matchArea && matchBusca
+  })
+
+  const handleSelectVaga = (vaga) => {
+    setVagaSelecionada(vaga)
+    setMobileView('detalhe')
+  }
+
+  return (
     <div className="trabalhe-conosco-page">
+      {/* HERO COMPACTO */}
       <section className="tc-hero">
         <div className="tc-hero-content">
-          <span className="tc-hero-pretitle">Junte-se ao nosso time</span>
+          <span className="tc-hero-pretitle">Evolutec • Carreiras</span>
           <h1>Trabalhe Conosco</h1>
-          <p>Evolutec • Trabalhe Conosco</p>
-        </div>
-      </section>
+          <p className="tc-hero-sub">Faça parte do maior ecossistema de educação do Norte do Brasil</p>
 
-      {/* ─── SEÇÃO NÚMEROS + BENEFÍCIOS ─── */}
-      <section className="tc-numeros-section">
-        <div className="tc-inner">
-          <div className="tc-numeros-header">
-            <span className="tc-numeros-pretitle">Por que a Evolutec?</span>
-            <h2>Um lugar onde você cresce de verdade</h2>
-            <p>Mais do que um emprego — aqui você encontra propósito, desenvolvimento e uma equipe que torce por você.</p>
-          </div>
-
-          <div className="tc-stats-grid">
-            {[
-              { valor: '8', sufixo: '+', label: 'Unidades no Norte do Brasil' },
-              { valor: '70', sufixo: '+', label: 'Cursos disponíveis' },
-              { valor: '10', sufixo: 'k+', label: 'Alunos transformados' },
-              { valor: '5', sufixo: 'anos', label: 'De crescimento contínuo' },
-            ].map((s, i) => (
-              <div className="tc-stat-card" key={i}>
-                <div className="tc-stat-numero">
-                  <span className="tc-stat-valor">{s.valor}</span>
-                  <span className="tc-stat-sufixo">{s.sufixo}</span>
-                </div>
-                <span className="tc-stat-label">{s.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="tc-beneficios-grid">
-            {[
-              {
-                icon: '🚀',
-                titulo: 'Plano de Carreira',
-                desc: 'Crescimento estruturado com promoções reais: Vendedor → Supervisor → Gerente → Diretor.',
-              },
-              {
-                icon: '🎓',
-                titulo: 'Cursos Gratuitos',
-                desc: 'Acesso ilimitado aos cursos Evolutec com certificação internacional pela Faculdade Evolutec.',
-              },
-              {
-                icon: '💰',
-                titulo: 'Remuneração Competitiva',
-                desc: 'Salário base + comissões. Nossos vendedores chegam a R$ 4.000/mês e recebem prêmios por metas.',
-              },
-              {
-                icon: '✈️',
-                titulo: 'Viagens como Prêmio',
-                desc: 'Destinos paradisíacos com hospedagem e alimentação pagos pela empresa para quem bate metas.',
-              },
-              {
-                icon: '🏥',
-                titulo: 'Saúde & Bem-estar',
-                desc: 'Plano de saúde, plano odontológico e desconto especial no Centro de Saúde Estelita do Grupo Evolutec.',
-              },
-              {
-                icon: '🤝',
-                titulo: 'Cultura de Pertencimento',
-                desc: 'Time que celebra conquistas, faz treinamentos juntos e se apoia no dia a dia.',
-              },
-            ].map((b, i) => (
-              <div className="tc-beneficio-card" key={i}>
-                <div className="tc-beneficio-icon">{b.icon}</div>
-                <div>
-                  <h4>{b.titulo}</h4>
-                  <p>{b.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="tc-section">
-        <div className="tc-inner">
-          <div className="filtros-area">
-            {areas.map(a => (
-              <button
-                key={a}
-                className={`filtro-btn ${filtro === a ? 'filtro-btn--ativo' : ''}`}
-                onClick={() => setFiltro(a)}
-              >
-                {a}
-              </button>
-            ))}
-          </div>
-
-          <div className="vagas-grid">
-            {vagasFiltradas.map(vaga => (
-              <VagaCard key={vaga.id} vaga={vaga} onClick={() => setVagaSelecionada(vaga)} />
-            ))}
-          </div>
-
-          <div className="contato-geral">
-            <div>
-              <h3>Não encontrou a vaga ideal?</h3>
-              <p>Envie seu currículo para o nosso banco de talentos. Quando surgir uma oportunidade alinhada ao seu perfil, entraremos em contato.</p>
+          <div className="tc-hero-stats">
+            <div className="tc-hero-stat">
+              <strong>8+</strong>
+              <span>Unidades</span>
             </div>
-            <a href="https://rhevolutec.base44.app/InscricaoCandidato" className="btn-curriculo">
-              Enviar Currículo Espontâneo
+            <div className="tc-stat-div" />
+            <div className="tc-hero-stat">
+              <strong>70+</strong>
+              <span>Cursos</span>
+            </div>
+            <div className="tc-stat-div" />
+            <div className="tc-hero-stat">
+              <strong>10k+</strong>
+              <span>Alunos</span>
+            </div>
+            <div className="tc-stat-div" />
+            <div className="tc-hero-stat">
+              <strong>{vagas.length}</strong>
+              <span>Vagas abertas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BARRA DE BUSCA + FILTROS */}
+      <div className="tc-search-bar">
+        <div className="tc-inner">
+          <div className="tc-search-row">
+            <div className="tc-search-input-wrap">
+              <svg className="tc-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input
+                type="text"
+                className="tc-search-input"
+                placeholder="Buscar por cargo, área ou cidade..."
+                value={busca}
+                onChange={e => setBusca(e.target.value)}
+              />
+            </div>
+            <div className="tc-filtros">
+              {areas.map(a => (
+                <button
+                  key={a}
+                  className={`filtro-btn ${filtro === a ? 'filtro-btn--ativo' : ''}`}
+                  onClick={() => setFiltro(a)}
+                >
+                  {a}
+                </button>
+              ))}
+            </div>
+          </div>
+          <p className="tc-results-count">
+            {vagasFiltradas.length} {vagasFiltradas.length === 1 ? 'vaga encontrada' : 'vagas encontradas'}
+          </p>
+        </div>
+      </div>
+
+      {/* LAYOUT PRINCIPAL: LISTA + DETALHE */}
+      <div className="tc-main-layout tc-inner">
+
+        {/* Mobile nav */}
+        {mobileView === 'detalhe' && vagaSelecionada && (
+          <button className="mobile-back-btn" onClick={() => setMobileView('lista')}>
+            <IconArrowLeft />
+            Voltar às vagas
+          </button>
+        )}
+
+        <div className={`tc-jobs-list ${mobileView === 'detalhe' ? 'tc-jobs-list--hidden-mobile' : ''}`}>
+          {vagasFiltradas.length === 0 ? (
+            <div className="tc-no-results">
+              <p>Nenhuma vaga encontrada.</p>
+              <button onClick={() => { setBusca(''); setFiltro('Todas') }}>Limpar filtros</button>
+            </div>
+          ) : (
+            vagasFiltradas.map(vaga => (
+              <VagaListItem
+                key={vaga.id}
+                vaga={vaga}
+                isSelected={vagaSelecionada?.id === vaga.id}
+                onClick={() => handleSelectVaga(vaga)}
+              />
+            ))
+          )}
+
+          {/* Currículo espontâneo */}
+          <div className="tc-espontaneo">
+            <p>Não encontrou a vaga ideal?</p>
+            <a href="https://rhevolutec.base44.app/InscricaoCandidato" className="btn-espontaneo">
+              Enviar currículo espontâneo
             </a>
           </div>
         </div>
-      </section>
+
+        <div className={`tc-jobs-detail ${mobileView === 'lista' ? 'tc-jobs-detail--hidden-mobile' : ''}`}>
+          <VagaDetalhePanel vaga={vagaSelecionada} />
+        </div>
+      </div>
     </div>
   )
 }

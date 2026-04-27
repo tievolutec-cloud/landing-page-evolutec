@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import './Depoimentos.css'
 
 const videos = [
@@ -49,9 +49,6 @@ function useVisible() {
   }, [])
   return visible
 }
-
-const depoimentos = [
-]
 
 export default function Depoimentos() {
   const [offset, setOffset]       = useState(0)

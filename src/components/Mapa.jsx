@@ -129,11 +129,6 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
     }
   }, [initialPoloId, onPoloChange])
 
-  const handlePoloChange = (e) => {
-    const polo = POLOS.find(p => p.id.toString() === e.target.value)
-    onPoloChange && onPoloChange(polo)
-  }
-
   return (
     <section className="mapa-section">
       <div className="mapa-container">

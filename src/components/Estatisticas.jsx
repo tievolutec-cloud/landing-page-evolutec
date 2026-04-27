@@ -76,7 +76,7 @@ function useCountUp(target, duration = 2000, active = false) {
   return count
 }
 
-function StatItem({ icon, value, suffix, label, description, active }) {
+function StatItem({ icon, value, suffix, label, active }) {
   const count = useCountUp(value, 1800, active)
   
   return (

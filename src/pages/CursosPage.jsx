@@ -77,10 +77,8 @@ function CursosPage() {
     setSelectedCategory(categoria || 'Todos');
   }, [searchParams]);
 
-  // Extrair categorias, modos e tags únicos
+  // Extrair categorias únicas
   const categories = categoriasCursos;
-  const modes = ['Todos', ...new Set(cursos.map(curso => curso.mode).filter(Boolean))];
-  const tags = ['Todos', ...new Set(cursos.map(curso => curso.tag).filter(Boolean))];
 
   // Filtrar e ordenar cursos
   const filteredCursos = useMemo(() => {

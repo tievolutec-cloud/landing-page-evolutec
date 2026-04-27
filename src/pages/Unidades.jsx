@@ -46,7 +46,7 @@ function Unidades() {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [location]);
+  }, [location, unidadeId]);
 
   return (
     <div className="unidades-page">
