@@ -4,7 +4,7 @@ import './ValidarCertificado.css'
 
 export default function ValidarCertificado() {
   return (
-    <div className="validar-page">
+    <div className="validar-page dottedbackground">
       <Banner />
 
       <main className="validar-main">

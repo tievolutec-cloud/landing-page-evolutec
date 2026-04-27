@@ -7,6 +7,10 @@
   z-index: 0;
 }
 
+.validar-page {
+  min-height: 100vh;
+}
+
 .validar-steps {
   background: var(--white);
   padding: 2rem;
@@ -19,16 +23,10 @@
 }
 
 /* dotted background behind the validation content */
-.validar-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(12,24,48,0.06) 1px, transparent 1px);
+.dottedbackground {
+  background-color: #f5f8fb;
+  background-image: radial-gradient(rgba(26,93,148,0.14) 1.2px, transparent 1.2px);
   background-size: 18px 18px;
-  opacity: 0.35;
-  pointer-events: none;
-  z-index: -1;
-  border-radius: 10px;
 }
 
 .validar-steps h1 {
