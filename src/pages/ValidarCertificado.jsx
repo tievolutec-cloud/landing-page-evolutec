@@ -15,7 +15,7 @@ export default function ValidarCertificado() {
           <ol className="steps-list">
             <li>
               <strong>Localize o código do seu certificado</strong>
-              <p>O código geralmente aparece na parte inferior do documento ou no verso do certificado. Ele pode estar formatado como grupos de letras e números.</p>
+              <p>O código geralmente aparece ao lado do QrCode na frente do certificado em vermelho. Ele é formatado com um cojunto de letras e números</p>
             </li>
             <li>
               <strong>Acesse o validador</strong>
