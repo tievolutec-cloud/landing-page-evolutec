@@ -13,6 +13,7 @@ const BlogPage = lazy(() => import('./pages/BlogPage'))
 const Sobre = lazy(() => import('./pages/Sobre'))
 const TrabalheConosco = lazy(() => import('./pages/TrabalheConosco'))
 const Ebooks = lazy(() => import('./pages/Ebooks'))
+const ValidarCertificado = lazy(() => import('./pages/ValidarCertificado'))
 
 import './App.css'
 
@@ -77,6 +78,7 @@ function App() {
               />
               <Route path="/curso/:slug" element={<CursoDetalhes />} />
               <Route path="/unidades" element={<Unidades />} />
+              <Route path="/validar-certificado" element={<ValidarCertificado />} />
               <Route path="/noticia/:id" element={<Noticia />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/sobre" element={<Sobre />} />

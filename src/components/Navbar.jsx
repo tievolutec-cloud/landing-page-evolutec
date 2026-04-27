@@ -373,6 +373,15 @@ function Navbar() {
                 Trabalhe Conosco
               </Link>
             </li>
+            <li className="navbar-btn-item">
+              <Link
+                to="/validar-certificado"
+                className="navbar-btn navbar-btn--blue"
+                onClick={closeMenu}
+              >
+                Consulte seu certificado
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

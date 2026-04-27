@@ -39,68 +39,68 @@ const MapUpdater = ({ center, fixedZoom }) => {
 
 const FIXED_MAP_ZOOM = 8
 
-const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
-  const polos = [
-    {
-      id: 'todos',
-      nome: 'Todos os Polos',
-      position: [-1.2949, -47.9182],
-      descricao: 'Visualize todos os nossos polos de ensino.',
-    },
-    {
-      id: 1,
-      nome: 'Castanhal - PA',
-      position: [-1.2904867452288942, -47.927698915342106],
-      descricao: 'Conheça nossa unidade em Castanhal',
-      endereco: 'Tv. Cônego Luíz Leitão, 2479 - Centro, Castanhal - PA, 68743-020',
-    },
-    {
-      id: 2,
-      nome: 'Marapanim - PA',
-      position: [-0.7129983384339472, -47.69613518032469],
-      descricao: 'Conheça nossa unidade em Marapanim',
-      endereco: 'R. Edmundo Botelho, 544 - Centro, Marapanim - PA, 68760-000',
-    },
-    {
-      id: 3,
-      nome: 'Curuçá - PA',
-      position: [-0.7314956080193113, -47.85028899692766],
-      descricao: 'Conheça nossa unidade em Curuçá',
-      endereco: 'Tv. Sete de Setembro, 151 - Centro, Curuçá - PA, 68750-000',
-    },
-    {
-      id: 4,
-      nome: 'Maracanã - PA',
-      position: [-0.7644489541998982, -47.456059412414234],
-      descricao: 'Conheça nossa unidade em Maracanã',
-      endereco: 'Rua Cantidio Guimarães, Tv. Ernesto Gomes, 53 - Qd 44 - Centro, Maracanã - PA, 68710-000',
-    },
-    {
-      id: 5,
-      nome: 'Irituia - PA',
-      position: [-1.7696900394870572, -47.44180260081108],
-      descricao: 'Conheça nossa unidade em Irituia',
-      endereco: 'Tv. Ceará - Centro, Irituia - PA, 68655-000',
-    },
-    {
-      id: 6,
-      nome: 'São Domingos do Capim - PA',
-      position: [-1.6742720646956826, -47.77274371713776],
-      descricao: 'Conheça nossa unidade em São Domingos do Capim',
-      endereco: 'Av. Dr. Lauro Sodré, 70 - Centro, São Domingos do Capim - PA, 68635-000',
-    },
-    {
-      id: 7,
-      nome: 'São Miguel do Guamá - PA',
-      position: [-1.6224162787634167, -47.482412474973565],
-      descricao: 'Conheça nossa unidade em São Miguel do Guamá',
-      endereco: 'Tv. Américo Lopes, 297 - São Manoel, São Miguel do Guamá - PA, 68660-000',
-    }
-  ]
+const POLOS = [
+  {
+    id: 'todos',
+    nome: 'Todos os Polos',
+    position: [-1.2949, -47.9182],
+    descricao: 'Visualize todos os nossos polos de ensino.',
+  },
+  {
+    id: 1,
+    nome: 'Castanhal - PA',
+    position: [-1.2904867452288942, -47.927698915342106],
+    descricao: 'Conheça nossa unidade em Castanhal',
+    endereco: 'Tv. Cônego Luíz Leitão, 2479 - Centro, Castanhal - PA, 68743-020',
+  },
+  {
+    id: 2,
+    nome: 'Marapanim - PA',
+    position: [-0.7129983384339472, -47.69613518032469],
+    descricao: 'Conheça nossa unidade em Marapanim',
+    endereco: 'R. Edmundo Botelho, 544 - Centro, Marapanim - PA, 68760-000',
+  },
+  {
+    id: 3,
+    nome: 'Curuçá - PA',
+    position: [-0.7314956080193113, -47.85028899692766],
+    descricao: 'Conheça nossa unidade em Curuçá',
+    endereco: 'Tv. Sete de Setembro, 151 - Centro, Curuçá - PA, 68750-000',
+  },
+  {
+    id: 4,
+    nome: 'Maracanã - PA',
+    position: [-0.7644489541998982, -47.456059412414234],
+    descricao: 'Conheça nossa unidade em Maracanã',
+    endereco: 'Rua Cantidio Guimarães, Tv. Ernesto Gomes, 53 - Qd 44 - Centro, Maracanã - PA, 68710-000',
+  },
+  {
+    id: 5,
+    nome: 'Irituia - PA',
+    position: [-1.7696900394870572, -47.44180260081108],
+    descricao: 'Conheça nossa unidade em Irituia',
+    endereco: 'Tv. Ceará - Centro, Irituia - PA, 68655-000',
+  },
+  {
+    id: 6,
+    nome: 'São Domingos do Capim - PA',
+    position: [-1.6742720646956826, -47.77274371713776],
+    descricao: 'Conheça nossa unidade em São Domingos do Capim',
+    endereco: 'Av. Dr. Lauro Sodré, 70 - Centro, São Domingos do Capim - PA, 68635-000',
+  },
+  {
+    id: 7,
+    nome: 'São Miguel do Guamá - PA',
+    position: [-1.6224162787634167, -47.482412474973565],
+    descricao: 'Conheça nossa unidade em São Miguel do Guamá',
+    endereco: 'Tv. Américo Lopes, 297 - São Manoel, São Miguel do Guamá - PA, 68660-000',
+  }
+]
 
+const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
   // Usar poloSelecionado da prop, ou 'todos' como padrão
   const poloAtualState = poloSelecionado || 'todos';
-  const poloChosen = polos.find(p => p.id.toString() === poloAtualState.toString()) || polos[0];
+  const poloChosen = POLOS.find(p => p.id.toString() === poloAtualState.toString()) || POLOS[0];
 
   useEffect(() => {
     onPoloChange && onPoloChange(poloChosen)
@@ -109,15 +109,15 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
   // Seleciona polo vindo de prop externa (ex: navbar dropdown)
   useEffect(() => {
     if (initialPoloId) {
-      const polo = polos.find(p => p.id.toString() === initialPoloId.toString())
+      const polo = POLOS.find(p => p.id.toString() === initialPoloId.toString())
       if (polo) {
         onPoloChange && onPoloChange(polo)
       }
     }
-  }, [initialPoloId])
+  }, [initialPoloId, onPoloChange])
 
   const handlePoloChange = (e) => {
-    const polo = polos.find(p => p.id.toString() === e.target.value)
+    const polo = POLOS.find(p => p.id.toString() === e.target.value)
     onPoloChange && onPoloChange(polo)
   }
 
@@ -146,7 +146,7 @@ const Mapa = ({ initialPoloId, onPoloChange, poloSelecionado }) => {
             />
             
             {poloChosen.id === 'todos' ? (
-              polos.slice(1).map((polo) => (
+              POLOS.slice(1).map((polo) => (
                 <Marker
                   key={polo.id}
                   position={polo.position}

@@ -149,6 +149,8 @@ function Navbar() {
           <DrawerItem to="/blog" icon={<BookOpenTextIcon size={20} />} title="Blog" desc="Blog e notícias" onClick={closeMenu} />
           <DrawerItem to="/ebooks" icon={<BookIcon size={20} />} title="Ebooks" desc="Materiais Gratuitos" onClick={closeMenu} />
 
+          <DrawerItem to="/validar-certificado" icon={<BookOpenTextIcon size={20} />} title="Validar Certificado" desc="Consultar validade" onClick={closeMenu} />
+
           <li className="drawer-action-container">
             <button
               className="btn-matricula-drawer navbar-btn navbar-btn--yellow"

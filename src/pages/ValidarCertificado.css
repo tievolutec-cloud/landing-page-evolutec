@@ -1,0 +1,134 @@
+.validar-main {
+  max-width: 1200px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.validar-steps {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(12,24,48,0.06);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.validar-steps h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.validar-steps .lead {
+  margin: 0 0 1rem 0;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Horizontal timeline layout */
+.steps-list {
+  margin: 0;
+  padding: 2.25rem 1rem 0 1rem;
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  overflow-x: auto;
+  position: relative;
+}
+
+.steps-list::before {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: #e6e6e6;
+  z-index: 0;
+}
+
+.steps-list li {
+  counter-increment: step;
+  margin: 0;
+  padding: 2.5rem 1rem 1rem 1rem;
+  position: relative;
+  min-width: 220px;
+  max-width: 320px;
+  text-align: center;
+  background: transparent;
+  z-index: 1;
+}
+
+.steps-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(12,24,48,0.08);
+}
+
+.steps-list li strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.steps-list li p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.validar-iframe {
+  width: 100%;
+  margin-left: 0;
+}
+
+@media (max-width: 920px) {
+  .validar-steps {
+    padding: 1.25rem;
+    border-left-width: 3px;
+  }
+
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 0 0;
+  }
+
+  .steps-list::before {
+    display: none;
+  }
+
+  .steps-list li {
+    min-width: auto;
+    max-width: none;
+    text-align: left;
+    padding-left: 3.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .steps-list li::before {
+    left: 0;
+    transform: none;
+    top: 0.25rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 0.9rem;
+  }
+}

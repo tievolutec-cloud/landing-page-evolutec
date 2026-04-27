@@ -30,6 +30,15 @@ function Unidades() {
 
   useEffect(() => {
     if (unidadeId) {
+      setPoloSelecionado(unidadeId);
+      return;
+    }
+
+    setPoloSelecionado('todos');
+  }, [unidadeId]);
+
+  useEffect(() => {
+    if (unidadeId) {
       setTimeout(() => {
         const el = document.querySelector('.mapa-section');
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -86,7 +95,11 @@ function Unidades() {
 
       <section className="unidades-content">
         <div className="unidades-mapa-wrapper">
-          <Mapa initialPoloId={unidadeId} onPoloChange={setPoloAtivo} />
+          <Mapa
+            initialPoloId={unidadeId}
+            onPoloChange={setPoloAtivo}
+            poloSelecionado={poloSelecionado}
+          />
         </div>
       </section>
     </div>

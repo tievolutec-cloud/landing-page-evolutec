@@ -1,0 +1,22 @@
+.certificado-iframe-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.certificado-iframe {
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(12,24,48,0.08);
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .certificado-iframe-container {
+    padding: 0.5rem;
+  }
+}
