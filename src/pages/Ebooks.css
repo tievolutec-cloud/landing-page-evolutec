@@ -1,9 +1,28 @@
 .ebooks-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 100vh;
   background-color: #f9fafb;
   padding-top: 126px;
   padding-bottom: 5rem;
   font-family: 'Poppins', sans-serif;
+}
+
+.ebooks-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(26, 93, 148, 0.12) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ebooks-page > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Header ── */
