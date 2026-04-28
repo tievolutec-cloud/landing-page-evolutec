@@ -143,7 +143,7 @@ function Navbar() {
       }
     }
   }
-
+     
   const handleCursosClick = (e) => {
     closeMenu()
     if (location.pathname === '/') {
