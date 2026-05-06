@@ -22,6 +22,7 @@ function Unidades() {
     { id: 5, nome: 'Irituia - PA' },
     { id: 6, nome: 'São Domingos do Capim - PA' },
     { id: 7, nome: 'São Miguel do Guamá - PA' },
+    { id: 8, nome: 'Igarapé Açu - PA' },
   ];
 
   const handlePoloChange = (e) => {

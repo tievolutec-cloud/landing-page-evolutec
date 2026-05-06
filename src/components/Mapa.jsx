@@ -95,6 +95,13 @@ const POLOS = [
     position: [-1.6224162787634167, -47.482412474973565],
     descricao: 'Conheça nossa unidade em São Miguel do Guamá',
     endereco: 'Tv. Américo Lopes, 297 - São Manoel, São Miguel do Guamá - PA, 68660-000',
+  },
+  {
+    id: 8,
+    nome: 'Igarapé Açu - PA',
+    position: [-1.1299804636521684, -47.62362676416905],
+    descricao: 'Conheça nossa unidade em Igarapé Açu',
+    endereco: 'Evolutec Educação, Av. Magalhães Barata, 4034 - CENTRO, Igarapé-Açu - PA, 68725-000',
   }
 ]
 

@@ -335,6 +335,7 @@ function Navbar() {
                   { id: 5, label: 'Irituia - PA' },
                   { id: 6, label: 'São Domingos do Capim - PA' },
                   { id: 7, label: 'São Miguel do Guamá - PA' },
+                  { id: 8, label: 'Igarapé Açu - PA' },
                 ].map(({ id, label }) => (
                   <li key={id}>
                     <Link
