@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cursosData } from '../data/coursesData';
 import './Cursos.css';
+
+const COURSES_PER_PAGE = 6;
+
+const getPageNumbers = (currentPage, totalPages) => {
+  if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
+  if (currentPage <= 4) return [1, 2, 3, 4, 5, '...', totalPages];
+  if (currentPage >= totalPages - 3) return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+  return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+};
 
 // Ícones SVG simples para não depender de bibliotecas externas
 const ClockIcon = () => (
@@ -78,6 +87,25 @@ const CourseCard = ({
 
 function Cursos() {
   const cursos = cursosData;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(cursos.length / COURSES_PER_PAGE);
+  const paginatedCursos = cursos.slice(
+    (currentPage - 1) * COURSES_PER_PAGE,
+    currentPage * COURSES_PER_PAGE
+  );
+
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages || page === currentPage) return;
+
+    setCurrentPage(page);
+
+    const section = document.getElementById('cursos');
+    if (section) {
+      window.requestAnimationFrame(() => {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  };
 
   return (
     <section className="cursos-section" id="cursos">
@@ -90,7 +118,7 @@ function Cursos() {
         </div>
         
         <div className="cursos-grid">
-          {cursos.map((curso) => (
+          {paginatedCursos.map((curso) => (
             <CourseCard
               key={curso.id}
               slug={curso.slug}
@@ -104,6 +132,48 @@ function Cursos() {
             />
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <nav className="cursos-home-pagination" aria-label="Paginação dos cursos da página inicial">
+            <button
+              type="button"
+              className="cursos-home-pagination-btn"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Anterior
+            </button>
+
+            <div className="cursos-home-pagination-pages">
+              {getPageNumbers(currentPage, totalPages).map((page, index) =>
+                page === '...' ? (
+                  <span key={`ellipsis-${index}`} className="cursos-home-pagination-ellipsis">
+                    ...
+                  </span>
+                ) : (
+                  <button
+                    key={page}
+                    type="button"
+                    className={`cursos-home-pagination-page${currentPage === page ? ' active' : ''}`}
+                    onClick={() => handlePageChange(page)}
+                    aria-current={currentPage === page ? 'page' : undefined}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+            </div>
+
+            <button
+              type="button"
+              className="cursos-home-pagination-btn"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Próxima
+            </button>
+          </nav>
+        )}
 
         <div className="cursos-cta">
           <Link to="/cursos" className="btn-ver-todos-cursos">
