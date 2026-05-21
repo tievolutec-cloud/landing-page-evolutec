@@ -266,10 +266,17 @@
 }
 
 .dm-ebook-capa-img {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 220px;
+  max-height: 240px;
   width: auto;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+}
+
+@media (max-width: 520px) {
+  .dm-ebook-capa-img {
+    max-width: 170px;
+    max-height: 190px;
+  }
 }

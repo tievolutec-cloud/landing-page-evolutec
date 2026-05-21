@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Download, User, Mail, Phone, Building2, Loader2 } from 'lucide-react';
 import '../components/DownloadModal.css';
 
@@ -35,7 +36,7 @@ function DownloadModal({ ebook, onClose, formData, onChange, errors, loading, on
 
   if (!ebook) return null;
 
-  return (
+  const modalContent = (
     <div
       className="dm-backdrop"
       role="dialog"
@@ -139,6 +140,8 @@ function DownloadModal({ ebook, onClose, formData, onChange, errors, loading, on
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
 
 export default DownloadModal;
