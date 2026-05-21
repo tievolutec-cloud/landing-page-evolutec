@@ -61,21 +61,45 @@ const ArrowRightIcon = () => (
 );
 
 function CursosPage() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const cursos = cursosData;
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(() => searchParams.get('categoria') || 'Todos');
+  const [selectedCategory, setSelectedCategory] = useState('Todos');
   const [selectedMode, setSelectedMode] = useState('Todos');
   const [selectedTag, setSelectedTag] = useState('Todos');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' ou 'list'
   const [sortBy, setSortBy] = useState('title'); // 'title', 'duration', 'category'
   const [currentPage, setCurrentPage] = useState(1);
 
+  const normalizeText = (value) =>
+    (value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+
+  const resolveCategory = (value) => {
+    if (!value) return 'Todos';
+
+    const normalizedInput = normalizeText(value);
+    const match = categoriasCursos.find((category) => normalizeText(category) === normalizedInput);
+
+    return match || 'Todos';
+  };
+
   // Sincroniza o filtro de categoria quando o query param muda (ex: navegação pelo dropdown)
   useEffect(() => {
-    const categoria = searchParams.get('categoria');
-    setSelectedCategory(categoria || 'Todos');
-  }, [searchParams]);
+    const categoriaParam = searchParams.get('categoria');
+    const resolvedCategory = resolveCategory(categoriaParam);
+    setSelectedCategory(resolvedCategory);
+
+    // Mantém a URL em formato canônico para evitar links legados sem acento quebrando o filtro.
+    if (categoriaParam && resolvedCategory !== 'Todos' && categoriaParam !== resolvedCategory) {
+      const nextParams = new URLSearchParams(searchParams);
+      nextParams.set('categoria', resolvedCategory);
+      setSearchParams(nextParams, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
 
   // Extrair categorias únicas
   const categories = categoriasCursos;
@@ -160,7 +184,7 @@ function CursosPage() {
 
           {/* Busca */}
           <div className="filter-group">
-            <label>Buscar Curso</label>
+            <label>Buscar curso</label>
             <div className="search-input-wrapper">
               <SearchIcon />
               <input
@@ -238,7 +262,7 @@ function CursosPage() {
             <div className="no-results">
               <p>Nenhum curso encontrado com os filtros selecionados.</p>
               <button onClick={clearFilters} className="btn-clear-filters-main">
-                Limpar Filtros
+                Limpar filtros
               </button>
             </div>
           ) : (
@@ -298,7 +322,7 @@ function CursosPage() {
                     <div className="curso-card-meta">
                       <div className="meta-item">
                         <ClockIcon />
-                        <span className="meta-label">Duracao</span>
+                        <span className="meta-label">Duração</span>
                         <span className="meta-value">{curso.duration}</span>
                       </div>
                       <div className="meta-item">

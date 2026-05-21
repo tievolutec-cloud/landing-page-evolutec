@@ -144,12 +144,12 @@ function Navbar() {
 
           <DrawerItem to="/" icon={<HomeIcon size={20} />} title="Home" desc="Página principal" onClick={closeMenu} />
           <DrawerItem to="/cursos" icon={<GraduationCapIcon size={20} />} title="Cursos" desc="Grade de formações" onClick={closeMenu} />
-          <DrawerItem to="/unidades" icon={<MapPinIcon size={20} />} title="Unidades" desc="Polos do evolutec" onClick={closeMenu} />
-          <DrawerItem to="/sobre" icon={<BuildingIcon size={20} />} title="Sobre Nós" desc="Nossa história" onClick={closeMenu} />
+          <DrawerItem to="/unidades" icon={<MapPinIcon size={20} />} title="Unidades" desc="Polos da Evolutec" onClick={closeMenu} />
+          <DrawerItem to="/sobre" icon={<BuildingIcon size={20} />} title="Sobre nós" desc="Nossa história" onClick={closeMenu} />
           <DrawerItem to="/blog" icon={<BookOpenTextIcon size={20} />} title="Blog" desc="Blog e notícias" onClick={closeMenu} />
-          <DrawerItem to="/ebooks" icon={<BookIcon size={20} />} title="Ebooks" desc="Materiais Gratuitos" onClick={closeMenu} />
+          <DrawerItem to="/ebooks" icon={<BookIcon size={20} />} title="E-books" desc="Materiais gratuitos" onClick={closeMenu} />
 
-          <DrawerItem to="/validar-certificado" icon={<BookOpenTextIcon size={20} />} title="Validar Certificado" desc="Consultar validade" onClick={closeMenu} />
+          <DrawerItem to="/validar-certificado" icon={<BookOpenTextIcon size={20} />} title="Validar certificado" desc="Consultar validade" onClick={closeMenu} />
 
           <li className="drawer-action-container">
             <button
@@ -160,7 +160,9 @@ function Navbar() {
             >
               Matricule-se
             </button>
-            <button className="btn-trabalhe-drawer">Trabalhe Conosco</button>
+            <Link to="/trabalhe-conosco" className="btn-trabalhe-drawer" onClick={closeMenu}>
+              Trabalhe conosco
+            </Link>
           </li>
         </ul>
       </nav>

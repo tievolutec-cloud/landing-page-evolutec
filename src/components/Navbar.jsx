@@ -1,21 +1,12 @@
 import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { categoriasCursos } from '../data/coursesData';
 import './Navbar.css';
 const ContatoModal = lazy(() => import('./contatoModal'));
 const NavbarMobile = lazy(() => import('./NavbarMobile'));
 
 const FALLBACK_WHATSAPP = 'https://wa.me/559140424250';
-const COURSE_CATEGORIES = [
-  'Saude',
-  'Administracao',
-  'Tecnologia',
-  'Gestao',
-  'Turismo',
-  'Marketing',
-  'Comercio',
-  'Dados',
-  'Design',
-];
+const COURSE_CATEGORIES = categoriasCursos.filter((categoria) => categoria !== 'Todos');
 
 function MessageCircleIcon({ size = 16 }) {
   return (
@@ -199,9 +190,13 @@ function Navbar() {
             Matricule-se pelo WhatsApp
           </a>
           <div className="top-bar-right">
-            <a href="cta0" className="top-bar-link">
+            <Link
+              to="/#matricule"
+              className="top-bar-link"
+              onClick={(e) => handleAnchorClick(e, '#matricule')}
+            >
               Venha você também fazer parte do Evolutec!
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -290,7 +285,7 @@ function Navbar() {
                 {courseCategories.map((categoria) => (
                   <li key={categoria}>
                     <Link
-                      to={`/cursos?categoria=${categoria}`}
+                      to={`/cursos?categoria=${encodeURIComponent(categoria)}`}
                       onClick={() => { closeMenu(); closeDropdown() }}
                     >
                       <strong>{categoria}</strong>
@@ -371,7 +366,7 @@ function Navbar() {
                 className="navbar-btn navbar-btn--blue"
                 onClick={closeMenu}
               >
-                Trabalhe Conosco
+                Trabalhe conosco
               </Link>
             </li>
             <li className="navbar-btn-item">

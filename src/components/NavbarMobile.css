@@ -186,6 +186,9 @@
   font-family: 'Poppins', sans-serif !important;
   background: var(--primary-color);
   border: none;
+  display: block;
+  text-align: center;
+  text-decoration: none;
 
   }
 }

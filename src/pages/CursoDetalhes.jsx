@@ -220,7 +220,7 @@ function CursoDetalhes() {
               <div className="info-card-verde">
                 <ClockIcon />
                 <div className="info-card-content">
-                  <span className="info-card-label">Duracao</span>
+                  <span className="info-card-label">Duração</span>
                   <span className="info-card-value">{curso.duration}</span>
                 </div>
               </div>
