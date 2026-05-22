@@ -11,6 +11,10 @@ const allImages = [
   { id: 7, src: '/a.webp', alt: 'Evento Evolutec', type: 'standard' },
   { id: 8, src: '/b.webp', alt: 'Alunos Evolutec', type: 'standard' },
   { id: 9, src: '/c.webp', alt: 'Confraternização', type: 'standard' },
+  { id: 10, src: '/japim%20(1).JPEG', alt: 'Evento Japim Evolutec', type: 'standard' },
+  { id: 11, src: '/japim%20(1).JPG', alt: 'Formandos Japim Evolutec', type: 'standard' },
+  { id: 12, src: '/japim%20(2).JPG', alt: 'Turma Japim Evolutec', type: 'standard' },
+  { id: 13, src: '/japim%20(3).JPG', alt: 'Celebração Japim Evolutec', type: 'standard' },
 ]
 
 // Define slots and their required image type
