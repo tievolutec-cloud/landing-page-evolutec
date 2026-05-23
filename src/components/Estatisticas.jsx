@@ -58,35 +58,58 @@ function useCountUp(target, duration = 2000, active = false) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    if (!active) return
-    let start = 0
-    const step = Math.ceil(target / (duration / 16))
-    const timer = setInterval(() => {
-      start += step
-      if (start >= target) {
-        setCount(target)
-        clearInterval(timer)
-      } else {
-        setCount(start)
+    if (!active) {
+      setCount(0)
+      return
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setCount(target)
+      return
+    }
+
+    let animationFrame
+    let startTime
+    const easeOutQuint = (progress) => 1 - Math.pow(1 - progress, 5)
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp
+      const elapsed = timestamp - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const easedProgress = easeOutQuint(progress)
+
+      setCount(Math.round(target * easedProgress))
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate)
       }
-    }, 16)
-    return () => clearInterval(timer)
+    }
+
+    animationFrame = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationFrame)
   }, [active, target, duration])
 
   return count
 }
 
-function StatItem({ icon, value, suffix, label, active }) {
+function StatItem({ icon, value, suffix, label, active, index }) {
   const count = useCountUp(value, 1800, active)
+  const formattedCount = count.toLocaleString('pt-BR')
   
   return (
-    <div className="estat-item">
+    <div
+      className={`estat-item ${active ? 'is-active' : ''}`}
+      style={{ '--estat-delay': `${index * 120}ms` }}
+    >
       <div className="estat-icon-wrapper">
         {icon}
       </div>
       <div className="estat-content">
-        <div className="estat-number">
-          {count.toLocaleString('pt-BR')}{suffix}
+        <div className="estat-number" aria-label={`${formattedCount}${suffix}`}>
+          <span className="estat-number-glow" aria-hidden="true"></span>
+          <span className="estat-number-value">{formattedCount}</span>
+          <span className="estat-number-suffix">{suffix}</span>
+          <span className="estat-number-shine" aria-hidden="true"></span>
         </div>
         <div className="estat-label">{label}</div>
         {/* description used to be hidden but structure supports it - kept hidden in CSS for now? Or enabled? */}
@@ -109,11 +132,15 @@ export default function Estatisticas() {
   }, [])
 
   return (
-    <section className="estat-section" ref={ref}>
+    <section className={`estat-section ${active ? 'is-active' : ''}`} ref={ref}>
       <div className="estat-container">
         {stats.map((s, i) => (
-          <div className="estat-wrapper" key={i}>
-            <StatItem {...s} active={active} />
+          <div
+            className="estat-wrapper"
+            key={i}
+            style={{ '--estat-delay': `${i * 120}ms` }}
+          >
+            <StatItem {...s} active={active} index={i} />
             {i < stats.length - 1 && <div className="estat-divider"></div>}
           </div>
         ))}

@@ -12,7 +12,9 @@
 
 /* Container principal (Card Branco) */
 .estat-container {
-  background: #1a5d94;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.18), transparent 24%),
+    linear-gradient(135deg, #144b78 0%, #1a5d94 48%, #117a95 100%);
   color: #333;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
@@ -26,6 +28,23 @@
   position: relative;
   transform: translateY(-50%); /* overlap half */
   margin-bottom: -80px; /* Counteract space */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.estat-container::before {
+  content: '';
+  position: absolute;
+  inset: -80% -20%;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.16) 50%, transparent 65%);
+  transform: translateX(-65%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.estat-section.is-active .estat-container::before {
+  animation: estatContainerSweep 1.4s 0.2s ease-out both;
 }
 
 /* Wrapper individual */
@@ -36,6 +55,13 @@
   color: #ffffff;
   position: relative;
   justify-content: center; /* Center content in wrapper */
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+}
+
+.estat-section.is-active .estat-wrapper {
+  animation: estatItemReveal 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--estat-delay);
 }
 
 /* Item */
@@ -45,6 +71,28 @@
   gap: 1rem; /* Increased gap slightly */
   width: 100%;
   justify-content: center; /* Centers the whole block horizontally */
+  position: relative;
+  isolation: isolate;
+}
+
+.estat-item::before {
+  content: '';
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22), transparent 68%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-58%, -50%) scale(0.55);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.estat-item.is-active::before {
+  animation: estatSoftPulse 1.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--estat-delay) + 120ms);
 }
 
 /* Ícone */
@@ -58,11 +106,25 @@
   justify-content: center; /* Centers the SVG inside the wrapper */
   flex-shrink: 0;
   transition: all 0.3s ease;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+  transform: scale(0.9);
 }
 
 .estat-icon-wrapper svg {
   width: 100%;
   height: 100%;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+}
+
+.estat-item.is-active .estat-icon-wrapper {
+  animation: estatIconPop 820ms cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  animation-delay: calc(var(--estat-delay) + 80ms);
+}
+
+.estat-item.is-active .estat-icon-wrapper svg {
+  animation: estatIconDraw 1.1s ease-out both;
+  animation-delay: calc(var(--estat-delay) + 80ms);
 }
 
 /* Conteúdo de Texto */
@@ -70,6 +132,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .estat-number {
@@ -78,6 +141,74 @@
   color: #fff;
   line-height: 1.1;
   margin-bottom: 0.2rem;
+  display: inline-flex;
+  align-items: baseline;
+  position: relative;
+  width: max-content;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.estat-number-value,
+.estat-number-suffix {
+  position: relative;
+  z-index: 2;
+}
+
+.estat-number-value {
+  transform-origin: center bottom;
+}
+
+.estat-number-suffix {
+  color: #ffd95a;
+  margin-left: 0.06em;
+  transform-origin: left bottom;
+  text-shadow: 0 0 18px rgba(255, 217, 90, 0.42);
+}
+
+.estat-number-glow,
+.estat-number-shine {
+  position: absolute;
+  inset: -0.18em -0.25em;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.estat-number-glow {
+  background: rgba(255, 217, 90, 0.18);
+  filter: blur(10px);
+  opacity: 0;
+  transform: scale(0.8);
+  z-index: 0;
+}
+
+.estat-number-shine {
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.85) 48%, transparent 72%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: translateX(-130%) skewX(-16deg);
+  z-index: 3;
+}
+
+.estat-item.is-active .estat-number-value {
+  animation: estatNumberEmphasis 820ms cubic-bezier(0.22, 1.15, 0.32, 1) both;
+  animation-delay: calc(var(--estat-delay) + 260ms);
+}
+
+.estat-item.is-active .estat-number-suffix {
+  animation: estatSuffixPop 920ms cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  animation-delay: calc(var(--estat-delay) + 360ms);
+}
+
+.estat-item.is-active .estat-number-glow {
+  animation: estatNumberGlow 1.25s ease-out both;
+  animation-delay: calc(var(--estat-delay) + 240ms);
+}
+
+.estat-item.is-active .estat-number-shine {
+  animation: estatNumberShine 980ms ease-out both;
+  animation-delay: calc(var(--estat-delay) + 520ms);
 }
 
 .estat-label {
@@ -93,6 +224,151 @@
   height: 40px;
   background-color: rgba(255,255,255,0.2);
   margin: 0 1rem;
+  transform: scaleY(0);
+  transform-origin: center;
+}
+
+.estat-section.is-active .estat-divider {
+  animation: estatDividerReveal 620ms ease-out both;
+  animation-delay: calc(var(--estat-delay) + 300ms);
+}
+
+@keyframes estatContainerSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-65%);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(65%);
+  }
+}
+
+@keyframes estatItemReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes estatSoftPulse {
+  0% {
+    opacity: 0;
+    transform: translate(-58%, -50%) scale(0.55);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-58%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-58%, -50%) scale(1.25);
+  }
+}
+
+@keyframes estatIconPop {
+  0% {
+    transform: scale(0.74) rotate(-7deg);
+    opacity: 0;
+  }
+  62% {
+    transform: scale(1.12) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes estatIconDraw {
+  from {
+    stroke-dashoffset: 80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes estatNumberEmphasis {
+  0% {
+    transform: translateY(8px) scale(0.82);
+    opacity: 0;
+  }
+  58% {
+    transform: translateY(-3px) scale(1.11);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes estatSuffixPop {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.4) rotate(-12deg);
+  }
+  58% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.22) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes estatNumberGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+}
+
+@keyframes estatNumberShine {
+  0% {
+    opacity: 0;
+    transform: translateX(-130%) skewX(-16deg);
+  }
+  25% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(130%) skewX(-16deg);
+  }
+}
+
+@keyframes estatDividerReveal {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 /* Responsividade */
@@ -191,5 +467,42 @@
   
   .estat-divider {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .estat-container::before,
+  .estat-section.is-active .estat-wrapper,
+  .estat-item.is-active::before,
+  .estat-item.is-active .estat-icon-wrapper,
+  .estat-item.is-active .estat-icon-wrapper svg,
+  .estat-item.is-active .estat-number-value,
+  .estat-item.is-active .estat-number-suffix,
+  .estat-item.is-active .estat-number-glow,
+  .estat-item.is-active .estat-number-shine,
+  .estat-section.is-active .estat-divider {
+    animation: none;
+  }
+
+  .estat-wrapper {
+    opacity: 1;
+    transform: none;
+  }
+
+  .estat-icon-wrapper,
+  .estat-icon-wrapper svg,
+  .estat-number-value,
+  .estat-number-suffix {
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+
+  .estat-number-glow,
+  .estat-number-shine {
+    display: none;
+  }
+
+  .estat-divider {
+    transform: none;
   }
 }
