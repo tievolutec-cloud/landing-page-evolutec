@@ -3,22 +3,34 @@ import './Banner.css'
 
 const slides = [
   {
+    id: 1,
+    imageDesktop: '/BANNER%20(1).png',
+    imageMobile: '/BANNER%20(1).png',
+    title: 'Banner 1',
+  },
+  {
     id: 2,
-    imageDesktop: '/BANNER-TESTE.png',
-    imageMobile: '/BANNER-TESTE.png', // Substitua depois pela versão mobile
-    title: 'Educação que Transforma',
-    subtitle: 'Metodologia inovadora com foco em resultados e aprendizado real.',
-    cta: 'Saiba Mais',
-    ctaLink: '#sobre',
+    imageDesktop: '/BANNER%20(2).png',
+    imageMobile: '/BANNER%20(2).png',
+    title: 'Banner 2',
   },
   {
     id: 3,
-    imageDesktop: '/BANNER-TESTE-2.png',
-    imageMobile: '/BANNER-TESTE-2.png', // Substitua depois pela versão mobile
-    title: 'Matricule-se Agora',
-    subtitle: 'Vagas limitadas! Garanta sua vaga e comece sua jornada na tecnologia.',
-    cta: 'Matricule-se',
-    ctaLink: '#matricule',
+    imageDesktop: '/BANNER%20(3).png',
+    imageMobile: '/BANNER%20(3).png',
+    title: 'Banner 3',
+  },
+  {
+    id: 4,
+    imageDesktop: '/BANNER%20(4).png',
+    imageMobile: '/BANNER%20(4).png',
+    title: 'Banner 4',
+  },
+  {
+    id: 5,
+    imageDesktop: '/BANNER%20(5).png',
+    imageMobile: '/BANNER%20(5).png',
+    title: 'Banner 5',
   },
 ]
 

@@ -316,11 +316,91 @@
 }
 
 .btn-ver-todos-cursos {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 56px;
+  padding: 0.95rem 1.55rem;
+  border: 1px solid rgba(255, 175, 0, 0.72);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(135deg, #ffb400 0%, #ff9f00 42%, #1a5d94 100%);
+  box-shadow:
+    0 16px 34px rgba(26, 93, 148, 0.2),
+    0 8px 18px rgba(255, 175, 0, 0.22);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
 
+.btn-ver-todos-cursos::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+}
+
+.btn-ver-todos-cursos::after {
+  content: '';
+  position: absolute;
+  top: -70%;
+  left: -45%;
+  width: 38%;
+  height: 240%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+  transform: rotate(22deg);
+  transition: left 0.55s ease;
+}
+
+.btn-ver-todos-cursos svg {
+  position: relative;
+  z-index: 1;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  transition: transform 0.22s ease;
+}
+
+.btn-ver-todos-cursos span,
+.btn-ver-todos-cursos {
+  z-index: 0;
 }
 
 .btn-ver-todos-cursos:hover {
+  border-color: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 20px 42px rgba(26, 93, 148, 0.28),
+    0 10px 22px rgba(255, 175, 0, 0.3);
+  transform: translateY(-3px);
+}
 
+.btn-ver-todos-cursos:hover::after {
+  left: 112%;
+}
+
+.btn-ver-todos-cursos:hover svg {
+  transform: translateX(5px);
+}
+
+.btn-ver-todos-cursos:focus-visible {
+  outline: 3px solid rgba(255, 175, 0, 0.38);
+  outline-offset: 4px;
+}
+
+.btn-ver-todos-cursos:active {
+  transform: translateY(-1px);
 }
 
 /* Responsividade */
@@ -362,5 +442,17 @@
   .cursos-home-pagination-pages {
     order: 3;
     width: 100%;
+  }
+
+  .cursos-cta {
+    margin-top: 2.4rem;
+    padding-top: 1.4rem;
+  }
+
+  .btn-ver-todos-cursos {
+    width: min(100%, 340px);
+    min-height: 52px;
+    padding: 0.85rem 1rem;
+    font-size: 0.84rem;
   }
 }
