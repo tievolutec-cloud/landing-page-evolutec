@@ -8,7 +8,7 @@ const CIDADES_POLOS = [
   'São Miguel do Guamá - PA',
 ]
 
-const BENEFICIOS_CLT_PADRAO = ['Vale-refeição', 'Plano de saúde', 'Acesso a cursos Evolutec']
+const BENEFICIOS_PROCESSO_SELETIVO = ['Os benefícios serão destacados durante o processo seletivo.']
 
 export const vagas = [
   {
@@ -41,7 +41,7 @@ export const vagas = [
       'Domínio do conteúdo a ser ministrado',
       'Proatividade e comprometimento com resultados pedagógicos',
     ],
-    beneficios: [...BENEFICIOS_CLT_PADRAO, 'Treinamentos internos'],
+    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
   },
   {
     id: 2,
@@ -82,18 +82,7 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
       'Estar disposto a viajar pelas 8 unidades e cidades adjacentes (podendo ficar a semana toda fora)',
       'Experiência em vendas externas (chips, planos, produtos naturais, etc.) é diferencial, mas não obrigatória — primeiro emprego também é bem-vindo!',
     ],
-    beneficios: [
-      'Salário inicial de R$ 1.621,00 + comissões (vendedores chegam a R$ 3.500–R$ 4.000/mês)',
-      'Prêmio em dinheiro ao bater a meta mensal',
-      'Prêmios por desafios alcançados propostos pela gerência',
-      'Viagens para lugares paradisíacos com hospedagem e alimentação pagos pela Evolutec',
-      'Treinamentos trimestrais sobre vendas, atendimento e relações interpessoais',
-      'Desconto de até 40% em procedimentos odontológicos (Centro de Saúde Estelita — Grupo Evolutec)',
-      'Cursos Evolutec gratuitos com certificação internacional (Faculdade Evolutec)',
-      'Plano de carreira: Vendedor → Supervisor de Vendas → Gerente Comercial → Diretor Comercial',
-      'Cartão de crédito para compras em supermercados (ajuda de custos alimentícios)',
-      'Veículo disponibilizado pela empresa para deslocamentos, com combustível e manutenção pagos (para habilitados)',
-    ],
+    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
   },
   {
     id: 3,
@@ -123,7 +112,7 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
       'Pontualidade e responsabilidade',
       'Disponibilidade para trabalhar em diferentes pontos da cidade',
     ],
-    beneficios: ['Pagamento por produção', 'Vale-transporte', 'Flexibilidade de horários'],
+    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
   },
   {
     id: 4,
@@ -155,7 +144,42 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
       'Excelente comunicação verbal e escrita',
       'Organização, proatividade e empatia',
     ],
-    beneficios: [...BENEFICIOS_CLT_PADRAO, 'Plano odontológico'],
+    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
+  },
+  {
+    id: 5,
+    cargo: 'Auxiliar de Marketing',
+    area: 'Marketing',
+    cidades: ['Castanhal - PA'],
+    tipo: 'CLT',
+    nivel: 'Júnior',
+    salario: 'A combinar',
+    modalidade: 'Presencial',
+    escolaridadeMinima: 'Ensino médio completo',
+    encerramentoEm: null,
+    destaque: false,
+    imagem: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80',
+    resumo: 'Apoiar criação de conteúdos e operações de social media da unidade Evolutec em Castanhal.',
+    cargaHoraria: 'A combinar',
+    descricao: `Buscamos uma pessoa criativa, comunicativa e proativa para atuar como Auxiliar de Marketing, com foco em Social Media. O profissional será responsável por apoiar a criação de conteúdos para as redes sociais da Evolutec, contribuindo com ideias, gravação de vídeos, edição de materiais e ações de divulgação da unidade.`,
+    responsabilidades: [
+      'Gravar vídeos e criar conteúdos para redes sociais',
+      'Apoiar na produção de posts, stories, reels e materiais digitais',
+      'Auxiliar na comunicação da Evolutec nos canais digitais',
+      'Contribuir com ideias criativas para campanhas e divulgações',
+      'Apoiar na edição de imagens e vídeos',
+      'Acompanhar interações e demandas nos canais como Instagram, Facebook e WhatsApp',
+      'Colaborar com a equipe em ações de marketing e divulgação da unidade',
+    ],
+    requisitos: [
+      'Conhecimento em Instagram, Facebook e WhatsApp',
+      'Noções de edição de imagem e vídeo',
+      'Criatividade para criação de conteúdos digitais',
+      'Boa comunicação',
+      'Proatividade e vontade de aprender',
+      'Facilidade para gravar vídeos e produzir conteúdos para redes sociais',
+    ],
+    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
   },
 ];
 
