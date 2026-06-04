@@ -596,6 +596,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 14px;
+  text-align: left;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--borda);
 }
