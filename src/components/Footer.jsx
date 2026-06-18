@@ -40,7 +40,7 @@ function Footer() {
         <div className="footer-col footer-col--brand">
           <div className="footer-logo">
             <img
-              src="/logo topo nova.png"
+              src="/logo_rodape_nova2026.png"
               alt="Evolutec Logo"
               className="footer-logo-image"
               loading="lazy"
