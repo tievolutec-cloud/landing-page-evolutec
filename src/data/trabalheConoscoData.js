@@ -220,6 +220,100 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
     ],
     beneficios: ['Informações sobre benefícios serão repassadas durante o processo seletivo.'],
   },
+  {
+id: 7,
+
+cargo: 'Analista de T.I. e Operações',
+
+area: 'Administrativo',
+
+cidades: CIDADES_POLOS,
+
+tipo: 'CLT',
+
+nivel: 'Pleno',
+
+salario: 'A combinar',
+
+modalidade: 'Presencial',
+
+escolaridadeMinima: 'Ensino técnico ou superior em andamento/completo na área de Tecnologia',
+
+encerramentoEm: null,
+
+destaque: true,
+
+imagem: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
+
+resumo: 'Responsável pelo suporte técnico dos polos, infraestrutura, sistemas, estoque, certificados e apoio operacional da empresa.',
+
+cargaHoraria: 'a combinar',
+
+descricao: 'Buscamos um profissional organizado, proativo e resolutivo para atuar como referência em tecnologia e apoio operacional da Evolutec. Será responsável pelo suporte técnico dos polos, manutenção de equipamentos, infraestrutura de rede, sistemas internos, controle de estoque, emissão de certificados, apoio em eventos e implementação de melhorias operacionais.',
+
+responsabilidades: [
+
+'Prestar suporte técnico remoto e presencial para todos os polos',
+
+'Resolver problemas relacionados a internet, computadores, impressoras, celulares e rede',
+
+'Configurar sistemas, acessos, chips, telefonia VOIP e ferramentas da empresa',
+
+'Apoiar colaboradores na utilização dos sistemas internos',
+
+'Controlar entrada e saída de equipamentos e materiais em estoque',
+
+'Emitir certificados quando necessário',
+
+'Auxiliar na organização de formaturas, eventos e treinamentos',
+
+'Realizar visitas técnicas aos polos quando necessário',
+
+'Pesquisar e implementar soluções para melhoria de processos e redução de custos',
+
+'Acompanhar indicadores e demandas operacionais relacionadas à tecnologia'
+
+],
+
+requisitos: [
+
+'Conhecimento em manutenção e configuração de computadores e programação essencial',
+
+'Conhecimento em redes, internet, roteadores e impressoras',
+
+'Facilidade com sistemas e ferramentas digitais',
+
+'Organização e controle de informações',
+
+'Boa comunicação e atendimento ao usuário',
+
+'Disponibilidade para viagens',
+
+'Capacidade de resolver problemas com autonomia',
+
+'Perfil proativo e responsável',
+
+'Facilidade para aprender novas tecnologias',
+
+'CNH será considerada diferencial'
+
+],
+
+beneficios: [
+
+'Salário compatível com a função',
+
+'Possibilidade de crescimento profissional',
+
+'Treinamentos e capacitações',
+
+'Participação em projetos de expansão da empresa',
+
+'Atuação estratégica junto à diretoria'
+
+]
+
+},
 ];
 
 export const areas = [
