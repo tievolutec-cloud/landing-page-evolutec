@@ -4,7 +4,7 @@ import './Banner.css'
 const slides = [
   {
     id: 1,
-    imageDesktop: '/banner2_teste_new.png.png',
+    imageDesktop: '/banner2_teste_new.png',
     imageMobile: '/BANNER%20(1).png',
     title: 'Banner 1',
   },
