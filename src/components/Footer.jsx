@@ -40,7 +40,7 @@ function Footer() {
         <div className="footer-col footer-col--brand">
           <div className="footer-logo">
             <img
-              src="/logo-evolutec.webp"
+              src="/logo topo nova.png"
               alt="Evolutec Logo"
               className="footer-logo-image"
               loading="lazy"
