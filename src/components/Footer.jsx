@@ -45,8 +45,8 @@ function Footer() {
               className="footer-logo-image"
               loading="lazy"
               decoding="async"
-              width="220"
-              height="64"
+              style={{ width: '220px', height: 'auto' }}
+              
             />
           </div>
           <p className="footer-descricao">
