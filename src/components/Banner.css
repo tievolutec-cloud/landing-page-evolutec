@@ -15,15 +15,14 @@
 .banner::after {
   content: "";
   position: absolute;
-  left: -15%;
-  bottom: -140px;
-  width: 130%;
-  height: 260px;
+  left: -10%;
+  bottom: -120px;
+  width: 120%;
+  height: 220px;
   background: #ffffff;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   z-index: 10;
   pointer-events: none;
-}
 }
 }
 @media (max-width: 900px) {
