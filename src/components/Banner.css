@@ -3,15 +3,13 @@
   margin-top: 77px;
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 1;
-  height: auto;
-  min-height: 0;
+  height: 520px;
+  min-height: 520px;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
   background: #ffffff;
 }
 
-}
 .banner::after {
   content: "";
   position: absolute;
@@ -71,9 +69,8 @@
 .banner-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  display: block;
 }
 
 .banner-slide.active {
