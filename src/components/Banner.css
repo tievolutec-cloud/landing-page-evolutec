@@ -11,6 +11,18 @@
   background: #ffffff;
 }
 
+.banner::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  bottom: -60px;
+  width: 110%;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50% 50% 0 0;
+  z-index: 10;
+  pointer-events: none;
+}
 @media (max-width: 900px) {
   .banner {
     margin-top: 70px;
