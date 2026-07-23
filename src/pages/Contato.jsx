@@ -1,8 +1,28 @@
 import { useState, useEffect, useRef } from 'react'
-import { cursosData } from '../data/coursesData'
 import './Contato.css'
 
-const cursosOpcoesFallback = [...new Set(cursosData.map((curso) => curso.title))]
+const cursosOpcoesFallback = [
+  'Atendente de Farmácia',
+  'Auxiliar Administrativo',
+  'Desenvolvedor de Games e Apps',
+  'Designer',
+  'Gestão de Pessoas',
+  'Gestão Empresarial',
+  'Informática Completa',
+  'Inteligência Artificial',
+  'Manutenção de Celulares',
+  'Manutenção de Computadores',
+  'Manutenção de Notebook',
+  'Marketing Digital',
+  'Operador de Caixa',
+  'Pró em Power BI',
+  'Profissional em Animação 3D',
+  'Profissional em Planilhas',
+  'Profissional em Vendas',
+  'Redes e Infraestrutura',
+  'RH e Departamento Pessoal',
+  'Outros',
+]
 
 function Contato() {
   const [form, setForm] = useState({
