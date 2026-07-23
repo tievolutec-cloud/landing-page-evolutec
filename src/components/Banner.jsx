@@ -20,18 +20,6 @@ const slides = [
     imageMobile: '/BANNER%20(3).png',
     title: 'Banner 3',
   },
-  {
-    id: 4,
-    imageDesktop: '/BANNER%20(4).png',
-    imageMobile: '/BANNER%20(4).png',
-    title: 'Banner 4',
-  },
-  {
-    id: 5,
-    imageDesktop: '/BANNER%20(5).png',
-    imageMobile: '/BANNER%20(5).png',
-    title: 'Banner 5',
-  },
 ]
 
 function Banner() {
