@@ -66,29 +66,53 @@ function ContatoModal({ isOpen, onClose }) {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
+  e.preventDefault()
 
-    try {
-      await fetch(APPS_SCRIPT_URL, {
+  if (
+    !form.nome.trim() ||
+    !form.telefone.trim() ||
+    !form.curso ||
+    !form.cidade.trim() ||
+    !form.lgpd
+  ) {
+    setStatus('error')
+    return
+  }
+
+  setStatus('loading')
+
+  try {
+    await fetch(
+      'https://script.google.com/macros/s/AKfycbyLSZ9MRp-k_xuOdaOSxJQX0gedcKxP28G-6ujy6Qj27XH1owXzh2eryucWRhU7JbU71Q/exec',
+      {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
         body: JSON.stringify({
-          nome: form.nome,
-          telefone: form.telefone,
+          nome: form.nome.trim(),
+          telefone: form.telefone.trim(),
           curso: form.curso,
-          cidade: form.cidade,
+          cidade: form.cidade.trim(),
         }),
-      })
+      }
+    )
 
-      setStatus('success')
-      setForm({ nome: '', telefone: '', curso: '', cidade: '', lgpd: false })
-    } catch (err) {
-      console.error('Erro ao enviar para o Sheets:', err)
-      setStatus('error')
-    }
+    setStatus('success')
+
+    setForm({
+      nome: '',
+      telefone: '',
+      curso: '',
+      cidade: '',
+      lgpd: false,
+    })
+  } catch (err) {
+    console.error('Erro ao enviar para o Sheets:', err)
+    setStatus('error')
   }
+}
 
   // Clique no backdrop fecha o modal
   const handleBackdropClick = (e) => {
