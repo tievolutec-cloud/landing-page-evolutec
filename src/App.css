@@ -16,11 +16,12 @@
 
 /* Banner → Cursos (escuro para branco) */
 .transition-banner-to-cursos {
-  background: linear-gradient(180deg, 
-    rgba(26, 93, 148, 0.8) 0%, 
-    rgba(150, 150, 150, 0.3) 50%,
-    rgba(255, 255, 255, 1) 100%
+  background-color: #f7f9fc;
+  background-image: radial-gradient(
+    rgba(8, 68, 105, 0.16) 1px,
+    transparent 1px
   );
+  background-size: 18px 18px;
 }
 
 /* Cursos → Autoridade (branco para roxo claro) */
