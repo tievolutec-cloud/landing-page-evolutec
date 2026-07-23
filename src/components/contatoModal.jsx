@@ -4,12 +4,15 @@ import './contatoModal.css'
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDRXs5jyX4bYAvT0W6FZ3e_3c03oiWyJTZqfmHrdbnQMyF-UnEDYo-xiqT6dauuNffg/exec'
 
 const cursosOpcoes = [
-  'Técnico em Operador de Caixa',
-  'Conectividade e Tecnologia',
-  'Técnico em Enfermagem',
-  'Técnico em Hotelaria e Turismo',
+  'Operador de Caixa',
+  'Inteligência Artificial',
+  'Informática Essencial',
+  'Auxiliar Administrativo',
   'Profissional em Vendas',
   'Atendente de Farmácia',
+  'Gestão Empresarial',
+  'RH e Departamento Pessoal',
+  'Outro...',
 ]
 
 function ContatoModal({ isOpen, onClose }) {
