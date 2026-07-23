@@ -513,3 +513,22 @@ background-position: 0 0;
     transform: none;
   }
 }
+@media (max-width: 768px) {
+  .estat-section {
+    background-color: #f7f9fc;
+    background-image: radial-gradient(
+      circle,
+      rgba(26, 93, 148, 0.18) 1px,
+      transparent 1.2px
+    );
+    background-size: 18px 18px;
+    background-position: 0 0;
+    background-repeat: repeat;
+    margin-bottom: 0 !important;
+  }
+
+  .estat-container {
+    transform: translateY(-10%) !important;
+    margin-bottom: 0 !important;
+  }
+}
