@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260" preserveAspectRatio="none">
   <path
     fill="black"
     d="M0,0
        H1440
-       V185
-       C1260,205 1080,210 900,195
-       C720,180 560,145 390,148
-       C230,151 100,178 0,172
+       V170
+       C1260,235 1040,245 830,205
+       C670,175 540,105 370,110
+       C210,115 90,185 0,180
        Z" />
 </svg>
