@@ -15,13 +15,18 @@
 }
 
 /* Banner → Cursos (escuro para branco) */
-.transition-banner-to-cursos {
-  background-color: #f7f9fc;
+.section-transition.transition-banner-to-cursos {
+  background-color: #f7f9fc !important;
+
   background-image: radial-gradient(
-    rgba(8, 68, 105, 0.16) 1px,
-    transparent 1px
-  );
-  background-size: 18px 18px;
+    circle,
+    rgba(26, 93, 148, 0.18) 1px,
+    transparent 1.2px
+  ) !important;
+
+  background-size: 18px 18px !important;
+  background-position: 0 0 !important;
+  background-repeat: repeat !important;
 }
 
 /* Cursos → Autoridade (branco para roxo claro) */
