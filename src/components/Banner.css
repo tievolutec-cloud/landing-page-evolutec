@@ -7,10 +7,14 @@
   min-height: 720px;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
-  background: #fff;
 
-  -webkit-mask: url('/banner-wave.svg') bottom center / 100% 100% no-repeat;
-  mask: url('/banner-wave.svg') bottom center / 100% 100% no-repeat;
+  background-color: #f7f9fc;
+  background-image: radial-gradient(
+    circle,
+    rgba(26, 93, 148, 0.18) 1px,
+    transparent 1.2px
+  );
+  background-size: 18px 18px;
 }
 
 @media (max-width: 900px) {
@@ -36,6 +40,9 @@
   position: relative;
   width: 100%;
   height: 100%;
+
+  -webkit-mask: url('/banner-wave.svg') bottom center / 100% 100% no-repeat;
+  mask: url('/banner-wave.svg') bottom center / 100% 100% no-repeat;
 }
 
 .banner-slide {
