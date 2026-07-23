@@ -50,7 +50,7 @@
     -webkit-mask: url('/banner-wave-mobile.svg') bottom center / 100% 100% no-repeat;
     mask: url('/banner-wave-mobile.svg') bottom center / 100% 100% no-repeat;
   }
-
+}
 .banner-slide {
   position: absolute;
   inset: 0;
