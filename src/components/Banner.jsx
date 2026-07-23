@@ -5,7 +5,7 @@ const slides = [
   {
     id: 1,
     imageDesktop: '/banner2_teste_new.png',
-    imageMobile: '/banner2_teste_new.png',
+    imageMobile: '/banner_1_mobile.png',
     title: 'Banner 1',
   },
   {
