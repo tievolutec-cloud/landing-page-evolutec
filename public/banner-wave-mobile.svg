@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1440 720"
+     preserveAspectRatio="none">
+
   <path
     fill="black"
     d="
       M0,0
       H1440
-      V690
-      C1260,705 1080,708 900,698
-      C720,688 560,660 390,652
-      C250,646 120,662 0,680
+      V695
+      C1250,710 1070,708 900,700
+      C710,691 560,675 390,680
+      C230,684 110,696 0,700
       Z
     "
   />
