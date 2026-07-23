@@ -11,13 +11,13 @@ const slides = [
   {
     id: 2,
     imageDesktop: '/BANNER%20(2).png',
-    imageMobile: '/BANNER%20(2).png',
+    imageMobile: '/banner_2_mobile.png',
     title: 'Banner 2',
   },
   {
     id: 3,
     imageDesktop: '/BANNER%20(3).png',
-    imageMobile: '/BANNER%20(3).png',
+    imageMobile: '/banner_3_mobile.png',
     title: 'Banner 3',
   },
 ]
