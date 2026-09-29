@@ -2,8 +2,8 @@ import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { categoriasCursos } from '../data/coursesData';
 import './Navbar.css';
-const ContatoModal = lazy(() => import('./contatoModal'));
 const NavbarMobile = lazy(() => import('./NavbarMobile'));
+const StudentAreaModal = lazy(() => import('./StudentAreaModal'));
 
 const FALLBACK_WHATSAPP = 'https://wa.me/559140424250';
 const COURSE_CATEGORIES = categoriasCursos.filter((categoria) => categoria !== 'Todos');
@@ -24,6 +24,15 @@ function ChevronDownIcon({ size = 16 }) {
   );
 }
 
+function StudentIcon({ size = 18 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 21a8 8 0 0 0-16 0" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
@@ -31,7 +40,7 @@ function Navbar() {
   const [courseCategories] = useState(COURSE_CATEGORIES)
   const dropdownTimeout = useRef(null)
   const location = useLocation()
-  const [contatoModalOpen, setContatoModalOpen] = useState(false)
+  const [studentAreaModalOpen, setStudentAreaModalOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -154,10 +163,6 @@ function Navbar() {
     } else {
       if (linkAction) linkAction(e)
     }
-  }
-
-  const closeContatoModal = () => {
-    setContatoModalOpen(false)
   }
 
   if (isMobile) {
@@ -351,13 +356,14 @@ function Navbar() {
             </li>
             <li className='navbar-btn-item'>
               <a
-                href="#abrir-matricula"
-                className="navbar-btn navbar-btn--yellow"
-                onClick={e => { e.preventDefault(); setContatoModalOpen(true); closeMenu(); }}
+                href="#area-do-aluno"
+                className="navbar-btn navbar-btn--yellow navbar-student-button"
+                onClick={e => { e.preventDefault(); setStudentAreaModalOpen(true); closeMenu(); }}
                 role="menuitem"
                 tabIndex={0}
               >
-                Matricule-se
+                <StudentIcon size={18} />
+                Área do Aluno
               </a>
             </li>
             <li className="navbar-btn-item">
@@ -381,11 +387,11 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-      {contatoModalOpen ? (
+      {studentAreaModalOpen ? (
         <Suspense fallback={null}>
-          <ContatoModal
-            isOpen={contatoModalOpen}
-            onClose={closeContatoModal}
+          <StudentAreaModal
+            isOpen={studentAreaModalOpen}
+            onClose={() => setStudentAreaModalOpen(false)}
           />
         </Suspense>
       ) : null}

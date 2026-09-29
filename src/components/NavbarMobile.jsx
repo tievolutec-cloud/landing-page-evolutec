@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const ContatoModal = lazy(() => import('./contatoModal'));
+const StudentAreaModal = lazy(() => import('./StudentAreaModal'));
 import './NavbarMobile.css';
 
 function MenuIcon({ size = 28 }) {
@@ -78,6 +78,15 @@ function BookIcon({ size = 20 }) {
   );
 }
 
+function StudentIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 21a8 8 0 0 0-16 0" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
 function ArrowUpIcon({ size = 28 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -90,7 +99,7 @@ function ArrowUpIcon({ size = 28 }) {
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
-  const [contatoModalOpen, setContatoModalOpen] = useState(false);
+  const [studentAreaModalOpen, setStudentAreaModalOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -153,12 +162,13 @@ function Navbar() {
 
           <li className="drawer-action-container">
             <button
-              className="btn-matricula-drawer navbar-btn navbar-btn--yellow"
-              onClick={e => { e.preventDefault(); setContatoModalOpen(true); closeMenu(); }}
+              className="btn-matricula-drawer navbar-btn navbar-btn--yellow btn-student-area-drawer"
+              onClick={e => { e.preventDefault(); setStudentAreaModalOpen(true); closeMenu(); }}
               role="menuitem"
               tabIndex={0}
             >
-              Matricule-se
+              <StudentIcon size={20} />
+              Área do Aluno
             </button>
             <Link to="/trabalhe-conosco" className="btn-trabalhe-drawer" onClick={closeMenu}>
               Trabalhe conosco
@@ -171,9 +181,9 @@ function Navbar() {
           <ArrowUpIcon size={28} />
         </button>
       )}
-      {contatoModalOpen ? (
+      {studentAreaModalOpen ? (
         <Suspense fallback={null}>
-          <ContatoModal isOpen={contatoModalOpen} onClose={() => setContatoModalOpen(false)} />
+          <StudentAreaModal isOpen={studentAreaModalOpen} onClose={() => setStudentAreaModalOpen(false)} />
         </Suspense>
       ) : null}
     </>

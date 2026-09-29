@@ -188,6 +188,14 @@
 
   }
 
+  .btn-student-area-drawer {
+    gap: 8px;
+  }
+
+  .btn-student-area-drawer svg {
+    flex: 0 0 auto;
+  }
+
   .btn-trabalhe-drawer {
   color: #ffffff;
   font-family: 'Poppins', sans-serif !important;
