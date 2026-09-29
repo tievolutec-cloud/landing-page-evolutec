@@ -1,19 +1,7 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { studentPortals } from '../data/studentPortals';
 import './StudentAreaModal.css';
-
-const STUDENT_PORTALS = [
-  { name: 'Castanhal', url: null },
-  { name: 'Curuçá', url: null },
-  { name: 'Igarapé-Açu', url: null },
-  { name: 'Irituia', url: null },
-  {
-    name: 'Maracanã',
-    url: 'https://dkportal.com.br/portal_aluno?i=zFUZx9eA2vGaQkq-q93df0lYOGJCQnFNZ0p4Qk9MenFGc1J1cWc9PQ',
-  },
-  { name: 'Marapanim', url: null },
-  { name: 'São Domingos do Capim', url: null },
-  { name: 'São Miguel do Guamá', url: null },
-];
 
 function CloseIcon({ size = 22 }) {
   return (
@@ -92,14 +80,12 @@ function StudentAreaModal({ isOpen, onClose }) {
         </header>
 
         <div className="student-area-grid">
-          {STUDENT_PORTALS.map((portal) => (
+          {studentPortals.map((portal) => (
             portal.url ? (
-              <a
+              <Link
                 key={portal.name}
                 className="student-area-card is-available"
-                href={portal.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={`/area-do-aluno/${portal.slug}`}
                 onClick={onClose}
               >
                 <span className="student-area-card-icon"><SchoolIcon /></span>
@@ -108,7 +94,7 @@ function StudentAreaModal({ isOpen, onClose }) {
                   <small>Acessar portal</small>
                 </span>
                 <span className="student-area-card-arrow"><ArrowIcon /></span>
-              </a>
+              </Link>
             ) : (
               <div key={portal.name} className="student-area-card is-pending" aria-disabled="true">
                 <span className="student-area-card-icon"><SchoolIcon /></span>

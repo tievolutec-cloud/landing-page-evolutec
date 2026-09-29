@@ -1,5 +1,5 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 const StudentAreaModal = lazy(() => import('./StudentAreaModal'));
 import './NavbarMobile.css';
 
@@ -97,6 +97,7 @@ function ArrowUpIcon({ size = 28 }) {
 
 
 function Navbar() {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
   const [studentAreaModalOpen, setStudentAreaModalOpen] = useState(false);
@@ -111,6 +112,13 @@ function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('area-aluno') === '1') {
+      setStudentAreaModalOpen(true);
+    }
+  }, [location.search]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
