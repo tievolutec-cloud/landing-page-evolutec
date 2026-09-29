@@ -14,7 +14,6 @@ const Sobre = lazy(() => import('./pages/Sobre'))
 const TrabalheConosco = lazy(() => import('./pages/TrabalheConosco'))
 const Ebooks = lazy(() => import('./pages/Ebooks'))
 const ValidarCertificado = lazy(() => import('./pages/ValidarCertificado'))
-const StudentPortal = lazy(() => import('./pages/StudentPortal'))
 
 import './App.css'
 
@@ -85,7 +84,6 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
               <Route path="/ebooks" element={<Ebooks />} />
-              <Route path="/area-do-aluno/:polo" element={<StudentPortal />} />
             </Route>
 
           </Routes>
@@ -95,3 +93,4 @@ function App() {
 }
 
 export default App
+

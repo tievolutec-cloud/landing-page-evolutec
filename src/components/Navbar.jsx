@@ -103,13 +103,6 @@ function Navbar() {
     }
   }, [location])
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search)
-    if (params.get('area-aluno') === '1') {
-      setStudentAreaModalOpen(true)
-    }
-  }, [location.search])
-
   // Fecha o menu ao clicar fora (mobile)
   useEffect(() => {
     const handleClickOutside = (event) => {
