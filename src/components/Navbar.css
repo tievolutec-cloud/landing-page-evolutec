@@ -299,6 +299,18 @@
   display: none !important;
 }
 
+.navbar-student-button,
+.navbar-links li a.navbar-student-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.navbar-student-button svg {
+  flex: 0 0 auto;
+}
+
 /* ===== Dropdown Desktop ===== */
 .navbar-links .dropdown {
   position: relative;
