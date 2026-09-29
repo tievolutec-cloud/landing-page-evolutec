@@ -98,8 +98,6 @@ function StudentAreaModal({ isOpen, onClose }) {
                 key={portal.name}
                 className="student-area-card is-available"
                 href={portal.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={onClose}
               >
                 <span className="student-area-card-icon"><SchoolIcon /></span>
