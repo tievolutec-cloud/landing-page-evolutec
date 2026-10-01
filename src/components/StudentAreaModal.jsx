@@ -2,7 +2,10 @@ import { useEffect, useRef } from 'react';
 import './StudentAreaModal.css';
 
 const STUDENT_PORTALS = [
-  { name: 'Castanhal', url: null },
+  {
+    name: 'Castanhal',
+    url: 'https://dkportal.com.br/portal_aluno?i=OykhGj2_u--d3jQ6K0M3DS9ZdXlXL2VMRUpNWSsvMnhNb2pKaUE9PQ',
+  },
   { name: 'Curuçá', url: null },
   { name: 'Igarapé-Açu', url: null },
   { name: 'Irituia', url: null },
