@@ -6,16 +6,34 @@ const STUDENT_PORTALS = [
     name: 'Castanhal',
     url: 'https://dkportal.com.br/portal_aluno?i=OykhGj2_u--d3jQ6K0M3DS9ZdXlXL2VMRUpNWSsvMnhNb2pKaUE9PQ',
   },
-  { name: 'Curuçá', url: null },
-  { name: 'Igarapé-Açu', url: null },
-  { name: 'Irituia', url: null },
+  {
+    name: 'Curuçá',
+    url: 'https://dkportal.com.br/portal_aluno?i=Fw4dagmjvQD1o1_CoTjgEC9NNWJCaC8yY2NxU3dtbmpwdUs2Wmc9PQ',
+  },
+  {
+    name: 'Igarapé-Açu',
+    url: 'https://dkportal.com.br/portal_aluno?i=8r23pvKSX_5PMypXtN_QlHFkSGx2emlLU3RsRGUzUWRSa3FWZ0E9PQ',
+  },
+  {
+    name: 'Irituia',
+    url: 'https://dkportal.com.br/portal_aluno?i=kxz6lFeqG1NySlbuLfqXpE1uT0svZUpGQ0podnQ2TUZCOGpGL3c9PQ',
+  },
   {
     name: 'Maracanã',
     url: 'https://dkportal.com.br/portal_aluno?i=zFUZx9eA2vGaQkq-q93df0lYOGJCQnFNZ0p4Qk9MenFGc1J1cWc9PQ',
   },
-  { name: 'Marapanim', url: null },
-  { name: 'São Domingos do Capim', url: null },
-  { name: 'São Miguel do Guamá', url: null },
+  {
+    name: 'Marapanim',
+    url: 'https://dkportal.com.br/portal_aluno?i=-Orn1M0TJjGLtJTmYkdJtXpURW9VTkhVM0c2SnhJMUl4aURGRVE9PQ',
+  },
+  {
+    name: 'São Domingos do Capim',
+    url: 'https://dkportal.com.br/portal_aluno?i=vHgXJloGHCedgD0Ii5bgpmZwTEdmRk0zTE9wbUdVQmpXbnZpOHc9PQ',
+  },
+  {
+    name: 'São Miguel do Guamá',
+    url: 'https://dkportal.com.br/portal_aluno?i=xSJNJWOkH86_re60P8NfoDNzYm9MRmpib2Fkd0hwUG4rc1JuWFE9PQ',
+  },
 ];
 
 function CloseIcon({ size = 22 }) {
