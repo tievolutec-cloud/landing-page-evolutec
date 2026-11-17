@@ -162,28 +162,10 @@ A Evolutec está crescendo a cada dia para se tornar a maior rede de ensino do N
     resumo: 'Atue com conteúdos, redes sociais, vídeos, campanhas digitais, tráfego pago e análise de resultados.',
     cargaHoraria: 'A combinar',
     descricao: 'Buscamos uma pessoa criativa, comunicativa, organizada e com perfil analítico para atuar como Analista de Marketing da Evolutec. O profissional participará do planejamento e execução de campanhas, da produção de conteúdos para redes sociais, de gravações e edições de vídeos e do acompanhamento de ações de marketing digital e seus resultados.',
-    responsabilidades: [
-      'Planejar e organizar o calendário de conteúdos e campanhas digitais',
-      'Gravar vídeos e produzir conteúdos para Instagram, Facebook e outros canais',
-      'Criar e apoiar a produção de posts, stories, reels, roteiros e materiais de divulgação',
-      'Editar imagens e vídeos e elaborar textos e briefings para campanhas',
-      'Acompanhar interações e demandas de comunicação no Instagram, Facebook e WhatsApp',
-      'Apoiar a execução e o acompanhamento de campanhas no Meta Ads e Google Ads',
-      'Analisar alcance, cliques, leads e resultados das campanhas',
-      'Organizar relatórios, sugerir melhorias e colaborar nas ações de divulgação das unidades',
-    ],
-    requisitos: [
-      'Estar cursando ou ter concluído Marketing, Publicidade ou área relacionada',
-      'Conhecimento em Instagram, Facebook, WhatsApp e marketing de conteúdo',
-      'Facilidade para gravar vídeos e produzir conteúdos para redes sociais',
-      'Noções de edição de imagem e vídeo e familiaridade com Canva',
-      'Noções de Meta Ads, Google Ads e métricas de desempenho',
-      'Facilidade com planilhas e ferramentas digitais',
-      'Boa escrita, comunicação, criatividade, organização e perfil analítico',
-      'Proatividade e disposição para aprender',
-      'Projetos próprios ou experiência prática em marketing serão diferenciais',
-    ],
-    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
+    responsabilidades: ["Criar conteúdos para redes sociais, posts, stories e reels","Gravar, produzir e editar vídeos e reels, incluindo participação diante da câmera","Desenvolver artes, peças para posts e materiais digitais","Manter atualizados os perfis da empresa e acompanhar interações","Planejar calendário de conteúdos e campanhas","Apoiar anúncios pagos e impulsionamentos no Meta Ads e Google Ads","Analisar indicadores, leads e resultados para propor melhorias"],
+    requisitos: ["Estar cursando ou ter concluído Marketing, Publicidade ou área relacionada","Conhecimento de Instagram, Facebook, WhatsApp e marketing de conteúdo","Facilidade para aparecer falando em vídeos, reels e stories","Noções de edição de vídeos e imagens e de ferramentas como Canva","Boa comunicação, criatividade, organização e proatividade"],
+    diferenciais: ["Conhecimento básico em tráfego pago","Noções de design e identidade visual","Experiência com edição e captação de vídeo","Criatividade, organização e desenvoltura diante da câmera"],
+    beneficios: ["Bonificações, prêmios e viagens","Desconto em procedimentos odontológicos","Folga no aniversário","Treinamentos da empresa com certificado"],
   },
   {
     id: 6,
@@ -255,69 +237,12 @@ cargaHoraria: 'a combinar',
 
 descricao: 'Buscamos um profissional organizado, proativo e resolutivo para atuar como referência em tecnologia e apoio operacional da Evolutec. Será responsável pelo suporte técnico dos polos, manutenção de equipamentos, infraestrutura de rede, sistemas internos, controle de estoque, emissão de certificados, apoio em eventos e implementação de melhorias operacionais.',
 
-responsabilidades: [
+responsabilidades: ["Resolver problemas de redes, internet e conectividade nos polos","Realizar manutenção de computadores e periféricos","Configurar sistemas, usuários, acessos e equipamentos","Apoiar telefonia VoIP e ferramentas internas","Configurar chatbots e plataformas utilizadas pela empresa","Prestar suporte presencial e remoto e orientar os colaboradores","Apoiar controles operacionais, equipamentos e eventos da empresa"],
 
-'Prestar suporte técnico remoto e presencial para todos os polos',
+requisitos: ["Estar cursando ou ter concluído formação técnica ou superior em Tecnologia da Informação ou área relacionada","Conhecimento em manutenção de computadores, redes e roteadores","Familiaridade com configuração de sistemas, ferramentas e telefonia VoIP","Boa comunicação, organização e capacidade de solucionar problemas","Disponibilidade para atender demandas dos polos"],
 
-'Resolver problemas relacionados a internet, computadores, impressoras, celulares e rede',
-
-'Configurar sistemas, acessos, chips, telefonia VOIP e ferramentas da empresa',
-
-'Apoiar colaboradores na utilização dos sistemas internos',
-
-'Controlar entrada e saída de equipamentos e materiais em estoque',
-
-'Emitir certificados quando necessário',
-
-'Auxiliar na organização de formaturas, eventos e treinamentos',
-
-'Realizar visitas técnicas aos polos quando necessário',
-
-'Pesquisar e implementar soluções para melhoria de processos e redução de custos',
-
-'Acompanhar indicadores e demandas operacionais relacionadas à tecnologia'
-
-],
-
-requisitos: [
-
-'Conhecimento em manutenção e configuração de computadores e programação essencial',
-
-'Conhecimento em redes, internet, roteadores e impressoras',
-
-'Facilidade com sistemas e ferramentas digitais',
-
-'Organização e controle de informações',
-
-'Boa comunicação e atendimento ao usuário',
-
-'Disponibilidade para viagens',
-
-'Capacidade de resolver problemas com autonomia',
-
-'Perfil proativo e responsável',
-
-'Facilidade para aprender novas tecnologias',
-
-'CNH será considerada diferencial'
-
-],
-
-beneficios: [
-
-'Salário compatível com a função',
-
-'Possibilidade de crescimento profissional',
-
-'Treinamentos e capacitações',
-
-'Participação em projetos de expansão da empresa',
-
-'Atuação estratégica junto à diretoria'
-
-]
-
-},
+diferenciais: ["Experiência com roteadores e infraestrutura de redes","Conhecimento em segurança, backup e suporte","Noções de servidores e automações","Vivência com suporte técnico corporativo"],
+    beneficios: ["Bonificações, prêmios e viagens","Desconto em procedimentos odontológicos","Folga no aniversário","Treinamentos da empresa com certificado"],},
   {
     id: 8,
     cargo: "Programador",
@@ -334,9 +259,10 @@ beneficios: [
     resumo: "Crie e mantenha sites, landing pages, sistemas e integrações da Evolutec.",
     cargaHoraria: 'A combinar',
     descricao: "Procuramos uma pessoa que esteja estudando ou já tenha formação em programação e consiga desenvolver soluções digitais completas, de sites institucionais a sistemas internos.",
-    responsabilidades: ["Desenvolver e atualizar sites, páginas e aplicações web","Criar funcionalidades para sistemas internos e integrar APIs e bancos de dados","Corrigir erros, testar funcionalidades e melhorar desempenho","Documentar projetos e utilizar controle de versão com Git"],
-    requisitos: ["Conhecimento prático de HTML, CSS e JavaScript","Experiência com React ou outra tecnologia moderna de desenvolvimento web","Noções de APIs, bancos de dados e Git/GitHub","Capacidade de desenvolver soluções funcionais com autonomia","Portfólio de projetos será um diferencial"],
-    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
+    responsabilidades: ["Desenvolver e dar manutenção em sistemas e aplicações da Evolutec","Criar sites, landing pages e páginas web","Ajustar funcionalidades, testar soluções e corrigir erros","Apoiar integrações e melhorias em plataformas digitais","Colaborar com as equipes e comunicar andamento e soluções técnicas"],
+    requisitos: ["Estar cursando ou ter concluído formação em programação ou área relacionada","Conhecimento prático de HTML, CSS e JavaScript","Familiaridade com React ou tecnologias modernas de desenvolvimento web","Capacidade de desenvolver soluções funcionais e resolver problemas","Boa comunicação e organização"],
+    diferenciais: ["Conhecimento em banco de dados","Experiência com APIs e integrações","Noções de UI/UX e versionamento de código","Portfólio ou projetos já desenvolvidos"],
+    beneficios: ["Bonificações, prêmios e viagens","Desconto em procedimentos odontológicos","Folga no aniversário","Treinamentos da empresa com certificado"],
   },
   {
     id: 10,
@@ -354,9 +280,10 @@ beneficios: [
     resumo: "Apoie planilhas, documentos, controles financeiros e rotinas contábeis.",
     cargaHoraria: 'A combinar',
     descricao: "Oportunidade para estudante ou formado na área contábil apoiar a organização de documentos e as rotinas financeiras e administrativas da Evolutec.",
-    responsabilidades: ["Organizar notas fiscais, recibos e documentos administrativos","Apoiar contas a pagar, contas a receber e lançamentos","Conferir planilhas, comprovantes e relatórios financeiros","Auxiliar conciliações e preparação de informações para a contabilidade","Manter registros e arquivos atualizados"],
-    requisitos: ["Estar cursando ou ter concluído Ciências Contábeis ou área afim","Conhecimentos básicos de rotinas financeiras e contábeis","Familiaridade com Excel ou Google Planilhas","Organização, discrição e atenção aos detalhes","Experiência com conciliação financeira será um diferencial"],
-    beneficios: BENEFICIOS_PROCESSO_SELETIVO,
+    responsabilidades: ["Apoiar rotinas administrativas, fiscais e financeiras","Emitir notas fiscais e organizar documentos e comprovantes","Auxiliar em lançamentos e controles contábeis","Apoiar rotinas básicas de Departamento Pessoal","Organizar informações para rotinas fiscais e para a contabilidade","Conferir planilhas, controles e conciliações financeiras"],
+    requisitos: ["Estar cursando ou ter concluído Ciências Contábeis ou área relacionada","Noções de rotinas financeiras, administrativas e contábeis","Facilidade com planilhas e sistemas de gestão","Organização, atenção aos detalhes e boa comunicação"],
+    diferenciais: ["Estar cursando Contabilidade","Experiência com financeiro e conciliações","Domínio de planilhas e sistemas de gestão","Conhecimento em Departamento Pessoal e rotinas fiscais","Noções de sistemas da Receita Federal"],
+    beneficios: ["Bonificações, prêmios e viagens","Desconto em procedimentos odontológicos","Folga no aniversário","Treinamentos da empresa com certificado"],
   },
 
 ];
