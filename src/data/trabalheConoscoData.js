@@ -316,7 +316,7 @@ beneficios: [
 },
   {
     id: 8,
-    cargo: "Desenvolvedor de Sistemas e Sites",
+    cargo: "Programador",
     area: "Tecnologia",
     cidades: ["Castanhal - PA"],
     tipo: 'A combinar',
