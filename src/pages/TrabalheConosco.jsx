@@ -185,6 +185,20 @@ function VagaDetalhePanel({ vaga }) {
           </ul>
         </section>
 
+        {vaga.diferenciais?.length > 0 && (
+          <section className="vd-secao">
+            <h2>Diferenciais</h2>
+            <ul className="vd-checklist vd-checklist--requisitos">
+              {vaga.diferenciais.map((d, i) => (
+                <li key={i}>
+                  <span className="vd-check-icon"><IconCheck /></span>
+                  {d}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <section className="vd-secao">
           <h2>Benefícios</h2>
           <div className="vd-beneficios-chips">
